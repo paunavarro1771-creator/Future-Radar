@@ -2,9 +2,515 @@
 <html lang="es" class="dark">
 <head>
     <meta charset="UTF-8">
-    <title>Future Radar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Radar | Scouting de Fútbol Juvenil y Canteras</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            900: '#14532d',
+                            dark: '#090d16',
+                            card: '#111827',
+                            border: '#1f2937'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
 </head>
-<body class="bg-gray-950 text-white">
-    <h1>Prueba Limpia</h1>
+<body class="bg-brand-dark text-gray-100 min-h-screen selection:bg-brand-500 selection:text-white">
+
+    <!-- Top Notification Banner -->
+    <div class="bg-gradient-to-r from-green-600 to-emerald-800 text-xs sm:text-sm py-2 px-4 text-center font-medium text-white flex justify-center items-center gap-2">
+        <i class="fa-solid fa-radar animate-pulse"></i>
+        <span>Plataforma Oficial de Scouting &middot; Edición Especial UEFA Youth League U18/U21</span>
+        <span class="bg-black/30 px-2 py-0.5 rounded text-xs ml-2">By @nava_fut07</span>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center text-black font-extrabold text-xl shadow-lg shadow-green-500/20">
+                    FR
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-gray-200 to-green-400 bg-clip-text text-transparent">FUTURE RADAR</span>
+                    <span class="block text-[10px] uppercase tracking-widest text-green-400 font-semibold">Scouting & Analytics</span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#inicio" class="text-green-400 transition hover:text-green-300">Inicio</a>
+                <a href="#promesas" class="text-gray-300 transition hover:text-green-400">Base de Promesas</a>
+                <a href="#canteras" class="text-gray-300 transition hover:text-green-400">Análisis de Canteras</a>
+                <a href="#informes" class="text-gray-300 transition hover:text-green-400">Informes Pro</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <button onclick="openModal('contactoModal')" class="bg-green-600 hover:bg-green-500 text-black font-bold px-4 py-2.5 rounded-xl text-sm transition transform hover:scale-105 shadow-lg shadow-green-600/30 flex items-center gap-2">
+                    <i class="fa-solid fa-file-pdf"></i> Solicitar Informe
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-32">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-semibold tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span>
+                        Scouting Avanzado de Canteras U18 & U21
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-none">
+                        Descubriendo el talento <span class="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">del mañana</span> hoy.
+                    </h1>
+                    <p class="text-lg text-gray-400 max-w-2xl mx-auto lg:mx-0">
+                        Plataforma independiente de análisis de fútbol base, seguimiento de promesas internacionales, métricas avanzadas de rendimiento y perfiles detallados para clubes y analistas.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#promesas" class="bg-green-500 hover:bg-green-400 text-black font-bold px-6 py-3.5 rounded-xl transition shadow-lg shadow-green-500/20 flex items-center gap-2">
+                            <i class="fa-solid fa-binoculars"></i> Explorar Promesas
+                        </a>
+                        <a href="#canteras" class="bg-gray-800 hover:bg-gray-700 text-gray-200 font-semibold px-6 py-3.5 rounded-xl border border-gray-700 transition flex items-center gap-2">
+                            <i class="fa-solid fa-shield-halved"></i> Ver Canteras
+                        </a>
+                    </div>
+                    <!-- Quick Stats row -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-gray-800 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <div class="text-2xl font-bold text-white" id="playerCount">921</div>
+                            <div class="text-xs text-gray-400">JUGADORES TRACKEADOS</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white">U18 - U21</div>
+                            <div class="text-xs text-gray-400">RANGOS DE EDAD</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-green-400">98.2%</div>
+                            <div class="text-xs text-gray-400">PRECISIÓN DE DATOS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Interactive Card Preview -->
+                <div class="lg:col-span-5">
+                    <div class="glass-panel p-6 rounded-3xl shadow-2xl relative overflow-hidden border border-gray-700/60">
+                        <div class="absolute -right-10 -top-10 w-40 h-40 bg-green-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                        <div class="flex items-center justify-between pb-4 border-b border-gray-800">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center text-black font-extrabold text-xl">FR</div>
+                                <div>
+                                    <h3 class="font-bold text-white text-base">Informe Destacado #042</h3>
+                                    <p class="text-xs text-gray-400">UEFA Youth League &bull; Edición 2026/27</p>
+                                </div>
+                            </div>
+                            <span class="bg-green-500/20 text-green-400 text-xs px-2.5 py-1 rounded-lg font-bold">TOP SCOUT</span>
+                        </div>
+                        <div class="py-5 space-y-4">
+                            <div>
+                                <div class="flex justify-between text-xs mb-1 text-gray-400">
+                                    <span>Potencial Proyectado (Ceiling)</span>
+                                    <span class="text-green-400 font-bold">9.4 / 10</span>
+                                </div>
+                                <div class="w-full bg-gray-800 h-2.5 rounded-full overflow-hidden">
+                                    <div class="bg-gradient-to-r from-green-500 to-emerald-400 h-full rounded-full" style="width: 94%"></div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3 pt-2">
+                                <div class="bg-gray-900/60 p-3 rounded-xl border border-gray-800">
+                                    <span class="text-[11px] text-gray-400 block">Base de Datos</span>
+                                    <span class="text-lg font-extrabold text-white">36 Clubes</span>
+                                </div>
+                                <div class="bg-gray-900/60 p-3 rounded-xl border border-gray-800">
+                                    <span class="text-[11px] text-gray-400 block">Competiciones</span>
+                                    <span class="text-lg font-extrabold text-green-400">UYL / CONMEBOL</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-gray-800 flex items-center justify-between text-xs text-gray-400">
+                            <span>Analista: @nava_fut07</span>
+                            <button onclick="openModal('contactoModal')" class="text-green-400 hover:underline font-semibold">Solicitar acceso &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promising Players Section -->
+    <section id="promesas" class="py-20 bg-gray-950/50 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Base de Promesas U18 & U21</h2>
+                    <p class="text-gray-400 mt-2">Buscador y filtros avanzados de los talentos con mayor proyección en Europa y Sudamérica.</p>
+                </div>
+                <!-- Search & Filter Controls -->
+                <div class="flex flex-wrap gap-3">
+                    <div class="relative">
+                        <i class="fa-solid fa-search absolute left-3.5 top-3.5 text-gray-400 text-sm"></i>
+                        <input type="text" id="playerSearch" placeholder="Buscar por jugador o club..." class="bg-gray-900 border border-gray-800 text-sm rounded-xl pl-10 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500 w-64">
+                    </div>
+                    <select id="positionFilter" class="bg-gray-900 border border-gray-800 text-sm rounded-xl px-4 py-3 text-gray-300 focus:outline-none focus:border-green-500">
+                        <option value="ALL">Todas las posiciones</option>
+                        <option value="DEL">Delanteros</option>
+                        <option value="MC">Centrocampistas</option>
+                        <option value="DEF">Defensas</option>
+                        <option value="POR">Porteros</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Player Grid Dinámica -->
+            <div id="playerGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="text-center py-12 text-gray-400 col-span-full">Cargando base de datos de promesas...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Análisis de Canteras -->
+    <section id="canteras" class="py-20 bg-gray-900/30 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                <div>
+                    <span class="text-green-400 font-bold uppercase tracking-wider text-xs bg-green-500/10 px-3 py-1 rounded-full border border-green-500/20">Explorador de Academias</span>
+                    <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl mt-3">Análisis de Canteras</h2>
+                    <p class="text-gray-400 mt-2">Selecciona o busca un club para desplegar su plantilla completa de jóvenes talentos.</p>
+                </div>
+                <div class="relative">
+                    <i class="fa-solid fa-shield absolute left-3.5 top-3.5 text-gray-400 text-sm"></i>
+                    <input type="text" id="academySearch" placeholder="Filtrar por nombre de club..." class="bg-gray-900 border border-gray-800 text-sm rounded-xl pl-10 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500 w-72">
+                </div>
+            </div>
+
+            <!-- Contenedor de Canteras -->
+            <div id="academiesContainer" class="space-y-8">
+                <div class="text-center py-12 text-gray-400">Cargando análisis de canteras...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informes Pro Section -->
+    <section id="informes" class="py-20 bg-gray-950/70 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-green-400 font-bold uppercase tracking-wider text-xs bg-green-500/10 px-3 py-1 rounded-full border border-green-500/20">Panel Interactivo Pro</span>
+                    <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Generador de Informes de Scouting a Medida</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        ¿Necesitas un informe detallado sobre un jugador específico de categoría juvenil o una comparativa de canteras para tu dirección deportiva? Utiliza nuestra herramienta de solicitud directa.
+                    </p>
+                    <button onclick="openModal('contactoModal')" class="bg-green-500 hover:bg-green-400 text-black font-bold px-6 py-3.5 rounded-xl transition shadow-lg shadow-green-500/20 flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Contactar con el Analista
+                    </button>
+                </div>
+                <div class="glass-panel p-8 rounded-3xl border border-gray-800 shadow-2xl">
+                    <h3 class="text-xl font-bold text-white mb-6"><i class="fa-solid fa-calculator text-green-400 mr-2"></i> Simulador Rápido de Valoración U21</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-400 mb-1">PARTIDOS JUGADOS EN ÉLITE (Últimos 12 meses)</label>
+                            <input type="range" min="5" max="40" value="22" id="simPartidos" oninput="calcularValor()" class="w-full accent-green-500 bg-gray-800 rounded-lg h-2 cursor-pointer">
+                            <div class="flex justify-between text-xs text-gray-400 mt-1"><span>5 PJ</span><span id="valPartidos" class="text-green-400 font-bold">22 partidos</span><span>40 PJ</span></div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-400 mb-1">GOLES / ASISTENCIAS (Participaciones en gol)</label>
+                            <input type="range" min="0" max="25" value="12" id="simGoles" oninput="calcularValor()" class="w-full accent-green-500 bg-gray-800 rounded-lg h-2 cursor-pointer">
+                            <div class="flex justify-between text-xs text-gray-400 mt-1"><span>0</span><span id="valGoles" class="text-green-400 font-bold">12 participaciones</span><span>25</span></div>
+                        </div>
+                        <div class="p-4 bg-gray-900/80 rounded-2xl border border-gray-800 flex items-center justify-between mt-6">
+                            <div>
+                                <span class="text-xs text-gray-400 block">VALORACIÓN ESTIMADA DEL TALENTO</span>
+                                <span id="resultadoValor" class="text-2xl font-black text-green-400">€8.4 Millones</span>
+                            </div>
+                            <span class="bg-green-500/10 text-green-400 text-xs px-3 py-1.5 rounded-xl font-bold border border-green-500/20">ALTO POTENCIAL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-green-500 flex items-center justify-center text-black font-extrabold text-sm">FR</div>
+                <span class="text-lg font-bold text-white tracking-tight">FUTURE RADAR</span>
+            </div>
+            <p class="text-xs text-gray-500 text-center md:text-left">
+                &copy; 2026 Future Radar (@nava_fut07). Todos los derechos reservados. Plataforma especializada en scouting de fútbol juvenil y canteras.
+            </p>
+            <div class="flex items-center gap-4 text-gray-400">
+                <a href="https://twitter.com" target="_blank" class="hover:text-green-400 transition"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="hover:text-green-400 transition"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                <a href="https://instagram.com" target="_blank" class="hover:text-green-400 transition"><i class="fa-brands fa-instagram text-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactoModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-panel w-full max-w-lg rounded-3xl p-6 md:p-8 border border-gray-700 relative">
+            <button onclick="closeModal('contactoModal')" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="text-xl font-bold text-white mb-2"><i class="fa-solid fa-file-shield text-green-400 mr-2"></i> Solicitar Informe Pro</h3>
+            <p class="text-xs text-gray-400 mb-6">Contacta directamente con el departamento de scouting de Future Radar (@nava_fut07).</p>
+            <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Tu Nombre o Club</label>
+                    <input type="text" required placeholder="Ej. Dirección Deportiva / Ojeador" class="w-full bg-gray-900 border border-gray-800 text-sm rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Correo Electrónico</label>
+                    <input type="email" required placeholder="contacto@tuclub.com" class="w-full bg-gray-900 border border-gray-800 text-sm rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Detalles o Jugador de Interés</label>
+                    <textarea rows="3" required placeholder="Indica el perfil, categoría (U18/U21) o cantera que deseas analizar..." class="w-full bg-gray-900 border border-gray-800 text-sm rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-green-500 hover:bg-green-400 text-black font-bold py-3.5 rounded-xl transition shadow-lg shadow-green-500/20">Enviar Solicitud</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-green-600 text-black font-bold px-6 py-3 rounded-2xl shadow-2xl flex items-center gap-3 transition">
+        <i class="fa-solid fa-circle-check text-lg"></i>
+        <span>¡Solicitud enviada con éxito!</span>
+    </div>
+
+    <!-- JavaScript Lógica Principal & Carga del JSON -->
+    <script>
+        let allRadarPlayers = [];
+
+        function openModal(modalId) { document.getElementById(modalId).classList.remove('hidden'); }
+        function closeModal(modalId) { document.getElementById(modalId).classList.add('hidden'); }
+
+        function calcularValor() {
+            const partidos = parseInt(document.getElementById('simPartidos').value);
+            const goles = parseInt(document.getElementById('simGoles').value);
+            document.getElementById('valPartidos').innerText = partidos + ' partidos';
+            document.getElementById('valGoles').innerText = goles + ' participaciones';
+            const valorEstimado = ((partidos * 0.25) + (goles * 0.6) + 2.1).toFixed(1);
+            document.getElementById('resultadoValor').innerText = '€' + valorEstimado + ' Millones';
+        }
+
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            closeModal('contactoModal');
+            const toast = document.getElementById('toast');
+            toast.classList.remove('hidden');
+            setTimeout(() => { toast.classList.add('hidden'); }, 4000);
+        }
+
+        async function loadRadarPlayers() {
+            try {
+                const response = await fetch('future-radar-players.json');
+                if (!response.ok) throw new Error('Error al cargar JSON');
+                allRadarPlayers = await response.json();
+                
+                renderPlayers(allRadarPlayers);
+                renderAcademies(allRadarPlayers);
+
+                const counter = document.getElementById('playerCount');
+                if (counter) counter.textContent = allRadarPlayers.length;
+            } catch (error) {
+                console.error(error);
+                document.getElementById('playerGrid').innerHTML = '<p style="color: #ff5555; text-align: center; grid-column: 1 / -1;">Error al cargar la base de datos.</p>';
+                document.getElementById('academiesContainer').innerHTML = '<p style="color: #ff5555; text-align: center;">Error al cargar las canteras.</p>';
+            }
+        }
+
+        function cleanPosition(pos) {
+            if (!pos) return 'TALENTO';
+            let clean = String(pos).trim().toUpperCase();
+            if (clean.includes('DEL') || clean.includes('ST') || clean.includes('EXT') || clean.includes('RW') || clean.includes('LW')) return 'DELANTERO';
+            if (clean.includes('MC') || clean.includes('MCE') || clean.includes('MD') || clean.includes('MI') || clean.includes('M') || clean.includes('MED') || clean.includes('VOL') || clean.includes('CM') || clean.includes('AM')) return 'CENTROCAMPISTA';
+            if (clean.includes('DEF') || clean.includes('LI') || clean.includes('LD') || clean.includes('CENTRAL') || clean.includes('CB') || clean.includes('LB') || clean.includes('RB')) return 'DEFENSA';
+            if (clean.includes('POR') || clean.includes('GK')) return 'PORTERO';
+            return clean;
+        }
+
+        function getCountryFlag(nationality) {
+            if (!nationality) return '🏳️';
+            let nat = nationality.trim().toUpperCase();
+            const flags = { 'ESP': '🇪🇸', 'ENG': '🏴󠁧󠁢󠁥󠁮󠁧󠁿', 'FRA': '🇫🇷', 'GER': '🇩🇪', 'ITA': '🇮🇹', 'POR': '🇵🇹', 'NED': '🇳🇱', 'BRA': '🇧🇷', 'ARG': '🇦🇷', 'URU': '🇺🇾', 'BEL': '🇧🇪', 'COL': '🇨🇴' };
+            return flags[nat] || '🌍';
+        }
+
+        function getClubLogo(clubName) {
+            if (!clubName) return 'https://placehold.co/40x40/1e293b/22c55e?text=FR';
+            let initials = clubName.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
+            return `https://placehold.co/48x48/0f172a/22c55e?text=${initials}`;
+        }
+
+        function renderPlayers(players) {
+            const grid = document.getElementById('playerGrid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            if (players.length === 0) {
+                grid.innerHTML = '<p style="color: #94a3b8; text-align: center; grid-column: 1 / -1; padding: 40px; font-size: 14px;">No se han encontrado perfiles con estos criterios de búsqueda.</p>';
+                return;
+            }
+
+            players.forEach(player => {
+                const card = document.createElement('div');
+                card.className = "glass-panel p-5 rounded-2xl border border-gray-800 hover:border-green-500 transition duration-300 flex flex-col justify-between shadow-xl";
+
+                const positionFormatted = cleanPosition(player.position);
+                const name = player.name || 'Jugador sin identificar';
+                const club = player.club || 'Sin equipo asignado';
+                const nationality = player.nationality || 'INT';
+                const flagEmoji = getCountryFlag(nationality);
+                const clubLogoUrl = getClubLogo(club);
+                const age = player.age || 'N/D';
+                const season = player.season || '26/27';
+
+                card.innerHTML = `
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <span style="background: rgba(16, 185, 129, 0.12); color: #10b981; font-size: 10px; font-weight: 800; letter-spacing: 0.05em; padding: 5px 10px; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.2);">${positionFormatted}</span>
+                            <span style="font-size: 12px; font-weight: 700; background: #1e293b; padding: 4px 8px; border-radius: 6px; display: flex; align-items: center; gap: 5px; color: #f1f5f9;">
+                                ${flagEmoji} ${nationality}
+                            </span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                            <img src="${clubLogoUrl}" alt="Escudo" style="width: 40px; height: 40px; border-radius: 8px; border: 1px solid #334155; object-fit: cover;">
+                            <div>
+                                <h3 style="font-size: 17px; font-weight: 800; margin: 0; color: #f8fafc; letter-spacing: -0.01em;">${name}</h3>
+                                <p style="font-size: 13px; color: #38bdf8; margin: 2px 0 0 0; font-weight: 600;">${club}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; background: #020617; padding: 10px 12px; border-radius: 8px; border: 1px solid #1e293b; font-size: 11px; color: #94a3b8; margin-top: 10px;">
+                        <div>Edad: <strong style="color: #f1f5f9;">${age}</strong></div>
+                        <div style="text-align: right;">Temporada: <strong style="color: #f1f5f9;">${season}</strong></div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function renderAcademies(players, filterTerm = '') {
+            const container = document.getElementById('academiesContainer');
+            if (!container) return;
+            container.innerHTML = '';
+
+            const clubsMap = {};
+            players.forEach(p => {
+                const clubName = p.club ? p.club.trim() : 'Sin Equipo Asignado';
+                if (!clubsMap[clubName]) {
+                    clubsMap[clubName] = [];
+                }
+                clubsMap[clubName].push(p);
+            });
+
+            let clubEntries = Object.entries(clubsMap);
+            if (filterTerm) {
+                clubEntries = clubEntries.filter(([clubName]) => clubName.toLowerCase().includes(filterTerm));
+            }
+
+            if (clubEntries.length === 0) {
+                container.innerHTML = '<p style="color: #94a3b8; text-align: center; padding: 30px;">No se han encontrado canteras con ese nombre.</p>';
+                return;
+            }
+
+            clubEntries.forEach(([clubName, clubPlayers]) => {
+                const clubLogo = getClubLogo(clubName);
+                const clubCountry = clubPlayers[0]?.clubCountry || clubPlayers[0]?.nationality || 'INT';
+
+                const academyCard = document.createElement('div');
+                academyCard.className = "glass-panel rounded-3xl p-6 md:p-8 border border-gray-800 shadow-xl";
+
+                let playersHtml = clubPlayers.map(p => `
+                    <div style="background: #090d16; border: 1px solid #1e293b; padding: 12px 16px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <div style="font-weight: 700; color: #f8fafc; font-size: 14px;">${p.name || 'Sin nombre'}</div>
+                            <div style="font-size: 11px; color: #38bdf8; margin-top: 2px;">Posición: <strong>${cleanPosition(p.position)}</strong> (${p.position || 'N/D'})</div>
+                        </div>
+                        <div style="text-align: right; font-size: 11px; color: #94a3b8;">
+                            <div>Edad: <strong style="color: #fff;">${p.age || 'N/D'}</strong></div>
+                            <div style="margin-top: 2px;">${getCountryFlag(p.nationality)} ${p.nationality || 'INT'}</div>
+                        </div>
+                    </div>
+                `).join('');
+
+                academyCard.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; padding-bottom: 16px; margin-bottom: 20px;">
+                        <div style="display: flex; align-items: center; gap: 14px;">
+                            <img src="${clubLogo}" alt="Logo" style="width: 50px; height: 50px; border-radius: 12px; border: 1px solid #334155; object-fit: cover;">
+                            <div>
+                                <h3 style="font-size: 20px; font-weight: 800; color: #fff; margin: 0;">${clubName}</h3>
+                                <p style="font-size: 12px; color: #10b981; margin: 2px 0 0 0; font-weight: 600;">Cantera / Equipo Juvenil &bull; ${clubPlayers.length} talentos trackeados</p>
+                            </div>
+                        </div>
+                        <span style="background: #1e293b; color: #cbd5e1; font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 8px;">País: ${clubCountry}</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; max-height: 350px; overflow-y: auto; padding-right: 4px;">
+                        ${playersHtml}
+                    </div>
+                `;
+
+                container.appendChild(academyCard);
+            });
+        }
+
+        function filterPlayers() {
+            const term = document.getElementById('playerSearch').value.toLowerCase().trim();
+            const posVal = document.getElementById('positionFilter').value;
+
+            const filtered = allRadarPlayers.filter(p => {
+                const name = String(p.name || '').toLowerCase();
+                const club = String(p.club || '').toLowerCase();
+                const pos = cleanPosition(p.position);
+
+                const matchesSearch = name.includes(term) || club.includes(term);
+                const matchesPos = (posVal === 'ALL' || pos.includes(posVal));
+
+                return matchesSearch && matchesPos;
+            });
+
+            renderPlayers(filtered);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadRadarPlayers();
+
+            document.getElementById('playerSearch').addEventListener('input', filterPlayers);
+            document.getElementById('positionFilter').addEventListener('change', filterPlayers);
+
+            document.getElementById('academySearch').addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase().trim();
+                renderAcademies(allRadarPlayers, term);
+            });
+        });
+    </script>
 </body>
 </html>
