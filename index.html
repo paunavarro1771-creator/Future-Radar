@@ -620,5 +620,120 @@
             }, 4000);
         }
     </script>
+
+<script>
+let allRadarPlayers = [];
+
+async function loadRadarPlayers() {
+    const grid = document.getElementById('playerGrid');
+
+    try {
+        const response = await fetch('/future-radar-players.json');
+
+        if (!response.ok) {
+            throw new Error('No se ha podido cargar el archivo de jugadores');
+        }
+
+        allRadarPlayers = await response.json();
+
+        renderRadarPlayers(allRadarPlayers);
+
+        console.log('Future Radar FC: ' + allRadarPlayers.length + ' jugadores cargados');
+
+    } catch (error) {
+        console.error(error);
+
+        if (grid) {
+            grid.innerHTML = '<p>No se han podido cargar los jugadores. Comprueba el archivo JSON.</p>';
+        }
+    }
+}
+
+function getRadarPosition(position) {
+    const p = String(position || '').toUpperCase();
+
+    if (/GK|GOALKEEPER|PORTERO|POR/.test(p)) return 'POR';
+    if (/ST|CF|FW|FORWARD|DELANTERO|WINGER|EXTREMO/.test(p)) return 'DEL';
+    if (/CB|LB|RB|FB|DEFENDER|DEFENSA|LATERAL|CENTRAL/.test(p)) return 'DEF';
+
+    return 'MC';
+}
+
+function escapeRadarHTML(value) {
+    return String(value ?? '').replace(/[&<>"']/g, char => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+    })[char]);
+}
+
+function renderRadarPlayers(players) {
+    const grid = document.getElementById('playerGrid');
+    if (!grid) {
+        console.error('No encuentro el elemento playerGrid en index.html');
+        return;
+    }
+
+    grid.innerHTML = players.map(player => {
+        const name = escapeRadarHTML(player.name || 'Sin nombre');
+        const club = escapeRadarHTML(player.club || 'Club desconocido');
+        const position = getRadarPosition(player.position);
+        const age = player.age ?? '—';
+        const nationality = escapeRadarHTML(player.nationality || '—');
+        const initials = name.split(' ').slice(0, 2).map(word => word[0] || '').join('');
+
+        return `
+            <div class="player-card" data-name="${name.toLowerCase()}"
+                 data-club="${club.toLowerCase()}" data-pos="${position}">
+                <div class="player-card-header">
+                    <span>${escapeRadarHTML(initials)}</span>
+                    <span>${position}</span>
+                </div>
+                <h3>${name}</h3>
+                <p>${club}</p>
+                <div class="player-card-info">
+                    <span>Edad: ${escapeRadarHTML(age)}</span>
+                    <span>Nacionalidad: ${nationality}</span>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    const counter = document.getElementById('playerCount');
+    if (counter) counter.textContent = players.length;
+}
+
+function filterPlayers() {
+    const search = document.getElementById('playerSearch');
+    const positionFilter = document.getElementById('positionFilter');
+
+    const term = search ? search.value.toLowerCase().trim() : '';
+    const position = positionFilter ? positionFilter.value : 'ALL';
+
+    const filtered = allRadarPlayers.filter(player => {
+        const name = String(player.name || '').toLowerCase();
+        const club = String(player.club || '').toLowerCase();
+        const playerPosition = getRadarPosition(player.position);
+
+        return (name.includes(term) || club.includes(term)) &&
+            (position === 'ALL' || playerPosition === position);
+    });
+
+    renderRadarPlayers(filtered);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadRadarPlayers();
+
+    const search = document.getElementById('playerSearch');
+    const position = document.getElementById('positionFilter');
+
+    if (search) search.addEventListener('input', filterPlayers);
+    if (position) position.addEventListener('change', filterPlayers);
+});
+</script>
+
 </body>
 </html>
