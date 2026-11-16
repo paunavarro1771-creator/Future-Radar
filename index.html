@@ -329,7 +329,6 @@
             setTimeout(() => { toast.classList.add('hidden'); }, 4000);
         }
 
-        // Cargar JSON y renderizar todo
         async function loadRadarPlayers() {
             try {
                 const response = await fetch('future-radar-players.json');
@@ -348,7 +347,6 @@
             }
         }
 
-        // Corrección estricta para que detecte bien los centrocampistas (MC)
         function cleanPosition(pos) {
             if (!pos) return 'TALENTO';
             let clean = String(pos).trim().toUpperCase();
@@ -359,23 +357,19 @@
             return clean;
         }
 
-        // Función para obtener Bandera y Escudo del club (utilizando servicios públicos fiables)
         function getCountryFlag(nationality) {
             if (!nationality) return '🏳️';
             let nat = nationality.trim().toUpperCase();
-            // Mapeo rápido de abreviaturas comunes del PDF a emojis de banderas
             const flags = { 'ESP': '🇪🇸', 'ENG': '🏴󠁧󠁢󠁥󠁮󠁧󠁿', 'FRA': '🇫🇷', 'GER': '🇩🇪', 'ITA': '🇮🇹', 'POR': '🇵🇹', 'NED': '🇳🇱', 'BRA': '🇧🇷', 'ARG': '🇦🇷', 'URU': '🇺🇾', 'BEL': '🇧🇪', 'COL': '🇨🇴' };
             return flags[nat] || '🌍';
         }
 
         function getClubLogo(clubName) {
             if (!clubName) return 'https://placehold.co/40x40/1e293b/22c55e?text=FR';
-            // Genera una insignia limpia basada en las iniciales del club o un avatar deportivo
             let initials = clubName.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
             return `https://placehold.co/48x48/0f172a/22c55e?text=${initials}`;
         }
 
-        // 1. Renderizar la Base de Promesas con fichas profesionales (banderas y escudos)
         function renderPlayers(players) {
             const grid = document.getElementById('playerGrid');
             if (!grid) return;
@@ -424,13 +418,11 @@
             });
         }
 
-        // 2. Renderizar la sección de Canteras (agrupando por club)
         function renderAcademies(players, filterTerm = '') {
             const container = document.getElementById('academiesContainer');
             if (!container) return;
             container.innerHTML = '';
 
-            // Agrupar jugadores por club
             const clubsMap = {};
             players.forEach(p => {
                 const clubName = p.club ? p.club.trim() : 'Sin Equipo Asignado';
@@ -440,7 +432,6 @@
                 clubsMap[clubName].push(p);
             });
 
-            // Filtrar por texto de búsqueda de canteras si existe
             let clubEntries = Object.entries(clubsMap);
             if (filterTerm) {
                 clubEntries = clubEntries.filter(([clubName]) => clubName.toLowerCase().includes(filterTerm));
@@ -451,7 +442,6 @@
                 return;
             }
 
-            // Construir el HTML para cada cantera
             clubEntries.forEach(([clubName, clubPlayers]) => {
                 const clubLogo = getClubLogo(clubName);
                 const clubCountry = clubPlayers[0]?.clubCountry || clubPlayers[0]?.nationality || 'INT';
@@ -492,7 +482,6 @@
             });
         }
 
-        // Filtros en tiempo real
         function filterPlayers() {
             const term = document.getElementById('playerSearch').value.toLowerCase().trim();
             const posVal = document.getElementById('positionFilter').value;
@@ -514,11 +503,9 @@
         document.addEventListener('DOMContentLoaded', () => {
             loadRadarPlayers();
 
-            // Evento buscador de promesas
             document.getElementById('playerSearch').addEventListener('input', filterPlayers);
             document.getElementById('positionFilter').addEventListener('change', filterPlayers);
 
-            // Evento buscador de canteras
             document.getElementById('academySearch').addEventListener('input', (e) => {
                 const term = e.target.value.toLowerCase().trim();
                 renderAcademies(allRadarPlayers, term);
