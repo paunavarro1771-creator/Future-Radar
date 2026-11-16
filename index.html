@@ -73,18 +73,22 @@ function initials(name){return (name||'FR').replace(/[^A-Za-zÀ-ÿ ]/g,' ').spli
 function crestFallback(name){return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><rect width="80" height="80" rx="15" fill="#1b2a20"/><text x="40" y="47" font-family="Arial" font-size="25" font-weight="bold" text-anchor="middle" fill="#b7f36b">'+initials(name)+'</text></svg>')}
 function crestUrl(club){return crestOverrides[club]||crestCache[club]||crestFallback(club)}
 async function fetchClubLogo(page){
-  // Solo aceptamos el campo de logo oficial de Wikidata (P154).
-  // redirects=1 resuelve títulos de Wikipedia que son redirecciones.
+  // Primero intentamos recuperar el escudo oficial desde Wikidata.
   try{
     const wdUrl='https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles='+encodeURIComponent(page)+'&props=claims&format=json&origin=*&redirects=1';
-    const wd=await fetch(wdUrl);if(!wd.ok)throw new Error('Wikidata no disponible');
-    const data=await wd.json();
+    const wd=await fetch(wdUrl);const data=await wd.json();
     const entity=Object.values(data.entities||{}).find(x=>x&&x.claims);
     const claims=(entity?.claims?.P154||[]).filter(c=>c.rank!=='deprecated');
     const logo=claims[0]?.mainsnak?.datavalue?.value;
     if(logo)return 'https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(logo)+'?width=180';
-  }catch(e){console.warn('No se pudo cargar el escudo de',page,e)}
-  // Sin P154 dejamos el monograma neutro: nunca sustituimos un escudo por una foto.
+  }catch(e){}
+  // Recuperamos el sistema anterior para los clubes cuyo thumbnail sí mostraba
+  // su escudo. Porto, Lens y Roma tienen override propio para evitar fotos erróneas.
+  try{
+    const url='https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages&piprop=thumbnail&pithumbsize=180&redirects=1&titles='+encodeURIComponent(page)+'&origin=*';
+    const r=await fetch(url);const d=await r.json();const pg=Object.values(d.query.pages||{})[0];
+    if(pg?.thumbnail?.source)return pg.thumbnail.source;
+  }catch(e){}
   return null;
 }
 async function loadCrests(clubs){
