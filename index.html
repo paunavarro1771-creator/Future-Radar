@@ -100,7 +100,7 @@ function cleanPosition(pos){const p=String(pos||'').trim().toUpperCase();if(['GK
 function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 const playerPhotoCache=new Map(),playerPhotoQueue=[];let playerPhotoWorkers=0,playerPhotoObserver=null;
 function playerPhotoKey(p){return String(p.name||'').trim()+'|'+String(p.dateOfBirth||'');}
-function normalizePlayerName(v){return String(v||'').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();}
+function normalizePlayerName(v){return String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();}
 async function findPlayerPhoto(p){
   const name=String(p.name||'').trim();if(!name)return null;
   const searchUrl='https://www.wikidata.org/w/api.php?action=wbsearchentities&search='+encodeURIComponent(name)+'&language=en&uselang=en&type=item&limit=8&format=json&origin=*';
@@ -110,14 +110,14 @@ async function findPlayerPhoto(p){
   const ids=exact.map(x=>x.id).join('|');
   const er=await fetch('https://www.wikidata.org/w/api.php?action=wbgetentities&ids='+encodeURIComponent(ids)+'&props=claims|descriptions&languages=en&format=json&origin=*');
   if(!er.ok)throw new Error('Wikidata entities unavailable');const ed=await er.json();
-  const birthYear=String(p.dateOfBirth||'').match(/(?:19|20)\\d{2}/)?.[0];
+  const birthYear=String(p.dateOfBirth||'').match(/(?:19|20)\d{2}/)?.[0];
   for(const hit of exact){
     const entity=ed.entities?.[hit.id];if(!entity)continue;
     const description=entity.descriptions?.en?.value||hit.description||'';
     const occupations=(entity.claims?.P106||[]).map(c=>c.mainsnak?.datavalue?.value?.id).filter(Boolean);
     const isFootballer=/footballer|football player|soccer player|association football/i.test(description)||occupations.includes('Q937857');
     if(!isFootballer)continue;
-    if(birthYear){const birth=entity.claims?.P569?.[0]?.mainsnak?.datavalue?.value?.time||'';const found=birth.match(/(?:19|20)\\d{2}/)?.[0];if(found&&found!==birthYear)continue;}
+    if(birthYear){const birth=entity.claims?.P569?.[0]?.mainsnak?.datavalue?.value?.time||'';const found=birth.match(/(?:19|20)\d{2}/)?.[0];if(found&&found!==birthYear)continue;}
     const file=entity.claims?.P18?.[0]?.mainsnak?.datavalue?.value;if(file)return 'https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(file)+'?width=480';
   }
   return null;
