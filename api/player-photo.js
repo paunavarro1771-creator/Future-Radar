@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
     if (!response.ok) return res.status(404).send('Official profile unavailable');
 
     const html = await response.text();
-    const tags = html.match(/<meta\\b[^>]*>/gi) || [];
+    const tags = html.match(/<meta\b[^>]*>/gi) || [];
     let image = '';
 
     for (const tag of tags) {
