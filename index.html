@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Radar | Scouting de Fútbol Juvenil y Canteras</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            900: '#14532d',
+                            dark: '#090d16',
+                            card: '#111827',
+                            border: '#1f2937'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-100 min-h-screen selection:bg-brand-500 selection:text-white">
+
+    <!-- Top Notification Banner -->
+    <div class="bg-gradient-to-r from-green-600 to-emerald-800 text-xs sm:text-sm py-2 px-4 text-center font-medium text-white flex justify-center items-center gap-2">
+        <i class="fa-solid fa-radar animate-pulse"></i>
+        <span>Plataforma Oficial de Scouting &middot; Edición Especial UEFA Youth League U18/U21</span>
+        <span class="bg-black/30 px-2 py-0.5 rounded text-xs ml-2">By @nava_fut07</span>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center text-black font-extrabold text-xl shadow-lg shadow-green-500/20">
+                    FR
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-gray-200 to-green-400 bg-clip-text text-transparent">FUTURE RADAR</span>
+                    <span class="block text-[10px] uppercase tracking-widest text-green-400 font-semibold">Scouting & Analytics</span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#inicio" class="text-green-400 transition hover:text-green-300">Inicio</a>
+                <a href="#promesas" class="text-gray-300 transition hover:text-green-400">Base de Promesas</a>
+                <a href="#canteras" class="text-gray-300 transition hover:text-green-400">Análisis de Canteras</a>
+                <a href="#informes" class="text-gray-300 transition hover:text-green-400">Informes Pro</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <button onclick="openModal('contactoModal')" class="bg-green-600 hover:bg-green-500 text-black font-bold px-4 py-2.5 rounded-xl text-sm transition transform hover:scale-105 shadow-lg shadow-green-600/30 flex items-center gap-2">
+                    <i class="fa-solid fa-file-pdf"></i> Solicitar Informe
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-32">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-semibold tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span>
+                        Scouting Avanzado de Canteras U18 & U21
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-none">
+                        Descubriendo el talento <span class="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">del mañana</span> hoy.
+                    </h1>
+                    <p class="text-lg text-gray-400 max-w-2xl mx-auto lg:mx-0">
+                        Plataforma independiente de análisis de fútbol base, seguimiento de promesas internacionales, métricas avanzadas de rendimiento y perfiles detallados para clubes y analistas.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#promesas" class="bg-green-500 hover:bg-green-400 text-black font-bold px-6 py-3.5 rounded-xl transition shadow-lg shadow-green-500/20 flex items-center gap-2">
+                            <i class="fa-solid fa-binoculars"></i> Explorar Promesas
+                        </a>
+                        <a href="#canteras" class="bg-gray-800 hover:bg-gray-700 text-gray-200 font-semibold px-6 py-3.5 rounded-xl border border-gray-700 transition flex items-center gap-2">
+                            <i class="fa-solid fa-chart-pie"></i> Ver Canteras
+                        </a>
+                    </div>
+                    <!-- Quick Stats row -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-gray-800 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <div class="text-2xl font-bold text-white">+450</div>
+                            <div class="text-xs text-gray-400">JUGADORES TRACKEADOS</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white">U18 - U21</div>
+                            <div class="text-xs text-gray-400">RANGOS DE EDAD</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-green-400">98.2%</div>
+                            <div class="text-xs text-gray-400">PRECISIÓN DE DATOS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Interactive Card Preview -->
+                <div class="lg:col-span-5">
+                    <div class="glass-panel p-6 rounded-3xl shadow-2xl relative overflow-hidden border border-gray-700/60">
+                        <div class="absolute -right-10 -top-10 w-40 h-40 bg-green-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                        <div class="flex items-center justify-between pb-4 border-b border-gray-800">
+                            <div class="flex items-center gap-3">
+                                <img src="https://placehold.co/48x48/1f2937/22c55e?text=FR" alt="Escudo" class="w-12 h-12 rounded-xl object-cover border border-green-500/30">
+                                <div>
+                                    <h3 class="font-bold text-white text-base">Informe Destacado #042</h3>
+                                    <p class="text-xs text-gray-400">UEFA Youth League &bull; Edición 2026</p>
+                                </div>
+                            </div>
+                            <span class="bg-green-500/20 text-green-400 text-xs px-2.5 py-1 rounded-lg font-bold">TOP SCOUT</span>
+                        </div>
+                        <div class="py-5 space-y-4">
+                            <div>
+                                <div class="flex justify-between text-xs mb-1 text-gray-400">
+                                    <span>Potencial Proyectado (Ceiling)</span>
+                                    <span class="text-green-400 font-bold">9.4 / 10</span>
+                                </div>
+                                <div class="w-full bg-gray-800 h-2.5 rounded-full overflow-hidden">
+                                    <div class="bg-gradient-to-r from-green-500 to-emerald-400 h-full rounded-full" style="width: 94%"></div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3 pt-2">
+                                <div class="bg-gray-900/60 p-3 rounded-xl border border-gray-800">
+                                    <span class="text-[11px] text-gray-400 block">Valoración Mercado</span>
+                                    <span class="text-lg font-extrabold text-white">€12.5M</span>
+                                </div>
+                                <div class="bg-gray-900/60 p-3 rounded-xl border border-gray-800">
+                                    <span class="text-[11px] text-gray-400 block">Índice Presión U21</span>
+                                    <span class="text-lg font-extrabold text-green-400">88.3%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-gray-800 flex items-center justify-between text-xs text-gray-400">
+                            <span>Analista: @nava_fut07</span>
+                            <button onclick="openModal('contactoModal')" class="text-green-400 hover:underline font-semibold">Ver reporte completo &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promising Players Section -->
+    <section id="promesas" class="py-20 bg-gray-950/50 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Base de Promesas U18 & U21</h2>
+                    <p class="text-gray-400 mt-2">Buscador y filtros avanzados de los talentos con mayor proyección en Europa.</p>
+                </div>
+                <!-- Search & Filter Controls -->
+                <div class="flex flex-wrap gap-3">
+                    <div class="relative">
+                        <i class="fa-solid fa-search absolute left-3.5 top-3.5 text-gray-400 text-sm"></i>
+                        <input type="text" id="searchInput" onkeyup="filterPlayers()" placeholder="Buscar por jugador o club..." class="bg-gray-900 border border-gray-800 text-sm rounded-xl pl-10 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500 w-64">
+                    </div>
+                    <select id="posFilter" onchange="filterPlayers()" class="bg-gray-900 border border-gray-800 text-sm rounded-xl px-4 py-3 text-gray-300 focus:outline-none focus:border-green-500">
+                        <option value="ALL">Todas las posiciones</option>
+                        <option value="DEL">Delantero (ST/WG)</option>
+                        <option value="MC">Centrocampista (CM/AM)</option>
+                        <option value="DEF">Defensa (CB/FB)</option>
+                        <option value="POR">Portero (GK)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Player Grid -->
+            <div id="playerGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Player Card 1 -->
+                <div class="player-card glass-panel rounded-2xl p-6 border border-gray-800 hover:border-green-500/50 transition duration-300" data-name="marcos alonso" data-pos="MC" data-club="valencia cf">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-green-600 to-emerald-400 flex items-center justify-center font-bold text-black text-lg">
+                                MA
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Marcos Alonso</h3>
+                                <p class="text-xs text-gray-400">Valencia CF &bull; 18 años (U18)</p>
+                            </div>
+                        </div>
+                        <span class="bg-green-500/10 text-green-400 border border-green-500/20 text-xs px-2.5 py-1 rounded-lg font-bold">MC / 8</span>
+                    </div>
+                    <div class="space-y-3 my-4 text-sm">
+                        <div class="flex justify-between text-gray-300">
+                            <span class="text-gray-400">Recuperaciones/90m:</span>
+                            <span class="font-semibold text-white">8.4</span>
+                        </div>
+                        <div class="flex justify-between text-gray-300">
+                            <span class="text-gray-400">Precisión Pases:</span>
+                            <span class="font-semibold text-green-400">91.2%</span>
+                        </div>
+                        <div class="flex justify-between text-gray-300">
+                            <span class="text-gray-400">Potencial Estimado:</span>
+                            <span class="font-semibold text-white">9.1 / 10</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800/80 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">Seguimiento: <strong class="text-green-400">Activo</strong></span>
+                        <button onclick="openPlayerDetail('Marcos Alonso', 'Valencia CF', '18', 'Mediocentro Organizador', '9.1', '8.4', '91.2%')" class="text-xs bg-gray-800 hover:bg-green-600 hover:text-black font-bold px-3 py-2 rounded-lg transition">Ver Perfil</button>
+                    </div>
+                </div>
+
+                <!-- Player Card 2 -->
+                <div class="player-card glass-panel rounded-2xl p-6 border border-gray-800 hover:border-green-500/50 transition duration-300" data-name="leo borges" data-pos="DEL" data-club="real madrid">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center font-bold text-black text-lg">
+                                LB
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Leo Borges</h3>
+                                <p class="text-xs text-gray-400">Real Madrid &bull; 19 años (U19)</p>
+                            </div>
+                        </div>
+                        <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs px-2.5 py-1 rounded-lg font-bold">DEL / 9</span>
+                    </div>
+                    <div class="space-y-3 my-4 text-sm">
+                        <div class="flex justify-between text-gray-300">
+                            <span class="text-gray-400">Goles UEFA Youth L.:</span>
+                            <span class="font-semibold text-white">7 Goles / 6 Partidos</span>
+                        </div>
+                        <div class="flex justify-between text-gray-300">
+                            <span class="text-gray-400">Duelos Aéreos Ganados:</span>
+                            <span class="font-semibold text-green-400">68%</span>
+                        </div>
+                        <div class="flex justify-between text-gray-300">
+                            <span class="text-gray-400">Potencial Estimado:</span>
+                            <span class="font-semibold text-white">9.5 / 10</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800/80 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">Seguimiento: <strong class="text-green-400">Prioridad Alta</strong></span>
+                        <button onclick="openPlayerDetail('Leo Borges', 'Real Madrid', '19', 'Delantero Centro', '9.5', '7 Goles / 6 PJ', '68% Duelos')" class="text-xs bg-gray-800 hover:bg-green-600 hover:text-black font-bold px-3 py-2 rounded-lg transition">Ver Perfil</button>
+                    </div>
+                </div>
+
+                <!-- Player Card 3 -->
+                <div class="player-card glass-panel rounded-2xl p-6 border border-gray-800 hover:border-green-500/50 transition duration-300" data-name="mateo silva" data-pos="DEF" data-club="fc barcelona">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-green-500 to-lime-500 flex items-center justify-center font-bold text-black text-lg">
+                                MS
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Mateo Silva</h3>
+                                <p class="text-xs text-gray-400">FC Barcelona &bull; 17 años (U18)</p>
+                            </div>
+                        </div>
+                        <span class="bg-lime-500/10 text-lime-400 border border-lime-500/20 text-xs px-2.5 py-1 rounded-lg font-bold">DEF / CB</span>
+                    </div>
+                    <div class="space-y-3 my-4 text-sm">
+                        <div class="flex justify-between text-gray-300">
+                            <span class="text-gray-400">Salida de Balón Imp.:</span>
+                            <span class="font-semibold text-white">94.5%</span>
+                        </div>
+                        <div class="flex justify-between text-gray-300">
+                            <span class="text-gray-400">Intercepciones/90m:</span>
+                            <span class="font-semibold text-green-400">7.2</span>
+                        </div>
+                        <div class="flex justify-between text-gray-300">
+                            <span class="text-gray-400">Potencial Estimado:</span>
+                            <span class="font-semibold text-white">9.3 / 10</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800/80 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">Seguimiento: <strong class="text-green-400">Seguimiento OK</strong></span>
+                        <button onclick="openPlayerDetail('Mateo Silva', 'FC Barcelona', '17', 'Defensa Central', '9.3', '7.2 Interc.', '94.5% Pases')" class="text-xs bg-gray-800 hover:bg-green-600 hover:text-black font-bold px-3 py-2 rounded-lg transition">Ver Perfil</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academy Analysis & Age Average Chart Section -->
+    <section id="canteras" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-green-400 font-bold uppercase tracking-wider text-xs bg-green-500/10 px-3 py-1 rounded-full border border-green-500/20">Análisis Comparativo</span>
+                <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl mt-3">Promedio de Edad y Promoción en Canteras</h2>
+                <p class="text-gray-400 mt-3">Estudio comparativo del índice de confianza juvenil y la media de edad en alineaciones de equipos filiales y UEFA Youth League.</p>
+            </div>
+
+            <!-- Grid with Analytics / Chart visualization -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Left stats breakdown -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-800">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-bold text-white text-base">Ajax Academy (De Toekomst)</span>
+                            <span class="text-green-400 font-extrabold text-sm">18.4 Años</span>
+                        </div>
+                        <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-green-500 h-full rounded-full" style="width: 85%"></div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2">Líder histórico en aprovechamiento de talento sub-19 directo a primer equipo.</p>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-800">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-bold text-white text-base">La Masia (FC Barcelona)</span>
+                            <span class="text-green-400 font-extrabold text-sm">18.7 Años</span>
+                        </div>
+                        <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-emerald-400 h-full rounded-full" style="width: 82%"></div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2">Alta densidad de minutos en competición profesional U21.</p>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-800">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-bold text-white text-base">Real Madrid Castilla & Juvenil A</span>
+                            <span class="text-green-400 font-extrabold text-sm">19.1 Años</span>
+                        </div>
+                        <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-teal-500 h-full rounded-full" style="width: 76%"></div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2">Excelente rentabilidad de ventas y rendimiento físico superior.</p>
+                    </div>
+                </div>
+
+                <!-- Right Interactive Simulation Chart Container -->
+                <div class="lg:col-span-7">
+                    <div class="glass-panel p-8 rounded-3xl border border-gray-800 shadow-2xl relative">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="font-bold text-lg text-white"><i class="fa-solid fa-chart-bar text-green-400 mr-2"></i> Comparativa Edad Media Canteras U19/U21</h3>
+                            <span class="text-xs bg-gray-800 text-gray-300 px-3 py-1 rounded-lg">Temporada 2025/26</span>
+                        </div>
+                        <!-- Simulated Interactive Bar Chart using HTML/CSS -->
+                        <div class="space-y-4 pt-4">
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold mb-1 text-gray-300">
+                                    <span>Ajax Amsterdam U19</span>
+                                    <span>18.2 años</span>
+                                </div>
+                                <div class="w-full bg-gray-900 h-4 rounded-lg overflow-hidden p-0.5 border border-gray-800">
+                                    <div class="bg-gradient-to-r from-green-500 to-emerald-400 h-full rounded-md transition-all duration-1000" style="width: 82%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold mb-1 text-gray-300">
+                                    <span>FC Barcelona (La Masia)</span>
+                                    <span>18.5 años</span>
+                                </div>
+                                <div class="w-full bg-gray-900 h-4 rounded-lg overflow-hidden p-0.5 border border-gray-800">
+                                    <div class="bg-gradient-to-r from-green-500 to-emerald-400 h-full rounded-md transition-all duration-1000" style="width: 86%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold mb-1 text-gray-300">
+                                    <span>SL Benfica Youth</span>
+                                    <span>18.8 años</span>
+                                </div>
+                                <div class="w-full bg-gray-900 h-4 rounded-lg overflow-hidden p-0.5 border border-gray-800">
+                                    <div class="bg-gradient-to-r from-green-500 to-emerald-400 h-full rounded-md transition-all duration-1000" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold mb-1 text-gray-300">
+                                    <span>Real Madrid Juvenil A</span>
+                                    <span>19.0 años</span>
+                                </div>
+                                <div class="w-full bg-gray-900 h-4 rounded-lg overflow-hidden p-0.5 border border-gray-800">
+                                    <div class="bg-gradient-to-r from-green-500 to-emerald-400 h-full rounded-md transition-all duration-1000" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold mb-1 text-gray-300">
+                                    <span>Borussia Dortmund U19</span>
+                                    <span>18.3 años</span>
+                                </div>
+                                <div class="w-full bg-gray-900 h-4 rounded-lg overflow-hidden p-0.5 border border-gray-800">
+                                    <div class="bg-gradient-to-r from-green-500 to-emerald-400 h-full rounded-md transition-all duration-1000" style="width: 84%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-6 border-t border-gray-800 flex justify-between items-center text-xs text-gray-400">
+                            <span>* Datos basados en partidos oficiales UEFA Youth League</span>
+                            <span class="text-green-400 font-bold">Actualizado semanalmente</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Scouting Simulator / Report Section -->
+    <section id="informes" class="py-20 bg-gray-950/70 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-green-400 font-bold uppercase tracking-wider text-xs bg-green-500/10 px-3 py-1 rounded-full border border-green-500/20">Panel Interactivo Pro</span>
+                    <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Generador de Informes de Scouting a Medida</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        ¿Necesitas un informe detallado sobre un jugador específico de categoría juvenil o una comparativa de canteras para tu dirección deportiva? Utiliza nuestra herramienta de solicitud directa.
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check text-green-400"></i> Análisis de métricas avanzadas (xG, duelos, presión alta).
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check text-green-400"></i> Proyección de valor de mercado y adaptabilidad a ligas top.
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check text-green-400"></i> Seguimiento exclusivo por @nava_fut07.
+                        </li>
+                    </ul>
+                    <button onclick="openModal('contactoModal')" class="bg-green-500 hover:bg-green-400 text-black font-bold px-6 py-3.5 rounded-xl transition shadow-lg shadow-green-500/20 flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Contactar con el Analista
+                    </button>
+                </div>
+                <!-- Interactive Quick Calculator Card -->
+                <div class="glass-panel p-8 rounded-3xl border border-gray-800 shadow-2xl">
+                    <h3 class="text-xl font-bold text-white mb-6"><i class="fa-solid fa-calculator text-green-400 mr-2"></i> Simulador Rápido de Valoración U21</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-400 mb-1">PARTIDOS JUGADOS EN ÉLITE (Últimos 12 meses)</label>
+                            <input type="range" min="5" max="40" value="22" id="simPartidos" oninput="calcularValor()" class="w-full accent-green-500 bg-gray-800 rounded-lg h-2 cursor-pointer">
+                            <div class="flex justify-between text-xs text-gray-400 mt-1"><span>5 PJ</span><span id="valPartidos" class="text-green-400 font-bold">22 partidos</span><span>40 PJ</span></div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-400 mb-1">GOLES / ASISTENCIAS (Participaciones en gol)</label>
+                            <input type="range" min="0" max="25" value="12" id="simGoles" oninput="calcularValor()" class="w-full accent-green-500 bg-gray-800 rounded-lg h-2 cursor-pointer">
+                            <div class="flex justify-between text-xs text-gray-400 mt-1"><span>0</span><span id="valGoles" class="text-green-400 font-bold">12 participaciones</span><span>25</span></div>
+                        </div>
+                        <div class="p-4 bg-gray-900/80 rounded-2xl border border-gray-800 flex items-center justify-between mt-6">
+                            <div>
+                                <span class="text-xs text-gray-400 block">VALORACIÓN ESTIMADA DEL TALENTO</span>
+                                <span id="resultadoValor" class="text-2xl font-black text-green-400">€8.4 Millones</span>
+                            </div>
+                            <span class="bg-green-500/10 text-green-400 text-xs px-3 py-1.5 rounded-xl font-bold border border-green-500/20">ALTO POTENCIAL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-green-500 flex items-center justify-center text-black font-extrabold text-sm">
+                    FR
+                </div>
+                <span class="text-lg font-bold text-white tracking-tight">FUTURE RADAR</span>
+            </div>
+            <p class="text-xs text-gray-500 text-center md:text-left">
+                &copy; 2026 Future Radar (@nava_fut07). Todos los derechos reservados. Plataforma especializada en scouting de fútbol juvenil y canteras.
+            </p>
+            <div class="flex items-center gap-4 text-gray-400">
+                <a href="https://twitter.com" target="_blank" class="hover:text-green-400 transition"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="hover:text-green-400 transition"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                <a href="https://instagram.com" target="_blank" class="hover:text-green-400 transition"><i class="fa-brands fa-instagram text-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Player Detail Modal -->
+    <div id="playerModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-panel w-full max-w-lg rounded-3xl p-6 md:p-8 border border-gray-700 relative animate-in fade-in zoom-in duration-200">
+            <button onclick="closeModal('playerModal')" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
+            <div class="flex items-center gap-4 mb-6">
+                <div id="modalAvatar" class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-700 flex items-center justify-center text-black font-black text-2xl">
+                    MA
+                </div>
+                <div>
+                    <h3 id="modalName" class="text-xl font-bold text-white">Nombre Jugador</h3>
+                    <p id="modalClub" class="text-xs text-green-400 font-semibold">Club &bull; Edad</p>
+                </div>
+            </div>
+            <div class="space-y-4 text-sm">
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-gray-900 p-3 rounded-xl border border-gray-800">
+                        <span class="text-[11px] text-gray-400 block">Posición</span>
+                        <span id="modalPos" class="font-bold text-white text-base">-</span>
+                    </div>
+                    <div class="bg-gray-900 p-3 rounded-xl border border-gray-800">
+                        <span class="text-[11px] text-gray-400 block">Potencial Scouting</span>
+                        <span id="modalPot" class="font-bold text-green-400 text-base">-</span>
+                    </div>
+                </div>
+                <div class="bg-gray-900 p-4 rounded-xl border border-gray-800 space-y-2">
+                    <span class="text-[11px] text-gray-400 block uppercase tracking-wider">Métricas Clave Observadas</span>
+                    <div class="flex justify-between text-gray-300">
+                        <span id="modalStat1Title">Métrica Principal:</span>
+                        <span id="modalStat1Val" class="font-bold text-white">-</span>
+                    </div>
+                    <div class="flex justify-between text-gray-300">
+                        <span id="modalStat2Title">Métrica Secundaria:</span>
+                        <span id="modalStat2Val" class="font-bold text-green-400">-</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-800 flex justify-end">
+                <button onclick="closeModal('playerModal')" class="bg-green-600 hover:bg-green-500 text-black font-bold px-5 py-2.5 rounded-xl text-sm transition">Cerrar Ficha</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact / Report Request Modal -->
+    <div id="contactoModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-panel w-full max-w-lg rounded-3xl p-6 md:p-8 border border-gray-700 relative">
+            <button onclick="closeModal('contactoModal')" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="text-xl font-bold text-white mb-2"><i class="fa-solid fa-file-shield text-green-400 mr-2"></i> Solicitar Informe Pro</h3>
+            <p class="text-xs text-gray-400 mb-6">Contacta directamente con el departamento de scouting de Future Radar (@nava_fut07).</p>
+            <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Tu Nombre o Club</label>
+                    <input type="text" required placeholder="Ej. Dirección Deportiva / Ojeador" class="w-full bg-gray-900 border border-gray-800 text-sm rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Correo Electrónico</label>
+                    <input type="email" required placeholder="contacto@tuclub.com" class="w-full bg-gray-900 border border-gray-800 text-sm rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Detalles o Jugador de Interés</label>
+                    <textarea rows="3" required placeholder="Indica el perfil, categoría (U18/U21) o cantera que deseas analizar..." class="w-full bg-gray-900 border border-gray-800 text-sm rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-green-500 hover:bg-green-400 text-black font-bold py-3.5 rounded-xl transition shadow-lg shadow-green-500/20">Enviar Solicitud</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Message Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-green-600 text-black font-bold px-6 py-3 rounded-2xl shadow-2xl flex items-center gap-3 transition transform duration-300">
+        <i class="fa-solid fa-circle-check text-lg"></i>
+        <span id="toastText">¡Solicitud enviada con éxito!</span>
+    </div>
+
+    <!-- JavaScript Interactive Logic -->
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        function openPlayerDetail(name, club, age, pos, pot, stat1, stat2) {
+            document.getElementById('modalName').innerText = name;
+            document.getElementById('modalClub').innerText = club + ' • ' + age + ' años';
+            document.getElementById('modalPos').innerText = pos;
+            document.getElementById('modalPot').innerText = pot + ' / 10';
+            document.getElementById('modalStat1Val').innerText = stat1;
+            document.getElementById('modalStat2Val').innerText = stat2;
+            
+            // Initials avatar
+            const initials = name.split(' ').map(n => n[0]).join('');
+            document.getElementById('modalAvatar').innerText = initials;
+            
+            openModal('playerModal');
+        }
+
+        function filterPlayers() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const posVal = document.getElementById('posFilter').value;
+            const cards = document.querySelectorAll('.player-card');
+
+            cards.forEach(card => {
+                const name = card.getAttribute('data-name');
+                const pos = card.getAttribute('data-pos');
+                const club = card.getAttribute('data-club');
+
+                const matchesQuery = name.includes(query) || club.includes(query);
+                const matchesPos = (posVal === 'ALL' || pos === posVal);
+
+                if (matchesQuery && matchesPos) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function calcularValor() {
+            const partidos = parseInt(document.getElementById('simPartidos').value);
+            const goles = parseInt(document.getElementById('simGoles').value);
+            
+            document.getElementById('valPartidos').innerText = partidos + ' partidos';
+            document.getElementById('valGoles').innerText = goles + ' participaciones';
+
+            // Algoritmo simulado de valor de mercado U21
+            const valorEstimado = ((partidos * 0.25) + (goles * 0.6) + 2.1).toFixed(1);
+            document.getElementById('resultadoValor').innerText = '€' + valorEstimado + ' Millones';
+        }
+
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            closeModal('contactoModal');
+            
+            const toast = document.getElementById('toast');
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
