@@ -98,11 +98,20 @@ async function loadCrests(clubs){
 function handleCrestError(img){img.onerror=null;img.src=crestFallback(img.dataset.crest||img.alt||'FR');}
 function cleanPosition(pos){const p=String(pos||'').trim().toUpperCase();if(['GK','POR','PORTERO'].includes(p)||p.includes('PORT'))return 'PORTERO';if(['ST','CF','LW','RW','FW','DEL'].includes(p)||p.includes('DELANT')||p.includes('EXTREMO'))return 'DELANTERO';if(['CB','LB','RB','LWB','RWB','DEF','LI','LD','DFC'].includes(p)||p.includes('DEFEN'))return 'DEFENSA';if(['CM','CDM','CAM','DM','AM','MC','MCD','MCO','VOL','MD','MI'].includes(p)||p.includes('CENTRO')||p.includes('MEDIO'))return 'CENTROCAMPISTA';return p||'SIN DATO'}
 function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+const officialPlayerProfiles={
+  'Adrián Pérez':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/adrian-perez-munoz',
+  'Marco Company':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/marco-david-company-garcia',
+  'Andrés Corcoba':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/andres-corcoba-martinez',
+  'Rubén López Domínguez':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/ruben-lopez-dominguez',
+  'Pelayo Palomo':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/pelayo-palomo-cidon',
+  'Rodrigo Velasco':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/rodrigo-velasco-sanchez'
+};
 const playerPhotoCache=new Map(),playerPhotoQueue=[];let playerPhotoWorkers=0,playerPhotoObserver=null;
 function playerPhotoKey(p){return String(p.name||'').trim()+'|'+String(p.dateOfBirth||'');}
 function normalizePlayerName(v){return String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();}
 async function findPlayerPhoto(p){
   const name=String(p.name||'').trim();if(!name)return null;
+  const officialProfile=officialPlayerProfiles[name];if(officialProfile)return '/api/player-photo?profile='+encodeURIComponent(officialProfile);
   const searchUrl='https://www.wikidata.org/w/api.php?action=wbsearchentities&search='+encodeURIComponent(name)+'&language=en&uselang=en&type=item&limit=8&format=json&origin=*';
   const sr=await fetch(searchUrl);if(!sr.ok)throw new Error('Wikidata search unavailable');const sd=await sr.json();
   const exact=(sd.search||[]).filter(x=>normalizePlayerName(x.label)===normalizePlayerName(name));
