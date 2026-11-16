@@ -55,28 +55,34 @@ const flags={ALB:'al',ALG:'dz',ANG:'ao',ARG:'ar',AUS:'au',AUT:'at',AZE:'az',BEL:
 const wikiPages={
 'AEK Athens U19':'AEK_Athens_F.C.','Arsenal U19':'Arsenal_F.C.','Aston Villa U19':'Aston_Villa_F.C.','Atlético de Madrid U19':'Atlético_Madrid','Barcelona U19':'FC_Barcelona','Bayern München U19':'FC_Bayern_Munich','Bodø/Glimt U19':'FK_Bodø/Glimt','Borussia Dortmund U19':'Borussia_Dortmund','Club Brugge U19':'Club_Brugge_KV','Como U20':'Como_1907','FC Porto U19':'FC_Porto','Fenerbahçe U19':'Fenerbahçe_S.K.','Feyenoord U19':'Feyenoord','Galatasaray U19':'Galatasaray_S.K.','Inter U20':'Inter_Milan','LASK Linz U19':'LASK','Lens U19':'RC_Lens','Lille U19':'LOSC_Lille','Liverpool U19':'Liverpool_F.C.','Manchester City U19':'Manchester_City_F.C.','Manchester United U19':'Manchester_United_F.C.','Napoli U19':'S.S.C._Napoli','PSV Eindhoven U19':'PSV_Eindhoven','Paris Saint-Germain U19':'Paris_Saint-Germain_F.C.','RB Leipzig U19':'RB_Leipzig','Real Betis U19':'Real_Betis','Real Madrid U19':'Real_Madrid_CF','Roma U20':'AS_Roma','Sabah U19':'Sabah_FK','Shakhtar Donetsk U19':'FC_Shakhtar_Donetsk','Slavia Praha U19':'SK_Slavia_Prague','Sporting CP U19':'Sporting_CP','VfB Stuttgart U19':'VfB_Stuttgart','Viking FK U19':'Viking_FK','Villarreal U19':'Villarreal_CF','ŠK Slovan Bratislava U19':'ŠK_Slovan_Bratislava'};
 const crestCache={};
+// Escudos contrastados: evitamos que una foto del estadio o de una celebración
+// aparezca como si fuera el escudo del club.
+const crestOverrides={
+  'FC Porto U19':'https://www.footylogos.com/downloads/logo/fc-porto-logo-footylogos.png',
+  'Lens U19':'https://www.footylogos.com/downloads/logo/rc-lens-logo-footylogos.png',
+  'Roma U20':'https://commons.wikimedia.org/wiki/Special:FilePath/AS_Roma_logo.svg?width=160'
+};
 function flagUrl(code){const iso=flags[String(code||'').toUpperCase()];return iso?'https://flagcdn.com/w40/'+iso+'.png':''}
 function initials(name){return (name||'FR').replace(/[^A-Za-zÀ-ÿ ]/g,' ').split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join('').toUpperCase()||'FR'}
 function crestFallback(name){return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><rect width="80" height="80" rx="15" fill="#1b2a20"/><text x="40" y="47" font-family="Arial" font-size="25" font-weight="bold" text-anchor="middle" fill="#b7f36b">'+initials(name)+'</text></svg>')}
-function crestUrl(club){return crestCache[club]||crestFallback(club)}
+function crestUrl(club){return crestOverrides[club]||crestCache[club]||crestFallback(club)}
 async function fetchClubLogo(page){
-  // Prioriza el escudo oficial de Wikidata (propiedad P154).
+  // Solo aceptamos el campo de logo oficial de Wikidata (P154).
+  // redirects=1 resuelve títulos de Wikipedia que son redirecciones.
   try{
-    const wdUrl='https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles='+encodeURIComponent(page)+'&props=claims&format=json&origin=*';
-    const wd=await fetch(wdUrl);const data=await wd.json();const entity=Object.values(data.entities||{}).find(x=>x&&x.claims);
-    const logo=entity?.claims?.P154?.[0]?.mainsnak?.datavalue?.value;
-    if(logo)return 'https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(logo)+'?width=160';
-  }catch(e){}
-  // Si Wikidata no tiene escudo, usa la imagen disponible de la página del club.
-  try{
-    const url='https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages&piprop=thumbnail&pithumbsize=160&redirects=1&titles='+encodeURIComponent(page)+'&origin=*';
-    const r=await fetch(url);const d=await r.json();const pg=Object.values(d.query.pages||{})[0];
-    if(pg?.thumbnail?.source)return pg.thumbnail.source;
-  }catch(e){}
+    const wdUrl='https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles='+encodeURIComponent(page)+'&props=claims&format=json&origin=*&redirects=1';
+    const wd=await fetch(wdUrl);if(!wd.ok)throw new Error('Wikidata no disponible');
+    const data=await wd.json();
+    const entity=Object.values(data.entities||{}).find(x=>x&&x.claims);
+    const claims=(entity?.claims?.P154||[]).filter(c=>c.rank!=='deprecated');
+    const logo=claims[0]?.mainsnak?.datavalue?.value;
+    if(logo)return 'https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(logo)+'?width=180';
+  }catch(e){console.warn('No se pudo cargar el escudo de',page,e)}
+  // Sin P154 dejamos el monograma neutro: nunca sustituimos un escudo por una foto.
   return null;
 }
 async function loadCrests(clubs){
-  await Promise.all(clubs.map(async club=>{const page=wikiPages[club];if(!page)return;const logo=await fetchClubLogo(page);if(logo)crestCache[club]=logo;}));
+  await Promise.all(clubs.map(async club=>{if(crestOverrides[club])return;const page=wikiPages[club];if(!page)return;const logo=await fetchClubLogo(page);if(logo)crestCache[club]=logo;}));
   document.querySelectorAll('[data-crest]').forEach(img=>{const club=img.dataset.crest;img.src=crestUrl(club);});
 }
 function handleCrestError(img){img.onerror=null;img.src=crestFallback(img.dataset.crest||img.alt||'FR');}
