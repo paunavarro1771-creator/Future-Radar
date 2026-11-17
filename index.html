@@ -50,6 +50,9 @@ footer{padding:28px 0;border-top:1px solid #26372c;color:#839389;font-size:10px}
 .rank-empty p{max-width:570px;margin:0 auto;color:var(--muted);font-size:11px;line-height:1.7}
 .rank-status{display:inline-flex;padding:5px 8px;border:1px solid #57482b;background:#2a2112;color:#e7c783;border-radius:5px;font-size:9px;font-weight:800;letter-spacing:.5px}
 @media(max-width:700px){.ranking-intro{grid-template-columns:1fr}.ranking-table-wrap{overflow-x:auto}.ranking-table{min-width:650px}.ranking-filters .control{flex:1;min-width:140px}}
+
+.ranking-metric{display:none;min-width:150px}
+.rank-source{color:#91a397;font-size:9px;text-decoration:underline;text-underline-offset:3px}
 </style></head>
 <body>
 <div class="topline">Independent football intelligence · Season 2026/27</div>
@@ -78,21 +81,21 @@ footer{padding:28px 0;border-top:1px solid #26372c;color:#839389;font-size:10px}
 <div class="roster" id="rosterPanel"><div class="roster-head"><div class="roster-title"><img id="rosterCrest" alt=""><div><h3 id="rosterName">Cantera</h3><p id="rosterCount"></p></div></div><button class="btn btn-secondary" id="closeRoster" type="button">Cerrar ×</button></div><div class="roster-list" id="rosterList"></div></div>
 </div></section>
 <section class="section" id="rankings"><div class="wrap">
-<div class="section-head"><div><div class="section-kicker">Performance & potential / 03</div><h2>Rankings <span class="accent">Future Radar</span></h2><p class="section-desc">Clasificaciones de talento joven basadas en nivel actual y proyección. Compara jugadores, generaciones, posiciones y academias.</p></div></div>
+<div class="section-head"><div><div class="section-kicker">Performance & potential / 03</div><h2>Rankings <span class="accent">Future Radar</span></h2><p class="section-desc">Clasificaciones de talento joven basadas en nivel actual, proyección y rendimiento competitivo. Compara jugadores, generaciones, posiciones y academias.</p></div></div>
 <div class="ranking-intro">
 <div class="ranking-model"><h3>El modelo de evaluación</h3><p>El ranking combinado utiliza dos dimensiones independientes. La nota global se calcula con el mismo peso para ambas, para equilibrar rendimiento actual y proyección.</p><div class="score-pills"><span class="score-pill"><strong>50%</strong> Current Level</span><span class="score-pill"><strong>50%</strong> Prospect Score</span><span class="score-pill"><strong>/100</strong> Future Radar Score</span></div></div>
-<div class="ranking-note"><h3>Transparencia de datos</h3><p>Las puntuaciones no se asignan automáticamente por edad, club o reputación. Cada perfil necesita una evaluación contrastada. Los jugadores sin notas verificadas no entran en una clasificación.</p></div>
+<div class="ranking-note"><h3>Transparencia de datos</h3><p>Las estadísticas oficiales de la UEFA Youth League 2026/27 ya están incorporadas para los primeros clubes. Las notas Current Level y Prospect Score seguirán requiriendo evaluación propia y contrastada.</p></div>
 </div>
 <div class="ranking-tabs" role="tablist" aria-label="Tipo de ranking">
 <button class="ranking-tab active" type="button" data-ranking-tab="global">Global Top 100</button>
 <button class="ranking-tab" type="button" data-ranking-tab="u18">U18</button>
 <button class="ranking-tab" type="button" data-ranking-tab="u21">U21</button>
-<button class="ranking-tab" type="button" data-ranking-tab="academies">Academies</button>
+<button class="ranking-tab" type="button" data-ranking-tab="academies">Academies</button><button class="ranking-tab" type="button" data-ranking-tab="youth">UEFA Youth League</button>
 </div>
 <div class="ranking-filters">
 <input id="rankingSearch" class="control search" type="search" placeholder="Buscar jugador…">
 <select id="rankingPosition" class="control"><option value="ALL">Todas las posiciones</option><option value="DELANTERO">Delanteros</option><option value="CENTROCAMPISTA">Centrocampistas</option><option value="DEFENSA">Defensas</option><option value="PORTERO">Porteros</option></select>
-<select id="rankingClub" class="control"><option value="ALL">Todos los clubes</option></select>
+<select id="rankingClub" class="control"><option value="ALL">Todos los clubes</option></select><select id="rankingMetric" class="control ranking-metric"><option value="goals">Goles</option><option value="matchesPlayed">Partidos</option><option value="minutesPlayed">Minutos</option><option value="assists">Asistencias</option><option value="totalAttempts">Disparos</option><option value="goalsConceded">Goles encajados (porteros)</option></select>
 </div>
 <div class="ranking-table-wrap" id="rankingResults"><div class="rank-empty"><strong>Preparando rankings…</strong><p>Consultando las evaluaciones disponibles en la base de datos.</p></div></div>
 </div></section>
@@ -229,6 +232,20 @@ function renderRankings(){
  const search=(document.getElementById('rankingSearch')?.value||'').trim().toLowerCase();
  const position=document.getElementById('rankingPosition')?.value||'ALL';
  const club=document.getElementById('rankingClub')?.value||'ALL';
+
+ if(activeRankingTab==='youth'){
+  const metric=document.getElementById('rankingMetric')?.value||'goals';
+  const labels={goals:'Goles',matchesPlayed:'Partidos',minutesPlayed:'Minutos',assists:'Asistencias',totalAttempts:'Disparos',goalsConceded:'Goles encajados'};
+  const players=allRadarPlayers.filter(p=>p.youthLeagueStats&&
+   (metric==='goalsConceded'?typeof p.youthLeagueStats.goalsConceded==='number':typeof p.youthLeagueStats[metric]==='number')&&
+   (position==='ALL'||cleanPosition(p.position)===position)&&
+   (club==='ALL'||p.club===club)&&
+   (!search||[p.name,p.club,p.nationality].some(v=>String(v||'').toLowerCase().includes(search))))
+   .sort((a,b)=>b.youthLeagueStats[metric]-a.youthLeagueStats[metric]||b.youthLeagueStats.matchesPlayed-a.youthLeagueStats.matchesPlayed)
+   .slice(0,100);
+  if(!players.length){host.innerHTML='<div class="rank-empty"><span class="rank-status">SIN DATOS PARA ESTE FILTRO</span><strong>No hay registros disponibles en esta categoría.</strong><p>Estamos ampliando la cobertura de la competición club por club. Las estadísticas se muestran únicamente cuando aparecen en una fuente oficial de UEFA.</p></div>';return;}
+  host.innerHTML='<table class="ranking-table"><thead><tr><th>#</th><th>Player</th><th>Age</th><th>Club</th><th>PJ</th><th>MIN</th><th>G</th><th>A</th><th>GC</th><th>Source</th></tr></thead><tbody>'+players.map((p,i)=>{const s=p.youthLeagueStats;return '<tr><td class="rank-number">'+(i+1)+'</td><td><div class="rank-player"><img src="'+crestUrl(p.club||'')+'" alt="" onerror="handleCrestError(this)" data-crest="'+esc(p.club||'')+'"><div><strong>'+esc(p.name)+'</strong><small>'+esc(cleanPosition(p.position))+'</small></div></div></td><td>'+esc(p.age??'—')+'</td><td>'+esc(p.club||'')+'</td><td>'+s.matchesPlayed+'</td><td>'+(s.minutesPlayed??'—')+'</td><td>'+(s.goals??'—')+'</td><td>'+(s.assists??'—')+'</td><td>'+(s.goalsConceded??'—')+'</td><td><a class="rank-source" href="'+esc(s.sourceUrl)+'" target="_blank" rel="noopener">UEFA</a></td></tr>'}).join('')+'</tbody></table><p class="rank-muted" style="padding:12px 14px">Ordenado por '+labels[metric]+'. Datos de la UEFA Youth League 2026/27; los campos no publicados se muestran como —.</p>';return;
+ }
  if(activeRankingTab==='academies'){
   const clubs=new Map();
   allRadarPlayers.forEach(p=>{const s=playerRankingScores(p);if(!s)return;const name=p.club||'Club no disponible';if(!clubs.has(name))clubs.set(name,[]);clubs.get(name).push(s)});
@@ -242,14 +259,14 @@ function renderRankings(){
   (club==='ALL'||p.club===club)&&
   (!search||[p.name,p.club,p.nationality].some(v=>String(v||'').toLowerCase().includes(search))))
  .map(p=>({...p,scores:playerRankingScores(p)})).sort((a,b)=>b.scores.combined-a.scores.combined||b.scores.prospect-a.scores.prospect).slice(0,100);
- if(!scored.length){host.innerHTML='<div class="rank-empty"><span class="rank-status">EVALUACIONES PENDIENTES</span><strong>El ranking está listo. Faltan las primeras valoraciones.</strong><p>La base actual contiene datos de identidad, edad, posición, nacionalidad, altura y club, pero todavía no incluye estadísticas de rendimiento ni notas individuales. Para no inventar un Top 100, esta clasificación solo mostrará jugadores cuando añadamos sus dos puntuaciones verificadas: Current Level y Prospect Score.</p></div>';return;}
+ if(!scored.length){host.innerHTML='<div class="rank-empty"><span class="rank-status">EVALUACIONES PENDIENTES</span><strong>El ranking está listo. Faltan las primeras valoraciones.</strong><p>Ya contamos con estadísticas oficiales de la UEFA Youth League para parte de los jugadores. Para el Top 100 combinado aún necesitamos valoraciones individuales de Current Level y Prospect Score: no vamos a convertir goles o edad directamente en una nota de scouting.</p></div>';return;}
  host.innerHTML='<table class="ranking-table"><thead><tr><th>#</th><th>Player</th><th>Age</th><th>Current Level</th><th>Prospect Score</th><th>Future Radar Score</th></tr></thead><tbody>'+scored.map((p,i)=>'<tr><td class="rank-number">'+(i+1)+'</td><td><div class="rank-player"><img src="'+crestUrl(p.club||'')+'" alt="" onerror="handleCrestError(this)" data-crest="'+esc(p.club||'')+'"><div><strong>'+esc(p.name)+'</strong><small>'+esc(p.club||'')+' · '+esc(p.nationality||'')+'</small></div></div></td><td>'+esc(p.age??'—')+'</td><td>'+p.scores.current.toFixed(1)+'</td><td>'+p.scores.prospect.toFixed(1)+'</td><td class="rank-score">'+p.scores.combined.toFixed(1)+'</td></tr>').join('')+'</tbody></table>';
 }
 function setupRankings(){
  const clubSelect=document.getElementById('rankingClub');
  [...new Set(allRadarPlayers.map(p=>p.club).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'es')).forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;clubSelect.appendChild(o)});
- document.querySelectorAll('[data-ranking-tab]').forEach(btn=>btn.addEventListener('click',()=>{activeRankingTab=btn.dataset.rankingTab;document.querySelectorAll('[data-ranking-tab]').forEach(b=>b.classList.toggle('active',b===btn));document.getElementById('rankingPosition').disabled=activeRankingTab==='academies';document.getElementById('rankingClub').disabled=activeRankingTab==='academies';renderRankings()}));
- ['rankingSearch','rankingPosition','rankingClub'].forEach(id=>document.getElementById(id).addEventListener(id==='rankingSearch'?'input':'change',renderRankings));
+ document.querySelectorAll('[data-ranking-tab]').forEach(btn=>btn.addEventListener('click',()=>{activeRankingTab=btn.dataset.rankingTab;document.querySelectorAll('[data-ranking-tab]').forEach(b=>b.classList.toggle('active',b===btn));document.getElementById('rankingPosition').disabled=activeRankingTab==='academies';document.getElementById('rankingClub').disabled=activeRankingTab==='academies';document.getElementById('rankingMetric').style.display=activeRankingTab==='youth'?'block':'none';renderRankings()}));
+ ['rankingSearch','rankingPosition','rankingClub','rankingMetric'].forEach(id=>document.getElementById(id).addEventListener(id==='rankingSearch'?'input':'change',renderRankings));
  renderRankings();
 }
 

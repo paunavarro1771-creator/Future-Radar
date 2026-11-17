@@ -9,7 +9,16 @@
     "club": "Real Madrid U19",
     "coach": "Álvaro López",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605448/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 2
+    }
   },
   {
     "name": "Gabriel Valero",
@@ -57,7 +66,16 @@
     "club": "Real Madrid U19",
     "coach": "Álvaro López",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 1,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605448/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Alfonso Romero",
@@ -81,7 +99,16 @@
     "club": "Real Madrid U19",
     "coach": "Álvaro López",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 1,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605448/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Fran Santamaría",
@@ -93,7 +120,16 @@
     "club": "Real Madrid U19",
     "coach": "Álvaro López",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605448/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Sergio Castellón",
@@ -105,7 +141,16 @@
     "club": "Real Madrid U19",
     "coach": "Álvaro López",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605448/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Diego Lacosta",
@@ -129,7 +174,16 @@
     "club": "Real Madrid U19",
     "coach": "Álvaro López",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605448/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Cherif Fofana",
@@ -141,7 +195,16 @@
     "club": "Real Madrid U19",
     "coach": "Álvaro López",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605448/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Diego Martínez Beto",
@@ -189,7 +252,16 @@
     "club": "Real Madrid U19",
     "coach": "Álvaro López",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605448/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Andrés Corcoba",
@@ -201,7 +273,16 @@
     "club": "Real Madrid U19",
     "coach": "Álvaro López",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 2,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605448/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Pelayo Palomo",
@@ -285,7 +366,16 @@
     "club": "Real Madrid U19",
     "coach": "Álvaro López",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 1,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605448/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Melvin Ukpeigbe",
@@ -309,7 +399,16 @@
     "club": "Real Madrid U19",
     "coach": "Álvaro López",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605448/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Javi Bailón",
@@ -333,7 +432,16 @@
     "club": "Real Madrid U19",
     "coach": "Álvaro López",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605448/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Guille González",
@@ -345,7 +453,16 @@
     "club": "Real Madrid U19",
     "coach": "Álvaro López",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605448/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Ares Capatana Abad",
@@ -381,7 +498,16 @@
     "club": "Real Madrid U19",
     "coach": "Álvaro López",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 0,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605448/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Mauro Bautista",
@@ -417,7 +543,16 @@
     "club": "Real Madrid U19",
     "coach": "Álvaro López",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605448/squad/",
+      "lastUpdated": "2026-11-17",
+      "goalsConceded": 3
+    }
   },
   {
     "name": "Álvaro Rodríguez",
@@ -429,7 +564,16 @@
     "club": "Real Madrid U19",
     "coach": "Álvaro López",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 0,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605448/squad/",
+      "lastUpdated": "2026-11-17",
+      "goalsConceded": 0
+    }
   },
   {
     "name": "Izu Onunta",
@@ -1041,7 +1185,21 @@
     "club": "Villarreal U19",
     "coach": "Pepe Reina",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/players/250225294--raul-garcia/",
+      "lastUpdated": "2026-11-17",
+      "goals": 4,
+      "minutesPlayed": 310,
+      "totalAttempts": 12,
+      "assists": 0,
+      "yellowCards": 0,
+      "redCards": 0
+    }
   },
   {
     "name": "Adrián Vivó Guillamón",
@@ -1053,7 +1211,16 @@
     "club": "Villarreal U19",
     "coach": "Pepe Reina",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2607408/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Mauro Roca",
@@ -1065,7 +1232,16 @@
     "club": "Villarreal U19",
     "coach": "Pepe Reina",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2607408/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Yuri Kisak",
@@ -1077,7 +1253,16 @@
     "club": "Villarreal U19",
     "coach": "Pepe Reina",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2607408/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Sergio Barrera Martín",
@@ -1089,7 +1274,16 @@
     "club": "Villarreal U19",
     "coach": "Pepe Reina",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 2,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2607408/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Miguel Ángel Ruiz",
@@ -1125,7 +1319,16 @@
     "club": "Villarreal U19",
     "coach": "Pepe Reina",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2607408/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Saúl Rodríguez Parejo",
@@ -1137,7 +1340,16 @@
     "club": "Villarreal U19",
     "coach": "Pepe Reina",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2607408/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 2
+    }
   },
   {
     "name": "Álvaro Alcaide",
@@ -1149,7 +1361,16 @@
     "club": "Villarreal U19",
     "coach": "Pepe Reina",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2607408/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Moussa Kante",
@@ -1185,7 +1406,16 @@
     "club": "Villarreal U19",
     "coach": "Pepe Reina",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 0,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2607408/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Seydou Llopis",
@@ -1221,7 +1451,16 @@
     "club": "Villarreal U19",
     "coach": "Pepe Reina",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2607408/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "David Gómez Montejano",
@@ -1305,7 +1544,16 @@
     "club": "Villarreal U19",
     "coach": "Pepe Reina",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 0,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2607408/squad/",
+      "lastUpdated": "2026-11-17",
+      "goalsConceded": 0
+    }
   },
   {
     "name": "Jordi Mata Flor",
@@ -1377,7 +1625,16 @@
     "club": "Villarreal U19",
     "coach": "Pepe Reina",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2607408/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Sergio Esteban",
@@ -1425,7 +1682,16 @@
     "club": "Atlético de Madrid U19",
     "coach": "Pedro Moya",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605449/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 4
+    }
   },
   {
     "name": "Daniel Fitzgerald",
@@ -1437,7 +1703,16 @@
     "club": "Atlético de Madrid U19",
     "coach": "Pedro Moya",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605449/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Sergio Vinatea",
@@ -1497,7 +1772,16 @@
     "club": "Atlético de Madrid U19",
     "coach": "Pedro Moya",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605449/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Ian Mencia",
@@ -1521,7 +1805,16 @@
     "club": "Atlético de Madrid U19",
     "coach": "Pedro Moya",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605449/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Gonzalo Gross",
@@ -1533,7 +1826,16 @@
     "club": "Atlético de Madrid U19",
     "coach": "Pedro Moya",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605449/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 2
+    }
   },
   {
     "name": "Joel Sánchez",
@@ -1545,7 +1847,16 @@
     "club": "Atlético de Madrid U19",
     "coach": "Pedro Moya",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605449/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 3
+    }
   },
   {
     "name": "Javi Tena",
@@ -1557,7 +1868,16 @@
     "club": "Atlético de Madrid U19",
     "coach": "Pedro Moya",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605449/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Adrián Martínez",
@@ -1569,7 +1889,16 @@
     "club": "Atlético de Madrid U19",
     "coach": "Pedro Moya",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 2,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605449/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Gerard Fragoso",
@@ -1581,7 +1910,16 @@
     "club": "Atlético de Madrid U19",
     "coach": "Pedro Moya",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605449/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Carlos Núñez García",
@@ -1593,7 +1931,16 @@
     "club": "Atlético de Madrid U19",
     "coach": "Pedro Moya",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605449/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Miguel Gil",
@@ -1629,7 +1976,16 @@
     "club": "Atlético de Madrid U19",
     "coach": "Pedro Moya",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 1,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605449/squad/",
+      "lastUpdated": "2026-11-17",
+      "goalsConceded": 1
+    }
   },
   {
     "name": "Diego Piqueras",
@@ -1641,7 +1997,16 @@
     "club": "Atlético de Madrid U19",
     "coach": "Pedro Moya",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605449/squad/",
+      "lastUpdated": "2026-11-17",
+      "goalsConceded": 4
+    }
   },
   {
     "name": "Miguel Olarrieta",
@@ -1665,7 +2030,16 @@
     "club": "PSV Eindhoven U19",
     "coach": "Jasper Waalkens",
     "clubCountry": "Países Bajos",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605545/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 4
+    }
   },
   {
     "name": "Austyn Jones",
@@ -1677,7 +2051,16 @@
     "club": "PSV Eindhoven U19",
     "coach": "Jasper Waalkens",
     "clubCountry": "Países Bajos",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 2,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605545/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 2
+    }
   },
   {
     "name": "Samuel Dumbili",
@@ -1689,7 +2072,16 @@
     "club": "PSV Eindhoven U19",
     "coach": "Jasper Waalkens",
     "clubCountry": "Países Bajos",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 2,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605545/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 2
+    }
   },
   {
     "name": "Will Ostrander",
@@ -1701,7 +2093,16 @@
     "club": "PSV Eindhoven U19",
     "coach": "Jasper Waalkens",
     "clubCountry": "Países Bajos",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605545/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Rij k Ostrander",
@@ -1785,7 +2186,16 @@
     "club": "PSV Eindhoven U19",
     "coach": "Jasper Waalkens",
     "clubCountry": "Países Bajos",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605545/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Mathieu Buyens",
@@ -1797,7 +2207,16 @@
     "club": "PSV Eindhoven U19",
     "coach": "Jasper Waalkens",
     "clubCountry": "Países Bajos",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 1,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605545/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Jonas Colaes",
@@ -1809,7 +2228,16 @@
     "club": "PSV Eindhoven U19",
     "coach": "Jasper Waalkens",
     "clubCountry": "Países Bajos",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605545/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Damian Ferreira",
@@ -1821,7 +2249,16 @@
     "club": "PSV Eindhoven U19",
     "coach": "Jasper Waalkens",
     "clubCountry": "Países Bajos",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605545/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Adin Cama",
@@ -1869,7 +2306,16 @@
     "club": "PSV Eindhoven U19",
     "coach": "Jasper Waalkens",
     "clubCountry": "Países Bajos",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605545/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Rajven Olenski",
@@ -1929,7 +2375,16 @@
     "club": "PSV Eindhoven U19",
     "coach": "Jasper Waalkens",
     "clubCountry": "Países Bajos",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605545/squad/",
+      "lastUpdated": "2026-11-17",
+      "goalsConceded": 6
+    }
   },
   {
     "name": "Kane Aerts",
@@ -1941,7 +2396,16 @@
     "club": "PSV Eindhoven U19",
     "coach": "Jasper Waalkens",
     "clubCountry": "Países Bajos",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 0,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605545/squad/",
+      "lastUpdated": "2026-11-17",
+      "goalsConceded": 0
+    }
   },
   {
     "name": "Eskil Moedt",
@@ -2469,7 +2933,21 @@
     "club": "Liverpool U19",
     "coach": "Robert Page",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/players/250211053--will-wright/",
+      "lastUpdated": "2026-11-17",
+      "goals": 6,
+      "minutesPlayed": 360,
+      "totalAttempts": 17,
+      "assists": 2,
+      "yellowCards": 2,
+      "redCards": 0
+    }
   },
   {
     "name": "Josh Sonni-Lambie",
@@ -2481,7 +2959,16 @@
     "club": "Liverpool U19",
     "coach": "Robert Page",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2606417/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 2
+    }
   },
   {
     "name": "Finn Inglethorpe",
@@ -2493,7 +2980,16 @@
     "club": "Liverpool U19",
     "coach": "Robert Page",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2606417/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Alvin Ayman",
@@ -2505,7 +3001,16 @@
     "club": "Liverpool U19",
     "coach": "Robert Page",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2606417/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Erik Farkas Leonard",
@@ -2517,7 +3022,16 @@
     "club": "Liverpool U19",
     "coach": "Robert Page",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2606417/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Prince Kobe Cisse",
@@ -2529,7 +3043,16 @@
     "club": "Liverpool U19",
     "coach": "Robert Page",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2606417/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Joe Bradshaw",
@@ -2541,7 +3064,16 @@
     "club": "Liverpool U19",
     "coach": "Robert Page",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2606417/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Luca Eden",
@@ -2553,7 +3085,16 @@
     "club": "Liverpool U19",
     "coach": "Robert Page",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2606417/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Oliver O'Connor",
@@ -2565,7 +3106,16 @@
     "club": "Liverpool U19",
     "coach": "Robert Page",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2606417/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Emmanuel Airoboma",
@@ -2589,7 +3139,16 @@
     "club": "Liverpool U19",
     "coach": "Robert Page",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2606417/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Lucas Pitt",
@@ -2625,7 +3184,16 @@
     "club": "Liverpool U19",
     "coach": "Robert Page",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2606417/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Harvey Owen",
@@ -2649,7 +3217,16 @@
     "club": "Liverpool U19",
     "coach": "Robert Page",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 1,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2606417/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Isaiah Garin",
@@ -2685,7 +3262,16 @@
     "club": "Liverpool U19",
     "coach": "Robert Page",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2606417/squad/",
+      "lastUpdated": "2026-11-17",
+      "goalsConceded": 7
+    }
   },
   {
     "name": "Matthew Wright",
@@ -2697,7 +3283,16 @@
     "club": "Liverpool U19",
     "coach": "Robert Page",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 0,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2606417/squad/",
+      "lastUpdated": "2026-11-17",
+      "goalsConceded": 0
+    }
   },
   {
     "name": "Hayden Smith",
@@ -2709,7 +3304,16 @@
     "club": "Liverpool U19",
     "coach": "Robert Page",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 0,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2606417/squad/",
+      "lastUpdated": "2026-11-17",
+      "goalsConceded": 0
+    }
   },
   {
     "name": "Bjarki Hrafn Gylfason",
@@ -5073,7 +5677,16 @@
     "club": "Barcelona U19",
     "coach": "Pol Planas",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 1,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605447/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Shane Kluivert",
@@ -5097,7 +5710,16 @@
     "club": "Barcelona U19",
     "coach": "Pol Planas",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605447/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Ajay Tavares",
@@ -5121,7 +5743,16 @@
     "club": "Barcelona U19",
     "coach": "Pol Planas",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605447/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Adrián Guerrero",
@@ -5157,7 +5788,16 @@
     "club": "Barcelona U19",
     "coach": "Pol Planas",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605447/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Joni Hernández",
@@ -5169,7 +5809,16 @@
     "club": "Barcelona U19",
     "coach": "Pol Planas",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605447/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Iu Martínez",
@@ -5181,7 +5830,16 @@
     "club": "Barcelona U19",
     "coach": "Pol Planas",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605447/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Byron Mendoza",
@@ -5217,7 +5875,16 @@
     "club": "Barcelona U19",
     "coach": "Pol Planas",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 1,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605447/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Pedro Rodríguez",
@@ -5241,7 +5908,16 @@
     "club": "Barcelona U19",
     "coach": "Pol Planas",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 2,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605447/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Ibrahim Abbayev",
@@ -5277,7 +5953,16 @@
     "club": "Barcelona U19",
     "coach": "Pol Planas",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 1,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605447/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Samu Borniquel",
@@ -5289,7 +5974,16 @@
     "club": "Barcelona U19",
     "coach": "Pol Planas",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 2,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605447/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Joan Inglés",
@@ -5301,7 +5995,16 @@
     "club": "Barcelona U19",
     "coach": "Pol Planas",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 2,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605447/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Lorenzo Oertli",
@@ -5313,7 +6016,16 @@
     "club": "Barcelona U19",
     "coach": "Pol Planas",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 0,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605447/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Raúl Expósito",
@@ -5325,7 +6037,16 @@
     "club": "Barcelona U19",
     "coach": "Pol Planas",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 2,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605447/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Pau Bergés",
@@ -5337,7 +6058,16 @@
     "club": "Barcelona U19",
     "coach": "Pol Planas",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 2,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605447/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Álvaro Gómez",
@@ -5397,7 +6127,16 @@
     "club": "Barcelona U19",
     "coach": "Pol Planas",
     "clubCountry": "España",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 1,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605447/squad/",
+      "lastUpdated": "2026-11-17",
+      "goalsConceded": 0
+    }
   },
   {
     "name": "Gerard Valls",
@@ -6141,7 +6880,16 @@
     "club": "Bayern München U19",
     "coach": "Leonhard Haas",
     "clubCountry": "Alemania",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605443/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Yll Gashi",
@@ -6153,7 +6901,16 @@
     "club": "Bayern München U19",
     "coach": "Leonhard Haas",
     "clubCountry": "Alemania",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605443/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Noah Codjo-Evora",
@@ -6165,7 +6922,16 @@
     "club": "Bayern München U19",
     "coach": "Leonhard Haas",
     "clubCountry": "Alemania",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605443/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Aristide Hentcho",
@@ -6213,7 +6979,16 @@
     "club": "Bayern München U19",
     "coach": "Leonhard Haas",
     "clubCountry": "Alemania",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605443/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Philipp von Taube",
@@ -6249,7 +7024,16 @@
     "club": "Bayern München U19",
     "coach": "Leonhard Haas",
     "clubCountry": "Alemania",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605443/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Serdar Yildiz",
@@ -6285,7 +7069,16 @@
     "club": "Bayern München U19",
     "coach": "Leonhard Haas",
     "clubCountry": "Alemania",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605443/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Matteo Maric",
@@ -6297,7 +7090,16 @@
     "club": "Bayern München U19",
     "coach": "Leonhard Haas",
     "clubCountry": "Alemania",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605443/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Simon Schaff",
@@ -6369,7 +7171,16 @@
     "club": "Bayern München U19",
     "coach": "Leonhard Haas",
     "clubCountry": "Alemania",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605443/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Adam El-Chaar",
@@ -6381,7 +7192,16 @@
     "club": "Bayern München U19",
     "coach": "Leonhard Haas",
     "clubCountry": "Alemania",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 2,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605443/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Skender Nuraj",
@@ -6405,7 +7225,16 @@
     "club": "Bayern München U19",
     "coach": "Leonhard Haas",
     "clubCountry": "Alemania",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605443/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Do-yeon Kim",
@@ -6417,7 +7246,16 @@
     "club": "Bayern München U19",
     "coach": "Leonhard Haas",
     "clubCountry": "Alemania",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605443/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Afrim Gashi",
@@ -6501,7 +7339,16 @@
     "club": "Bayern München U19",
     "coach": "Leonhard Haas",
     "clubCountry": "Alemania",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605443/squad/",
+      "lastUpdated": "2026-11-17",
+      "goalsConceded": 10
+    }
   },
   {
     "name": "Leonard Ruland",
@@ -6573,7 +7420,16 @@
     "club": "Arsenal U19",
     "coach": "David Horseman",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 2,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605532/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Axel Donczew",
@@ -6585,7 +7441,16 @@
     "club": "Arsenal U19",
     "coach": "David Horseman",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605532/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Jaden Maghoma",
@@ -6609,7 +7474,16 @@
     "club": "Arsenal U19",
     "coach": "David Horseman",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605532/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Ife Ibrahim",
@@ -6621,7 +7495,16 @@
     "club": "Arsenal U19",
     "coach": "David Horseman",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605532/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Luis Muñoz",
@@ -6633,7 +7516,16 @@
     "club": "Arsenal U19",
     "coach": "David Horseman",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605532/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Josh Ogunnaike",
@@ -6645,7 +7537,16 @@
     "club": "Arsenal U19",
     "coach": "David Horseman",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605532/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Brayden Clarke",
@@ -6657,7 +7558,16 @@
     "club": "Arsenal U19",
     "coach": "David Horseman",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 2,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605532/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Elijah Upson",
@@ -6669,7 +7579,16 @@
     "club": "Arsenal U19",
     "coach": "David Horseman",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605532/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Abraham Owusu-Gyasi",
@@ -6681,7 +7600,16 @@
     "club": "Arsenal U19",
     "coach": "David Horseman",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 1,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605532/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Elyon Mbala",
@@ -6693,7 +7621,16 @@
     "club": "Arsenal U19",
     "coach": "David Horseman",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 2,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605532/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Angelinou Pedro",
@@ -6717,7 +7654,16 @@
     "club": "Arsenal U19",
     "coach": "David Horseman",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605532/squad/",
+      "lastUpdated": "2026-11-17",
+      "goalsConceded": 8
+    }
   },
   {
     "name": "Khari Ranson",
@@ -6753,7 +7699,16 @@
     "club": "Arsenal U19",
     "coach": "David Horseman",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 0,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605532/squad/",
+      "lastUpdated": "2026-11-17",
+      "goalsConceded": 0
+    }
   },
   {
     "name": "Ettore Broggian",
@@ -7677,7 +8632,16 @@
     "club": "Manchester City U19",
     "coach": "Oliver Reiss",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605445/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 3
+    }
   },
   {
     "name": "Kylan Midwood",
@@ -7689,7 +8653,16 @@
     "club": "Manchester City U19",
     "coach": "Oliver Reiss",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605445/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Timeo Whisker",
@@ -7701,7 +8674,16 @@
     "club": "Manchester City U19",
     "coach": "Oliver Reiss",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 0,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605445/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Javan Woods",
@@ -7725,7 +8707,16 @@
     "club": "Manchester City U19",
     "coach": "Oliver Reiss",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 2,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605445/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Tyrese Samba",
@@ -7737,7 +8728,16 @@
     "club": "Manchester City U19",
     "coach": "Oliver Reiss",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 0,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605445/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Xavier Parker",
@@ -7749,7 +8749,16 @@
     "club": "Manchester City U19",
     "coach": "Oliver Reiss",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605445/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Dexter Oliver",
@@ -7761,7 +8770,16 @@
     "club": "Manchester City U19",
     "coach": "Oliver Reiss",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605445/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 1
+    }
   },
   {
     "name": "Finlay Gorman",
@@ -7773,7 +8791,16 @@
     "club": "Manchester City U19",
     "coach": "Oliver Reiss",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605445/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Harrison Miles",
@@ -7785,7 +8812,16 @@
     "club": "Manchester City U19",
     "coach": "Oliver Reiss",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605445/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Femi Fapetu",
@@ -7809,7 +8845,16 @@
     "club": "Manchester City U19",
     "coach": "Oliver Reiss",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 0,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605445/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Mishel Nduka",
@@ -7833,7 +8878,16 @@
     "club": "Manchester City U19",
     "coach": "Oliver Reiss",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605445/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Kian Noble",
@@ -7845,7 +8899,16 @@
     "club": "Manchester City U19",
     "coach": "Oliver Reiss",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605445/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Matthew Henderson-Hall",
@@ -7869,7 +8932,16 @@
     "club": "Manchester City U19",
     "coach": "Oliver Reiss",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605445/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Brooklyn Nfonkeu",
@@ -7881,7 +8953,16 @@
     "club": "Manchester City U19",
     "coach": "Oliver Reiss",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605445/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Marlow Barrett",
@@ -7893,7 +8974,16 @@
     "club": "Manchester City U19",
     "coach": "Oliver Reiss",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 3,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605445/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Freddie Laerie",
@@ -7905,7 +8995,16 @@
     "club": "Manchester City U19",
     "coach": "Oliver Reiss",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 1,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605445/squad/",
+      "lastUpdated": "2026-11-17",
+      "goals": 0
+    }
   },
   {
     "name": "Theo Carrington",
@@ -7941,7 +9040,16 @@
     "club": "Manchester City U19",
     "coach": "Oliver Reiss",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 4,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605445/squad/",
+      "lastUpdated": "2026-11-17",
+      "goalsConceded": 7
+    }
   },
   {
     "name": "Max Hudson",
@@ -7965,7 +9073,16 @@
     "club": "Manchester City U19",
     "coach": "Oliver Reiss",
     "clubCountry": "Inglaterra",
-    "season": "2026/27"
+    "season": "2026/27",
+    "youthLeagueStats": {
+      "competition": "UEFA Youth League",
+      "season": "2026/27",
+      "matchesPlayed": 0,
+      "source": "UEFA",
+      "sourceUrl": "https://www.uefa.com/uefayouthleague/clubs/2605445/squad/",
+      "lastUpdated": "2026-11-17",
+      "goalsConceded": 0
+    }
   },
   {
     "name": "Anas El Mahboubi",
