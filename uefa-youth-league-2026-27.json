@@ -57,7 +57,8 @@
       "away": "Inter",
       "homeScore": 3,
       "awayScore": 0,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/inter-u20-real-madrid-u19/erYseLFg"
     },
     {
       "matchday": 1,
@@ -120,7 +121,8 @@
       "away": "Feyenoord",
       "homeScore": 1,
       "awayScore": 2,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/feyenoord-u19-barcelona-u19/DcLsCTDb"
     },
     {
       "matchday": 1,
@@ -534,7 +536,8 @@
       "away": "Paris Saint-Germain",
       "homeScore": 3,
       "awayScore": 0,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/villarreal-u19-paris-saint-germain-u19/NcLsfCHb"
     },
     {
       "matchday": 4,
