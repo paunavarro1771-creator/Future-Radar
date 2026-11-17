@@ -560,7 +560,8 @@
       "away": "Lille",
       "homeScore": 2,
       "awayScore": 1,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/lille-u19-bodoglimt-u19/ujtcsnztc"
     },
     {
       "matchday": 4,
@@ -760,7 +761,8 @@
       "away": "Borussia Dortmund",
       "kickoff": "14:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING"
+      "status": "UPCOMING",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/arsenal-u19-borussia-dortmund-u19/uzrsvcL"
     },
     {
       "matchday": 5,
