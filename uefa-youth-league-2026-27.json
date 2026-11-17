@@ -493,7 +493,8 @@
       "away": "Lens",
       "homeScore": 4,
       "awayScore": 2,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/lens-u19-club-brugge-u19/BORbskztc"
     },
     {
       "matchday": 3,
@@ -521,7 +522,8 @@
       "away": "Shakhtar Donetsk",
       "homeScore": 2,
       "awayScore": 0,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/inter-u20-shakhtar-donetsk-u19/yeTseLFg"
     },
     {
       "matchday": 3,
@@ -530,7 +532,8 @@
       "away": "Leipzig",
       "homeScore": 5,
       "awayScore": 2,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/rb-leipzig-u19-real-madrid-u19/erYsUAeb"
     },
     {
       "matchday": 3,
