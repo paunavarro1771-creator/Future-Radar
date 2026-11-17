@@ -221,7 +221,8 @@
       "away": "Lille",
       "homeScore": 2,
       "awayScore": 3,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/lille-u19-arsenal-u19/vcLsnztc"
     },
     {
       "matchday": 2,
@@ -338,7 +339,8 @@
       "away": "Paris Saint-Germain",
       "homeScore": 0,
       "awayScore": 2,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/manchester-city-u19-paris-saint-germain-u19/NcLsgrY"
     },
     {
       "matchday": 3,
@@ -347,7 +349,8 @@
       "away": "PSV Eindhoven",
       "homeScore": 3,
       "awayScore": 1,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/psv-eindhoven-u19-fc-porto-u19/rmGsPcL"
     },
     {
       "matchday": 3,
@@ -419,7 +422,8 @@
       "away": "AEK Athens",
       "homeScore": 1,
       "awayScore": 1,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/es/football/match/aek-athens-u19-manchester-city-u19/grYspQtc"
     },
     {
       "matchday": 3,
@@ -473,7 +477,8 @@
       "away": "Arsenal",
       "homeScore": 3,
       "awayScore": 3,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/arsenal-u19-fc-bayern-munchen-u19/DzrsvcL"
     },
     {
       "matchday": 3,
@@ -500,7 +505,8 @@
       "away": "Feyenoord",
       "homeScore": 1,
       "awayScore": 4,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/real-betis-u19-feyenoord-u19/CTDbsOpkc"
     },
     {
       "matchday": 4,
@@ -619,7 +625,8 @@
       "away": "Napoli",
       "homeScore": 3,
       "awayScore": 1,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/es/football/match/napoli-u20-fc-porto-u19/rmGsRQGg"
     },
     {
       "matchday": 4,
