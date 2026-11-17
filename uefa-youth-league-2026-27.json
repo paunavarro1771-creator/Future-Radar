@@ -570,7 +570,8 @@
       "away": "Sporting CP",
       "homeScore": 1,
       "awayScore": 3,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/shakhtar-donetsk-u19-sporting-u19/bnGsyeT"
     },
     {
       "matchday": 4,
@@ -589,7 +590,8 @@
       "away": "Inter",
       "homeScore": 3,
       "awayScore": 1,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/inter-u20-feyenoord-u19/CTDbseLFg"
     },
     {
       "matchday": 4,
@@ -598,7 +600,8 @@
       "away": "Roma",
       "homeScore": 1,
       "awayScore": 1,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/roma-u20-manchester-united-u19/YqYstLFg"
     },
     {
       "matchday": 4,
@@ -607,7 +610,8 @@
       "away": "Slovan Bratislava",
       "homeScore": 2,
       "awayScore": 1,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/lask-linz-u19-sk-slovan-bratislava-u19/hpUsvFik"
     },
     {
       "matchday": 4,
@@ -616,7 +620,8 @@
       "away": "Bayern München",
       "homeScore": 4,
       "awayScore": 1,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/atletico-madrid-u19-fc-bayern-munchen-u19/DzrsxPD"
     },
     {
       "matchday": 4,
@@ -626,7 +631,8 @@
       "homeScore": 3,
       "awayScore": 3,
       "status": "FT",
-      "uefaMatchUrl": "https://es.uefa.com/uefayouthleague/match/2049859--barcelona-vs-aston-villa/statistics/"
+      "uefaMatchUrl": "https://es.uefa.com/uefayouthleague/match/2049859--barcelona-vs-aston-villa/statistics/",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/barcelona-u19-aston-villa-u19/xcLsDcL"
     },
     {
       "matchday": 4,
@@ -635,7 +641,8 @@
       "away": "Real Madrid",
       "homeScore": 1,
       "awayScore": 4,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/aek-athens-u19-real-madrid-u19/erYspQtc"
     },
     {
       "matchday": 4,
@@ -644,7 +651,8 @@
       "away": "Liverpool",
       "homeScore": 3,
       "awayScore": 5,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/fenerbahce-u19-liverpool-u19/JcLsaBXb"
     },
     {
       "matchday": 4,
