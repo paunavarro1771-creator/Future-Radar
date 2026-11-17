@@ -731,7 +731,8 @@
       "away": "LASK",
       "kickoff": "11:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING"
+      "status": "UPCOMING",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/lask-linz-u19-bodoglimt-u19/ujtcsvFik"
     },
     {
       "matchday": 5,
@@ -769,7 +770,8 @@
       "away": "Porto",
       "kickoff": "14:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING"
+      "status": "UPCOMING",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/feyenoord-u19-fc-porto-u19/rmGsCTDb"
     },
     {
       "matchday": 5,
@@ -798,7 +800,8 @@
       "away": "Lens",
       "kickoff": "16:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING"
+      "status": "UPCOMING",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/lens-u19-rb-leipzig-u19/UAebskztc"
     },
     {
       "matchday": 5,
@@ -816,7 +819,8 @@
       "away": "Barcelona",
       "kickoff": "12:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING"
+      "status": "UPCOMING",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/sabah-u19-barcelona-u19/DcLsfvxh"
     },
     {
       "matchday": 5,
@@ -825,7 +829,8 @@
       "away": "Fenerbahçe",
       "kickoff": "13:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING"
+      "status": "UPCOMING",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/fenerbahce-u19-shakhtar-donetsk-u19/yeTsaBXb"
     },
     {
       "matchday": 5,
@@ -834,7 +839,8 @@
       "away": "Villarreal",
       "kickoff": "13:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING"
+      "status": "UPCOMING",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/villarreal-u19-slavia-praha-u19/nIrsfCHb"
     },
     {
       "matchday": 5,
@@ -852,7 +858,8 @@
       "away": "Liverpool",
       "kickoff": "15:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING"
+      "status": "UPCOMING",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/club-brugge-u19-liverpool-u19/JcLsBORb"
     },
     {
       "matchday": 5,
@@ -870,7 +877,8 @@
       "away": "Bayern München",
       "kickoff": "15:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING"
+      "status": "UPCOMING",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/lille-u19-fc-bayern-munchen-u19/Dzrsnztc"
     },
     {
       "matchday": 5,
@@ -879,7 +887,8 @@
       "away": "Manchester United",
       "kickoff": "15:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING"
+      "status": "UPCOMING",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/manchester-united-u19-sporting-u19/bnGsYqY"
     },
     {
       "matchday": 5,
@@ -888,7 +897,8 @@
       "away": "Viking",
       "kickoff": "16:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING"
+      "status": "UPCOMING",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/viking-fk-u19-atletico-madrid-u19/xPDsCTec"
     },
     {
       "matchday": 6,
