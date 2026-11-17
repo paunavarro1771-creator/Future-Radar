@@ -425,7 +425,8 @@
       "away": "Bodø/Glimt",
       "homeScore": 1,
       "awayScore": 0,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/napoli-u20-bodoglimt-u19/ujtcsRQGg"
     },
     {
       "matchday": 3,
@@ -503,7 +504,8 @@
       "away": "LASK",
       "homeScore": 2,
       "awayScore": 1,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/lask-linz-u19-sporting-u19/bnGsvFik"
     },
     {
       "matchday": 3,
