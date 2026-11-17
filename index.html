@@ -339,8 +339,10 @@ async function loadU17Squads(){
  if(u17SquadsLoaded){renderU17SquadResults();return}
  const status=document.getElementById('u17SquadStatus');status.innerHTML='Conectando con el documento oficial de FIFA y leyendo las convocatorias…';
  try{
-  const response=await fetch('/api/u17-squads');if(!response.ok)throw new Error('El importador FIFA ha respondido '+response.status);
-  const payload=await response.json();if(!Array.isArray(payload.players)||!payload.players.length)throw new Error(payload.error||'No se han podido extraer jugadores del PDF');
+  const response=await fetch('/api/u17-squads');
+  const payload=await response.json().catch(()=>({error:'El servidor no ha devuelto una respuesta JSON válida'}));
+  if(!response.ok){const reason=[payload.error,payload.stage?'fase: '+payload.stage:'',payload.upstreamStatus?'respuesta FIFA: '+payload.upstreamStatus:'',payload.detail||''].filter(Boolean).join(' · ');throw new Error('Error '+response.status+(reason?' — '+reason:''))}
+  if(!Array.isArray(payload.players)||!payload.players.length)throw new Error(payload.error||'No se han podido extraer jugadores del PDF');
   u17SquadPlayers=payload.players.map(p=>({...p,nationalTeam:u17Team(p.nationalTeamCode)?.name||p.nationalTeamCode}));
   const known=new Map(allRadarPlayers.map((p,i)=>[[String(p.name||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(),String(p.dateOfBirth||'')].join('|'),i]));
   let added=0,matched=0;
