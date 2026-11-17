@@ -71,7 +71,8 @@
       "away": "Villarreal",
       "homeScore": 2,
       "awayScore": 3,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/villarreal-u19-borussia-dortmund-u19/uzrsfCHb"
     },
     {
       "matchday": 1,
@@ -190,7 +191,8 @@
       "away": "Bodø/Glimt",
       "homeScore": 6,
       "awayScore": 1,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/bodoglimt-u19-fc-bayern-munchen-u19/Dzrsujtc"
     },
     {
       "matchday": 2,
@@ -279,7 +281,8 @@
       "away": "Manchester United",
       "homeScore": 3,
       "awayScore": 0,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/manchester-united-u19-atletico-madrid-u19/xPDsYqY"
     },
     {
       "matchday": 2,
@@ -327,7 +330,8 @@
       "away": "Stuttgart",
       "homeScore": 1,
       "awayScore": 0,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/sk-slovan-bratislava-u19-vfb-stuttgart-u19/HzrshpU"
     },
     {
       "matchday": 2,
@@ -663,7 +667,8 @@
       "away": "Sabah",
       "homeScore": 5,
       "awayScore": 0,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/sabah-u19-viking-fk-u19/CTecsfvxh"
     },
     {
       "matchday": 4,
@@ -722,7 +727,8 @@
       "away": "Real Betis",
       "homeScore": 2,
       "awayScore": 2,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/real-betis-u19-borussia-dortmund-u19/uzrsOpkc"
     },
     {
       "matchday": 5,
