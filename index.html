@@ -213,6 +213,7 @@ function filterPlayers(){const term=document.getElementById('playerSearch').valu
 
 let activeRankingTab='global';
 function playerRankingScores(p){
+ if(p.currentLevel===null||p.currentLevel===undefined||p.prospectScore===null||p.prospectScore===undefined)return null;
  const current=Number(p.currentLevel),prospect=Number(p.prospectScore);
  if(!Number.isFinite(current)||!Number.isFinite(prospect)||current<0||current>100||prospect<0||prospect>100)return null;
  return {current,prospect,combined:Math.round((current+prospect)/2*10)/10};
