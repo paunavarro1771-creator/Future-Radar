@@ -70,6 +70,19 @@ footer{padding:28px 0;border-top:1px solid #26372c;color:#839389;font-size:10px}
 .u17-match-flag{width:28px;height:19px;object-fit:cover;border-radius:3px;border:1px solid #ffffff24;box-shadow:0 1px 3px #0005;flex:0 0 auto}
 @media(max-width:600px){.u17-match-flag{width:23px;height:16px}.u17-flag{width:22px;height:15px}.u17-match-side{gap:5px}.u17-match-side b{font-size:10px}}
 
+
+.u17-squad-tools{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.u17-squad-tools .control{min-width:180px}
+.u17-squad-status{border:1px solid #34483a;background:#111a14;border-radius:9px;padding:13px 15px;color:#b7c5ba;font-size:12px;margin:12px 0}
+.u17-squad-status strong{color:var(--green)}
+.u17-squad-table-wrap{overflow:auto;border:1px solid #293a2f;border-radius:10px}
+.u17-squad-table{width:100%;border-collapse:collapse;min-width:760px;background:#101913}
+.u17-squad-table th{font-size:9px;color:var(--green);letter-spacing:1px;text-transform:uppercase;text-align:left;padding:12px;border-bottom:1px solid #34483a}
+.u17-squad-table td{font-size:11px;padding:11px 12px;border-bottom:1px solid #26372c;color:#e5eee7}
+.u17-squad-table tr:last-child td{border-bottom:0}
+.u17-squad-player{font-weight:700}.u17-squad-club{color:#aab8ae}
+.u17-squad-count{font:700 13px 'Space Grotesk';color:var(--green);margin:10px 0}
+
 </style></head>
 <body>
 <div class="topline">Independent football intelligence · Season 2026/27</div>
@@ -120,17 +133,17 @@ footer{padding:28px 0;border-top:1px solid #26372c;color:#839389;font-size:10px}
 <div class="section-head"><div><div class="section-kicker">International tournament / 04</div><h2>FIFA U-17 World Cup <span class="accent">Qatar 2026</span></h2><p class="section-desc">El escaparate mundial del talento U17. 48 selecciones, 12 grupos y seguimiento de calendario y resultados.</p></div></div>
 <div class="u17-stats"><div class="u17-stat"><strong id="u17TeamCount">48</strong><span>Selecciones</span></div><div class="u17-stat"><strong>12</strong><span>Grupos</span></div><div class="u17-stat"><strong>19 NOV – 13 DIC</strong><span>Fechas</span></div><div class="u17-stat"><strong id="u17MatchCount">72</strong><span>Partidos de grupos</span></div></div>
 <div class="u17-source"><a href="https://fdp.fifa.org/assetspublic/ce303/pdf/SquadLists-Spanish.pdf" target="_blank" rel="noopener">Convocatorias oficiales FIFA (PDF) ↗</a><a href="https://www.fifa.com/es/tournaments/mens/u17worldcup/qatar-2026/articles/resultados-partidos-horarios-catar-2026-mundial-sub-17" target="_blank" rel="noopener">Calendario FIFA ↗</a><a href="https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a" target="_blank" rel="noopener">Horario oficial y campos (PDF) ↗</a></div>
-<div class="u17-tabs"><button class="u17-tab active" data-u17-tab="fixtures">Calendario</button><button class="u17-tab" data-u17-tab="groups">Grupos y selecciones</button></div>
+<div class="u17-tabs"><button class="u17-tab active" data-u17-tab="fixtures">Calendario</button><button class="u17-tab" data-u17-tab="groups">Grupos y selecciones</button><button class="u17-tab" data-u17-tab="squads">Convocatorias FIFA</button></div>
 <div id="u17FixturesPanel"><div class="ranking-filters"><select class="control" id="u17Date"><option value="ALL">Todas las fechas</option></select><select class="control" id="u17Group"><option value="ALL">Todos los grupos</option><option value="A">Grupo A</option><option value="B">Grupo B</option><option value="C">Grupo C</option><option value="D">Grupo D</option><option value="E">Grupo E</option><option value="F">Grupo F</option><option value="G">Grupo G</option><option value="H">Grupo H</option><option value="I">Grupo I</option><option value="J">Grupo J</option><option value="K">Grupo K</option><option value="L">Grupo L</option></select><input class="control search" id="u17TeamSearch" type="search" placeholder="Buscar selección…"></div><div class="u17-fixtures" id="u17Fixtures"><div class="empty">Cargando calendario…</div></div></div>
-<div id="u17GroupsPanel" hidden><div class="u17-groups" id="u17Groups"></div></div>
-<p class="rank-muted" style="margin-top:14px">Horarios expresados en hora local de Catar (UTC+3). El calendario de eliminatorias se completará cuando se definan los cruces. La convocatoria publicada por FIFA está enlazada en su documento oficial; los registros individuales de esos jugadores aún no están importados en la base de perfiles.</p>
+<div id="u17GroupsPanel" hidden><div class="u17-groups" id="u17Groups"></div></div><div id="u17SquadsPanel" hidden><div class="u17-squad-status" id="u17SquadStatus">Las convocatorias se importarán directamente del documento oficial de FIFA.</div><div class="u17-squad-tools"><select class="control" id="u17SquadTeam"><option value="ALL">Las 48 selecciones</option></select><select class="control" id="u17SquadPosition"><option value="ALL">Todas las posiciones</option><option value="GK">Porteros</option><option value="DEF">Defensas</option><option value="CM">Centrocampistas</option><option value="ST">Delanteros</option></select><input class="control search" id="u17SquadSearch" type="search" placeholder="Buscar jugador o club…"></div><div class="u17-squad-count" id="u17SquadCount"></div><div id="u17SquadResults"><div class="empty">Selecciona esta pestaña para importar las convocatorias oficiales.</div></div></div>
+<p class="rank-muted" style="margin-top:14px">Horarios expresados en hora local de Catar (UTC+3). El calendario de eliminatorias se completará cuando se definan los cruces. Las convocatorias oficiales se cargan desde el PDF de FIFA en la pestaña Convocatorias FIFA.</p>
 </div></section>
 
 </main>
 <footer><div class="wrap footer-inner"><span class="footer-brand">FUTURE RADAR FC</span><span>Proyecto independiente de scouting · Temporada 2026/27</span><span>© 2026 Future Radar</span></div></footer>
 <script>
 let allRadarPlayers=[];
-const flags={ALB:'al',ALG:'dz',ANG:'ao',ARG:'ar',AUS:'au',AUT:'at',AZE:'az',BEL:'be',BIH:'ba',BRA:'br',BUL:'bg',CIV:'ci',CMR:'cm',COD:'cd',COL:'co',COM:'km',CRO:'hr',CUW:'cw',CZE:'cz',EGY:'eg',ENG:'gb-eng',ESP:'es',FIN:'fi',FRA:'fr',GAB:'ga',GAM:'gm',GBS:'gw',GEO:'ge',GER:'de',GHA:'gh',GRE:'gr',GUI:'gn',HUN:'hu',IRL:'ie',ISL:'is',ITA:'it',JPN:'jp',KOR:'kr',KOS:'xk',LTU:'lt',LVA:'lv',MAR:'ma',MDA:'md',MKD:'mk',MNE:'me',NED:'nl',NGR:'ng',NIR:'gb-nir',NOR:'no',PER:'pe',POL:'pl',POR:'pt',ROU:'ro',RUS:'ru',SCO:'gb-sct',SEN:'sn',SLO:'si',SRB:'rs',SUI:'ch',SVK:'sk',SWE:'se',THA:'th',TUN:'tn',TUR:'tr',UKR:'ua',USA:'us',WAL:'gb-wls'};
+const flags={ALB:'al',ALG:'dz',ANG:'ao',ARG:'ar',AUS:'au',AUT:'at',AZE:'az',BEL:'be',BIH:'ba',BRA:'br',BUL:'bg',CIV:'ci',CMR:'cm',COD:'cd',COL:'co',COM:'km',CRO:'hr',CUW:'cw',CZE:'cz',EGY:'eg',ENG:'gb-eng',ESP:'es',FIN:'fi',FRA:'fr',GAB:'ga',GAM:'gm',GBS:'gw',GEO:'ge',GER:'de',GHA:'gh',GRE:'gr',GUI:'gn',HUN:'hu',IRL:'ie',ISL:'is',ITA:'it',JPN:'jp',KOR:'kr',KOS:'xk',LTU:'lt',LVA:'lv',MAR:'ma',MDA:'md',MKD:'mk',MNE:'me',NED:'nl',NGR:'ng',NIR:'gb-nir',NOR:'no',PER:'pe',POL:'pl',POR:'pt',ROU:'ro',RUS:'ru',SCO:'gb-sct',SEN:'sn',SLO:'si',SRB:'rs',SUI:'ch',SVK:'sk',SWE:'se',THA:'th',TUN:'tn',TUR:'tr',UKR:'ua',USA:'us',WAL:'gb-wls',QAT:'qa',PAN:'pa',UGA:'ug',NCL:'nc',ECU:'ec',MOZ:'mz',DEN:'dk',HAI:'ht',KSA:'sa',URU:'uy',JAM:'jm',UZB:'uz',MLI:'ml',NZL:'nz',VIE:'vn',CUB:'cu',TJK:'tj',FIJ:'fj',CHN:'cn',TAN:'tz',CHI:'cl',CRC:'cr',MEX:'mx',VEN:'ve',DOM:'do'};
 const wikiPages={
 'AEK Athens U19':'AEK_Athens_F.C.','Arsenal U19':'Arsenal_F.C.','Aston Villa U19':'Aston_Villa_F.C.','Atlético de Madrid U19':'Atlético_Madrid','Barcelona U19':'FC_Barcelona','Bayern München U19':'FC_Bayern_Munich','Bodø/Glimt U19':'FK_Bodø/Glimt','Borussia Dortmund U19':'Borussia_Dortmund','Club Brugge U19':'Club_Brugge_KV','Como U20':'Como_1907','FC Porto U19':'FC_Porto','Fenerbahçe U19':'Fenerbahçe_S.K.','Feyenoord U19':'Feyenoord','Galatasaray U19':'Galatasaray_S.K.','Inter U20':'Inter_Milan','LASK Linz U19':'LASK','Lens U19':'RC_Lens','Lille U19':'LOSC_Lille','Liverpool U19':'Liverpool_F.C.','Manchester City U19':'Manchester_City_F.C.','Manchester United U19':'Manchester_United_F.C.','Napoli U19':'S.S.C._Napoli','PSV Eindhoven U19':'PSV_Eindhoven','Paris Saint-Germain U19':'Paris_Saint-Germain_F.C.','RB Leipzig U19':'RB_Leipzig','Real Betis U19':'Real_Betis','Real Madrid U19':'Real_Madrid_CF','Roma U20':'AS_Roma','Sabah U19':'Sabah_FK','Shakhtar Donetsk U19':'FC_Shakhtar_Donetsk','Slavia Praha U19':'SK_Slavia_Prague','Sporting CP U19':'Sporting_CP','VfB Stuttgart U19':'VfB_Stuttgart','Viking FK U19':'Viking_FK','Villarreal U19':'Villarreal_CF','ŠK Slovan Bratislava U19':'ŠK_Slovan_Bratislava'};
 const crestCache={};
@@ -175,7 +188,7 @@ async function loadCrests(clubs){
   document.querySelectorAll('[data-crest]').forEach(img=>{const club=img.dataset.crest;img.src=crestUrl(club);});
 }
 function handleCrestError(img){img.onerror=null;img.src=crestFallback(img.dataset.crest||img.alt||'FR');}
-function cleanPosition(pos){const p=String(pos||'').trim().toUpperCase();if(['GK','POR','PORTERO'].includes(p)||p.includes('PORT'))return 'PORTERO';if(['ST','CF','LW','RW','FW','DEL'].includes(p)||p.includes('DELANT')||p.includes('EXTREMO'))return 'DELANTERO';if(['CB','LB','RB','LWB','RWB','DEF','LI','LD','DFC'].includes(p)||p.includes('DEFEN'))return 'DEFENSA';if(['CM','CDM','CAM','DM','AM','MC','MCD','MCO','VOL','MD','MI'].includes(p)||p.includes('CENTRO')||p.includes('MEDIO'))return 'CENTROCAMPISTA';return p||'SIN DATO'}
+function cleanPosition(pos){const p=String(pos||'').trim().toUpperCase();if(['GK','PO','POR','PORTERO'].includes(p)||p.includes('PORT'))return 'PORTERO';if(['ST','CF','LW','RW','FW','DC','DEL'].includes(p)||p.includes('DELANT')||p.includes('EXTREMO'))return 'DELANTERO';if(['CB','LB','RB','LWB','RWB','DEF','DF','LI','LD','DFC'].includes(p)||p.includes('DEFEN'))return 'DEFENSA';if(['CM','CDM','CAM','DM','AM','MC','MCD','MCO','VOL','MD','MI'].includes(p)||p.includes('CENTRO')||p.includes('MEDIO'))return 'CENTROCAMPISTA';return p||'SIN DATO'}
 function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 const officialPlayerProfiles={
   'Adrián Pérez':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/adrian-perez-munoz',
@@ -313,12 +326,49 @@ function renderU17Groups(){
  const letters='ABCDEFGHIJKL'.split('');
  document.getElementById('u17Groups').innerHTML=letters.map(g=>'<article class="u17-group"><h3>GRUPO '+g+'</h3>'+u17Data.teams.filter(t=>t.group===g).map(t=>'<div class="u17-team"><span class="u17-team-main">'+u17Flag(t)+'<span>'+t.name+'</span></span><small>'+t.code+'</small></div>').join('')+'</article>').join('');
 }
+
+let u17SquadPlayers=[];
+let u17SquadsLoaded=false;
+function renderU17SquadResults(){
+ const team=document.getElementById('u17SquadTeam').value,position=document.getElementById('u17SquadPosition').value,term=document.getElementById('u17SquadSearch').value.trim().toLowerCase();
+ const list=u17SquadPlayers.filter(p=>(team==='ALL'||p.nationalTeamCode===team)&&(position==='ALL'||p.position===position)&&(!term||[p.name,p.club,p.nationalTeam].some(v=>String(v||'').toLowerCase().includes(term))));
+ document.getElementById('u17SquadCount').textContent=list.length+' jugadores · '+(team==='ALL'?'48 selecciones':u17Team(team)?.name||team);
+ document.getElementById('u17SquadResults').innerHTML=list.length?'<div class="u17-squad-table-wrap"><table class="u17-squad-table"><thead><tr><th>#</th><th>Jugador</th><th>Posición</th><th>Edad</th><th>Fecha nacimiento</th><th>Altura</th><th>Club</th></tr></thead><tbody>'+list.map(p=>'<tr><td>'+p.squadNumber+'</td><td class="u17-squad-player">'+esc(p.name)+'</td><td>'+esc(cleanPosition(p.position))+'</td><td>'+p.age+'</td><td>'+esc(p.dateOfBirth)+'</td><td>'+(p.heightCm?p.heightCm+' cm':'—')+'</td><td class="u17-squad-club">'+esc(p.club||'—')+'</td></tr>').join('')+'</tbody></table></div>':'<div class="empty">No hay jugadores para estos filtros. Si FIFA todavía no ha publicado la lista de esa selección, no añadiremos nombres estimados.</div>';
+}
+async function loadU17Squads(){
+ if(u17SquadsLoaded){renderU17SquadResults();return}
+ const status=document.getElementById('u17SquadStatus');status.innerHTML='Conectando con el documento oficial de FIFA y leyendo las convocatorias…';
+ try{
+  const response=await fetch('/api/u17-squads');if(!response.ok)throw new Error('El importador FIFA ha respondido '+response.status);
+  const payload=await response.json();if(!Array.isArray(payload.players)||!payload.players.length)throw new Error(payload.error||'No se han podido extraer jugadores del PDF');
+  u17SquadPlayers=payload.players.map(p=>({...p,nationalTeam:u17Team(p.nationalTeamCode)?.name||p.nationalTeamCode}));
+  const known=new Map(allRadarPlayers.map((p,i)=>[[String(p.name||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(),String(p.dateOfBirth||'')].join('|'),i]));
+  let added=0,matched=0;
+  for(const player of u17SquadPlayers){
+   const key=[String(player.name||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(),String(player.dateOfBirth||'')].join('|');
+   if(known.has(key)){const existing=allRadarPlayers[known.get(key)];existing.worldCupSquad={competition:player.competition,nationalTeam:player.nationalTeam,nationalTeamCode:player.nationalTeamCode,squadNumber:player.squadNumber,sourceUrl:player.sourceUrl};matched++}
+   else{allRadarPlayers.push({...player,worldCupSquad:{competition:player.competition,nationalTeam:player.nationalTeam,nationalTeamCode:player.nationalTeamCode,squadNumber:player.squadNumber,sourceUrl:player.sourceUrl}});known.set(key,allRadarPlayers.length-1);added++}
+  }
+  u17SquadsLoaded=true;
+  const teamSelect=document.getElementById('u17SquadTeam');u17Data.teams.forEach(t=>{const option=document.createElement('option');option.value=t.code;option.textContent=t.name;teamSelect.appendChild(option)});
+  ['u17SquadTeam','u17SquadPosition'].forEach(id=>document.getElementById(id).addEventListener('change',renderU17SquadResults));document.getElementById('u17SquadSearch').addEventListener('input',renderU17SquadResults);
+  document.getElementById('heroCount').innerHTML=allRadarPlayers.length+' <small>perfiles registrados</small>';
+  const clubs=[...new Set(allRadarPlayers.map(p=>p.club).filter(Boolean))];document.getElementById('clubCount').textContent=clubs.length;
+  renderPlayers(allRadarPlayers);renderAcademies();loadCrests(clubs);
+  const rankingClub=document.getElementById('rankingClub');if(rankingClub){const present=new Set([...rankingClub.options].map(o=>o.value));clubs.forEach(c=>{if(!present.has(c)){const o=document.createElement('option');o.value=c;o.textContent=c;rankingClub.appendChild(o)}})}
+  const teamsWithPlayers=Object.keys(payload.countsByTeam||{}).length;
+  const missingTeams=u17Data.teams.filter(t=>!payload.countsByTeam?.[t.code]).map(t=>t.name);
+  status.innerHTML='<strong>Importación completada:</strong> '+payload.playerCount+' jugadores detectados en '+teamsWithPlayers+' convocatorias con registros de futbolistas. '+added+' perfiles nuevos añadidos a Future Radar y '+matched+' vinculados con perfiles existentes.'+(missingTeams.length?' Sin filas de jugadores en el PDF actual: '+missingTeams.join(', ')+'.':'')+' <a href="'+payload.source+'" target="_blank" rel="noopener" style="color:var(--green);text-decoration:underline">Fuente oficial FIFA ↗</a>';
+  renderU17SquadResults();
+ }catch(error){status.textContent='No se pudo completar la importación automática: '+error.message+'. Puedes consultar el PDF oficial enlazado arriba.';console.error(error)}
+}
+
 async function setupU17(){
  try{const r=await fetch(U17_DATA_URL);if(!r.ok)throw new Error('U17 data unavailable');u17Data=await r.json();
  document.getElementById('u17TeamCount').textContent=u17Data.teams.length;document.getElementById('u17MatchCount').textContent=u17Data.matches.length;
  [...new Set(u17Data.matches.map(m=>m.date))].sort().forEach(d=>{const o=document.createElement('option');o.value=d;o.textContent=u17DateLabel(d);document.getElementById('u17Date').appendChild(o)});
  ['u17Date','u17Group'].forEach(id=>document.getElementById(id).addEventListener('change',renderU17Fixtures));document.getElementById('u17TeamSearch').addEventListener('input',renderU17Fixtures);
- document.querySelectorAll('[data-u17-tab]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-u17-tab]').forEach(x=>x.classList.toggle('active',x===b));document.getElementById('u17FixturesPanel').hidden=b.dataset.u17Tab!=='fixtures';document.getElementById('u17GroupsPanel').hidden=b.dataset.u17Tab!=='groups'}));
+ document.querySelectorAll('[data-u17-tab]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-u17-tab]').forEach(x=>x.classList.toggle('active',x===b));document.getElementById('u17FixturesPanel').hidden=b.dataset.u17Tab!=='fixtures';document.getElementById('u17GroupsPanel').hidden=b.dataset.u17Tab!=='groups';document.getElementById('u17SquadsPanel').hidden=b.dataset.u17Tab!=='squads';if(b.dataset.u17Tab==='squads')loadU17Squads()}));
  renderU17Fixtures();renderU17Groups();
  }catch(e){document.getElementById('u17Fixtures').innerHTML='<div class="empty">No se ha podido cargar el calendario U17.</div>';console.error(e)}
 }

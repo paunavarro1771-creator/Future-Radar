@@ -224,10 +224,10 @@
       "flag": "https://flagcdn.com/w80/cr.png"
     },
     {
-      "code": "USA",
-      "name": "Estados Unidos",
+      "code": "DOM",
+      "name": "República Dominicana",
       "group": "J",
-      "flag": "https://flagcdn.com/w80/us.png"
+      "flag": "https://flagcdn.com/w80/do.png"
     },
     {
       "code": "MNE",
@@ -481,7 +481,7 @@
       "number": 19,
       "date": "2026-11-21",
       "timeQatar": "17:30",
-      "home": "USA",
+      "home": "DOM",
       "away": "MNE",
       "pitch": 3,
       "status": "scheduled",
@@ -721,7 +721,7 @@
       "number": 43,
       "date": "2026-11-24",
       "timeQatar": "17:30",
-      "home": "USA",
+      "home": "DOM",
       "away": "CHI",
       "pitch": 3,
       "status": "scheduled",
@@ -962,7 +962,7 @@
       "date": "2026-11-27",
       "timeQatar": "18:00",
       "home": "ALG",
-      "away": "USA",
+      "away": "DOM",
       "pitch": 2,
       "status": "scheduled",
       "stage": "group"
@@ -1022,8 +1022,9 @@
     "fifaTeams": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/teams",
     "fifaFixtures": "https://www.fifa.com/es/tournaments/mens/u17worldcup/qatar-2026/articles/resultados-partidos-horarios-catar-2026-mundial-sub-17",
     "squadLists": "https://fdp.fifa.org/assetspublic/ce303/pdf/SquadLists-Spanish.pdf",
-    "matchSchedule": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a"
+    "matchSchedule": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
+    "fifaSquads": "https://fdp.fifa.org/assetspublic/ce303/pdf/SquadLists-Spanish.pdf"
   },
-  "squadStatus": "published_official_pdf_not_yet_imported_as_individual_player_records",
+  "squadStatus": "official_fifa_pdf_imported_on_demand",
   "lastVerified": "2026-11-17"
 }
