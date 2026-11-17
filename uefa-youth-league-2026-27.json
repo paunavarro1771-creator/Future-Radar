@@ -199,7 +199,8 @@
       "away": "Sporting CP",
       "homeScore": 3,
       "awayScore": 2,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/lens-u19-sporting-u19/bnGskztc"
     },
     {
       "matchday": 2,
@@ -208,7 +209,8 @@
       "away": "Slavia Praha",
       "homeScore": 0,
       "awayScore": 3,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/sabah-u19-slavia-praha-u19/nIrsfvxh"
     },
     {
       "matchday": 2,
@@ -217,7 +219,8 @@
       "away": "Bayern München",
       "homeScore": 2,
       "awayScore": 0,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/viking-fk-u19-fc-bayern-munchen-u19/DzrsCTec"
     },
     {
       "matchday": 2,
@@ -246,7 +249,8 @@
       "away": "PSV Eindhoven",
       "homeScore": 1,
       "awayScore": 6,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/rb-leipzig-u19-psv-eindhoven-u19/PcLsUAeb"
     },
     {
       "matchday": 2,
@@ -255,7 +259,8 @@
       "away": "Club Brugge",
       "homeScore": 1,
       "awayScore": 1,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/inter-u20-club-brugge-u19/BORbseLFg"
     },
     {
       "matchday": 2,
@@ -291,7 +296,8 @@
       "away": "Liverpool",
       "homeScore": 2,
       "awayScore": 4,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/lask-linz-u19-liverpool-u19/JcLsvFik"
     },
     {
       "matchday": 2,
@@ -300,7 +306,8 @@
       "away": "Como",
       "homeScore": 1,
       "awayScore": 0,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/como-u20-feyenoord-u19/CTDbseAHb"
     },
     {
       "matchday": 2,
@@ -309,7 +316,8 @@
       "away": "AEK Athens",
       "homeScore": 1,
       "awayScore": 2,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/aek-athens-u19-shakhtar-donetsk-u19/yeTspQtc"
     },
     {
       "matchday": 2,
