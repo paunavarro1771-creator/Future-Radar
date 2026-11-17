@@ -1,0 +1,1029 @@
+{
+  "competition": "FIFA U-17 World Cup Qatar 2026",
+  "season": "2026",
+  "startDate": "2026-11-19",
+  "endDate": "2026-12-13",
+  "host": "Qatar",
+  "teamCount": 48,
+  "groupCount": 12,
+  "teams": [
+    {
+      "code": "QAT",
+      "name": "Catar",
+      "group": "A",
+      "flag": "https://flagcdn.com/w80/qa.png"
+    },
+    {
+      "code": "PAN",
+      "name": "Panamá",
+      "group": "A",
+      "flag": "https://flagcdn.com/w80/pa.png"
+    },
+    {
+      "code": "EGY",
+      "name": "Egipto",
+      "group": "A",
+      "flag": "https://flagcdn.com/w80/eg.png"
+    },
+    {
+      "code": "GRE",
+      "name": "Grecia",
+      "group": "A",
+      "flag": "https://flagcdn.com/w80/gr.png"
+    },
+    {
+      "code": "KOR",
+      "name": "Corea del Sur",
+      "group": "B",
+      "flag": "https://flagcdn.com/w80/kr.png"
+    },
+    {
+      "code": "UGA",
+      "name": "Uganda",
+      "group": "B",
+      "flag": "https://flagcdn.com/w80/ug.png"
+    },
+    {
+      "code": "NCL",
+      "name": "Nueva Caledonia",
+      "group": "B",
+      "flag": "https://flagcdn.com/w80/nc.png"
+    },
+    {
+      "code": "ECU",
+      "name": "Ecuador",
+      "group": "B",
+      "flag": "https://flagcdn.com/w80/ec.png"
+    },
+    {
+      "code": "ARG",
+      "name": "Argentina",
+      "group": "C",
+      "flag": "https://flagcdn.com/w80/ar.png"
+    },
+    {
+      "code": "AUS",
+      "name": "Australia",
+      "group": "C",
+      "flag": "https://flagcdn.com/w80/au.png"
+    },
+    {
+      "code": "MOZ",
+      "name": "Mozambique",
+      "group": "C",
+      "flag": "https://flagcdn.com/w80/mz.png"
+    },
+    {
+      "code": "DEN",
+      "name": "Dinamarca",
+      "group": "C",
+      "flag": "https://flagcdn.com/w80/dk.png"
+    },
+    {
+      "code": "FRA",
+      "name": "Francia",
+      "group": "D",
+      "flag": "https://flagcdn.com/w80/fr.png"
+    },
+    {
+      "code": "HAI",
+      "name": "Haití",
+      "group": "D",
+      "flag": "https://flagcdn.com/w80/ht.png"
+    },
+    {
+      "code": "KSA",
+      "name": "Arabia Saudí",
+      "group": "D",
+      "flag": "https://flagcdn.com/w80/sa.png"
+    },
+    {
+      "code": "URU",
+      "name": "Uruguay",
+      "group": "D",
+      "flag": "https://flagcdn.com/w80/uy.png"
+    },
+    {
+      "code": "ITA",
+      "name": "Italia",
+      "group": "E",
+      "flag": "https://flagcdn.com/w80/it.png"
+    },
+    {
+      "code": "JAM",
+      "name": "Jamaica",
+      "group": "E",
+      "flag": "https://flagcdn.com/w80/jm.png"
+    },
+    {
+      "code": "CIV",
+      "name": "Costa de Marfil",
+      "group": "E",
+      "flag": "https://flagcdn.com/w80/ci.png"
+    },
+    {
+      "code": "UZB",
+      "name": "Uzbekistán",
+      "group": "E",
+      "flag": "https://flagcdn.com/w80/uz.png"
+    },
+    {
+      "code": "SEN",
+      "name": "Senegal",
+      "group": "F",
+      "flag": "https://flagcdn.com/w80/sn.png"
+    },
+    {
+      "code": "CRO",
+      "name": "Croacia",
+      "group": "F",
+      "flag": "https://flagcdn.com/w80/hr.png"
+    },
+    {
+      "code": "CUB",
+      "name": "Cuba",
+      "group": "F",
+      "flag": "https://flagcdn.com/w80/cu.png"
+    },
+    {
+      "code": "TJK",
+      "name": "Tayikistán",
+      "group": "F",
+      "flag": "https://flagcdn.com/w80/tj.png"
+    },
+    {
+      "code": "MLI",
+      "name": "Mali",
+      "group": "G",
+      "flag": "https://flagcdn.com/w80/ml.png"
+    },
+    {
+      "code": "NZL",
+      "name": "Nueva Zelanda",
+      "group": "G",
+      "flag": "https://flagcdn.com/w80/nz.png"
+    },
+    {
+      "code": "BEL",
+      "name": "Bélgica",
+      "group": "G",
+      "flag": "https://flagcdn.com/w80/be.png"
+    },
+    {
+      "code": "VIE",
+      "name": "Vietnam",
+      "group": "G",
+      "flag": "https://flagcdn.com/w80/vn.png"
+    },
+    {
+      "code": "ESP",
+      "name": "España",
+      "group": "H",
+      "flag": "https://flagcdn.com/w80/es.png"
+    },
+    {
+      "code": "CHN",
+      "name": "China",
+      "group": "H",
+      "flag": "https://flagcdn.com/w80/cn.png"
+    },
+    {
+      "code": "FIJ",
+      "name": "Fiyi",
+      "group": "H",
+      "flag": "https://flagcdn.com/w80/fj.png"
+    },
+    {
+      "code": "MAR",
+      "name": "Marruecos",
+      "group": "H",
+      "flag": "https://flagcdn.com/w80/ma.png"
+    },
+    {
+      "code": "BRA",
+      "name": "Brasil",
+      "group": "I",
+      "flag": "https://flagcdn.com/w80/br.png"
+    },
+    {
+      "code": "IRL",
+      "name": "República de Irlanda",
+      "group": "I",
+      "flag": "https://flagcdn.com/w80/ie.png"
+    },
+    {
+      "code": "TAN",
+      "name": "Tanzania",
+      "group": "I",
+      "flag": "https://flagcdn.com/w80/tz.png"
+    },
+    {
+      "code": "CRC",
+      "name": "Costa Rica",
+      "group": "I",
+      "flag": "https://flagcdn.com/w80/cr.png"
+    },
+    {
+      "code": "USA",
+      "name": "Estados Unidos",
+      "group": "J",
+      "flag": "https://flagcdn.com/w80/us.png"
+    },
+    {
+      "code": "MNE",
+      "name": "Montenegro",
+      "group": "J",
+      "flag": "https://flagcdn.com/w80/me.png"
+    },
+    {
+      "code": "CHI",
+      "name": "Chile",
+      "group": "J",
+      "flag": "https://flagcdn.com/w80/cl.png"
+    },
+    {
+      "code": "ALG",
+      "name": "Argelia",
+      "group": "J",
+      "flag": "https://flagcdn.com/w80/dz.png"
+    },
+    {
+      "code": "MEX",
+      "name": "México",
+      "group": "K",
+      "flag": "https://flagcdn.com/w80/mx.png"
+    },
+    {
+      "code": "ROU",
+      "name": "Rumanía",
+      "group": "K",
+      "flag": "https://flagcdn.com/w80/ro.png"
+    },
+    {
+      "code": "CMR",
+      "name": "Camerún",
+      "group": "K",
+      "flag": "https://flagcdn.com/w80/cm.png"
+    },
+    {
+      "code": "VEN",
+      "name": "Venezuela",
+      "group": "K",
+      "flag": "https://flagcdn.com/w80/ve.png"
+    },
+    {
+      "code": "JPN",
+      "name": "Japón",
+      "group": "L",
+      "flag": "https://flagcdn.com/w80/jp.png"
+    },
+    {
+      "code": "COL",
+      "name": "Colombia",
+      "group": "L",
+      "flag": "https://flagcdn.com/w80/co.png"
+    },
+    {
+      "code": "SRB",
+      "name": "Serbia",
+      "group": "L",
+      "flag": "https://flagcdn.com/w80/rs.png"
+    },
+    {
+      "code": "HON",
+      "name": "Honduras",
+      "group": "L",
+      "flag": "https://flagcdn.com/w80/hn.png"
+    }
+  ],
+  "matches": [
+    {
+      "number": 1,
+      "date": "2026-11-19",
+      "timeQatar": "18:30",
+      "home": "QAT",
+      "away": "PAN",
+      "pitch": 2,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 2,
+      "date": "2026-11-19",
+      "timeQatar": "17:00",
+      "home": "EGY",
+      "away": "GRE",
+      "pitch": 5,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 3,
+      "date": "2026-11-19",
+      "timeQatar": "16:30",
+      "home": "KOR",
+      "away": "UGA",
+      "pitch": 1,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 4,
+      "date": "2026-11-19",
+      "timeQatar": "16:00",
+      "home": "NCL",
+      "away": "ECU",
+      "pitch": 4,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 5,
+      "date": "2026-11-19",
+      "timeQatar": "19:00",
+      "home": "ARG",
+      "away": "AUS",
+      "pitch": 8,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 6,
+      "date": "2026-11-19",
+      "timeQatar": "18:00",
+      "home": "MOZ",
+      "away": "DEN",
+      "pitch": 3,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 7,
+      "date": "2026-11-19",
+      "timeQatar": "16:00",
+      "home": "FRA",
+      "away": "HAI",
+      "pitch": 9,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 8,
+      "date": "2026-11-19",
+      "timeQatar": "19:00",
+      "home": "KSA",
+      "away": "URU",
+      "pitch": 7,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 9,
+      "date": "2026-11-20",
+      "timeQatar": "18:00",
+      "home": "ITA",
+      "away": "JAM",
+      "pitch": 3,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 10,
+      "date": "2026-11-20",
+      "timeQatar": "19:00",
+      "home": "CIV",
+      "away": "UZB",
+      "pitch": 8,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 11,
+      "date": "2026-11-20",
+      "timeQatar": "18:30",
+      "home": "SEN",
+      "away": "CRO",
+      "pitch": 2,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 12,
+      "date": "2026-11-20",
+      "timeQatar": "16:00",
+      "home": "CUB",
+      "away": "TJK",
+      "pitch": 4,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 13,
+      "date": "2026-11-20",
+      "timeQatar": "16:30",
+      "home": "MLI",
+      "away": "NZL",
+      "pitch": 1,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 14,
+      "date": "2026-11-20",
+      "timeQatar": "16:00",
+      "home": "BEL",
+      "away": "VIE",
+      "pitch": 9,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 15,
+      "date": "2026-11-20",
+      "timeQatar": "19:00",
+      "home": "ESP",
+      "away": "CHN",
+      "pitch": 7,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 16,
+      "date": "2026-11-20",
+      "timeQatar": "17:00",
+      "home": "FIJ",
+      "away": "MAR",
+      "pitch": 5,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 17,
+      "date": "2026-11-21",
+      "timeQatar": "18:00",
+      "home": "BRA",
+      "away": "IRL",
+      "pitch": 2,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 18,
+      "date": "2026-11-21",
+      "timeQatar": "16:00",
+      "home": "TAN",
+      "away": "CRC",
+      "pitch": 1,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 19,
+      "date": "2026-11-21",
+      "timeQatar": "17:30",
+      "home": "USA",
+      "away": "MNE",
+      "pitch": 3,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 20,
+      "date": "2026-11-21",
+      "timeQatar": "16:30",
+      "home": "CHI",
+      "away": "ALG",
+      "pitch": 5,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 21,
+      "date": "2026-11-21",
+      "timeQatar": "18:30",
+      "home": "MEX",
+      "away": "ROU",
+      "pitch": 8,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 22,
+      "date": "2026-11-21",
+      "timeQatar": "18:30",
+      "home": "CMR",
+      "away": "VEN",
+      "pitch": 7,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 23,
+      "date": "2026-11-21",
+      "timeQatar": "15:30",
+      "home": "JPN",
+      "away": "COL",
+      "pitch": 9,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 24,
+      "date": "2026-11-21",
+      "timeQatar": "15:30",
+      "home": "SRB",
+      "away": "HON",
+      "pitch": 4,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 25,
+      "date": "2026-11-22",
+      "timeQatar": "18:00",
+      "home": "QAT",
+      "away": "EGY",
+      "pitch": 2,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 26,
+      "date": "2026-11-22",
+      "timeQatar": "15:30",
+      "home": "GRE",
+      "away": "PAN",
+      "pitch": 9,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 27,
+      "date": "2026-11-22",
+      "timeQatar": "17:30",
+      "home": "KOR",
+      "away": "NCL",
+      "pitch": 3,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 28,
+      "date": "2026-11-22",
+      "timeQatar": "16:00",
+      "home": "ECU",
+      "away": "UGA",
+      "pitch": 1,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 29,
+      "date": "2026-11-22",
+      "timeQatar": "18:30",
+      "home": "ARG",
+      "away": "MOZ",
+      "pitch": 7,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 30,
+      "date": "2026-11-22",
+      "timeQatar": "15:30",
+      "home": "DEN",
+      "away": "AUS",
+      "pitch": 4,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 31,
+      "date": "2026-11-22",
+      "timeQatar": "16:30",
+      "home": "FRA",
+      "away": "KSA",
+      "pitch": 5,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 32,
+      "date": "2026-11-22",
+      "timeQatar": "18:30",
+      "home": "URU",
+      "away": "HAI",
+      "pitch": 8,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 33,
+      "date": "2026-11-23",
+      "timeQatar": "17:30",
+      "home": "ITA",
+      "away": "CIV",
+      "pitch": 3,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 34,
+      "date": "2026-11-23",
+      "timeQatar": "16:00",
+      "home": "UZB",
+      "away": "JAM",
+      "pitch": 1,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 35,
+      "date": "2026-11-23",
+      "timeQatar": "16:30",
+      "home": "SEN",
+      "away": "CUB",
+      "pitch": 5,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 36,
+      "date": "2026-11-23",
+      "timeQatar": "15:30",
+      "home": "TJK",
+      "away": "CRO",
+      "pitch": 9,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 37,
+      "date": "2026-11-23",
+      "timeQatar": "18:30",
+      "home": "MLI",
+      "away": "BEL",
+      "pitch": 7,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 38,
+      "date": "2026-11-23",
+      "timeQatar": "18:30",
+      "home": "VIE",
+      "away": "NZL",
+      "pitch": 8,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 39,
+      "date": "2026-11-23",
+      "timeQatar": "15:30",
+      "home": "ESP",
+      "away": "FIJ",
+      "pitch": 4,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 40,
+      "date": "2026-11-23",
+      "timeQatar": "18:00",
+      "home": "MAR",
+      "away": "CHN",
+      "pitch": 2,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 41,
+      "date": "2026-11-24",
+      "timeQatar": "18:00",
+      "home": "BRA",
+      "away": "TAN",
+      "pitch": 2,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 42,
+      "date": "2026-11-24",
+      "timeQatar": "15:30",
+      "home": "CRC",
+      "away": "IRL",
+      "pitch": 4,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 43,
+      "date": "2026-11-24",
+      "timeQatar": "17:30",
+      "home": "USA",
+      "away": "CHI",
+      "pitch": 3,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 44,
+      "date": "2026-11-24",
+      "timeQatar": "16:30",
+      "home": "ALG",
+      "away": "MNE",
+      "pitch": 5,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 45,
+      "date": "2026-11-24",
+      "timeQatar": "18:30",
+      "home": "MEX",
+      "away": "CMR",
+      "pitch": 7,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 46,
+      "date": "2026-11-24",
+      "timeQatar": "15:30",
+      "home": "VEN",
+      "away": "ROU",
+      "pitch": 9,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 47,
+      "date": "2026-11-24",
+      "timeQatar": "16:00",
+      "home": "JPN",
+      "away": "SRB",
+      "pitch": 1,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 48,
+      "date": "2026-11-24",
+      "timeQatar": "18:30",
+      "home": "HON",
+      "away": "COL",
+      "pitch": 8,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 49,
+      "date": "2026-11-25",
+      "timeQatar": "17:30",
+      "home": "GRE",
+      "away": "QAT",
+      "pitch": 2,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 50,
+      "date": "2026-11-25",
+      "timeQatar": "17:30",
+      "home": "PAN",
+      "away": "EGY",
+      "pitch": 3,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 51,
+      "date": "2026-11-25",
+      "timeQatar": "15:30",
+      "home": "ECU",
+      "away": "KOR",
+      "pitch": 4,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 52,
+      "date": "2026-11-25",
+      "timeQatar": "15:30",
+      "home": "UGA",
+      "away": "NCL",
+      "pitch": 9,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 53,
+      "date": "2026-11-25",
+      "timeQatar": "18:30",
+      "home": "DEN",
+      "away": "ARG",
+      "pitch": 7,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 54,
+      "date": "2026-11-25",
+      "timeQatar": "18:30",
+      "home": "AUS",
+      "away": "MOZ",
+      "pitch": 8,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 55,
+      "date": "2026-11-25",
+      "timeQatar": "16:30",
+      "home": "URU",
+      "away": "FRA",
+      "pitch": 5,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 56,
+      "date": "2026-11-25",
+      "timeQatar": "16:30",
+      "home": "HAI",
+      "away": "KSA",
+      "pitch": 1,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 57,
+      "date": "2026-11-26",
+      "timeQatar": "17:00",
+      "home": "UZB",
+      "away": "ITA",
+      "pitch": 5,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 58,
+      "date": "2026-11-26",
+      "timeQatar": "17:00",
+      "home": "JAM",
+      "away": "CIV",
+      "pitch": 1,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 59,
+      "date": "2026-11-26",
+      "timeQatar": "19:00",
+      "home": "TJK",
+      "away": "SEN",
+      "pitch": 7,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 60,
+      "date": "2026-11-26",
+      "timeQatar": "19:00",
+      "home": "CRO",
+      "away": "CUB",
+      "pitch": 8,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 61,
+      "date": "2026-11-26",
+      "timeQatar": "16:00",
+      "home": "VIE",
+      "away": "MLI",
+      "pitch": 9,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 62,
+      "date": "2026-11-26",
+      "timeQatar": "16:00",
+      "home": "NZL",
+      "away": "BEL",
+      "pitch": 4,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 63,
+      "date": "2026-11-26",
+      "timeQatar": "18:00",
+      "home": "MAR",
+      "away": "ESP",
+      "pitch": 2,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 64,
+      "date": "2026-11-26",
+      "timeQatar": "18:00",
+      "home": "CHN",
+      "away": "FIJ",
+      "pitch": 3,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 65,
+      "date": "2026-11-27",
+      "timeQatar": "17:00",
+      "home": "CRC",
+      "away": "BRA",
+      "pitch": 5,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 66,
+      "date": "2026-11-27",
+      "timeQatar": "17:00",
+      "home": "IRL",
+      "away": "TAN",
+      "pitch": 1,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 67,
+      "date": "2026-11-27",
+      "timeQatar": "18:00",
+      "home": "ALG",
+      "away": "USA",
+      "pitch": 2,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 68,
+      "date": "2026-11-27",
+      "timeQatar": "18:00",
+      "home": "MNE",
+      "away": "CHI",
+      "pitch": 3,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 69,
+      "date": "2026-11-27",
+      "timeQatar": "19:00",
+      "home": "VEN",
+      "away": "MEX",
+      "pitch": 7,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 70,
+      "date": "2026-11-27",
+      "timeQatar": "19:00",
+      "home": "ROU",
+      "away": "CMR",
+      "pitch": 8,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 71,
+      "date": "2026-11-27",
+      "timeQatar": "16:00",
+      "home": "HON",
+      "away": "JPN",
+      "pitch": 4,
+      "status": "scheduled",
+      "stage": "group"
+    },
+    {
+      "number": 72,
+      "date": "2026-11-27",
+      "timeQatar": "16:00",
+      "home": "COL",
+      "away": "SRB",
+      "pitch": 9,
+      "status": "scheduled",
+      "stage": "group"
+    }
+  ],
+  "officialSources": {
+    "fifaTeams": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/teams",
+    "fifaFixtures": "https://www.fifa.com/es/tournaments/mens/u17worldcup/qatar-2026/articles/resultados-partidos-horarios-catar-2026-mundial-sub-17",
+    "squadLists": "https://fdp.fifa.org/assetspublic/ce303/pdf/SquadLists-Spanish.pdf",
+    "matchSchedule": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a"
+  },
+  "squadStatus": "published_official_pdf_not_yet_imported_as_individual_player_records",
+  "lastVerified": "2026-11-17"
+}

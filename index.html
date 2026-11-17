@@ -53,12 +53,19 @@ footer{padding:28px 0;border-top:1px solid #26372c;color:#839389;font-size:10px}
 
 .ranking-metric{display:none;min-width:150px}
 .rank-source{color:#91a397;font-size:9px;text-decoration:underline;text-underline-offset:3px}
+
+/* FIFA U17 World Cup */
+.u17-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}.u17-stat{border:1px solid #2b3d31;background:#121c15;border-radius:10px;padding:15px}.u17-stat strong{font:700 24px 'Space Grotesk';color:var(--green);display:block}.u17-stat span{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.u17-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.u17-tab{border:1px solid #304234;background:#101913;color:#aebdb2;border-radius:8px;padding:10px 14px;font-size:11px;font-weight:800;cursor:pointer}.u17-tab.active{background:var(--green);color:#10180e;border-color:var(--green)}
+.u17-groups{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}.u17-group{border:1px solid #2a3b30;background:#101913;border-radius:10px;padding:13px}.u17-group h3{font:700 13px 'Space Grotesk';color:var(--green);margin:0 0 9px}.u17-team{display:flex;justify-content:space-between;gap:8px;font-size:11px;padding:5px 0;color:#dce6de}.u17-team small{color:var(--muted)}
+.u17-fixtures{display:grid;gap:9px}.u17-match{display:grid;grid-template-columns:85px 1fr 90px;align-items:center;gap:12px;border:1px solid #293a2f;background:#101913;border-radius:9px;padding:13px}.u17-match-time{font:700 13px 'Space Grotesk';color:var(--green)}.u17-match-time small{display:block;color:var(--muted);font:10px 'DM Sans';margin-top:4px}.u17-match-teams{display:flex;align-items:center;justify-content:center;gap:12px;font:700 12px 'Space Grotesk'}.u17-match-teams span{color:var(--muted);font-size:10px}.u17-match-meta{text-align:right;color:var(--muted);font-size:10px}.u17-source{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}.u17-source a{font-size:11px;color:var(--green);text-decoration:underline;text-underline-offset:3px}
+@media(max-width:800px){.u17-groups{grid-template-columns:repeat(3,1fr)}}@media(max-width:600px){.u17-stats{grid-template-columns:repeat(2,1fr)}.u17-groups{grid-template-columns:repeat(2,1fr)}.u17-match{grid-template-columns:68px 1fr;gap:8px}.u17-match-meta{grid-column:2;text-align:center}.u17-match-teams{gap:7px;font-size:10px}}
 </style></head>
 <body>
 <div class="topline">Independent football intelligence · Season 2026/27</div>
 <header><div class="wrap nav">
 <a class="brand" href="#inicio"><div class="brand-mark">FR</div><div><span class="brand-name">FUTURE RADAR FC</span><span class="brand-sub">SCOUTING & TALENT DISCOVERY</span></div></a>
-<nav class="navlinks"><a href="#inicio">Inicio</a><a href="#jugadores">Jugadores</a><a href="#canteras">Canteras</a><a href="#rankings">Rankings</a></nav>
+<nav class="navlinks"><a href="#inicio">Inicio</a><a href="#jugadores">Jugadores</a><a href="#canteras">Canteras</a><a href="#rankings">Rankings</a><a href="#partidos">Partidos</a></nav>
 <a class="nav-cta" href="#jugadores">EXPLORAR BASE ↗</a>
 </div></header>
 <main>
@@ -99,6 +106,16 @@ footer{padding:28px 0;border-top:1px solid #26372c;color:#839389;font-size:10px}
 </div>
 <div class="ranking-table-wrap" id="rankingResults"><div class="rank-empty"><strong>Preparando rankings…</strong><p>Consultando las evaluaciones disponibles en la base de datos.</p></div></div>
 </div></section>
+<section class="section" id="partidos"><div class="wrap">
+<div class="section-head"><div><div class="section-kicker">International tournament / 04</div><h2>FIFA U-17 World Cup <span class="accent">Qatar 2026</span></h2><p class="section-desc">El escaparate mundial del talento U17. 48 selecciones, 12 grupos y seguimiento de calendario y resultados.</p></div></div>
+<div class="u17-stats"><div class="u17-stat"><strong id="u17TeamCount">48</strong><span>Selecciones</span></div><div class="u17-stat"><strong>12</strong><span>Grupos</span></div><div class="u17-stat"><strong>19 NOV – 13 DIC</strong><span>Fechas</span></div><div class="u17-stat"><strong id="u17MatchCount">72</strong><span>Partidos de grupos</span></div></div>
+<div class="u17-source"><a href="https://fdp.fifa.org/assetspublic/ce303/pdf/SquadLists-Spanish.pdf" target="_blank" rel="noopener">Convocatorias oficiales FIFA (PDF) ↗</a><a href="https://www.fifa.com/es/tournaments/mens/u17worldcup/qatar-2026/articles/resultados-partidos-horarios-catar-2026-mundial-sub-17" target="_blank" rel="noopener">Calendario FIFA ↗</a><a href="https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a" target="_blank" rel="noopener">Horario oficial y campos (PDF) ↗</a></div>
+<div class="u17-tabs"><button class="u17-tab active" data-u17-tab="fixtures">Calendario</button><button class="u17-tab" data-u17-tab="groups">Grupos y selecciones</button></div>
+<div id="u17FixturesPanel"><div class="ranking-filters"><select class="control" id="u17Date"><option value="ALL">Todas las fechas</option></select><select class="control" id="u17Group"><option value="ALL">Todos los grupos</option><option value="A">Grupo A</option><option value="B">Grupo B</option><option value="C">Grupo C</option><option value="D">Grupo D</option><option value="E">Grupo E</option><option value="F">Grupo F</option><option value="G">Grupo G</option><option value="H">Grupo H</option><option value="I">Grupo I</option><option value="J">Grupo J</option><option value="K">Grupo K</option><option value="L">Grupo L</option></select><input class="control search" id="u17TeamSearch" type="search" placeholder="Buscar selección…"></div><div class="u17-fixtures" id="u17Fixtures"><div class="empty">Cargando calendario…</div></div></div>
+<div id="u17GroupsPanel" hidden><div class="u17-groups" id="u17Groups"></div></div>
+<p class="rank-muted" style="margin-top:14px">Horarios expresados en hora local de Catar (UTC+3). El calendario de eliminatorias se completará cuando se definan los cruces. La convocatoria publicada por FIFA está enlazada en su documento oficial; los registros individuales de esos jugadores aún no están importados en la base de perfiles.</p>
+</div></section>
+
 </main>
 <footer><div class="wrap footer-inner"><span class="footer-brand">FUTURE RADAR FC</span><span>Proyecto independiente de scouting · Temporada 2026/27</span><span>© 2026 Future Radar</span></div></footer>
 <script>
@@ -270,6 +287,30 @@ function setupRankings(){
  renderRankings();
 }
 
+
+const U17_DATA_URL='./u17-world-cup-2026.json';
+let u17Data=null;
+function u17DateLabel(date){return new Date(date+'T12:00:00Z').toLocaleDateString('es-ES',{weekday:'short',day:'2-digit',month:'short',timeZone:'UTC'});}
+function renderU17Fixtures(){
+ const date=document.getElementById('u17Date').value,group=document.getElementById('u17Group').value,term=document.getElementById('u17TeamSearch').value.trim().toLowerCase();
+ const groups=new Map(u17Data.teams.map(t=>[t.code,t.group]));
+ const list=u17Data.matches.filter(m=>(date==='ALL'||m.date===date)&&(group==='ALL'||groups.get(m.home)===group)&&(!term||[m.home,m.away].some(code=>{const t=u17Data.teams.find(x=>x.code===code);return (t?.name+' '+code).toLowerCase().includes(term)})));
+ document.getElementById('u17Fixtures').innerHTML=list.length?list.map(m=>'<article class="u17-match"><div class="u17-match-time">'+m.timeQatar+'<small>'+u17DateLabel(m.date)+'</small></div><div class="u17-match-teams"><b>'+m.home+'</b><span>VS</span><b>'+m.away+'</b></div><div class="u17-match-meta">Grupo '+groups.get(m.home)+'<br>Campo '+m.pitch+'</div></article>').join(''):'<div class="empty">No hay partidos para estos filtros.</div>';
+}
+function renderU17Groups(){
+ const letters='ABCDEFGHIJKL'.split('');
+ document.getElementById('u17Groups').innerHTML=letters.map(g=>'<article class="u17-group"><h3>GRUPO '+g+'</h3>'+u17Data.teams.filter(t=>t.group===g).map(t=>'<div class="u17-team"><span>'+t.name+'</span><small>'+t.code+'</small></div>').join('')+'</article>').join('');
+}
+async function setupU17(){
+ try{const r=await fetch(U17_DATA_URL);if(!r.ok)throw new Error('U17 data unavailable');u17Data=await r.json();
+ document.getElementById('u17TeamCount').textContent=u17Data.teams.length;document.getElementById('u17MatchCount').textContent=u17Data.matches.length;
+ [...new Set(u17Data.matches.map(m=>m.date))].sort().forEach(d=>{const o=document.createElement('option');o.value=d;o.textContent=u17DateLabel(d);document.getElementById('u17Date').appendChild(o)});
+ ['u17Date','u17Group'].forEach(id=>document.getElementById(id).addEventListener('change',renderU17Fixtures));document.getElementById('u17TeamSearch').addEventListener('input',renderU17Fixtures);
+ document.querySelectorAll('[data-u17-tab]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-u17-tab]').forEach(x=>x.classList.toggle('active',x===b));document.getElementById('u17FixturesPanel').hidden=b.dataset.u17Tab!=='fixtures';document.getElementById('u17GroupsPanel').hidden=b.dataset.u17Tab!=='groups'}));
+ renderU17Fixtures();renderU17Groups();
+ }catch(e){document.getElementById('u17Fixtures').innerHTML='<div class="empty">No se ha podido cargar el calendario U17.</div>';console.error(e)}
+}
+
 async function init(){try{const r=await fetch('./future-radar-players.json');if(!r.ok)throw new Error('No se pudo cargar el archivo de jugadores');allRadarPlayers=await r.json();const clubs=[...new Set(allRadarPlayers.map(p=>p.club).filter(Boolean))];document.getElementById('heroCount').innerHTML=allRadarPlayers.length+' <small>perfiles registrados</small>';document.getElementById('clubCount').textContent=clubs.length;renderPlayers(allRadarPlayers);renderAcademies();setupRankings();loadCrests(clubs)}catch(e){document.getElementById('playerGrid').innerHTML='<div class="empty">No se ha podido cargar la base de datos. Recarga la página en unos segundos.</div>';document.getElementById('academiesContainer').innerHTML='<div class="empty">No se han podido cargar las canteras.</div>';console.error(e)}}
-document.getElementById('playerSearch').addEventListener('input',filterPlayers);document.getElementById('positionFilter').addEventListener('change',filterPlayers);document.getElementById('academySearch').addEventListener('input',renderAcademies);document.getElementById('closeRoster').addEventListener('click',()=>document.getElementById('rosterPanel').classList.remove('show'));document.addEventListener('DOMContentLoaded',init);
+document.getElementById('playerSearch').addEventListener('input',filterPlayers);document.getElementById('positionFilter').addEventListener('change',filterPlayers);document.getElementById('academySearch').addEventListener('input',renderAcademies);document.getElementById('closeRoster').addEventListener('click',()=>document.getElementById('rosterPanel').classList.remove('show'));document.addEventListener('DOMContentLoaded',()=>{init();setupU17()});
 </script></body></html>
