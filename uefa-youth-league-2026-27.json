@@ -579,7 +579,8 @@
       "away": "Aston Villa",
       "homeScore": 3,
       "awayScore": 3,
-      "status": "FT"
+      "status": "FT",
+      "uefaMatchUrl": "https://es.uefa.com/uefayouthleague/match/2049859--barcelona-vs-aston-villa/statistics/"
     },
     {
       "matchday": 4,
