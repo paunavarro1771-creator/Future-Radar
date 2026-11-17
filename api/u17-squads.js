@@ -102,7 +102,7 @@ module.exports = async (req, res) => {
           let rawHeight = line.height;
           let name = compact([line.firstNames, line.surnames]) || line.displayName;
           if (!/^\d{1,2}$/.test(squadNumber) || !POSITION_MAP[rawPosition] || !dob) {
-            const dateMatch = line.text.match(/\b(\d{1,2}\\/\d{1,2}\\/\d{4})\b/);
+            const dateMatch = line.text.match(/\b(\d{1,2}\/\d{1,2}\/\d{4})\b);
             if (!dateMatch) continue;
             const dateIndex = line.text.indexOf(dateMatch[0]);
             const beforeDate = line.text.slice(0, dateIndex).trim();
@@ -120,8 +120,8 @@ module.exports = async (req, res) => {
             clubRaw = heightMatch ? afterDate.slice(0, heightMatch.index).trim() : afterDate;
           }
           if (!/^\d{1,2}$/.test(squadNumber) || !POSITION_MAP[rawPosition] || !dob || !name) continue;
-          const clubCountry = clubRaw.match(/\\(([A-Z]{3})\\)\s*$/)?.[1] || '';
-          const club = clubRaw.replace(/\s*\\([A-Z]{3}\\)\s*$/, '').trim();
+          const clubCountry = clubRaw.match(/\(([A-Z]{3})\)\s*$/)?.[1] || '';
+          const club = clubRaw.replace(/\s*\([A-Z]{3}\)\s*$/, '').trim();
           const height = Number(String(rawHeight).match(/\d{3}/)?.[0]);
           players.push({
             name,
