@@ -1,0 +1,990 @@
+{
+  "competition": "UEFA Youth League",
+  "season": "2026/27",
+  "phase": "Champions League path league phase",
+  "source": "UEFA official fixtures and results, updated 4 November 2026",
+  "timezone": "CET",
+  "lastUpdated": "2026-11-17",
+  "matchdays": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "matches": [
+    {
+      "matchday": 1,
+      "date": "2026-09-08",
+      "home": "AEK Athens",
+      "away": "LASK",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "matchday": 1,
+      "date": "2026-09-08",
+      "home": "Porto",
+      "away": "Manchester City",
+      "homeScore": 3,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 1,
+      "date": "2026-09-08",
+      "home": "Club Brugge",
+      "away": "Aston Villa",
+      "homeScore": 5,
+      "awayScore": 3,
+      "status": "FT"
+    },
+    {
+      "matchday": 1,
+      "date": "2026-09-08",
+      "home": "Lille",
+      "away": "Real Betis",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "matchday": 1,
+      "date": "2026-09-08",
+      "home": "Real Madrid",
+      "away": "Inter",
+      "homeScore": 3,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "matchday": 1,
+      "date": "2026-09-08",
+      "home": "Borussia Dortmund",
+      "away": "Villarreal",
+      "homeScore": 2,
+      "awayScore": 3,
+      "status": "FT"
+    },
+    {
+      "matchday": 1,
+      "date": "2026-09-09",
+      "home": "Stuttgart",
+      "away": "Viking",
+      "homeScore": 5,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "matchday": 1,
+      "date": "2026-09-09",
+      "home": "Napoli",
+      "away": "Arsenal",
+      "homeScore": 1,
+      "awayScore": 2,
+      "status": "FT"
+    },
+    {
+      "matchday": 1,
+      "date": "2026-09-09",
+      "home": "Paris Saint-Germain",
+      "away": "Slovan Bratislava",
+      "homeScore": 6,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 1,
+      "date": "2026-09-09",
+      "home": "Sporting CP",
+      "away": "Galatasaray",
+      "homeScore": 2,
+      "awayScore": 2,
+      "status": "FT"
+    },
+    {
+      "matchday": 1,
+      "date": "2026-09-09",
+      "home": "Liverpool",
+      "away": "Atlético de Madrid",
+      "homeScore": 2,
+      "awayScore": 2,
+      "status": "FT"
+    },
+    {
+      "matchday": 1,
+      "date": "2026-09-10",
+      "home": "Barcelona",
+      "away": "Feyenoord",
+      "homeScore": 1,
+      "awayScore": 2,
+      "status": "FT"
+    },
+    {
+      "matchday": 1,
+      "date": "2026-09-10",
+      "home": "Fenerbahçe",
+      "away": "Roma",
+      "homeScore": 2,
+      "awayScore": 4,
+      "status": "FT"
+    },
+    {
+      "matchday": 1,
+      "date": "2026-09-10",
+      "home": "PSV Eindhoven",
+      "away": "Shakhtar Donetsk",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "matchday": 1,
+      "date": "2026-09-10",
+      "home": "Slavia Praha",
+      "away": "Lens",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 1,
+      "date": "2026-09-10",
+      "home": "Manchester United",
+      "away": "Sabah",
+      "homeScore": 5,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "matchday": 1,
+      "date": "2026-09-10",
+      "home": "Como",
+      "away": "Leipzig",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 1,
+      "date": "2026-09-10",
+      "home": "Bayern München",
+      "away": "Bodø/Glimt",
+      "homeScore": 6,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 2,
+      "date": "2026-10-13",
+      "home": "Lens",
+      "away": "Sporting CP",
+      "homeScore": 3,
+      "awayScore": 2,
+      "status": "FT"
+    },
+    {
+      "matchday": 2,
+      "date": "2026-10-13",
+      "home": "Sabah",
+      "away": "Slavia Praha",
+      "homeScore": 0,
+      "awayScore": 3,
+      "status": "FT"
+    },
+    {
+      "matchday": 2,
+      "date": "2026-10-13",
+      "home": "Viking",
+      "away": "Bayern München",
+      "homeScore": 2,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "matchday": 2,
+      "date": "2026-10-13",
+      "home": "Galatasaray",
+      "away": "Barcelona",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 2,
+      "date": "2026-10-13",
+      "home": "Arsenal",
+      "away": "Lille",
+      "homeScore": 2,
+      "awayScore": 3,
+      "status": "FT"
+    },
+    {
+      "matchday": 2,
+      "date": "2026-10-13",
+      "home": "Leipzig",
+      "away": "PSV Eindhoven",
+      "homeScore": 1,
+      "awayScore": 6,
+      "status": "FT"
+    },
+    {
+      "matchday": 2,
+      "date": "2026-10-13",
+      "home": "Inter",
+      "away": "Club Brugge",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 2,
+      "date": "2026-10-13",
+      "home": "Villarreal",
+      "away": "Napoli",
+      "homeScore": 5,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "matchday": 2,
+      "date": "2026-10-13",
+      "home": "Atlético de Madrid",
+      "away": "Manchester United",
+      "homeScore": 3,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "matchday": 2,
+      "date": "2026-10-14",
+      "home": "Bodø/Glimt",
+      "away": "Borussia Dortmund",
+      "homeScore": 0,
+      "awayScore": 5,
+      "status": "FT"
+    },
+    {
+      "matchday": 2,
+      "date": "2026-10-14",
+      "home": "LASK",
+      "away": "Liverpool",
+      "homeScore": 2,
+      "awayScore": 4,
+      "status": "FT"
+    },
+    {
+      "matchday": 2,
+      "date": "2026-10-14",
+      "home": "Feyenoord",
+      "away": "Como",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "matchday": 2,
+      "date": "2026-10-14",
+      "home": "Shakhtar Donetsk",
+      "away": "AEK Athens",
+      "homeScore": 1,
+      "awayScore": 2,
+      "status": "FT"
+    },
+    {
+      "matchday": 2,
+      "date": "2026-10-14",
+      "home": "Slovan Bratislava",
+      "away": "Stuttgart",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "matchday": 2,
+      "date": "2026-10-14",
+      "home": "Roma",
+      "away": "Real Madrid",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 2,
+      "date": "2026-10-14",
+      "home": "Aston Villa",
+      "away": "Fenerbahçe",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 2,
+      "date": "2026-10-14",
+      "home": "Real Betis",
+      "away": "Porto",
+      "homeScore": 5,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "matchday": 2,
+      "date": "2026-10-14",
+      "home": "Manchester City",
+      "away": "Paris Saint-Germain",
+      "homeScore": 0,
+      "awayScore": 2,
+      "status": "FT"
+    },
+    {
+      "matchday": 3,
+      "date": "2026-10-20",
+      "home": "Porto",
+      "away": "PSV Eindhoven",
+      "homeScore": 3,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 3,
+      "date": "2026-10-20",
+      "home": "Fenerbahçe",
+      "away": "Slavia Praha",
+      "homeScore": 1,
+      "awayScore": 3,
+      "status": "FT"
+    },
+    {
+      "matchday": 3,
+      "date": "2026-10-20",
+      "home": "Sabah",
+      "away": "Borussia Dortmund",
+      "homeScore": 0,
+      "awayScore": 2,
+      "status": "FT"
+    },
+    {
+      "matchday": 3,
+      "date": "2026-10-20",
+      "home": "Roma",
+      "away": "Slovan Bratislava",
+      "homeScore": 5,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "matchday": 3,
+      "date": "2026-10-20",
+      "home": "Paris Saint-Germain",
+      "away": "Barcelona",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 3,
+      "date": "2026-10-20",
+      "home": "Napoli",
+      "away": "Bodø/Glimt",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "matchday": 3,
+      "date": "2026-10-20",
+      "home": "Stuttgart",
+      "away": "Atlético de Madrid",
+      "homeScore": 2,
+      "awayScore": 4,
+      "status": "FT"
+    },
+    {
+      "matchday": 3,
+      "date": "2026-10-20",
+      "home": "Liverpool",
+      "away": "Villarreal",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "matchday": 3,
+      "date": "2026-10-20",
+      "home": "Manchester City",
+      "away": "AEK Athens",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 3,
+      "date": "2026-10-21",
+      "home": "Como",
+      "away": "Manchester United",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 3,
+      "date": "2026-10-21",
+      "home": "LOSC Lille",
+      "away": "Galatasaray",
+      "homeScore": 3,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 3,
+      "date": "2026-10-21",
+      "home": "Aston Villa",
+      "away": "Viking",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 3,
+      "date": "2026-10-21",
+      "home": "Club Brugge",
+      "away": "Lens",
+      "homeScore": 4,
+      "awayScore": 2,
+      "status": "FT"
+    },
+    {
+      "matchday": 3,
+      "date": "2026-10-21",
+      "home": "Sporting CP",
+      "away": "LASK",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 3,
+      "date": "2026-10-21",
+      "home": "Bayern München",
+      "away": "Arsenal",
+      "homeScore": 3,
+      "awayScore": 3,
+      "status": "FT"
+    },
+    {
+      "matchday": 3,
+      "date": "2026-10-21",
+      "home": "Inter",
+      "away": "Shakhtar Donetsk",
+      "homeScore": 2,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "matchday": 3,
+      "date": "2026-10-21",
+      "home": "Real Madrid",
+      "away": "Leipzig",
+      "homeScore": 5,
+      "awayScore": 2,
+      "status": "FT"
+    },
+    {
+      "matchday": 3,
+      "date": "2026-10-21",
+      "home": "Real Betis",
+      "away": "Feyenoord",
+      "homeScore": 1,
+      "awayScore": 4,
+      "status": "FT"
+    },
+    {
+      "matchday": 4,
+      "date": "2026-11-03",
+      "home": "Bodø/Glimt",
+      "away": "Lille",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 4,
+      "date": "2026-11-03",
+      "home": "Galatasaray",
+      "away": "Stuttgart",
+      "homeScore": 2,
+      "awayScore": 2,
+      "status": "FT"
+    },
+    {
+      "matchday": 4,
+      "date": "2026-11-03",
+      "home": "Shakhtar Donetsk",
+      "away": "Sporting CP",
+      "homeScore": 1,
+      "awayScore": 3,
+      "status": "FT"
+    },
+    {
+      "matchday": 4,
+      "date": "2026-11-03",
+      "home": "Villarreal",
+      "away": "Paris Saint-Germain",
+      "homeScore": 3,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "matchday": 4,
+      "date": "2026-11-03",
+      "home": "Feyenoord",
+      "away": "Inter",
+      "homeScore": 3,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 4,
+      "date": "2026-11-03",
+      "home": "Manchester United",
+      "away": "Roma",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 4,
+      "date": "2026-11-03",
+      "home": "LASK",
+      "away": "Slovan Bratislava",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 4,
+      "date": "2026-11-03",
+      "home": "Atlético de Madrid",
+      "away": "Bayern München",
+      "homeScore": 4,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 4,
+      "date": "2026-11-03",
+      "home": "Barcelona",
+      "away": "Aston Villa",
+      "homeScore": 3,
+      "awayScore": 3,
+      "status": "FT"
+    },
+    {
+      "matchday": 4,
+      "date": "2026-11-04",
+      "home": "AEK Athens",
+      "away": "Real Madrid",
+      "homeScore": 1,
+      "awayScore": 4,
+      "status": "FT"
+    },
+    {
+      "matchday": 4,
+      "date": "2026-11-04",
+      "home": "Fenerbahçe",
+      "away": "Liverpool",
+      "homeScore": 3,
+      "awayScore": 5,
+      "status": "FT"
+    },
+    {
+      "matchday": 4,
+      "date": "2026-11-04",
+      "home": "Viking",
+      "away": "Sabah",
+      "homeScore": 5,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "matchday": 4,
+      "date": "2026-11-04",
+      "home": "Porto",
+      "away": "Napoli",
+      "homeScore": 3,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 4,
+      "date": "2026-11-04",
+      "home": "PSV Eindhoven",
+      "away": "Club Brugge",
+      "homeScore": 3,
+      "awayScore": 2,
+      "status": "FT"
+    },
+    {
+      "matchday": 4,
+      "date": "2026-11-04",
+      "home": "Lens",
+      "away": "Como",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FT"
+    },
+    {
+      "matchday": 4,
+      "date": "2026-11-04",
+      "home": "Slavia Praha",
+      "away": "Arsenal",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "FT"
+    },
+    {
+      "matchday": 4,
+      "date": "2026-11-04",
+      "home": "Leipzig",
+      "away": "Manchester City",
+      "homeScore": 1,
+      "awayScore": 2,
+      "status": "FT"
+    },
+    {
+      "matchday": 4,
+      "date": "2026-11-04",
+      "home": "Borussia Dortmund",
+      "away": "Real Betis",
+      "homeScore": 2,
+      "awayScore": 2,
+      "status": "FT"
+    },
+    {
+      "matchday": 5,
+      "date": "2026-11-24",
+      "home": "Bodø/Glimt",
+      "away": "LASK",
+      "kickoff": "11:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 5,
+      "date": "2026-11-24",
+      "home": "Galatasaray",
+      "away": "Aston Villa",
+      "kickoff": "11:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 5,
+      "date": "2026-11-24",
+      "home": "Arsenal",
+      "away": "Borussia Dortmund",
+      "kickoff": "14:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 5,
+      "date": "2026-11-24",
+      "home": "Slovan Bratislava",
+      "away": "Real Betis",
+      "kickoff": "14:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 5,
+      "date": "2026-11-24",
+      "home": "Feyenoord",
+      "away": "Porto",
+      "kickoff": "14:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 5,
+      "date": "2026-11-24",
+      "home": "Como",
+      "away": "AEK Athens",
+      "kickoff": "15:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 5,
+      "date": "2026-11-24",
+      "home": "Manchester City",
+      "away": "Napoli",
+      "kickoff": "16:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 5,
+      "date": "2026-11-24",
+      "home": "Leipzig",
+      "away": "Lens",
+      "kickoff": "16:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 5,
+      "date": "2026-11-24",
+      "home": "Real Madrid",
+      "away": "PSV Eindhoven",
+      "kickoff": "16:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 5,
+      "date": "2026-11-25",
+      "home": "Sabah",
+      "away": "Barcelona",
+      "kickoff": "12:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 5,
+      "date": "2026-11-25",
+      "home": "Shakhtar Donetsk",
+      "away": "Fenerbahçe",
+      "kickoff": "13:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 5,
+      "date": "2026-11-25",
+      "home": "Slavia Praha",
+      "away": "Villarreal",
+      "kickoff": "13:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 5,
+      "date": "2026-11-25",
+      "home": "Paris Saint-Germain",
+      "away": "AS Roma",
+      "kickoff": "14:30",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 5,
+      "date": "2026-11-25",
+      "home": "Club Brugge",
+      "away": "Liverpool",
+      "kickoff": "15:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 5,
+      "date": "2026-11-25",
+      "home": "Inter",
+      "away": "Stuttgart",
+      "kickoff": "15:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 5,
+      "date": "2026-11-25",
+      "home": "Lille",
+      "away": "Bayern München",
+      "kickoff": "15:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 5,
+      "date": "2026-11-25",
+      "home": "Sporting CP",
+      "away": "Manchester United",
+      "kickoff": "15:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 5,
+      "date": "2026-11-25",
+      "home": "Atlético de Madrid",
+      "away": "Viking",
+      "kickoff": "16:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 6,
+      "date": "2026-12-08",
+      "home": "Viking",
+      "away": "Feyenoord",
+      "kickoff": "12:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 6,
+      "date": "2026-12-08",
+      "home": "Villarreal",
+      "away": "Sabah",
+      "kickoff": "12:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 6,
+      "date": "2026-12-08",
+      "home": "AEK Athens",
+      "away": "Galatasaray",
+      "kickoff": "14:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 6,
+      "date": "2026-12-08",
+      "home": "Roma",
+      "away": "Sporting CP",
+      "kickoff": "14:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 6,
+      "date": "2026-12-08",
+      "home": "Napoli",
+      "away": "Club Brugge",
+      "kickoff": "14:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 6,
+      "date": "2026-12-08",
+      "home": "Manchester United",
+      "away": "Leipzig",
+      "kickoff": "15:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 6,
+      "date": "2026-12-08",
+      "home": "Aston Villa",
+      "away": "Paris Saint-Germain",
+      "kickoff": "15:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 6,
+      "date": "2026-12-08",
+      "home": "Barcelona",
+      "away": "Manchester City",
+      "kickoff": "16:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 6,
+      "date": "2026-12-08",
+      "home": "Bayern München",
+      "away": "Slavia Praha",
+      "kickoff": "16:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 6,
+      "date": "2026-12-09",
+      "home": "Real Betis",
+      "away": "Como",
+      "kickoff": "13:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 6,
+      "date": "2026-12-09",
+      "home": "Slovan Bratislava",
+      "away": "Shakhtar Donetsk",
+      "kickoff": "13:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 6,
+      "date": "2026-12-09",
+      "home": "Arsenal",
+      "away": "Real Madrid",
+      "kickoff": "14:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 6,
+      "date": "2026-12-09",
+      "home": "PSV Eindhoven",
+      "away": "Atlético de Madrid",
+      "kickoff": "14:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 6,
+      "date": "2026-12-09",
+      "home": "Lens",
+      "away": "Bodø/Glimt",
+      "kickoff": "14:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 6,
+      "date": "2026-12-09",
+      "home": "Stuttgart",
+      "away": "Lille",
+      "kickoff": "15:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 6,
+      "date": "2026-12-09",
+      "home": "LASK",
+      "away": "Fenerbahçe",
+      "kickoff": "15:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 6,
+      "date": "2026-12-09",
+      "home": "Borussia Dortmund",
+      "away": "Inter",
+      "kickoff": "16:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    },
+    {
+      "matchday": 6,
+      "date": "2026-12-09",
+      "home": "Liverpool",
+      "away": "Porto",
+      "kickoff": "16:00",
+      "kickoffTimezone": "CET",
+      "status": "UPCOMING"
+    }
+  ]
+}
