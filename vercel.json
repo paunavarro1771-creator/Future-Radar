@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/u17-squads.js": {
+      "includeFiles": "node_modules/pdfjs-dist/legacy/build/pdf.worker.js",
+      "maxDuration": 60
+    }
+  }
+}
