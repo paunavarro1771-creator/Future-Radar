@@ -21,7 +21,8 @@
       "away": "LASK",
       "homeScore": 0,
       "awayScore": 0,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/lask-linz-u19-u19-aek-athens-u19/pQtcsvFik"
     },
     {
       "matchday": 1,
@@ -109,7 +110,8 @@
       "away": "Galatasaray",
       "homeScore": 2,
       "awayScore": 2,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/galatasaray-u19-sporting-u19/bnGstrY"
     },
     {
       "matchday": 1,
@@ -138,7 +140,8 @@
       "away": "Roma",
       "homeScore": 2,
       "awayScore": 4,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/roma-u20-fenerbahce-u19/aBXbstLFg"
     },
     {
       "matchday": 1,
@@ -147,7 +150,8 @@
       "away": "Shakhtar Donetsk",
       "homeScore": 1,
       "awayScore": 0,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/shakhtar-donetsk-u19-psv-eindhoven-u19/PcLsyeT"
     },
     {
       "matchday": 1,
@@ -156,7 +160,8 @@
       "away": "Lens",
       "homeScore": 2,
       "awayScore": 1,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/lens-u19-slavia-praha-u19/nIrskztc"
     },
     {
       "matchday": 1,
@@ -165,7 +170,8 @@
       "away": "Sabah",
       "homeScore": 5,
       "awayScore": 0,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/sabah-u19-manchester-united-u19/YqYsfvxh"
     },
     {
       "matchday": 1,
@@ -174,7 +180,8 @@
       "away": "Leipzig",
       "homeScore": 1,
       "awayScore": 1,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/como-u20-rb-leipzig-u19/UAebseAHb"
     },
     {
       "matchday": 1,
@@ -219,7 +226,8 @@
       "away": "Barcelona",
       "homeScore": 0,
       "awayScore": 1,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/galatasaray-u19-barcelona-u19/DcLstrY"
     },
     {
       "matchday": 2,
