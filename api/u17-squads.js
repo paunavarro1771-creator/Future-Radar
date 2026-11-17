@@ -48,13 +48,34 @@ function pageLines(items) {
   });
 }
 module.exports = async (req, res) => {
+  let stage = 'starting';
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Cache-Control', 'public, s-maxage=21600, stale-while-revalidate=86400');
   try {
-    const response = await fetch(PDF_URL, { headers: { 'User-Agent': 'FutureRadarFC/1.0 (FIFA squad list importer)' } });
-    if (!response.ok) return res.status(502).json({ error: 'FIFA squad list is temporarily unavailable', upstreamStatus: response.status });
+    stage = 'downloading_fifa_pdf';
+    const response = await fetch(PDF_URL, {
+      redirect: 'follow',
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (compatible; FutureRadarFC/1.0; +https://www.futureradar.es)',
+        'Accept': 'application/pdf,application/octet-stream;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8',
+        'Referer': 'https://www.fifa.com/',
+        'Origin': 'https://www.fifa.com'
+      }
+    });
+    if (!response.ok) {
+      console.error('FIFA PDF upstream response:', response.status, response.statusText);
+      return res.status(502).json({ error: 'FIFA squad PDF could not be downloaded', stage, upstreamStatus: response.status, upstreamStatusText: response.statusText });
+    }
+    const contentType = response.headers.get('content-type') || '';
     const bytes = new Uint8Array(await response.arrayBuffer());
+    if (bytes.length < 1000 || (contentType && !/pdf|octet-stream/i.test(contentType))) {
+      return res.status(502).json({ error: 'FIFA did not return a valid PDF', stage, contentType, bytes: bytes.length });
+    }
+    stage = 'loading_pdf_parser';
     const pdfjs = require('pdfjs-dist/legacy/build/pdf.js');
+    pdfjs.GlobalWorkerOptions.workerSrc = require.resolve('pdfjs-dist/legacy/build/pdf.worker.js');
+    stage = 'parsing_pdf';
     const pdf = await pdfjs.getDocument({ data: bytes, disableWorker: true, useSystemFonts: true, verbosity: 0 }).promise;
     const players = [];
     const teamsFound = new Set();
@@ -123,6 +144,9 @@ module.exports = async (req, res) => {
       pageErrors
     });
   } catch (error) {
-    return res.status(502).json({ error: 'Could not parse FIFA squad list', detail: String(error.message || error) });
+    console.error('FIFA U17 squad import failed at stage:', stage, error);
+    return res.status(502).json({ error: 'Could not import FIFA squad list', stage, detail: String(error.message || error), stack: process.env.NODE_ENV === 'development' ? error.stack : undefined });
   }
 };
+
+module.exports.config = { maxDuration: 60 };
