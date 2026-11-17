@@ -30,7 +30,8 @@
       "away": "Manchester City",
       "homeScore": 3,
       "awayScore": 1,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/manchester-city-u19-fc-porto-u19/rmGsgrY"
     },
     {
       "matchday": 1,
@@ -39,7 +40,8 @@
       "away": "Aston Villa",
       "homeScore": 5,
       "awayScore": 3,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/club-brugge-u19-aston-villa-u19/xcLsBORb"
     },
     {
       "matchday": 1,
@@ -48,7 +50,8 @@
       "away": "Real Betis",
       "homeScore": 0,
       "awayScore": 0,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/lille-u19-real-betis-u19/Opkcsnztc"
     },
     {
       "matchday": 1,
@@ -76,7 +79,8 @@
       "away": "Viking",
       "homeScore": 5,
       "awayScore": 0,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/viking-fk-u19-vfb-stuttgart-u19/HzrsCTec"
     },
     {
       "matchday": 1,
@@ -85,7 +89,8 @@
       "away": "Arsenal",
       "homeScore": 1,
       "awayScore": 2,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/napoli-u20-arsenal-u19/vcLsRQGg"
     },
     {
       "matchday": 1,
@@ -94,7 +99,8 @@
       "away": "Slovan Bratislava",
       "homeScore": 6,
       "awayScore": 1,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/sk-slovan-bratislava-u19-paris-saint-germain-u19/NcLshpU"
     },
     {
       "matchday": 1,
@@ -112,7 +118,8 @@
       "away": "Atlético de Madrid",
       "homeScore": 2,
       "awayScore": 2,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/liverpool-u19-atletico-madrid-u19/xPDsJcL"
     },
     {
       "matchday": 1,
