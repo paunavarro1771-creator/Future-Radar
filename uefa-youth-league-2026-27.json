@@ -680,7 +680,8 @@
       "away": "Club Brugge",
       "homeScore": 3,
       "awayScore": 2,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/club-brugge-u19-psv-eindhoven-u19/PcLsBORb"
     },
     {
       "matchday": 4,
@@ -689,7 +690,8 @@
       "away": "Como",
       "homeScore": 2,
       "awayScore": 1,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/lens-u19-como-u20/eAHbskztc"
     },
     {
       "matchday": 4,
@@ -698,7 +700,8 @@
       "away": "Arsenal",
       "homeScore": 1,
       "awayScore": 0,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/arsenal-u19-slavia-praha-u19/nIrsvcL"
     },
     {
       "matchday": 4,
@@ -707,7 +710,8 @@
       "away": "Manchester City",
       "homeScore": 1,
       "awayScore": 2,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/rb-leipzig-u19-manchester-city-u19/grYsUAeb"
     },
     {
       "matchday": 4,
