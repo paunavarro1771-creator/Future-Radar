@@ -356,8 +356,9 @@ async function loadU17Squads(){
   const clubs=[...new Set(allRadarPlayers.map(p=>p.club).filter(Boolean))];document.getElementById('clubCount').textContent=clubs.length;
   renderPlayers(allRadarPlayers);renderAcademies();loadCrests(clubs);
   const rankingClub=document.getElementById('rankingClub');if(rankingClub){const present=new Set([...rankingClub.options].map(o=>o.value));clubs.forEach(c=>{if(!present.has(c)){const o=document.createElement('option');o.value=c;o.textContent=c;rankingClub.appendChild(o)}})}
-  const missing= u17Data.teams.length-payload.teamCount;
-  status.innerHTML='<strong>Importación completada:</strong> '+payload.playerCount+' jugadores detectados en '+payload.teamCount+' convocatorias del PDF FIFA. '+added+' perfiles nuevos añadidos a Future Radar y '+matched+' vinculados con perfiles existentes.'+(missing?' '+missing+' selección(es) sin filas de jugadores en el PDF actual.':'')+' <a href="'+payload.source+'" target="_blank" rel="noopener" style="color:var(--green);text-decoration:underline">Fuente oficial FIFA ↗</a>';
+  const teamsWithPlayers=Object.keys(payload.countsByTeam||{}).length;
+  const missingTeams=u17Data.teams.filter(t=>!payload.countsByTeam?.[t.code]).map(t=>t.name);
+  status.innerHTML='<strong>Importación completada:</strong> '+payload.playerCount+' jugadores detectados en '+teamsWithPlayers+' convocatorias con registros de futbolistas. '+added+' perfiles nuevos añadidos a Future Radar y '+matched+' vinculados con perfiles existentes.'+(missingTeams.length?' Sin filas de jugadores en el PDF actual: '+missingTeams.join(', ')+'.':'')+' <a href="'+payload.source+'" target="_blank" rel="noopener" style="color:var(--green);text-decoration:underline">Fuente oficial FIFA ↗</a>';
   renderU17SquadResults();
  }catch(error){status.textContent='No se pudo completar la importación automática: '+error.message+'. Puedes consultar el PDF oficial enlazado arriba.';console.error(error)}
 }
