@@ -20,12 +20,42 @@ header{position:sticky;top:0;z-index:20;background:rgba(8,13,11,.9);backdrop-fil
 footer{padding:28px 0;border-top:1px solid #26372c;color:#839389;font-size:10px}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-brand{font:700 13px 'Space Grotesk';color:#e8f0e9;letter-spacing:1px}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:35px}.hero-panel{max-width:560px}.academy-grid{grid-template-columns:repeat(3,1fr)}.player-grid{grid-template-columns:repeat(2,1fr)}.navlinks{gap:15px}}
 @media(max-width:640px){.wrap{width:min(100% - 28px,1160px)}.nav{height:66px}.navlinks{display:none}.nav-cta{font-size:10px;padding:9px 10px}.brand-name{font-size:14px}.hero{padding:62px 0}.hero-grid{gap:28px}h1{letter-spacing:-2px}.section{padding:58px 0}.section-head{display:block}.controls{margin-top:20px}.search{min-width:100%;width:100%}.player-grid{grid-template-columns:1fr}.academy-grid{grid-template-columns:repeat(2,1fr)}.academy-card{padding:12px;gap:9px}.academy-card img{width:35px;height:35px}.academy-card strong{font-size:10px}.roster-list{grid-template-columns:1fr}.roster{padding:14px}.footer-inner{flex-direction:column;text-align:center}.hero-stats{gap:8px}.hero-stat strong{font-size:17px}}
+
+/* Rankings */
+.ranking-intro{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;margin-bottom:22px}
+.ranking-model,.ranking-note{border:1px solid #2b3d31;background:linear-gradient(145deg,#142018,#0e1511);border-radius:13px;padding:19px}
+.ranking-model h3{font:700 15px 'Space Grotesk';margin:0 0 8px}
+.ranking-model p,.ranking-note p{color:var(--muted);font-size:11px;line-height:1.65;margin:0}
+.score-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.score-pill{padding:8px 10px;border-radius:7px;background:#0b130e;border:1px solid #304334;font-size:10px;color:#dce8dd}
+.score-pill strong{color:var(--green);font:700 13px 'Space Grotesk';margin-right:5px}
+.ranking-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 16px}
+.ranking-tab{border:1px solid #304234;background:#101913;color:#aebdb2;border-radius:8px;padding:10px 15px;font-size:11px;font-weight:800;cursor:pointer}
+.ranking-tab.active,.ranking-tab:hover{background:#b7f36b;color:#10180e;border-color:#b7f36b}
+.ranking-filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:16px}
+.ranking-table-wrap{border:1px solid #2a3b30;border-radius:13px;overflow:hidden;background:#0e1511}
+.ranking-table{width:100%;border-collapse:collapse;text-align:left}
+.ranking-table th{font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:#91a397;background:#141f18;padding:14px 13px}
+.ranking-table td{padding:13px;border-top:1px solid #25352b;font-size:11px;color:#dce6de}
+.ranking-table tr:hover td{background:#142019}
+.rank-number{font:700 16px 'Space Grotesk';color:var(--green);width:48px}
+.rank-player{display:flex;align-items:center;gap:10px;min-width:180px}
+.rank-player img{width:31px;height:31px;object-fit:contain;background:#1c2a20;border-radius:7px;padding:4px}
+.rank-player strong{display:block;font:600 12px 'Space Grotesk'}
+.rank-player small{display:block;color:var(--muted);font-size:9px;margin-top:3px}
+.rank-score{font:700 15px 'Space Grotesk';color:var(--green);font-variant-numeric:tabular-nums}
+.rank-muted{color:#819187;font-size:10px}
+.rank-empty{padding:34px 22px;text-align:center}
+.rank-empty strong{font:700 16px 'Space Grotesk';display:block;margin-bottom:8px}
+.rank-empty p{max-width:570px;margin:0 auto;color:var(--muted);font-size:11px;line-height:1.7}
+.rank-status{display:inline-flex;padding:5px 8px;border:1px solid #57482b;background:#2a2112;color:#e7c783;border-radius:5px;font-size:9px;font-weight:800;letter-spacing:.5px}
+@media(max-width:700px){.ranking-intro{grid-template-columns:1fr}.ranking-table-wrap{overflow-x:auto}.ranking-table{min-width:650px}.ranking-filters .control{flex:1;min-width:140px}}
 </style></head>
 <body>
 <div class="topline">Independent football intelligence · Season 2026/27</div>
 <header><div class="wrap nav">
 <a class="brand" href="#inicio"><div class="brand-mark">FR</div><div><span class="brand-name">FUTURE RADAR FC</span><span class="brand-sub">SCOUTING & TALENT DISCOVERY</span></div></a>
-<nav class="navlinks"><a href="#inicio">Inicio</a><a href="#jugadores">Jugadores</a><a href="#canteras">Canteras</a></nav>
+<nav class="navlinks"><a href="#inicio">Inicio</a><a href="#jugadores">Jugadores</a><a href="#canteras">Canteras</a><a href="#rankings">Rankings</a></nav>
 <a class="nav-cta" href="#jugadores">EXPLORAR BASE ↗</a>
 </div></header>
 <main>
@@ -46,6 +76,25 @@ footer{padding:28px 0;border-top:1px solid #26372c;color:#839389;font-size:10px}
 <div class="section-head"><div><div class="section-kicker">Academy explorer / 02</div><h2>Las canteras</h2><p class="section-desc">Explora los clubes incluidos en la base de datos y abre cada academia para consultar sus jugadores.</p></div><div class="academy-tools"><input id="academySearch" class="control search" type="search" placeholder="Buscar cantera…"></div></div>
 <div class="academy-grid" id="academiesContainer"><div class="empty">Cargando canteras…</div></div>
 <div class="roster" id="rosterPanel"><div class="roster-head"><div class="roster-title"><img id="rosterCrest" alt=""><div><h3 id="rosterName">Cantera</h3><p id="rosterCount"></p></div></div><button class="btn btn-secondary" id="closeRoster" type="button">Cerrar ×</button></div><div class="roster-list" id="rosterList"></div></div>
+</div></section>
+<section class="section" id="rankings"><div class="wrap">
+<div class="section-head"><div><div class="section-kicker">Performance & potential / 03</div><h2>Rankings <span class="accent">Future Radar</span></h2><p class="section-desc">Clasificaciones de talento joven basadas en nivel actual y proyección. Compara jugadores, generaciones, posiciones y academias.</p></div></div>
+<div class="ranking-intro">
+<div class="ranking-model"><h3>El modelo de evaluación</h3><p>El ranking combinado utiliza dos dimensiones independientes. La nota global se calcula con el mismo peso para ambas, para equilibrar rendimiento actual y proyección.</p><div class="score-pills"><span class="score-pill"><strong>50%</strong> Current Level</span><span class="score-pill"><strong>50%</strong> Prospect Score</span><span class="score-pill"><strong>/100</strong> Future Radar Score</span></div></div>
+<div class="ranking-note"><h3>Transparencia de datos</h3><p>Las puntuaciones no se asignan automáticamente por edad, club o reputación. Cada perfil necesita una evaluación contrastada. Los jugadores sin notas verificadas no entran en una clasificación.</p></div>
+</div>
+<div class="ranking-tabs" role="tablist" aria-label="Tipo de ranking">
+<button class="ranking-tab active" type="button" data-ranking-tab="global">Global Top 100</button>
+<button class="ranking-tab" type="button" data-ranking-tab="u18">U18</button>
+<button class="ranking-tab" type="button" data-ranking-tab="u21">U21</button>
+<button class="ranking-tab" type="button" data-ranking-tab="academies">Academies</button>
+</div>
+<div class="ranking-filters">
+<input id="rankingSearch" class="control search" type="search" placeholder="Buscar jugador…">
+<select id="rankingPosition" class="control"><option value="ALL">Todas las posiciones</option><option value="DELANTERO">Delanteros</option><option value="CENTROCAMPISTA">Centrocampistas</option><option value="DEFENSA">Defensas</option><option value="PORTERO">Porteros</option></select>
+<select id="rankingClub" class="control"><option value="ALL">Todos los clubes</option></select>
+</div>
+<div class="ranking-table-wrap" id="rankingResults"><div class="rank-empty"><strong>Preparando rankings…</strong><p>Consultando las evaluaciones disponibles en la base de datos.</p></div></div>
 </div></section>
 </main>
 <footer><div class="wrap footer-inner"><span class="footer-brand">FUTURE RADAR FC</span><span>Proyecto independiente de scouting · Temporada 2026/27</span><span>© 2026 Future Radar</span></div></footer>
@@ -161,6 +210,49 @@ function renderPlayers(players){const grid=document.getElementById('playerGrid')
 function renderAcademies(){const term=document.getElementById('academySearch').value.trim().toLowerCase();const map=new Map();allRadarPlayers.forEach(p=>{const c=p.club||'Club no disponible';if(!map.has(c))map.set(c,[]);map.get(c).push(p)});const entries=[...map.entries()].sort((a,b)=>a[0].localeCompare(b[0],'es')).filter(([c])=>c.toLowerCase().includes(term));const el=document.getElementById('academiesContainer');if(!entries.length){el.innerHTML='<div class="empty">No se han encontrado canteras.</div>';return}el.innerHTML=entries.map(([c,ps])=>'<button class="academy-card" type="button" data-club="'+esc(c)+'"><img data-crest="'+esc(c)+'" src="'+crestUrl(c)+'" onerror="handleCrestError(this)" alt="Escudo de '+esc(c)+'"><span><strong>'+esc(c)+'</strong><small>'+ps.length+' jugadores registrados</small></span></button>').join('');el.querySelectorAll('[data-club]').forEach(btn=>btn.addEventListener('click',()=>openRoster(btn.dataset.club)));document.querySelectorAll('[data-crest]').forEach(img=>{img.onerror=()=>handleCrestError(img);img.src=crestUrl(img.dataset.crest)})}
 function openRoster(club){const players=allRadarPlayers.filter(p=>p.club===club).sort((a,b)=>(a.name||'').localeCompare(b.name||''));document.getElementById('rosterName').textContent=club;document.getElementById('rosterCount').textContent=players.length+' jugadores · Temporada 2026/27';const img=document.getElementById('rosterCrest');img.dataset.crest=club;img.onerror=()=>handleCrestError(img);img.src=crestUrl(club);document.getElementById('rosterList').innerHTML=players.map(p=>'<div class="roster-player"><div><strong>'+esc(p.name||'Sin nombre')+'</strong><small>'+esc(cleanPosition(p.position))+' · '+esc(p.clubCountry||'')+'</small></div><div class="roster-right">'+(flagUrl(p.nationality)?'<img src="'+flagUrl(p.nationality)+'" width="20" alt="">':'🌍')+'<div>'+((p.age??'—')+' años')+'</div></div></div>').join('');const panel=document.getElementById('rosterPanel');panel.classList.add('show');document.querySelectorAll('.academy-card').forEach(b=>b.classList.toggle('active',b.dataset.club===club));panel.scrollIntoView({behavior:'smooth',block:'nearest'})}
 function filterPlayers(){const term=document.getElementById('playerSearch').value.trim().toLowerCase();const pos=document.getElementById('positionFilter').value;renderPlayers(allRadarPlayers.filter(p=>(String(p.name||'').toLowerCase().includes(term)||String(p.club||'').toLowerCase().includes(term)||String(p.nationality||'').toLowerCase().includes(term))&&(pos==='ALL'||cleanPosition(p.position)===pos)))}
-async function init(){try{const r=await fetch('./future-radar-players.json');if(!r.ok)throw new Error('No se pudo cargar el archivo de jugadores');allRadarPlayers=await r.json();const clubs=[...new Set(allRadarPlayers.map(p=>p.club).filter(Boolean))];document.getElementById('heroCount').innerHTML=allRadarPlayers.length+' <small>perfiles registrados</small>';document.getElementById('clubCount').textContent=clubs.length;renderPlayers(allRadarPlayers);renderAcademies();loadCrests(clubs)}catch(e){document.getElementById('playerGrid').innerHTML='<div class="empty">No se ha podido cargar la base de datos. Recarga la página en unos segundos.</div>';document.getElementById('academiesContainer').innerHTML='<div class="empty">No se han podido cargar las canteras.</div>';console.error(e)}}
+
+let activeRankingTab='global';
+function playerRankingScores(p){
+ if(p.currentLevel===null||p.currentLevel===undefined||p.prospectScore===null||p.prospectScore===undefined)return null;
+ const current=Number(p.currentLevel),prospect=Number(p.prospectScore);
+ if(!Number.isFinite(current)||!Number.isFinite(prospect)||current<0||current>100||prospect<0||prospect>100)return null;
+ return {current,prospect,combined:Math.round((current+prospect)/2*10)/10};
+}
+function rankingEligible(p,tab){
+ const age=Number(p.age);
+ if(tab==='u18')return Number.isFinite(age)&&age<=18;
+ if(tab==='u21')return Number.isFinite(age)&&age>=19&&age<=21;
+ return true;
+}
+function renderRankings(){
+ const host=document.getElementById('rankingResults');if(!host)return;
+ const search=(document.getElementById('rankingSearch')?.value||'').trim().toLowerCase();
+ const position=document.getElementById('rankingPosition')?.value||'ALL';
+ const club=document.getElementById('rankingClub')?.value||'ALL';
+ if(activeRankingTab==='academies'){
+  const clubs=new Map();
+  allRadarPlayers.forEach(p=>{const s=playerRankingScores(p);if(!s)return;const name=p.club||'Club no disponible';if(!clubs.has(name))clubs.set(name,[]);clubs.get(name).push(s)});
+  const rows=[...clubs.entries()].map(([name,scores])=>({name,count:scores.length,score:scores.reduce((a,s)=>a+s.combined,0)/scores.length,current:scores.reduce((a,s)=>a+s.current,0)/scores.length,prospect:scores.reduce((a,s)=>a+s.prospect,0)/scores.length})).sort((a,b)=>b.score-a.score);
+  if(!rows.length){host.innerHTML='<div class="rank-empty"><span class="rank-status">EVALUACIONES PENDIENTES</span><strong>El ranking de academias está preparado.</strong><p>Se activará cuando existan jugadores evaluados con Current Level y Prospect Score. No clasificamos canteras por número de fichas: eso mediría el tamaño de la base, no la calidad de su formación.</p></div>';return;}
+  const filtered=rows.filter(r=>r.name.toLowerCase().includes(search));
+  host.innerHTML='<table class="ranking-table"><thead><tr><th>#</th><th>Academy</th><th>Players evaluated</th><th>Current avg.</th><th>Prospect avg.</th><th>Academy score</th></tr></thead><tbody>'+filtered.map((r,i)=>'<tr><td class="rank-number">'+(i+1)+'</td><td><div class="rank-player"><img src="'+crestUrl(r.name)+'" alt="" onerror="handleCrestError(this)" data-crest="'+esc(r.name)+'"><div><strong>'+esc(r.name)+'</strong><small>Academy ranking</small></div></div></td><td>'+r.count+'</td><td>'+r.current.toFixed(1)+'</td><td>'+r.prospect.toFixed(1)+'</td><td class="rank-score">'+r.score.toFixed(1)+'</td></tr>').join('')+'</tbody></table>';return;
+ }
+ const scored=allRadarPlayers.filter(p=>playerRankingScores(p)&&rankingEligible(p,activeRankingTab)&&
+  (position==='ALL'||cleanPosition(p.position)===position)&&
+  (club==='ALL'||p.club===club)&&
+  (!search||[p.name,p.club,p.nationality].some(v=>String(v||'').toLowerCase().includes(search))))
+ .map(p=>({...p,scores:playerRankingScores(p)})).sort((a,b)=>b.scores.combined-a.scores.combined||b.scores.prospect-a.scores.prospect).slice(0,100);
+ if(!scored.length){host.innerHTML='<div class="rank-empty"><span class="rank-status">EVALUACIONES PENDIENTES</span><strong>El ranking está listo. Faltan las primeras valoraciones.</strong><p>La base actual contiene datos de identidad, edad, posición, nacionalidad, altura y club, pero todavía no incluye estadísticas de rendimiento ni notas individuales. Para no inventar un Top 100, esta clasificación solo mostrará jugadores cuando añadamos sus dos puntuaciones verificadas: Current Level y Prospect Score.</p></div>';return;}
+ host.innerHTML='<table class="ranking-table"><thead><tr><th>#</th><th>Player</th><th>Age</th><th>Current Level</th><th>Prospect Score</th><th>Future Radar Score</th></tr></thead><tbody>'+scored.map((p,i)=>'<tr><td class="rank-number">'+(i+1)+'</td><td><div class="rank-player"><img src="'+crestUrl(p.club||'')+'" alt="" onerror="handleCrestError(this)" data-crest="'+esc(p.club||'')+'"><div><strong>'+esc(p.name)+'</strong><small>'+esc(p.club||'')+' · '+esc(p.nationality||'')+'</small></div></div></td><td>'+esc(p.age??'—')+'</td><td>'+p.scores.current.toFixed(1)+'</td><td>'+p.scores.prospect.toFixed(1)+'</td><td class="rank-score">'+p.scores.combined.toFixed(1)+'</td></tr>').join('')+'</tbody></table>';
+}
+function setupRankings(){
+ const clubSelect=document.getElementById('rankingClub');
+ [...new Set(allRadarPlayers.map(p=>p.club).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'es')).forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;clubSelect.appendChild(o)});
+ document.querySelectorAll('[data-ranking-tab]').forEach(btn=>btn.addEventListener('click',()=>{activeRankingTab=btn.dataset.rankingTab;document.querySelectorAll('[data-ranking-tab]').forEach(b=>b.classList.toggle('active',b===btn));document.getElementById('rankingPosition').disabled=activeRankingTab==='academies';document.getElementById('rankingClub').disabled=activeRankingTab==='academies';renderRankings()}));
+ ['rankingSearch','rankingPosition','rankingClub'].forEach(id=>document.getElementById(id).addEventListener(id==='rankingSearch'?'input':'change',renderRankings));
+ renderRankings();
+}
+
+async function init(){try{const r=await fetch('./future-radar-players.json');if(!r.ok)throw new Error('No se pudo cargar el archivo de jugadores');allRadarPlayers=await r.json();const clubs=[...new Set(allRadarPlayers.map(p=>p.club).filter(Boolean))];document.getElementById('heroCount').innerHTML=allRadarPlayers.length+' <small>perfiles registrados</small>';document.getElementById('clubCount').textContent=clubs.length;renderPlayers(allRadarPlayers);renderAcademies();setupRankings();loadCrests(clubs)}catch(e){document.getElementById('playerGrid').innerHTML='<div class="empty">No se ha podido cargar la base de datos. Recarga la página en unos segundos.</div>';document.getElementById('academiesContainer').innerHTML='<div class="empty">No se han podido cargar las canteras.</div>';console.error(e)}}
 document.getElementById('playerSearch').addEventListener('input',filterPlayers);document.getElementById('positionFilter').addEventListener('change',filterPlayers);document.getElementById('academySearch').addEventListener('input',renderAcademies);document.getElementById('closeRoster').addEventListener('click',()=>document.getElementById('rosterPanel').classList.remove('show'));document.addEventListener('DOMContentLoaded',init);
 </script></body></html>
