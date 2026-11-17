@@ -291,7 +291,8 @@
       "away": "Borussia Dortmund",
       "homeScore": 0,
       "awayScore": 5,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/bodoglimt-u19-borussia-dortmund-u19/uzrsujtc"
     },
     {
       "matchday": 2,
@@ -479,7 +480,8 @@
       "away": "Galatasaray",
       "homeScore": 3,
       "awayScore": 1,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/lille-u19-galatasaray-u19/trYsnztc"
     },
     {
       "matchday": 3,
@@ -567,7 +569,8 @@
       "away": "Stuttgart",
       "homeScore": 2,
       "awayScore": 2,
-      "status": "FT"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/galatasaray-u19-vfb-stuttgart-u19/HzrstrY"
     },
     {
       "matchday": 4,
@@ -816,7 +819,8 @@
       "away": "PSV Eindhoven",
       "kickoff": "16:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING"
+      "status": "UPCOMING",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/real-madrid-u19-psv-eindhoven-u19/PcLserY"
     },
     {
       "matchday": 5,
@@ -874,7 +878,8 @@
       "away": "Stuttgart",
       "kickoff": "15:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING"
+      "status": "UPCOMING",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/inter-u20-vfb-stuttgart-u19/HzrseLFg"
     },
     {
       "matchday": 5,
