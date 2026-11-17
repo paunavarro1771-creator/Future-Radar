@@ -1,6 +1,6 @@
 const PDF_URL = 'https://fdp.fifa.org/assetspublic/ce303/pdf/SquadLists-Spanish.pdf';
 const TEAM_CODES = new Set('ALG ARG AUS BEL BRA CMR CHI CHN CIV COL CRC CRO CUB DEN DOM ECU EGY ESP FIJ FRA GRE HAI HON ITA JAM JPN KOR MAR MEX MLI MNE MOZ NCL NZL PAN QAT ROU SEN SRB TAN TJK UGA URU UZB VEN VIE'.split(' '));
-const POSITION_MAP = { PO: 'GK', DF: 'DEF', MC: 'CM', DC: 'ST' };
+const POSITION_MAP = { PO: 'GK', DF: 'DEF', MC: 'CM', DC: 'ST', MF: 'CM', FW: 'ST' };
 
 function normalizeDate(raw) {
   const match = String(raw || '').match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
@@ -85,27 +85,50 @@ module.exports = async (req, res) => {
         const page = await pdf.getPage(pageNumber);
         const content = await page.getTextContent();
         const lines = pageLines(content.items);
-        const header = lines.filter(l => l.y > 470).map(l => l.text).join(' ');
-        const codeMatch = header.match(/\b([A-Z]{3})\b/g)?.find(code => TEAM_CODES.has(code));
+        // FIFA puts one national squad on each page. Read the country code from the page heading,
+        // rather than relying on a fixed vertical coordinate (the Spanish and English PDFs differ).
+        const header = lines.slice(0, 22).map(l => l.text).join(' ');
+        const codeMatch = header.match(/\(([A-Z]{3})\)/g)?.map(value => value.slice(1, 4)).find(code => TEAM_CODES.has(code));
         if (!codeMatch) continue;
         const teamCode = codeMatch;
         teamsFound.add(teamCode);
         for (const line of lines) {
-          if (!/^\d{1,2}$/.test(line.number) || !POSITION_MAP[line.pos]) continue;
-          const dob = normalizeDate(line.dob);
-          if (!dob) continue;
-          const clubRaw = line.club;
-          const clubCountry = clubRaw.match(/\(([A-Z]{3})\)\s*$/)?.[1] || '';
-          const club = clubRaw.replace(/\s*\([A-Z]{3}\)\s*$/, '').trim();
-          const height = Number(String(line.height).match(/\d{3}/)?.[0]);
-          const name = compact([line.firstNames, line.surnames]) || line.displayName;
-          if (!name) continue;
+          // Prefer coordinate-based columns when available; fall back to the full text row.
+          // This avoids silently dropping every player when FIFA changes PDF column positions.
+          let squadNumber = line.number;
+          let rawPosition = line.pos;
+          let dob = normalizeDate(line.dob);
+          let clubRaw = line.club;
+          let rawHeight = line.height;
+          let name = compact([line.firstNames, line.surnames]) || line.displayName;
+          if (!/^\\d{1,2}$/.test(squadNumber) || !POSITION_MAP[rawPosition] || !dob) {
+            const dateMatch = line.text.match(/\\b(\\d{1,2}\\/\\d{1,2}\\/\\d{4})\\b/);
+            if (!dateMatch) continue;
+            const dateIndex = line.text.indexOf(dateMatch[0]);
+            const beforeDate = line.text.slice(0, dateIndex).trim();
+            const afterDate = line.text.slice(dateIndex + dateMatch[0].length).trim();
+            const prefix = beforeDate.match(/^(\\d{1,2})\\s+(PO|DF|MC|DC|MF|FW)\\s+(.+)$/);
+            if (!prefix) continue;
+            squadNumber = prefix[1];
+            rawPosition = prefix[2];
+            dob = normalizeDate(dateMatch[0]);
+            // PLAYER NAME is the first display-name column after shirt number and position.
+            // Keep the first two tokens as FIFA's display-name format (e.g. "PONCE Guillermo").
+            name = prefix[3].split(/\\s+/).slice(0, 2).join(' ');
+            const heightMatch = afterDate.match(/\\s+(\\d{3})\\s*$/);
+            rawHeight = heightMatch ? heightMatch[1] : '';
+            clubRaw = heightMatch ? afterDate.slice(0, heightMatch.index).trim() : afterDate;
+          }
+          if (!/^\\d{1,2}$/.test(squadNumber) || !POSITION_MAP[rawPosition] || !dob || !name) continue;
+          const clubCountry = clubRaw.match(/\\(([A-Z]{3})\\)\\s*$/)?.[1] || '';
+          const club = clubRaw.replace(/\\s*\\([A-Z]{3}\\)\\s*$/, '').trim();
+          const height = Number(String(rawHeight).match(/\\d{3}/)?.[0]);
           players.push({
             name,
             position: POSITION_MAP[line.pos],
             nationality: teamCode,
             nationalTeamCode: teamCode,
-            squadNumber: Number(line.number),
+            squadNumber: Number(squadNumber),
             dateOfBirth: dob,
             age: ageOnTournamentStart(dob),
             club: club || clubRaw || '',
@@ -141,7 +164,8 @@ module.exports = async (req, res) => {
       teamsFound: [...teamsFound].sort(),
       teamCount: teamsFound.size,
       countsByTeam: counts,
-      pageErrors
+      pageErrors,
+      extractionDiagnostics: finalPlayers.length ? undefined : { sampleRows: pageErrors.length ? [] : 'PDF pages were read, but no rows matched the expected squad format.' }
     });
   } catch (error) {
     console.error('FIFA U17 squad import failed at stage:', stage, error);
