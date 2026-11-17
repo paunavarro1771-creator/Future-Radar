@@ -740,7 +740,8 @@
       "away": "Aston Villa",
       "kickoff": "11:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING"
+      "status": "UPCOMING",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/galatasaray-u19-aston-villa-u19/xcLstrY"
     },
     {
       "matchday": 5,
@@ -758,7 +759,8 @@
       "away": "Real Betis",
       "kickoff": "14:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING"
+      "status": "UPCOMING",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/real-betis-u19-sk-slovan-bratislava-u19/hpUsOpkc"
     },
     {
       "matchday": 5,
@@ -776,7 +778,8 @@
       "away": "AEK Athens",
       "kickoff": "15:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING"
+      "status": "UPCOMING",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/aek-athens-u19-como-u20/eAHbspQtc"
     },
     {
       "matchday": 5,
@@ -785,7 +788,8 @@
       "away": "Napoli",
       "kickoff": "16:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING"
+      "status": "UPCOMING",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/napoli-u20-manchester-city-u19/grYsRQGg"
     },
     {
       "matchday": 5,
