@@ -101,31 +101,31 @@ module.exports = async (req, res) => {
           let clubRaw = line.club;
           let rawHeight = line.height;
           let name = compact([line.firstNames, line.surnames]) || line.displayName;
-          if (!/^\\d{1,2}$/.test(squadNumber) || !POSITION_MAP[rawPosition] || !dob) {
-            const dateMatch = line.text.match(/\\b(\\d{1,2}\\/\\d{1,2}\\/\\d{4})\\b/);
+          if (!/^\d{1,2}$/.test(squadNumber) || !POSITION_MAP[rawPosition] || !dob) {
+            const dateMatch = line.text.match(/\b(\d{1,2}\\/\d{1,2}\\/\d{4})\b/);
             if (!dateMatch) continue;
             const dateIndex = line.text.indexOf(dateMatch[0]);
             const beforeDate = line.text.slice(0, dateIndex).trim();
             const afterDate = line.text.slice(dateIndex + dateMatch[0].length).trim();
-            const prefix = beforeDate.match(/^(\\d{1,2})\\s+(PO|DF|MC|DC|MF|FW)\\s+(.+)$/);
+            const prefix = beforeDate.match(/^(\d{1,2})\s+(PO|DF|MC|DC|MF|FW)\s+(.+)$/);
             if (!prefix) continue;
             squadNumber = prefix[1];
             rawPosition = prefix[2];
             dob = normalizeDate(dateMatch[0]);
             // PLAYER NAME is the first display-name column after shirt number and position.
             // Keep the first two tokens as FIFA's display-name format (e.g. "PONCE Guillermo").
-            name = prefix[3].split(/\\s+/).slice(0, 2).join(' ');
-            const heightMatch = afterDate.match(/\\s+(\\d{3})\\s*$/);
+            name = prefix[3].split(/\s+/).slice(0, 2).join(' ');
+            const heightMatch = afterDate.match(/\s+(\d{3})\s*$/);
             rawHeight = heightMatch ? heightMatch[1] : '';
             clubRaw = heightMatch ? afterDate.slice(0, heightMatch.index).trim() : afterDate;
           }
-          if (!/^\\d{1,2}$/.test(squadNumber) || !POSITION_MAP[rawPosition] || !dob || !name) continue;
-          const clubCountry = clubRaw.match(/\\(([A-Z]{3})\\)\\s*$/)?.[1] || '';
-          const club = clubRaw.replace(/\\s*\\([A-Z]{3}\\)\\s*$/, '').trim();
-          const height = Number(String(rawHeight).match(/\\d{3}/)?.[0]);
+          if (!/^\d{1,2}$/.test(squadNumber) || !POSITION_MAP[rawPosition] || !dob || !name) continue;
+          const clubCountry = clubRaw.match(/\\(([A-Z]{3})\\)\s*$/)?.[1] || '';
+          const club = clubRaw.replace(/\s*\\([A-Z]{3}\\)\s*$/, '').trim();
+          const height = Number(String(rawHeight).match(/\d{3}/)?.[0]);
           players.push({
             name,
-            position: POSITION_MAP[line.pos],
+            position: POSITION_MAP[rawPosition],
             nationality: teamCode,
             nationalTeamCode: teamCode,
             squadNumber: Number(squadNumber),
