@@ -149,6 +149,19 @@ footer{padding:28px 0;border-top:1px solid #26372c;color:#839389;font-size:10px}
 .youth-match-detail-cell strong{font-size:13px}
 .youth-match-data-note{background:#17241a;border-left:3px solid var(--green);padding:13px 15px;color:#bac9bd;font-size:11px;line-height:1.6;border-radius:0 8px 8px 0}
 .youth-match-official{display:inline-flex;margin-top:15px;background:var(--green);color:#10170d;text-decoration:none;font-weight:850;font-size:11px;padding:11px 15px;border-radius:8px}
+.youth-match-source-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.youth-match-source-actions a{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 13px;border-radius:8px;text-decoration:none;font-size:10px;font-weight:850;letter-spacing:.35px}
+.youth-match-source-actions .uefa-link{background:var(--green);color:#10170d}
+.youth-match-source-actions .sofa-link{background:#17251a;border:1px solid #405743;color:#e5eee6}
+.youth-match-data-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:20px 0 9px}
+.youth-match-data-head strong{font:700 14px 'Space Grotesk'}
+.youth-match-data-head span{font-size:9px;color:#b6c8b8;text-transform:uppercase;letter-spacing:.7px}
+.youth-match-data-panel{background:#111e15;border:1px solid #2c4030;border-radius:10px;padding:14px}
+.youth-match-data-panel p{margin:0;color:#bac9bd;font-size:11px;line-height:1.65}
+.youth-match-data-panel .data-status{display:flex;align-items:center;gap:8px;margin-bottom:8px;color:#e2ece3;font-size:11px;font-weight:800}
+.youth-match-data-panel .data-dot{width:7px;height:7px;border-radius:50%;background:#d6a64d;box-shadow:0 0 0 4px #d6a64d20}
+.youth-match-data-panel iframe{width:100%;min-height:520px;border:0;border-radius:8px;background:#fff}
+
 @media(max-width:600px){.youth-match-dialog{padding:16px}.youth-match-scoreboard{gap:7px}.youth-match-club{font-size:11px}.youth-match-club img{width:44px;height:44px}.youth-match-bigscore{font-size:24px}}
 @media(max-width:900px){.youth-calendar-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.youth-calendar-grid{grid-template-columns:1fr}.youth-calendar-filters .control{width:100%}}
@@ -487,12 +500,16 @@ function openYouthMatch(index){
  const modal=document.getElementById('youthMatchModal');
  const officialUrl=m.uefaMatchUrl||'https://www.uefa.com/uefayouthleague/fixtures-results/';
  const fmt=new Date(m.date+'T12:00:00').toLocaleDateString('es-ES',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+ const sofaWidget=m.sofascoreEventId?'https://www.sofascore.com/embed/event?id='+encodeURIComponent(m.sofascoreEventId):'';
+ const statsPanel=sofaWidget
+  ?'<div class="youth-match-data-head"><strong>Estadísticas del encuentro</strong><span>Fuente: Sofascore</span></div><div class="youth-match-data-panel"><iframe title="Estadísticas del partido en Sofascore" src="'+esc(sofaWidget)+'" loading="lazy" allow="clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>'
+  :'<div class="youth-match-data-head"><strong>Estadísticas del encuentro</strong><span>Datos verificados</span></div><div class="youth-match-data-panel"><div class="data-status"><i class="data-dot"></i> Estadísticas individuales pendientes de vinculación</div><p>Este partido todavía no tiene un identificador de evento verificado de Sofascore. Para evitar mostrar cifras incorrectas, Future Radar no inventa posesión, tiros, alineaciones ni goleadores. Puedes consultar la cobertura disponible en las fuentes externas.</p></div>';
  document.getElementById('youthMatchModalContent').innerHTML=
   '<h2 id="youthMatchModalTitle" style="font:700 22px Space Grotesk;margin:18px 0 0">Ficha del partido</h2>'+
   '<div class="youth-match-scoreboard"><div class="youth-match-club"><img src="'+esc(youthCrest(m.home))+'" alt="" onerror="handleCrestError(this)" data-crest="'+esc(youthTeamKey[m.home]||m.home)+'"><span>'+esc(m.home)+'</span></div><div class="youth-match-bigscore">'+(finished?m.homeScore+' - '+m.awayScore:'VS')+'</div><div class="youth-match-club"><img src="'+esc(youthCrest(m.away))+'" alt="" onerror="handleCrestError(this)" data-crest="'+esc(youthTeamKey[m.away]||m.away)+'"><span>'+esc(m.away)+'</span></div></div>'+
-  '<div class="youth-match-detail-grid"><div class="youth-match-detail-cell"><small>Fecha</small><strong>'+fmt+'</strong></div><div class="youth-match-detail-cell"><small>Jornada</small><strong>'+m.matchday+'</strong></div><div class="youth-match-detail-cell"><small>Estado</small><strong>'+(finished?'Finalizado':'Próximo')+'</strong></div><div class="youth-match-detail-cell"><small>Hora</small><strong>'+(m.kickoff?m.kickoff+' CET':(finished?'—':'Por confirmar'))+'</strong></div></div>'+
-  '<div class="youth-match-data-note">'+(m.uefaMatchUrl?'La ficha oficial de UEFA permite consultar las estadísticas del encuentro, alineaciones y eventos publicados.':'Ficha de Future Radar FC. Estamos vinculando los identificadores oficiales de cada partido para abrir sus estadísticas individuales. Mientras tanto, puedes consultar el calendario oficial de UEFA.')+'</div>'+
-  '<a class="youth-match-official" href="'+esc(officialUrl)+'" target="_blank" rel="noopener">'+(m.uefaMatchUrl?'VER ESTADÍSTICAS OFICIALES UEFA ↗':'ABRIR CALENDARIO OFICIAL UEFA ↗')+'</a>';
+  '<div class="youth-match-detail-grid"><div class="youth-match-detail-cell"><small>Fecha</small><strong>'+fmt+'</strong></div><div class="youth-match-detail-cell"><small>Competición</small><strong>UEFA Youth League</strong></div><div class="youth-match-detail-cell"><small>Jornada</small><strong>'+m.matchday+'</strong></div><div class="youth-match-detail-cell"><small>Estado</small><strong>'+(finished?'Finalizado':'Próximo')+'</strong></div></div>'+
+  statsPanel+
+  '<div class="youth-match-source-actions"><a class="uefa-link" href="'+esc(officialUrl)+'" target="_blank" rel="noopener">CENTRO OFICIAL UEFA ↗</a><a class="sofa-link" href="https://www.sofascore.com/es" target="_blank" rel="noopener">BUSCAR EN SOFASCORE ↗</a></div>';
  modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
 }
 function closeYouthMatch(){const modal=document.getElementById('youthMatchModal');modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
