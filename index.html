@@ -83,12 +83,37 @@ footer{padding:28px 0;border-top:1px solid #26372c;color:#839389;font-size:10px}
 .u17-squad-player{font-weight:700}.u17-squad-club{color:#aab8ae}
 .u17-squad-count{font:700 13px 'Space Grotesk';color:var(--green);margin:10px 0}
 
+
+/* UEFA Youth League calendar */
+.youth-calendar-head{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin:20px 0}
+.youth-calendar-summary{display:flex;gap:9px;flex-wrap:wrap}
+.youth-calendar-chip{border:1px solid #304234;background:#101913;color:#cbd8ce;padding:9px 12px;border-radius:8px;font-size:10px}
+.youth-calendar-chip strong{color:var(--green);font:700 14px 'Space Grotesk';margin-right:5px}
+.youth-calendar-filters{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.youth-calendar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.youth-event{position:relative;border:1px solid #2b3d31;background:linear-gradient(145deg,#142018,#0d1510);border-radius:12px;padding:17px;min-width:0;overflow:hidden}
+.youth-event:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:#506b4d}
+.youth-event.upcoming:before{background:var(--green)}
+.youth-event-date{font:700 19px 'Space Grotesk';color:var(--green);letter-spacing:-.4px}
+.youth-event-month{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1.3px;margin-top:3px}
+.youth-event-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.youth-event-status{font-size:8px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;padding:5px 7px;border-radius:5px;border:1px solid #3a493e;color:#aebdb2;background:#101913;white-space:nowrap}
+.youth-event.upcoming .youth-event-status{color:var(--green);border-color:#587744;background:#1a2818}
+.youth-event h3{font:700 14px 'Space Grotesk';margin:15px 0 6px}
+.youth-event-path{font-size:9px;color:#a8b8ac;letter-spacing:.7px;text-transform:uppercase}
+.youth-event-note{font-size:10px;color:var(--muted);line-height:1.6;margin:10px 0 0}
+.youth-calendar-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:18px;padding:15px;border:1px solid #2b3d31;background:#101913;border-radius:10px}
+.youth-calendar-footer p{font-size:10px;color:var(--muted);line-height:1.6;margin:0;max-width:680px}
+.youth-calendar-footer a{font-size:11px;color:var(--green);font-weight:800;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){.youth-calendar-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.youth-calendar-grid{grid-template-columns:1fr}.youth-calendar-filters .control{width:100%}.youth-event{padding:15px}}
+
 </style></head>
 <body>
 <div class="topline">Independent football intelligence · Season 2026/27</div>
 <header><div class="wrap nav">
 <a class="brand" href="#inicio"><div class="brand-mark">FR</div><div><span class="brand-name">FUTURE RADAR FC</span><span class="brand-sub">SCOUTING & TALENT DISCOVERY</span></div></a>
-<nav class="navlinks"><a href="#inicio">Inicio</a><a href="#jugadores">Jugadores</a><a href="#canteras">Canteras</a><a href="#rankings">Rankings</a><a href="#partidos">Partidos</a></nav>
+<nav class="navlinks"><a href="#inicio">Inicio</a><a href="#jugadores">Jugadores</a><a href="#canteras">Canteras</a><a href="#rankings">Rankings</a><a href="#youth-league">Youth League</a><a href="#partidos">Partidos</a></nav>
 <a class="nav-cta" href="#jugadores">EXPLORAR BASE ↗</a>
 </div></header>
 <main>
@@ -128,6 +153,14 @@ footer{padding:28px 0;border-top:1px solid #26372c;color:#839389;font-size:10px}
 <select id="rankingClub" class="control"><option value="ALL">Todos los clubes</option></select><select id="rankingMetric" class="control ranking-metric"><option value="goals">Goles</option><option value="matchesPlayed">Partidos</option><option value="minutesPlayed">Minutos</option><option value="assists">Asistencias</option><option value="totalAttempts">Disparos</option><option value="goalsConceded">Goles encajados (porteros)</option></select>
 </div>
 <div class="ranking-table-wrap" id="rankingResults"><div class="rank-empty"><strong>Preparando rankings…</strong><p>Consultando las evaluaciones disponibles en la base de datos.</p></div></div>
+</div></section>
+
+<section class="section" id="youth-league"><div class="wrap">
+<div class="section-head"><div><div class="section-kicker">European youth competition / 04</div><h2>UEFA Youth League <span class="accent">2026/27</span></h2><p class="section-desc">Sigue las jornadas de la fase de liga, la ruta de campeones nacionales y las eliminatorias. Fechas oficiales de competición en un único calendario.</p></div></div>
+<div class="youth-calendar-head"><div class="youth-calendar-summary"><span class="youth-calendar-chip"><strong>6</strong> jornadas de liga</span><span class="youth-calendar-chip"><strong>3</strong> rondas de campeones</span><span class="youth-calendar-chip"><strong>19 ABR</strong> final</span></div></div>
+<div class="youth-calendar-filters"><select class="control" id="youthPathFilter"><option value="ALL">Todas las fases</option><option value="league">Ruta Champions League</option><option value="domestic">Ruta campeones nacionales</option><option value="knockout">Fase eliminatoria</option></select><select class="control" id="youthStatusFilter"><option value="ALL">Todos los estados</option><option value="upcoming">Próximas</option><option value="completed">Finalizadas</option></select></div>
+<div class="youth-calendar-grid" id="youthCalendarGrid"><div class="empty">Cargando calendario UEFA Youth League…</div></div>
+<div class="youth-calendar-footer"><p>Las fechas corresponden al calendario oficial de la UEFA. Los emparejamientos, horarios y sedes de cada partido pueden estar sujetos a confirmación o cambios.</p><a href="https://www.uefa.com/uefayouthleague/fixtures-results/" target="_blank" rel="noopener">Ver partidos y resultados oficiales ↗</a></div>
 </div></section>
 <section class="section" id="partidos"><div class="wrap">
 <div class="section-head"><div><div class="section-kicker">International tournament / 04</div><h2>FIFA U-17 World Cup <span class="accent">Qatar 2026</span></h2><p class="section-desc">El escaparate mundial del talento U17. 48 selecciones, 12 grupos y seguimiento de calendario y resultados.</p></div></div>
@@ -375,6 +408,44 @@ async function setupU17(){
  }catch(e){document.getElementById('u17Fixtures').innerHTML='<div class="empty">No se ha podido cargar el calendario U17.</div>';console.error(e)}
 }
 
+
+const YOUTH_LEAGUE_EVENTS=[
+ {path:'league',start:'2026-09-08',end:'2026-09-10',date:'8–10 SEP',month:'Septiembre 2026',title:'Jornada 1',note:'Inicio de la fase de liga · partidos entre martes y jueves.'},
+ {path:'domestic',start:'2026-09-16',end:'2026-09-16',date:'16 SEP',month:'Septiembre 2026',title:'Primera ronda · ida',note:'Ruta de campeones nacionales.'},
+ {path:'league',start:'2026-10-13',end:'2026-10-14',date:'13–14 OCT',month:'Octubre 2026',title:'Jornada 2',note:'Segunda jornada de la fase de liga.'},
+ {path:'domestic',start:'2026-10-14',end:'2026-10-14',date:'14 OCT',month:'Octubre 2026',title:'Primera ronda · vuelta',note:'Se completan las eliminatorias de primera ronda.'},
+ {path:'league',start:'2026-10-20',end:'2026-10-21',date:'20–21 OCT',month:'Octubre 2026',title:'Jornada 3',note:'Tercera jornada de la fase de liga.'},
+ {path:'domestic',start:'2026-10-28',end:'2026-10-28',date:'28 OCT',month:'Octubre 2026',title:'Segunda ronda · ida',note:'Ruta de campeones nacionales.'},
+ {path:'league',start:'2026-11-03',end:'2026-11-04',date:'3–4 NOV',month:'Noviembre 2026',title:'Jornada 4',note:'Cuarta jornada de la fase de liga.'},
+ {path:'domestic',start:'2026-11-04',end:'2026-11-04',date:'4 NOV',month:'Noviembre 2026',title:'Segunda ronda · vuelta',note:'Se completan las eliminatorias de segunda ronda.'},
+ {path:'league',start:'2026-11-24',end:'2026-11-25',date:'24–25 NOV',month:'Noviembre 2026',title:'Jornada 5',note:'Quinta jornada de la fase de liga.'},
+ {path:'domestic',start:'2026-11-25',end:'2026-11-25',date:'25 NOV',month:'Noviembre 2026',title:'Tercera ronda · ida',note:'Última ronda de la ruta de campeones nacionales.'},
+ {path:'league',start:'2026-12-08',end:'2026-12-09',date:'8–9 DIC',month:'Diciembre 2026',title:'Jornada 6',note:'Última jornada de la fase de liga.'},
+ {path:'domestic',start:'2026-12-09',end:'2026-12-09',date:'9 DIC',month:'Diciembre 2026',title:'Tercera ronda · vuelta',note:'Se deciden los diez equipos que avanzan por esta ruta.'},
+ {path:'knockout',start:'2026-12-11',end:'2026-12-11',date:'11 DIC',month:'Diciembre 2026',title:'Sorteo de dieciseisavos',note:'Sorteo de la ronda de 32 en Nyon.'},
+ {path:'knockout',start:'2027-02-02',end:'2027-02-03',date:'2–3 FEB',month:'Febrero 2027',title:'Ronda de 32',note:'Comienza la fase eliminatoria a partido único.'},
+ {path:'knockout',start:'2027-02-05',end:'2027-02-05',date:'5 FEB',month:'Febrero 2027',title:'Sorteo de octavos en adelante',note:'Sorteo abierto para las siguientes rondas.'},
+ {path:'knockout',start:'2027-02-23',end:'2027-02-24',date:'23–24 FEB',month:'Febrero 2027',title:'Octavos de final',note:'Eliminatoria a partido único.'},
+ {path:'knockout',start:'2027-03-16',end:'2027-03-17',date:'16–17 MAR',month:'Marzo 2027',title:'Cuartos de final',note:'Eliminatoria a partido único.'},
+ {path:'knockout',start:'2027-04-16',end:'2027-04-16',date:'16 ABR',month:'Abril 2027',title:'Semifinales · Final Four',note:'Semifinales en sede única.'},
+ {path:'knockout',start:'2027-04-19',end:'2027-04-19',date:'19 ABR',month:'Abril 2027',title:'FINAL',note:'Final de la UEFA Youth League 2026/27.'}
+];
+function renderYouthCalendar(){
+ const path=document.getElementById('youthPathFilter').value,statusFilter=document.getElementById('youthStatusFilter').value;
+ const today=new Date();today.setHours(0,0,0,0);
+ const events=YOUTH_LEAGUE_EVENTS.map(e=>{const end=new Date(e.end+'T23:59:59');const start=new Date(e.start+'T00:00:00');const status=today>end?'completed':today>=start?'live':'upcoming';return {...e,status}})
+ .filter(e=>(path==='ALL'||e.path===path)&&(statusFilter==='ALL'||(statusFilter==='upcoming'&&e.status==='upcoming')||(statusFilter==='completed'&&e.status==='completed')));
+ const labels={league:'Ruta Champions League',domestic:'Ruta campeones nacionales',knockout:'Fase eliminatoria'};
+ const statusLabels={completed:'Finalizada',live:'En curso',upcoming:'Próxima'};
+ const host=document.getElementById('youthCalendarGrid');
+ host.innerHTML=events.map(e=>'<article class="youth-event '+e.status+'"><div class="youth-event-top"><div><div class="youth-event-date">'+e.date+'</div><div class="youth-event-month">'+e.month+'</div></div><span class="youth-event-status">'+statusLabels[e.status]+'</span></div><h3>'+e.title+'</h3><div class="youth-event-path">'+labels[e.path]+'</div><p class="youth-event-note">'+e.note+'</p></article>').join('')||'<div class="empty">No hay jornadas para los filtros seleccionados.</div>';
+}
+function setupYouthCalendar(){
+ document.getElementById('youthPathFilter').addEventListener('change',renderYouthCalendar);
+ document.getElementById('youthStatusFilter').addEventListener('change',renderYouthCalendar);
+ renderYouthCalendar();
+}
+
 async function init(){try{const r=await fetch('./future-radar-players.json');if(!r.ok)throw new Error('No se pudo cargar el archivo de jugadores');allRadarPlayers=await r.json();const clubs=[...new Set(allRadarPlayers.map(p=>p.club).filter(Boolean))];document.getElementById('heroCount').innerHTML=allRadarPlayers.length+' <small>perfiles registrados</small>';document.getElementById('clubCount').textContent=clubs.length;renderPlayers(allRadarPlayers);renderAcademies();setupRankings();loadCrests(clubs)}catch(e){document.getElementById('playerGrid').innerHTML='<div class="empty">No se ha podido cargar la base de datos. Recarga la página en unos segundos.</div>';document.getElementById('academiesContainer').innerHTML='<div class="empty">No se han podido cargar las canteras.</div>';console.error(e)}}
-document.getElementById('playerSearch').addEventListener('input',filterPlayers);document.getElementById('positionFilter').addEventListener('change',filterPlayers);document.getElementById('academySearch').addEventListener('input',renderAcademies);document.getElementById('closeRoster').addEventListener('click',()=>document.getElementById('rosterPanel').classList.remove('show'));document.addEventListener('DOMContentLoaded',()=>{init();setupU17()});
+document.getElementById('playerSearch').addEventListener('input',filterPlayers);document.getElementById('positionFilter').addEventListener('change',filterPlayers);document.getElementById('academySearch').addEventListener('input',renderAcademies);document.getElementById('closeRoster').addEventListener('click',()=>document.getElementById('rosterPanel').classList.remove('show'));document.addEventListener('DOMContentLoaded',()=>{init();setupU17();setupYouthCalendar()});
 </script></body></html>
