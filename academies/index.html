@@ -367,7 +367,7 @@ function normalizeClubForCrest(value){
 }
 function academyCrestSearchForms(value){
  const full=String(value||'').replace(/\b(?:U\s?\d{1,2}|Under\s?\d{1,2})\b/ig,'').trim();
- const forms=[full,full.replace(/^(?:FC|CF|AFC|SC|FK|SK|AS|US|RC|CA|CD|UD|RCD|AC|SV|VfB|VfL)\s+/i,'').trim(),full.replace(/\s+(?:FC|CF|AFC|SC|FK|SK|AS|US|RC|CA|CD|UD|AC)$/i,'').trim()];
+ const forms=[full,full.replace(/^(?:FC|CF|AFC|SC|FK|SK|AS|US|RC|CA|CD|UD|RCD|AC|SV|VfB|VfL)\s+/i,'').trim(),full.replace(/\s+(?:FC|CF|AFC|FK|SK|AS|US|RC|CA|CD|UD|AC)$/i,'').trim()];
  return [...new Set(forms.filter(Boolean))];
 }
 async function lookupAcademyCrest(club){
