@@ -430,7 +430,7 @@ function u17Team(code){return u17Data.teams.find(t=>t.code===code);}
 function u17Flag(team,extraClass='u17-flag'){return '<img class="'+extraClass+'" src="'+team.flag+'" alt="Bandera de '+team.name+'" loading="lazy" decoding="async">';}
 let u17LiveMatches={};
 function u17MatchKey(date,home,away){return [date,home,away].join('|')}
-function u17Slug(value){return String(value||'').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+function u17Slug(value){return frSlug(value)}
 function renderU17Fixtures(){
  const date=document.getElementById('u17Date').value,group=document.getElementById('u17Group').value,term=document.getElementById('u17TeamSearch').value.trim().toLowerCase();
  const groups=new Map(u17Data.teams.map(t=>[t.code,t.group]));
