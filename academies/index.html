@@ -362,7 +362,42 @@ function observePlayerPhotos(){
 }
 function frSlug(v){return String(v||'').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
 function renderPlayers(players){const grid=document.getElementById('playerGrid');if(!players.length){grid.innerHTML='<div class="empty">No hay jugadores que coincidan con la búsqueda.</div>';return}grid.innerHTML=players.map(p=>{const club=p.club||'Club no disponible',nat=p.nationality||'',flag=flagUrl(nat),photoKey=playerPhotoKey(p),initials=(p.name||'FR').split(/\\s+/).slice(0,2).map(x=>x[0]||'').join('').toUpperCase();return '<a class="player-card" href="/players/'+frSlug(p.name)+'-'+String(p.dateOfBirth||'').replace(/[^0-9]/g,'')+'"><div class="player-photo-wrap"><div class="player-photo-placeholder" data-photo-placeholder="'+esc(photoKey)+'">'+esc(initials)+'</div><img class="player-photo" data-player-photo="'+esc(photoKey)+'" alt="Foto de '+esc(p.name||'jugador')+'" loading="lazy" hidden></div><div class="player-top"><span class="position">'+esc(cleanPosition(p.position))+'</span>'+(flag?'<img class="flag" src="'+flag+'" alt="'+esc(nat)+'" title="'+esc(nat)+'">':'<span class="flag">🌍</span>')+'</div><div class="player-main"><img class="crest" data-crest="'+esc(club)+'" src="'+crestUrl(club)+'" onerror="handleCrestError(this)" alt="Escudo de '+esc(club)+'"><div style="min-width:0"><h3 class="player-name">'+esc(p.name||'Jugador sin nombre')+'</h3><div class="player-club">'+esc(club)+'</div></div></div><div class="player-meta"><span>EDAD <b>'+(p.age??'—')+'</b></span><span>ALTURA <b>'+(p.heightCm?p.heightCm+' cm':'—')+'</b></span><span>TEMP. <b>'+esc(p.season||'26/27')+'</b></span></div></a>'}).join('');observePlayerPhotos();}
-function renderAcademies(){const term=document.getElementById('academySearch').value.trim().toLowerCase();const map=new Map();allRadarPlayers.forEach(p=>{const c=p.club||'Club no disponible';if(!map.has(c))map.set(c,[]);map.get(c).push(p)});const entries=[...map.entries()].sort((a,b)=>a[0].localeCompare(b[0],'es')).filter(([c])=>c.toLowerCase().includes(term));const el=document.getElementById('academiesContainer');if(!entries.length){el.innerHTML='<div class="empty">No se han encontrado canteras.</div>';return}el.innerHTML=entries.map(([c,ps])=>'<a class="academy-card" href="/academies/'+frSlug(c)+'"><img data-crest="'+esc(c)+'" src="'+crestUrl(c)+'" onerror="handleCrestError(this)" alt="Escudo de '+esc(c)+'"><span><strong>'+esc(c)+'</strong><small>'+ps.length+' jugadores registrados</small></span></a>').join('');document.querySelectorAll('[data-crest]').forEach(img=>{img.onerror=()=>handleCrestError(img);img.src=crestUrl(img.dataset.crest)})}
+function normalizeClubForCrest(value){return String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\b(u17|u18|u19|u20|u21|under ?(17|18|19|20|21))\b/g,'').replace(/\b(football club|soccer club|fc|f\.c\.|cf|c\.f\.|sc|s\.c\.|afc)\b/g,'').replace(/[^a-z0-9]+/g,' ').trim()}
+async function lookupAcademyCrest(club){
+ const searchName=String(club||'').replace(/\s+(u17|u18|u19|u20|u21)$/i,'').trim();
+ try{
+  const searchUrl='https://www.wikidata.org/w/api.php?action=wbsearchentities&search='+encodeURIComponent(searchName)+'&language=en&uselang=en&type=item&limit=10&format=json&origin=*';
+  const sr=await fetch(searchUrl);if(!sr.ok)return null;const sd=await sr.json();
+  const target=normalizeClubForCrest(searchName);
+  const hits=(sd.search||[]).filter(x=>normalizeClubForCrest(x.label)===target);
+  if(!hits.length)return null;
+  const ids=hits.map(x=>x.id).join('|');
+  const er=await fetch('https://www.wikidata.org/w/api.php?action=wbgetentities&ids='+encodeURIComponent(ids)+'&props=claims&format=json&origin=*');
+  if(!er.ok)return null;const ed=await er.json();
+  for(const hit of hits){
+   const claims=ed.entities?.[hit.id]?.claims||{};
+   const statement=(claims.P154||[]).find(c=>c.rank==='preferred')||(claims.P154||[])[0]||(claims.P94||[]).find(c=>c.rank==='preferred')||(claims.P94||[])[0];
+   const file=statement?.mainsnak?.datavalue?.value;
+   if(file)return 'https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(file)+'?width=180';
+  }
+ }catch(e){}
+ return null;
+}
+const academyCrestPromises=new Map();
+let academyCrestObserver=null;
+function observeAcademyCrests(){
+ const images=[...document.querySelectorAll('#academiesContainer img[data-crest]')];
+ if(!('IntersectionObserver' in window)){images.forEach(img=>loadAcademyCrest(img));return}
+ if(!academyCrestObserver)academyCrestObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){academyCrestObserver.unobserve(entry.target);loadAcademyCrest(entry.target)}}),{rootMargin:'250px'});
+ images.forEach(img=>{if(!crestOverrides[img.dataset.crest]&&!crestCache[img.dataset.crest])academyCrestObserver.observe(img)});
+}
+async function loadAcademyCrest(img){
+ const club=img.dataset.crest;if(!club||crestOverrides[club]||crestCache[club]){img.src=crestUrl(club);return}
+ if(!academyCrestPromises.has(club))academyCrestPromises.set(club,lookupAcademyCrest(club));
+ const logo=await academyCrestPromises.get(club);
+ if(logo){crestCache[club]=logo;document.querySelectorAll('#academiesContainer img[data-crest="'+CSS.escape(club)+'"]').forEach(node=>{node.src=logo})}
+}
+function renderAcademies(){const term=document.getElementById('academySearch').value.trim().toLowerCase();const map=new Map();allRadarPlayers.forEach(p=>{const c=p.club||'Club no disponible';if(!map.has(c))map.set(c,[]);map.get(c).push(p)});const entries=[...map.entries()].sort((a,b)=>a[0].localeCompare(b[0],'es')).filter(([c])=>c.toLowerCase().includes(term));const el=document.getElementById('academiesContainer');if(!entries.length){el.innerHTML='<div class="empty">No se han encontrado canteras.</div>';return}el.innerHTML=entries.map(([c,ps])=>'<a class="academy-card" href="/academies/'+frSlug(c)+'"><img data-crest="'+esc(c)+'" src="'+crestUrl(c)+'" onerror="handleCrestError(this)" alt="Escudo de '+esc(c)+'"><span><strong>'+esc(c)+'</strong><small>'+ps.length+' jugadores registrados</small></span></a>').join('');document.querySelectorAll('#academiesContainer [data-crest]').forEach(img=>{img.onerror=()=>handleCrestError(img);img.src=crestUrl(img.dataset.crest)});observeAcademyCrests()}
 function openRoster(club){const players=allRadarPlayers.filter(p=>p.club===club).sort((a,b)=>(a.name||'').localeCompare(b.name||''));document.getElementById('rosterName').textContent=club;document.getElementById('rosterCount').textContent=players.length+' jugadores · Temporada 2026/27';const img=document.getElementById('rosterCrest');img.dataset.crest=club;img.onerror=()=>handleCrestError(img);img.src=crestUrl(club);document.getElementById('rosterList').innerHTML=players.map(p=>'<div class="roster-player"><div><strong>'+esc(p.name||'Sin nombre')+'</strong><small>'+esc(cleanPosition(p.position))+' · '+esc(p.clubCountry||'')+'</small></div><div class="roster-right">'+(flagUrl(p.nationality)?'<img src="'+flagUrl(p.nationality)+'" width="20" alt="">':'🌍')+'<div>'+((p.age??'—')+' años')+'</div></div></div>').join('');const panel=document.getElementById('rosterPanel');panel.classList.add('show');document.querySelectorAll('.academy-card').forEach(b=>b.classList.toggle('active',b.dataset.club===club));panel.scrollIntoView({behavior:'smooth',block:'nearest'})}
 function filterPlayers(){const term=document.getElementById('playerSearch').value.trim().toLowerCase();const pos=document.getElementById('positionFilter').value;renderPlayers(allRadarPlayers.filter(p=>(String(p.name||'').toLowerCase().includes(term)||String(p.club||'').toLowerCase().includes(term)||String(p.nationality||'').toLowerCase().includes(term))&&(pos==='ALL'||cleanPosition(p.position)===pos)))}
 
