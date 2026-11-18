@@ -5,8 +5,23 @@
 const $=id=>document.getElementById(id), esc=v=>String(v??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])), slug=v=>String(v||'').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''), path=location.pathname.split('/').filter(Boolean), kind=path[0], key=decodeURIComponent(path.slice(1).join('/'));
 const flag=code=>{const c=String(code||'').toUpperCase();return /^[A-Z]{3}$/.test(c)?String.fromCodePoint(...[...c].map(x=>127397+x.charCodeAt(0))):'🌍'};
 const crest=name=>'https://www.google.com/s2/favicons?domain='+encodeURIComponent(name)+'.com&sz=128';
-function normalizeAcademyCrestName(v){return String(v||'').replace(/\b(?:U\s?\d{1,2}|Under\s?\d{1,2})\b/ig,'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\b(football club|soccer club|fc|f\.c\.|cf|c\.f\.|afc)\b/g,'').replace(/[^a-z0-9]+/g,' ').trim()}
-async function findAcademyCrest(names){for(const name of names){try{const q=await fetch('https://www.wikidata.org/w/api.php?action=wbsearchentities&search='+encodeURIComponent(name)+'&language=en&uselang=en&type=item&limit=8&format=json&origin=*');if(!q.ok)continue;const results=await q.json(),target=normalizeAcademyCrestName(name),hits=(results.search||[]).filter(x=>normalizeAcademyCrestName(x.label)===target);if(!hits.length)continue;const e=await fetch('https://www.wikidata.org/w/api.php?action=wbgetentities&ids='+hits.map(x=>x.id).join('|')+'&props=claims&format=json&origin=*');if(!e.ok)continue;const data=await e.json();for(const hit of hits){const claims=data.entities?.[hit.id]?.claims||{},items=[...(claims.P154||[]),...(claims.P94||[])],item=items.find(x=>x.rank==='preferred')||items[0],file=item?.mainsnak?.datavalue?.value;if(file)return 'https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(file)+'?width=180'}}catch(e){}}return null}
+function normalizeAcademyCrestName(v){return String(v||'').replace(/\\b(?:U\\s?\\d{1,2}|Under\\s?\\d{1,2})\\b/ig,'').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase().replace(/\\b(football club|soccer club|club de football|club de futbol|fc|f\\.c\\.|cf|c\\.f\\.|afc)\\b/g,'').replace(/[^a-z0-9]+/g,' ').trim()}
+function academyCrestForms(v){const full=String(v||'').replace(/\\b(?:U\\s?\\d{1,2}|Under\\s?\\d{1,2})\\b/ig,'').trim();return [...new Set([full,full.replace(/^(?:FC|CF|AFC|SC|FK|SK|AS|US|RC|CA|CD|UD|RCD|AC|SV)\\s+/i,'').trim(),full.replace(/\\s+(?:FC|CF|AFC|SC|FK|SK|AS|US|RC|CA|CD|UD|AC)$/i,'').trim()].filter(Boolean))}
+async function findAcademyCrest(names){
+ for(const name of names){
+  try{
+   const forms=academyCrestForms(name),targets=new Set(forms.map(normalizeAcademyCrestName)),hits=new Map();
+   for(const query of forms){const r=await fetch('https://www.wikidata.org/w/api.php?action=wbsearchentities&search='+encodeURIComponent(query)+'&language=en&uselang=en&type=item&limit=12&format=json&origin=*');if(!r.ok)continue;(await r.json()).search?.forEach(x=>{if(x.id)hits.set(x.id,x)});}
+   if(!hits.size)continue;
+   const ids=[...hits.keys()],entities={};
+   for(let i=0;i<ids.length;i+=40){const r=await fetch('https://www.wikidata.org/w/api.php?action=wbgetentities&ids='+encodeURIComponent(ids.slice(i,i+40).join('|'))+'&props=claims|labels|aliases&languages=en|es|fr|de|it|pt|nl|no|tr|da&format=json&origin=*');if(r.ok)Object.assign(entities,(await r.json()).entities||{});}
+   const logos=[];
+   for(const entity of Object.values(entities)){const namesFound=[];Object.values(entity.labels||{}).forEach(x=>namesFound.push(x.value));Object.values(entity.aliases||{}).forEach(list=>list.forEach(x=>namesFound.push(x.value)));if(!namesFound.some(x=>targets.has(normalizeAcademyCrestName(x))))continue;const c=entity.claims||{},logo=(c.P154||[]).find(x=>x.rank==='preferred')||(c.P154||[]).find(x=>x.rank!=='deprecated'),badge=(c.P94||[]).find(x=>x.rank==='preferred')||(c.P94||[]).find(x=>x.rank!=='deprecated'),file=logo?.mainsnak?.datavalue?.value||badge?.mainsnak?.datavalue?.value;if(file)logos.push({file,preferred:logo?.rank==='preferred'||badge?.rank==='preferred'});}
+   logos.sort((a,b)=>Number(b.preferred)-Number(a.preferred));if(logos.length)return 'https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(logos[0].file)+'?width=180';
+  }catch(e){}
+ }
+ return null;
+}
 function stats(p){return p.youthLeagueStats||{}}
 function academyCategory(club){const m=String(club||'').match(/\b(?:U\s?(\d{1,2})|Under\s?(\d{1,2}))\b/i);return m?'U'+(m[1]||m[2]):'Sin categoría indicada'}
 function academyGroupKey(club){return String(club||'').replace(/\b(?:U\s?\d{1,2}|Under\s?\d{1,2})\b/ig,'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\b(football club|soccer club|fc|f\.c\.|cf|c\.f\.|afc)\b/g,'').replace(/[^a-z0-9]+/g,' ').trim()}
