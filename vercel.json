@@ -30,6 +30,22 @@
     {
       "source": "/matches/:slug/",
       "destination": "/detail.html"
+    },
+    {
+      "source": "/compare",
+      "destination": "/compare/index.html"
+    },
+    {
+      "source": "/compare/",
+      "destination": "/compare/index.html"
+    },
+    {
+      "source": "/scouting",
+      "destination": "/scouting/index.html"
+    },
+    {
+      "source": "/scouting/",
+      "destination": "/scouting/index.html"
     }
   ]
 }
