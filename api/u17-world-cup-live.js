@@ -80,6 +80,7 @@ async function listMatches(dates) {
   const events = payloads.flatMap(payload => Array.isArray(payload.events) ? payload.events : []);
   return events.filter(event => tournamentId(event) === TOURNAMENT_ID).map(event => ({
     ...simplify(event),
+    date: event.startTimestamp ? new Date(event.startTimestamp * 1000).toISOString().slice(0, 10) : null,
     homeCode: codeForTeam(event.homeTeam?.name),
     awayCode: codeForTeam(event.awayTeam?.name)
   })).filter(event => event.homeCode && event.awayCode);
