@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<base href="/">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Canteras | Future Radar FC</title>
+<meta name="description" content="Plataforma independiente de scouting y seguimiento de talento joven internacional.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080d0b;--panel:#101915;--panel2:#141f19;--line:#25352c;--muted:#93a49a;--text:#f2f7f3;--green:#b7f36b;--green2:#83c94b;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif}a{color:inherit;text-decoration:none}button,input,select{font:inherit}
+.wrap{width:min(1160px,calc(100% - 40px));margin:auto}.topline{height:34px;background:#111b15;border-bottom:1px solid var(--line);color:var(--green);font-size:10px;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;font-weight:800}
+header{position:sticky;top:0;z-index:20;background:rgba(8,13,11,.9);backdrop-filter:blur(18px);border-bottom:1px solid rgba(183,243,107,.12)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:42px;height:42px;border-radius:13px;background:var(--green);color:#10180e;display:grid;place-items:center;font:700 17px 'Space Grotesk';box-shadow:0 0 28px #b7f36b22}.brand-name{font:700 17px 'Space Grotesk';letter-spacing:1.2px}.brand-sub{display:block;font-size:9px;color:var(--muted);letter-spacing:2px;margin-top:2px}.navlinks{display:flex;gap:28px;color:#b9c6bd;font-size:13px;font-weight:600}.navlinks a:hover{color:var(--green)}.nav-cta{padding:11px 16px;border:1px solid #48623c;border-radius:9px;color:var(--green);font-size:12px;font-weight:700}
+.hero{position:relative;padding:88px 0 82px;overflow:hidden;background:radial-gradient(ellipse at 78% 40%,#20341e 0%,transparent 44%),linear-gradient(120deg,#0a100d,#0b120e 58%,#101a12)}.hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(#b7f36b08 1px,transparent 1px),linear-gradient(90deg,#b7f36b08 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(90deg,transparent,#000)}.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.3fr .7fr;gap:70px;align-items:center}.eyebrow{color:var(--green);font-size:10px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;display:flex;align-items:center;gap:10px}.eyebrow:before{content:"";width:24px;height:1px;background:var(--green)}h1,h2,h3,p{margin-top:0}h1{font:700 clamp(42px,6vw,72px)/1.02 'Space Grotesk';letter-spacing:-3px;margin:23px 0}.accent{color:var(--green)}.hero-copy{font-size:16px;line-height:1.8;color:#aab8ae;max-width:620px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 19px;border-radius:9px;font-size:12px;font-weight:800;transition:.2s}.btn-primary{background:var(--green);color:#10180e}.btn-primary:hover{background:#d0ff91;transform:translateY(-2px)}.btn-secondary{border:1px solid #405047;color:#d8e3db}.btn-secondary:hover{border-color:var(--green);color:var(--green)}
+.hero-panel{border:1px solid #3b503e;background:linear-gradient(145deg,#17251aee,#101813ee);padding:25px;border-radius:16px;box-shadow:0 25px 80px #0008;position:relative}.panel-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:17px}.panel-label{font-size:10px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}.live{color:var(--green);font-size:9px;font-weight:800;letter-spacing:1px}.live:before{content:"";display:inline-block;width:6px;height:6px;background:var(--green);border-radius:50%;margin-right:7px;vertical-align:1px}.hero-number{font:700 52px 'Space Grotesk';margin:20px 0 0}.hero-number small{font:500 13px 'DM Sans';color:var(--muted)}.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}.hero-stat{border-top:1px solid #344238;padding-top:12px}.hero-stat strong{font:700 20px 'Space Grotesk';display:block}.hero-stat span{font-size:9px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+.section{padding:78px 0;border-top:1px solid #1b2820}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}.section-kicker{font-size:10px;color:var(--green);font-weight:800;letter-spacing:2px;text-transform:uppercase}.section h2{font:700 clamp(28px,4vw,40px) 'Space Grotesk';letter-spacing:-1.2px;margin:10px 0}.section-desc{color:var(--muted);font-size:13px;line-height:1.7;margin:0;max-width:620px}
+.controls{display:flex;gap:10px;flex-wrap:wrap}.control{background:#101913;border:1px solid #2c3c31;color:#e7eee8;padding:12px 14px;border-radius:8px;outline:none;font-size:12px}.control:focus{border-color:var(--green)}.search{min-width:250px}.control option{background:#101913}
+.player-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.player-card{background:linear-gradient(145deg,#131e17,#0e1511);border:1px solid #26372c;border-radius:13px;padding:19px;transition:.22s;min-width:0}.player-card:hover{transform:translateY(-3px);border-color:#729b52;box-shadow:0 15px 35px #0004}.player-photo-wrap{height:168px;margin:-19px -19px 16px;position:relative;overflow:hidden;border-radius:13px 13px 0 0;background:radial-gradient(circle at 50% 25%,#29432e,#111b14 70%)}.player-photo{width:100%;height:100%;display:block;object-fit:cover;object-position:center 25%;}.player-photo[hidden]{display:none}.player-photo-placeholder{position:absolute;inset:0;display:grid;place-items:center;color:#b7f36b;font:700 38px 'Space Grotesk';letter-spacing:2px;background:linear-gradient(135deg,#1b2b20,#0c130e)}.player-photo-placeholder[hidden]{display:none}.player-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.position{font-size:9px;letter-spacing:1px;color:var(--green);font-weight:800;background:#b7f36b12;border:1px solid #b7f36b30;padding:6px 9px;border-radius:5px}.flag{font-size:18px}.player-main{display:flex;align-items:center;gap:13px;min-width:0}.crest{width:47px;height:47px;flex:0 0 47px;border-radius:11px;background:#1a281e;border:1px solid #34483a;object-fit:contain;padding:5px}.player-name{font:700 16px 'Space Grotesk';margin:0 0 5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.player-club{font-size:11px;color:#a4b5a8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.player-meta{display:flex;gap:16px;border-top:1px solid #26372c;margin-top:18px;padding-top:13px;color:var(--muted);font-size:10px}.player-meta b{color:#edf4ee;font-size:11px;margin-left:4px}.empty{grid-column:1/-1;padding:38px;text-align:center;color:var(--muted);border:1px dashed #344238;border-radius:12px}
+.academy-tools{display:flex;gap:10px;align-items:center}.academy-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.academy-card{border:1px solid #2a3a30;background:#111a14;border-radius:12px;padding:17px;display:flex;align-items:center;gap:13px;text-align:left;color:var(--text);cursor:pointer;transition:.2s;width:100%}.academy-card:hover,.academy-card.active{border-color:var(--green);background:#172319}.academy-card img{width:42px;height:42px;object-fit:contain;background:#1d2a20;border:1px solid #35483a;border-radius:10px;padding:5px}.academy-card strong{font:600 12px 'Space Grotesk';display:block}.academy-card small{font-size:10px;color:var(--muted);display:block;margin-top:5px}.roster{margin-top:22px;border:1px solid #34483a;background:#101913;border-radius:14px;padding:22px;display:none}.roster.show{display:block}.roster-head{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:15px}.roster-title{display:flex;align-items:center;gap:13px}.roster-title img{width:45px;height:45px;object-fit:contain}.roster-title h3{font:700 19px 'Space Grotesk';margin:0}.roster-title p{color:var(--muted);font-size:11px;margin:4px 0 0}.roster-list{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;max-height:520px;overflow:auto}.roster-player{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#0b120e;border:1px solid #26372c;padding:12px;border-radius:8px}.roster-player strong{font-size:12px}.roster-player small{display:block;color:var(--muted);font-size:10px;margin-top:4px}.roster-right{text-align:right;font-size:12px;white-space:nowrap}
+footer{padding:28px 0;border-top:1px solid #26372c;color:#839389;font-size:10px}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-brand{font:700 13px 'Space Grotesk';color:#e8f0e9;letter-spacing:1px}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:35px}.hero-panel{max-width:560px}.academy-grid{grid-template-columns:repeat(3,1fr)}.player-grid{grid-template-columns:repeat(2,1fr)}.navlinks{gap:15px}}
+@media(max-width:640px){.wrap{width:min(100% - 28px,1160px)}.nav{height:66px}.navlinks{display:none}.nav-cta{font-size:10px;padding:9px 10px}.brand-name{font-size:14px}.hero{padding:62px 0}.hero-grid{gap:28px}h1{letter-spacing:-2px}.section{padding:58px 0}.section-head{display:block}.controls{margin-top:20px}.search{min-width:100%;width:100%}.player-grid{grid-template-columns:1fr}.academy-grid{grid-template-columns:repeat(2,1fr)}.academy-card{padding:12px;gap:9px}.academy-card img{width:35px;height:35px}.academy-card strong{font-size:10px}.roster-list{grid-template-columns:1fr}.roster{padding:14px}.footer-inner{flex-direction:column;text-align:center}.hero-stats{gap:8px}.hero-stat strong{font-size:17px}}
+
+/* Rankings */
+.ranking-intro{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;margin-bottom:22px}
+.ranking-model,.ranking-note{border:1px solid #2b3d31;background:linear-gradient(145deg,#142018,#0e1511);border-radius:13px;padding:19px}
+.ranking-model h3{font:700 15px 'Space Grotesk';margin:0 0 8px}
+.ranking-model p,.ranking-note p{color:var(--muted);font-size:11px;line-height:1.65;margin:0}
+.score-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.score-pill{padding:8px 10px;border-radius:7px;background:#0b130e;border:1px solid #304334;font-size:10px;color:#dce8dd}
+.score-pill strong{color:var(--green);font:700 13px 'Space Grotesk';margin-right:5px}
+.ranking-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 16px}
+.ranking-tab{border:1px solid #304234;background:#101913;color:#aebdb2;border-radius:8px;padding:10px 15px;font-size:11px;font-weight:800;cursor:pointer}
+.ranking-tab.active,.ranking-tab:hover{background:#b7f36b;color:#10180e;border-color:#b7f36b}
+.ranking-filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:16px}
+.ranking-table-wrap{border:1px solid #2a3b30;border-radius:13px;overflow:hidden;background:#0e1511}
+.ranking-table{width:100%;border-collapse:collapse;text-align:left}
+.ranking-table th{font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:#91a397;background:#141f18;padding:14px 13px}
+.ranking-table td{padding:13px;border-top:1px solid #25352b;font-size:11px;color:#dce6de}
+.ranking-table tr:hover td{background:#142019}
+.rank-number{font:700 16px 'Space Grotesk';color:var(--green);width:48px}
+.rank-player{display:flex;align-items:center;gap:10px;min-width:180px}
+.rank-player img{width:31px;height:31px;object-fit:contain;background:#1c2a20;border-radius:7px;padding:4px}
+.rank-player strong{display:block;font:600 12px 'Space Grotesk'}
+.rank-player small{display:block;color:var(--muted);font-size:9px;margin-top:3px}
+.rank-score{font:700 15px 'Space Grotesk';color:var(--green);font-variant-numeric:tabular-nums}
+.rank-muted{color:#819187;font-size:10px}
+.rank-empty{padding:34px 22px;text-align:center}
+.rank-empty strong{font:700 16px 'Space Grotesk';display:block;margin-bottom:8px}
+.rank-empty p{max-width:570px;margin:0 auto;color:var(--muted);font-size:11px;line-height:1.7}
+.rank-status{display:inline-flex;padding:5px 8px;border:1px solid #57482b;background:#2a2112;color:#e7c783;border-radius:5px;font-size:9px;font-weight:800;letter-spacing:.5px}
+@media(max-width:700px){.ranking-intro{grid-template-columns:1fr}.ranking-table-wrap{overflow-x:auto}.ranking-table{min-width:650px}.ranking-filters .control{flex:1;min-width:140px}}
+
+.ranking-metric{display:none;min-width:150px}
+.rank-source{color:#91a397;font-size:9px;text-decoration:underline;text-underline-offset:3px}
+
+/* FIFA U17 World Cup */
+.u17-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}.u17-stat{border:1px solid #2b3d31;background:#121c15;border-radius:10px;padding:15px}.u17-stat strong{font:700 24px 'Space Grotesk';color:var(--green);display:block}.u17-stat span{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.u17-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.u17-tab{border:1px solid #304234;background:#101913;color:#aebdb2;border-radius:8px;padding:10px 14px;font-size:11px;font-weight:800;cursor:pointer}.u17-tab.active{background:var(--green);color:#10180e;border-color:var(--green)}
+.u17-groups{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}.u17-group{border:1px solid #2a3b30;background:#101913;border-radius:10px;padding:13px}.u17-group h3{font:700 13px 'Space Grotesk';color:var(--green);margin:0 0 9px}.u17-team{display:flex;justify-content:space-between;gap:8px;font-size:11px;padding:5px 0;color:#dce6de}.u17-team small{color:var(--muted)}
+.u17-fixtures{display:grid;gap:9px}.u17-match{display:grid;grid-template-columns:85px 1fr 90px;align-items:center;gap:12px;border:1px solid #293a2f;background:#101913;border-radius:9px;padding:13px}.u17-match-time{font:700 13px 'Space Grotesk';color:var(--green)}.u17-match-time small{display:block;color:var(--muted);font:10px 'DM Sans';margin-top:4px}.u17-match-teams{display:flex;align-items:center;justify-content:center;gap:12px;font:700 12px 'Space Grotesk'}.u17-match-teams span{color:var(--muted);font-size:10px}.u17-match-meta{text-align:right;color:var(--muted);font-size:10px}.u17-source{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}.u17-source a{font-size:11px;color:var(--green);text-decoration:underline;text-underline-offset:3px}
+@media(max-width:800px){.u17-groups{grid-template-columns:repeat(3,1fr)}}@media(max-width:600px){.u17-stats{grid-template-columns:repeat(2,1fr)}.u17-groups{grid-template-columns:repeat(2,1fr)}.u17-match{grid-template-columns:68px 1fr;gap:8px}.u17-match-meta{grid-column:2;text-align:center}.u17-match-teams{gap:7px;font-size:10px}}
+
+.u17-team{align-items:center}
+.u17-team-main{display:flex;align-items:center;gap:9px;min-width:0}
+.u17-flag{width:25px;height:17px;object-fit:cover;border-radius:3px;flex:0 0 auto;border:1px solid #ffffff24;box-shadow:0 1px 3px #0005}
+.u17-match-side{display:flex;align-items:center;justify-content:center;gap:8px;min-width:0;flex:1}
+.u17-match-side b{font-size:12px}
+.u17-match-teams{gap:10px}
+.u17-match-flag{width:28px;height:19px;object-fit:cover;border-radius:3px;border:1px solid #ffffff24;box-shadow:0 1px 3px #0005;flex:0 0 auto}
+@media(max-width:600px){.u17-match-flag{width:23px;height:16px}.u17-flag{width:22px;height:15px}.u17-match-side{gap:5px}.u17-match-side b{font-size:10px}}
+
+
+.u17-squad-country-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}
+.u17-country-card{display:flex;align-items:center;gap:12px;text-align:left;padding:15px;border:1px solid #2b3d31;background:linear-gradient(145deg,#142019,#0e1711);border-radius:11px;color:#edf5ee;cursor:pointer;transition:border-color .18s,transform .18s,background .18s;min-width:0}
+.u17-country-card:hover{border-color:var(--green);transform:translateY(-2px);background:#18271c}
+.u17-country-card .u17-country-flag{width:42px;height:29px;object-fit:cover;border-radius:4px;border:1px solid #ffffff2b;box-shadow:0 2px 8px #0005;flex:0 0 auto}
+.u17-country-info{min-width:0;flex:1}.u17-country-info strong{display:block;font:700 12px 'Space Grotesk';white-space:normal}.u17-country-info small{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+.u17-country-count{font:700 11px 'Space Grotesk';color:var(--green);white-space:nowrap}
+.u17-squad-detail-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 0 8px}
+.u17-squad-back{border:1px solid #405443;background:#142019;color:#e8f2e9;border-radius:8px;padding:9px 12px;font-weight:800;font-size:11px;cursor:pointer}
+.u17-squad-selected{display:flex;align-items:center;gap:10px;font:700 18px 'Space Grotesk'}
+.u17-squad-selected img{width:38px;height:26px;object-fit:cover;border-radius:4px;border:1px solid #ffffff2b}
+@media(max-width:900px){.u17-squad-country-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.u17-squad-country-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.u17-country-card{padding:10px;gap:8px}.u17-country-card .u17-country-flag{width:32px;height:22px}.u17-country-info strong{font-size:10px}.u17-country-count{font-size:10px}}.u17-squad-tools{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.u17-squad-tools .control{min-width:180px}
+.u17-squad-status{border:1px solid #34483a;background:#111a14;border-radius:9px;padding:13px 15px;color:#b7c5ba;font-size:12px;margin:12px 0}
+.u17-squad-status strong{color:var(--green)}
+.u17-squad-table-wrap{overflow:auto;border:1px solid #293a2f;border-radius:10px}
+.u17-squad-table{width:100%;border-collapse:collapse;min-width:760px;background:#101913}
+.u17-squad-table th{font-size:9px;color:var(--green);letter-spacing:1px;text-transform:uppercase;text-align:left;padding:12px;border-bottom:1px solid #34483a}
+.u17-squad-table td{font-size:11px;padding:11px 12px;border-bottom:1px solid #26372c;color:#e5eee7}
+.u17-squad-table tr:last-child td{border-bottom:0}
+.u17-squad-player{font-weight:700}.u17-squad-club{color:#aab8ae}
+.u17-squad-count{font:700 13px 'Space Grotesk';color:var(--green);margin:10px 0}
+
+
+/* UEFA Youth League calendar */
+.youth-calendar-head{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin:20px 0}
+.youth-calendar-summary{display:flex;gap:9px;flex-wrap:wrap}
+.youth-calendar-chip{border:1px solid #304234;background:#101913;color:#cbd8ce;padding:9px 12px;border-radius:8px;font-size:10px}
+.youth-calendar-chip strong{color:var(--green);font:700 14px 'Space Grotesk';margin-right:5px}
+.youth-calendar-filters{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.youth-calendar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.youth-event{position:relative;border:1px solid #2b3d31;background:linear-gradient(145deg,#142018,#0d1510);border-radius:12px;padding:17px;min-width:0;overflow:hidden}
+.youth-event:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:#506b4d}
+.youth-event.upcoming:before{background:var(--green)}
+.youth-event-date{font:700 19px 'Space Grotesk';color:var(--green);letter-spacing:-.4px}
+.youth-event-month{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1.3px;margin-top:3px}
+.youth-event-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.youth-event-status{font-size:8px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;padding:5px 7px;border-radius:5px;border:1px solid #3a493e;color:#aebdb2;background:#101913;white-space:nowrap}
+.youth-event.upcoming .youth-event-status{color:var(--green);border-color:#587744;background:#1a2818}
+.youth-event h3{font:700 14px 'Space Grotesk';margin:15px 0 6px}
+.youth-event-path{font-size:9px;color:#a8b8ac;letter-spacing:.7px;text-transform:uppercase}
+.youth-event-note{font-size:10px;color:var(--muted);line-height:1.6;margin:10px 0 0}
+.youth-calendar-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:18px;padding:15px;border:1px solid #2b3d31;background:#101913;border-radius:10px}
+.youth-calendar-footer p{font-size:10px;color:var(--muted);line-height:1.6;margin:0;max-width:680px}
+.youth-calendar-footer a{font-size:11px;color:var(--green);font-weight:800;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){.youth-calendar-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.youth-calendar-grid{grid-template-columns:1fr}.youth-calendar-filters .control{width:100%}.youth-event{padding:15px}}
+
+
+/* Youth League match centre */
+.youth-calendar-head{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:20px 0}
+.youth-calendar-summary{display:flex;gap:9px;flex-wrap:wrap}
+.youth-calendar-chip{border:1px solid #304234;background:#101913;color:#cbd8ce;padding:9px 12px;border-radius:8px;font-size:10px}
+.youth-calendar-chip strong{color:var(--green);font:700 14px 'Space Grotesk';margin-right:5px}
+.youth-calendar-filters{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.youth-calendar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.youth-match{border:1px solid #2b3d31;background:linear-gradient(145deg,#142018,#0d1510);border-radius:10px;padding:14px;min-width:0}
+.youth-match-top{display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--muted);font-size:9px;letter-spacing:.7px;text-transform:uppercase;margin-bottom:13px}
+.youth-match-status{border:1px solid #3b5540;border-radius:5px;padding:4px 6px;color:#aebdb2;font-size:8px;font-weight:800}
+.youth-match-status.upcoming{color:var(--green);border-color:#587744;background:#1a2818}
+.youth-match-row{display:grid;grid-template-columns:minmax(0,1fr) 46px;align-items:center;gap:8px;margin:7px 0;font-size:12px;font-weight:650}
+.youth-match-team{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.youth-match-score{text-align:center;font:700 16px 'Space Grotesk';font-variant-numeric:tabular-nums}
+.youth-match-score.pending{font-size:11px;color:var(--muted)}
+.youth-match-bottom{border-top:1px solid #29382d;margin-top:11px;padding-top:9px;display:flex;justify-content:space-between;color:var(--muted);font-size:9px}
+.youth-match-day{font-weight:800;color:#b6c8b8}
+
+.youth-match{cursor:pointer;transition:border-color .18s,transform .18s,background .18s;text-align:left;color:inherit;width:100%;font:inherit}
+.youth-match:hover,.youth-match:focus-visible{border-color:var(--green);transform:translateY(-2px);outline:none;box-shadow:0 8px 24px #0003}
+.youth-match-row{grid-template-columns:minmax(0,1fr) 42px}
+.youth-match-team-wrap{display:flex;align-items:center;gap:9px;min-width:0}
+.youth-match-crest{width:27px;height:27px;object-fit:contain;flex:0 0 27px;filter:drop-shadow(0 2px 3px #0005)}
+.youth-match-team{min-width:0}
+.youth-match-open{color:var(--green);font-size:9px;font-weight:800;letter-spacing:.6px;text-transform:uppercase}
+.youth-match-modal{position:fixed;inset:0;z-index:9999;background:#030805dc;display:none;align-items:center;justify-content:center;padding:18px}
+.youth-match-modal.open{display:flex}
+.youth-match-dialog{width:min(680px,100%);max-height:90vh;overflow:auto;background:#101a13;border:1px solid #405743;border-radius:16px;padding:22px;box-shadow:0 25px 90px #000b}
+.youth-match-dialog-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.youth-match-close{border:1px solid #405743;background:#17251a;color:#dce8dd;border-radius:8px;padding:8px 11px;cursor:pointer}
+.youth-match-scoreboard{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px;margin:24px 0;text-align:center}
+.youth-match-club{display:flex;flex-direction:column;align-items:center;gap:9px;font-weight:750;font-size:13px}
+.youth-match-club img{width:58px;height:58px;object-fit:contain}
+.youth-match-bigscore{font:700 30px 'Space Grotesk';white-space:nowrap}
+.youth-match-detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0}
+.youth-match-detail-cell{background:#17241a;border:1px solid #2c4030;border-radius:9px;padding:12px}
+.youth-match-detail-cell small{display:block;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px}
+.youth-match-detail-cell strong{font-size:13px}
+.youth-match-data-note{background:#17241a;border-left:3px solid var(--green);padding:13px 15px;color:#bac9bd;font-size:11px;line-height:1.6;border-radius:0 8px 8px 0}
+.youth-match-official{display:inline-flex;margin-top:15px;background:var(--green);color:#10170d;text-decoration:none;font-weight:850;font-size:11px;padding:11px 15px;border-radius:8px}
+.youth-match-source-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.youth-match-source-actions a{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 13px;border-radius:8px;text-decoration:none;font-size:10px;font-weight:850;letter-spacing:.35px}
+.youth-match-source-actions .uefa-link{background:var(--green);color:#10170d}
+.youth-match-source-actions .sofa-link{background:#17251a;border:1px solid #405743;color:#e5eee6}
+.youth-match-data-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:20px 0 9px}
+.youth-match-data-head strong{font:700 14px 'Space Grotesk'}
+.youth-match-data-head span{font-size:9px;color:#b6c8b8;text-transform:uppercase;letter-spacing:.7px}
+.youth-match-data-panel{background:#111e15;border:1px solid #2c4030;border-radius:10px;padding:14px}
+.youth-match-data-panel p{margin:0;color:#bac9bd;font-size:11px;line-height:1.65}
+.youth-match-data-panel .data-status{display:flex;align-items:center;gap:8px;margin-bottom:8px;color:#e2ece3;font-size:11px;font-weight:800}
+.youth-match-data-panel .data-dot{width:7px;height:7px;border-radius:50%;background:#d6a64d;box-shadow:0 0 0 4px #d6a64d20}
+.youth-match-data-panel iframe{width:100%;min-height:520px;border:0;border-radius:8px;background:#fff}
+
+@media(max-width:600px){.youth-match-dialog{padding:16px}.youth-match-scoreboard{gap:7px}.youth-match-club{font-size:11px}.youth-match-club img{width:44px;height:44px}.youth-match-bigscore{font-size:24px}}
+@media(max-width:900px){.youth-calendar-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.youth-calendar-grid{grid-template-columns:1fr}.youth-calendar-filters .control{width:100%}}
+
+
+.youth-api-stats{display:grid;gap:14px}.youth-api-section{background:#111e15;border:1px solid #2c4030;border-radius:10px;padding:14px}.youth-api-section h3{font:700 13px 'Space Grotesk';margin:0 0 12px;color:#e7f0e8}.youth-api-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.youth-api-stat{background:#17251a;border-radius:8px;padding:10px}.youth-api-stat small{display:block;color:#aabaaa;font-size:9px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:7px}.youth-api-stat strong{font:700 16px 'Space Grotesk';font-variant-numeric:tabular-nums}.youth-api-duel{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:center}.youth-api-duel div{text-align:center}.youth-api-duel b{display:block;font-size:12px;margin-bottom:5px}.youth-api-duel span{font:700 18px 'Space Grotesk'}.youth-api-meter{height:6px;background:#26382a;border-radius:8px;overflow:hidden;margin-top:8px;display:flex}.youth-api-meter i:first-child{background:var(--green)}.youth-api-meter i:last-child{background:#7890a0}.youth-api-note{color:#b8c7ba;font-size:11px;line-height:1.6}.youth-api-xi{display:grid;grid-template-columns:1fr 1fr;gap:12px}.youth-api-xi h4{font-size:10px;color:#b7c9b9;margin:0 0 7px}.youth-api-xi ol{padding-left:19px;margin:0;color:#e1ebe2;font-size:11px;line-height:1.8}.youth-api-source{font-size:9px;color:#8fa291;margin-top:10px}@media(max-width:600px){.youth-api-grid{grid-template-columns:1fr 1fr}.youth-api-xi{grid-template-columns:1fr}}
+</style><style>body[data-page] main>section{display:none!important}body[data-page="academies"] main>section#canteras{display:block!important}body[data-page="academies"] main>section#inicio{display:none!important}body[data-page="home"] main>section#inicio{display:block!important}</style></head>
+<body data-page="academies">
+<div class="topline">Independent football intelligence · Season 2026/27</div>
+<header><div class="wrap nav">
+<a class="brand" href="#inicio"><div class="brand-mark">FR</div><div><span class="brand-name">FUTURE RADAR FC</span><span class="brand-sub">SCOUTING & TALENT DISCOVERY</span></div></a>
+<nav class="navlinks"><a href="/">Inicio</a><a href="/players/">Jugadores</a><a href="/academies/">Canteras</a><a href="/rankings/">Rankings</a><a href="/competitions/uefa-youth-league/">Youth League</a><a href="/matches/">Partidos</a></nav>
+<a class="nav-cta" href="#jugadores">EXPLORAR BASE ↗</a>
+</div></header>
+<main>
+<section class="hero" id="inicio"><div class="wrap hero-grid">
+<div><div class="eyebrow">El futuro del fútbol empieza aquí</div><h1>El talento del<br><span class="accent">mañana, hoy.</span></h1>
+<p class="hero-copy">Una plataforma independiente para descubrir, seguir y analizar a las próximas generaciones del fútbol. Talento joven, academias y datos en un solo radar.</p>
+<div class="actions"><a class="btn btn-primary" href="#jugadores">Explorar jugadores ↗</a><a class="btn btn-secondary" href="#canteras">Descubrir canteras</a></div></div>
+<aside class="hero-panel"><div class="panel-top"><span class="panel-label">Future Radar · Database</span><span class="live">BASE ACTIVA</span></div>
+<div class="hero-number" id="heroCount">921 <small>perfiles registrados</small></div>
+<div class="hero-stats"><div class="hero-stat"><strong id="clubCount">36</strong><span>Clubes</span></div><div class="hero-stat"><strong>U18–U21</strong><span>Edades</span></div><div class="hero-stat"><strong>26/27</strong><span>Temporada</span></div></div>
+</aside></div></section>
+<section class="section" id="jugadores"><div class="wrap">
+<div class="section-head"><div><div class="section-kicker">Player database / 01</div><h2>Explora el talento</h2><p class="section-desc">Busca perfiles por nombre, club o nacionalidad. Cada ficha reúne la información disponible de cada jugador.</p></div>
+<div class="controls"><input id="playerSearch" class="control search" type="search" placeholder="Buscar jugador o club…"><select id="positionFilter" class="control"><option value="ALL">Todas las posiciones</option><option value="DELANTERO">Delanteros</option><option value="CENTROCAMPISTA">Centrocampistas</option><option value="DEFENSA">Defensas</option><option value="PORTERO">Porteros</option></select></div></div>
+<div class="player-grid" id="playerGrid"><div class="empty">Cargando base de datos…</div></div>
+</div></section>
+<section class="section" id="canteras"><div class="wrap">
+<div class="section-head"><div><div class="section-kicker">Academy explorer / 02</div><h2>Las canteras</h2><p class="section-desc">Explora los clubes incluidos en la base de datos y abre cada academia para consultar sus jugadores.</p></div><div class="academy-tools"><input id="academySearch" class="control search" type="search" placeholder="Buscar cantera…"></div></div>
+<div class="academy-grid" id="academiesContainer"><div class="empty">Cargando canteras…</div></div>
+<div class="roster" id="rosterPanel"><div class="roster-head"><div class="roster-title"><img id="rosterCrest" alt=""><div><h3 id="rosterName">Cantera</h3><p id="rosterCount"></p></div></div><button class="btn btn-secondary" id="closeRoster" type="button">Cerrar ×</button></div><div class="roster-list" id="rosterList"></div></div>
+</div></section>
+<section class="section" id="rankings"><div class="wrap">
+<div class="section-head"><div><div class="section-kicker">Performance & potential / 03</div><h2>Rankings <span class="accent">Future Radar</span></h2><p class="section-desc">Clasificaciones de talento joven basadas en nivel actual, proyección y rendimiento competitivo. Compara jugadores, generaciones, posiciones y academias.</p></div></div>
+<div class="ranking-intro">
+<div class="ranking-model"><h3>El modelo de evaluación</h3><p>El ranking combinado utiliza dos dimensiones independientes. La nota global se calcula con el mismo peso para ambas, para equilibrar rendimiento actual y proyección.</p><div class="score-pills"><span class="score-pill"><strong>50%</strong> Current Level</span><span class="score-pill"><strong>50%</strong> Prospect Score</span><span class="score-pill"><strong>/100</strong> Future Radar Score</span></div></div>
+<div class="ranking-note"><h3>Transparencia de datos</h3><p>Las estadísticas oficiales de la UEFA Youth League 2026/27 ya están incorporadas para los primeros clubes. Las notas Current Level y Prospect Score seguirán requiriendo evaluación propia y contrastada.</p></div>
+</div>
+<div class="ranking-tabs" role="tablist" aria-label="Tipo de ranking">
+<button class="ranking-tab active" type="button" data-ranking-tab="global">Global Top 100</button>
+<button class="ranking-tab" type="button" data-ranking-tab="u18">U18</button>
+<button class="ranking-tab" type="button" data-ranking-tab="u21">U21</button>
+<button class="ranking-tab" type="button" data-ranking-tab="academies">Academies</button><button class="ranking-tab" type="button" data-ranking-tab="youth">UEFA Youth League</button>
+</div>
+<div class="ranking-filters">
+<input id="rankingSearch" class="control search" type="search" placeholder="Buscar jugador…">
+<select id="rankingPosition" class="control"><option value="ALL">Todas las posiciones</option><option value="DELANTERO">Delanteros</option><option value="CENTROCAMPISTA">Centrocampistas</option><option value="DEFENSA">Defensas</option><option value="PORTERO">Porteros</option></select>
+<select id="rankingClub" class="control"><option value="ALL">Todos los clubes</option></select><select id="rankingMetric" class="control ranking-metric"><option value="goals">Goles</option><option value="matchesPlayed">Partidos</option><option value="minutesPlayed">Minutos</option><option value="assists">Asistencias</option><option value="totalAttempts">Disparos</option><option value="goalsConceded">Goles encajados (porteros)</option></select>
+</div>
+<div class="ranking-table-wrap" id="rankingResults"><div class="rank-empty"><strong>Preparando rankings…</strong><p>Consultando las evaluaciones disponibles en la base de datos.</p></div></div>
+</div></section>
+
+<section class="section" id="youth-league"><div class="wrap">
+<div class="section-head"><div><div class="section-kicker">European youth competition / 04</div><h2>UEFA Youth League <span class="accent">2026/27</span></h2><p class="section-desc">Todos los partidos de la fase liga: resultados, próximos encuentros y horarios oficiales.</p></div></div>
+<div class="youth-calendar-head"><div class="youth-calendar-summary"><span class="youth-calendar-chip"><strong>108</strong> partidos</span><span class="youth-calendar-chip"><strong>72</strong> resultados</span><span class="youth-calendar-chip"><strong>36</strong> próximos</span></div></div>
+<div class="youth-calendar-filters"><select class="control" id="youthMatchdayFilter"><option value="ALL">Todas las jornadas</option><option value="1">Jornada 1</option><option value="2">Jornada 2</option><option value="3">Jornada 3</option><option value="4">Jornada 4</option><option value="5">Jornada 5</option><option value="6">Jornada 6</option></select><select class="control" id="youthMatchStatusFilter"><option value="ALL">Todos los partidos</option><option value="FT">Resultados</option><option value="UPCOMING">Próximos</option></select><input class="control" id="youthTeamFilter" type="search" placeholder="Buscar equipo…"></div>
+<div class="youth-calendar-grid" id="youthCalendarGrid"><div class="empty">Cargando partidos y resultados oficiales…</div></div>
+<div class="youth-match-modal" id="youthMatchModal" aria-hidden="true">
+ <div class="youth-match-dialog" role="dialog" aria-modal="true" aria-labelledby="youthMatchModalTitle">
+  <div class="youth-match-dialog-head"><span class="youth-event-path">UEFA YOUTH LEAGUE · MATCH CENTRE</span><button class="youth-match-close" type="button" id="youthMatchClose" aria-label="Cerrar">✕</button></div>
+  <div id="youthMatchModalContent"></div>
+ </div>
+</div>
+<div class="youth-calendar-footer"><p>Los horarios se muestran en hora central europea (CET). Los resultados y emparejamientos corresponden a la fase liga de la ruta Champions League. La ruta de campeones nacionales tiene su propio cuadro.</p><a href="https://www.uefa.com/uefayouthleague/fixtures-results/" target="_blank" rel="noopener">Ver centro oficial de partidos UEFA ↗</a></div>
+</div></section>
+<section class="section" id="partidos"><div class="wrap">
+<div class="section-head"><div><div class="section-kicker">International tournament / 04</div><h2>FIFA U-17 World Cup <span class="accent">Qatar 2026</span></h2><p class="section-desc">El escaparate mundial del talento U17. 48 selecciones, 12 grupos y seguimiento de calendario y resultados.</p></div></div>
+<div class="u17-stats"><div class="u17-stat"><strong id="u17TeamCount">48</strong><span>Selecciones</span></div><div class="u17-stat"><strong>12</strong><span>Grupos</span></div><div class="u17-stat"><strong>19 NOV – 13 DIC</strong><span>Fechas</span></div><div class="u17-stat"><strong id="u17MatchCount">72</strong><span>Partidos de grupos</span></div></div>
+<div class="u17-source"><a href="https://fdp.fifa.org/assetspublic/ce303/pdf/SquadLists-Spanish.pdf" target="_blank" rel="noopener">Convocatorias oficiales FIFA (PDF) ↗</a><a href="https://www.fifa.com/es/tournaments/mens/u17worldcup/qatar-2026/articles/resultados-partidos-horarios-catar-2026-mundial-sub-17" target="_blank" rel="noopener">Calendario FIFA ↗</a><a href="https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a" target="_blank" rel="noopener">Horario oficial y campos (PDF) ↗</a></div>
+<div class="u17-tabs"><button class="u17-tab active" data-u17-tab="fixtures">Calendario</button><button class="u17-tab" data-u17-tab="groups">Grupos y selecciones</button><button class="u17-tab" data-u17-tab="squads">Convocatorias FIFA</button></div>
+<div id="u17FixturesPanel"><div class="ranking-filters"><select class="control" id="u17Date"><option value="ALL">Todas las fechas</option></select><select class="control" id="u17Group"><option value="ALL">Todos los grupos</option><option value="A">Grupo A</option><option value="B">Grupo B</option><option value="C">Grupo C</option><option value="D">Grupo D</option><option value="E">Grupo E</option><option value="F">Grupo F</option><option value="G">Grupo G</option><option value="H">Grupo H</option><option value="I">Grupo I</option><option value="J">Grupo J</option><option value="K">Grupo K</option><option value="L">Grupo L</option></select><input class="control search" id="u17TeamSearch" type="search" placeholder="Buscar selección…"></div><div class="u17-fixtures" id="u17Fixtures"><div class="empty">Cargando calendario…</div></div></div>
+<div id="u17GroupsPanel" hidden><div class="u17-groups" id="u17Groups"></div></div><div id="u17SquadsPanel" hidden><div class="u17-squad-status" id="u17SquadStatus">Base oficial FIFA · 987 jugadores extraídos de 47 convocatorias completas.</div><div id="u17SquadCountryGrid" class="u17-squad-country-grid"><div class="empty">Cargando selecciones…</div></div><div id="u17SquadDetail" hidden><div class="u17-squad-detail-head"><button class="u17-squad-back" id="u17SquadBack" type="button">← Todas las selecciones</button><div id="u17SquadSelected" class="u17-squad-selected"></div></div><div class="u17-squad-tools"><select class="control" id="u17SquadPosition"><option value="ALL">Todas las posiciones</option><option value="GK">Porteros</option><option value="DEF">Defensas</option><option value="CM">Centrocampistas</option><option value="ST">Delanteros</option></select><input class="control search" id="u17SquadSearch" type="search" placeholder="Buscar jugador o club…"></div><div class="u17-squad-count" id="u17SquadCount"></div><div id="u17SquadResults"><div class="empty">Las convocatorias aparecerán aquí al abrir la pestaña.</div></div></div></div>
+<p class="rank-muted" style="margin-top:14px">Horarios expresados en hora local de Catar (UTC+3). El calendario de eliminatorias se completará cuando se definan los cruces. Las convocatorias oficiales se cargan desde el PDF de FIFA en la pestaña Convocatorias FIFA.</p>
+</div></section>
+
+</main>
+<footer><div class="wrap footer-inner"><span class="footer-brand">FUTURE RADAR FC</span><span>Proyecto independiente de scouting · Temporada 2026/27</span><span>© 2026 Future Radar</span></div></footer>
+<script>
+let allRadarPlayers=[];
+const flags={ALB:'al',ALG:'dz',ANG:'ao',ARG:'ar',AUS:'au',AUT:'at',AZE:'az',BEL:'be',BIH:'ba',BRA:'br',BUL:'bg',CIV:'ci',CMR:'cm',COD:'cd',COL:'co',COM:'km',CRO:'hr',CUW:'cw',CZE:'cz',EGY:'eg',ENG:'gb-eng',ESP:'es',FIN:'fi',FRA:'fr',GAB:'ga',GAM:'gm',GBS:'gw',GEO:'ge',GER:'de',GHA:'gh',GRE:'gr',GUI:'gn',HUN:'hu',IRL:'ie',ISL:'is',ITA:'it',JPN:'jp',KOR:'kr',KOS:'xk',LTU:'lt',LVA:'lv',MAR:'ma',MDA:'md',MKD:'mk',MNE:'me',NED:'nl',NGR:'ng',NIR:'gb-nir',NOR:'no',PER:'pe',POL:'pl',POR:'pt',ROU:'ro',RUS:'ru',SCO:'gb-sct',SEN:'sn',SLO:'si',SRB:'rs',SUI:'ch',SVK:'sk',SWE:'se',THA:'th',TUN:'tn',TUR:'tr',UKR:'ua',USA:'us',WAL:'gb-wls',QAT:'qa',PAN:'pa',UGA:'ug',NCL:'nc',ECU:'ec',MOZ:'mz',DEN:'dk',HAI:'ht',KSA:'sa',URU:'uy',JAM:'jm',UZB:'uz',MLI:'ml',NZL:'nz',VIE:'vn',CUB:'cu',TJK:'tj',FIJ:'fj',CHN:'cn',TAN:'tz',CHI:'cl',CRC:'cr',MEX:'mx',VEN:'ve',DOM:'do'};
+const wikiPages={
+'AEK Athens U19':'AEK_Athens_F.C.','Arsenal U19':'Arsenal_F.C.','Aston Villa U19':'Aston_Villa_F.C.','Atlético de Madrid U19':'Atlético_Madrid','Barcelona U19':'FC_Barcelona','Bayern München U19':'FC_Bayern_Munich','Bodø/Glimt U19':'FK_Bodø/Glimt','Borussia Dortmund U19':'Borussia_Dortmund','Club Brugge U19':'Club_Brugge_KV','Como U20':'Como_1907','FC Porto U19':'FC_Porto','Fenerbahçe U19':'Fenerbahçe_S.K.','Feyenoord U19':'Feyenoord','Galatasaray U19':'Galatasaray_S.K.','Inter U20':'Inter_Milan','LASK Linz U19':'LASK','Lens U19':'RC_Lens','Lille U19':'LOSC_Lille','Liverpool U19':'Liverpool_F.C.','Manchester City U19':'Manchester_City_F.C.','Manchester United U19':'Manchester_United_F.C.','Napoli U19':'S.S.C._Napoli','PSV Eindhoven U19':'PSV_Eindhoven','Paris Saint-Germain U19':'Paris_Saint-Germain_F.C.','RB Leipzig U19':'RB_Leipzig','Real Betis U19':'Real_Betis','Real Madrid U19':'Real_Madrid_CF','Roma U20':'AS_Roma','Sabah U19':'Sabah_FK','Shakhtar Donetsk U19':'FC_Shakhtar_Donetsk','Slavia Praha U19':'SK_Slavia_Prague','Sporting CP U19':'Sporting_CP','VfB Stuttgart U19':'VfB_Stuttgart','Viking FK U19':'Viking_FK','Villarreal U19':'Villarreal_CF','ŠK Slovan Bratislava U19':'ŠK_Slovan_Bratislava'};
+const crestCache={};
+// Escudos contrastados: evitamos que una foto del estadio o de una celebración
+// aparezca como si fuera el escudo del club.
+const crestOverrides={
+  'Arsenal U19':'https://www.footylogos.com/downloads/logo/arsenal-logo-footylogos.png',
+  'Atlético de Madrid U19':'https://www.footylogos.com/downloads/logo/atletico-madrid-logo-footylogos.png',
+  'Fenerbahçe U19':'https://www.footylogos.com/downloads/logo/fenerbahce-logo-footylogos.png',
+  'Lille U19':'https://www.footylogos.com/downloads/logo/losc-lille-logo-footylogos.png',
+  'Liverpool U19':'https://www.footylogos.com/downloads/logo/liverpool-fc-logo-footylogos.png',
+  'Manchester City U19':'https://www.footylogos.com/downloads/logo/manchester-city-logo-footylogos.png',
+  'FC Porto U19':'https://www.footylogos.com/downloads/logo/fc-porto-logo-footylogos.png',
+  'Lens U19':'https://www.footylogos.com/downloads/logo/rc-lens-logo-footylogos.png',
+  'Roma U20':'https://commons.wikimedia.org/wiki/Special:FilePath/AS_Roma_logo.svg?width=160'
+};
+function flagUrl(code){const iso=flags[String(code||'').toUpperCase()];return iso?'https://flagcdn.com/w40/'+iso+'.png':''}
+function initials(name){return (name||'FR').replace(/[^A-Za-zÀ-ÿ ]/g,' ').split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join('').toUpperCase()||'FR'}
+function crestFallback(name){return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><rect width="80" height="80" rx="15" fill="#1b2a20"/><text x="40" y="47" font-family="Arial" font-size="25" font-weight="bold" text-anchor="middle" fill="#b7f36b">'+initials(name)+'</text></svg>')}
+function crestUrl(club){return crestOverrides[club]||crestCache[club]||crestFallback(club)}
+async function fetchClubLogo(page){
+  // Primero intentamos recuperar el escudo oficial desde Wikidata.
+  try{
+    const wdUrl='https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles='+encodeURIComponent(page)+'&props=claims&format=json&origin=*&redirects=1';
+    const wd=await fetch(wdUrl);const data=await wd.json();
+    const entity=Object.values(data.entities||{}).find(x=>x&&x.claims);
+    const claims=(entity?.claims?.P154||[]).filter(c=>c.rank!=='deprecated');
+    const logo=claims[0]?.mainsnak?.datavalue?.value;
+    if(logo)return 'https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(logo)+'?width=180';
+  }catch(e){}
+  // Recuperamos el sistema anterior para los clubes cuyo thumbnail sí mostraba
+  // su escudo. Porto, Lens y Roma tienen override propio para evitar fotos erróneas.
+  try{
+    const url='https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages&piprop=thumbnail&pithumbsize=180&redirects=1&titles='+encodeURIComponent(page)+'&origin=*';
+    const r=await fetch(url);const d=await r.json();const pg=Object.values(d.query.pages||{})[0];
+    if(pg?.thumbnail?.source)return pg.thumbnail.source;
+  }catch(e){}
+  return null;
+}
+async function loadCrests(clubs){
+  await Promise.all(clubs.map(async club=>{if(crestOverrides[club])return;const page=wikiPages[club];if(!page)return;const logo=await fetchClubLogo(page);if(logo)crestCache[club]=logo;}));
+  document.querySelectorAll('[data-crest]').forEach(img=>{const club=img.dataset.crest;img.src=crestUrl(club);});
+}
+function handleCrestError(img){img.onerror=null;img.src=crestFallback(img.dataset.crest||img.alt||'FR');}
+function cleanPosition(pos){const p=String(pos||'').trim().toUpperCase();if(['GK','PO','POR','PORTERO'].includes(p)||p.includes('PORT'))return 'PORTERO';if(['ST','CF','LW','RW','FW','DC','DEL'].includes(p)||p.includes('DELANT')||p.includes('EXTREMO'))return 'DELANTERO';if(['CB','LB','RB','LWB','RWB','DEF','DF','LI','LD','DFC'].includes(p)||p.includes('DEFEN'))return 'DEFENSA';if(['CM','CDM','CAM','DM','AM','MC','MCD','MCO','VOL','MD','MI'].includes(p)||p.includes('CENTRO')||p.includes('MEDIO'))return 'CENTROCAMPISTA';return p||'SIN DATO'}
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+const officialPlayerProfiles={
+  'Adrián Pérez':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/adrian-perez-munoz',
+  'Marco Company':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/marco-david-company-garcia',
+  'Andrés Corcoba':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/andres-corcoba-martinez',
+  'Rubén López Domínguez':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/ruben-lopez-dominguez',
+  'Pelayo Palomo':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/pelayo-palomo-cidon',
+  'Rodrigo Velasco':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/rodrigo-velasco-sanchez',
+  'Javi Bailón':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/francisco-javier-bailon-alvarez',
+  'Álvaro Lezcano':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/alvaro-lezcano-munoz',
+  'Ares Capatana Abad':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/ares-capatana-garcia-abad',
+  'Luis Paulo':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/luis-paulo-quevedo',
+  'Mateo Garrido':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/mateo-garrido-calderon',
+  'José Luis Espinosa':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/jose-luis-saez-espinosa',
+  'Mauro Bautista':'https://www.realmadrid.com/es-ES/futbol/cantera-masculina/juvenil-a/mauro-bautista-sanchez'
+};
+const playerPhotoCache=new Map(),playerPhotoQueue=[];let playerPhotoWorkers=0,playerPhotoObserver=null;
+function playerPhotoKey(p){return String(p.name||'').trim()+'|'+String(p.dateOfBirth||'');}
+function normalizePlayerName(v){return String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();}
+async function findPlayerPhoto(p){
+  const name=String(p.name||'').trim();if(!name)return null;
+  const officialProfile=officialPlayerProfiles[name];if(officialProfile)return '/api/player-photo?profile='+encodeURIComponent(officialProfile);
+  const searchUrl='https://www.wikidata.org/w/api.php?action=wbsearchentities&search='+encodeURIComponent(name)+'&language=en&uselang=en&type=item&limit=8&format=json&origin=*';
+  const sr=await fetch(searchUrl);if(!sr.ok)throw new Error('Wikidata search unavailable');const sd=await sr.json();
+  const exact=(sd.search||[]).filter(x=>normalizePlayerName(x.label)===normalizePlayerName(name));
+  if(!exact.length)return null;
+  const ids=exact.map(x=>x.id).join('|');
+  const er=await fetch('https://www.wikidata.org/w/api.php?action=wbgetentities&ids='+encodeURIComponent(ids)+'&props=claims|descriptions&languages=en&format=json&origin=*');
+  if(!er.ok)throw new Error('Wikidata entities unavailable');const ed=await er.json();
+  const birthYear=String(p.dateOfBirth||'').match(/(?:19|20)\d{2}/)?.[0];
+  for(const hit of exact){
+    const entity=ed.entities?.[hit.id];if(!entity)continue;
+    const description=entity.descriptions?.en?.value||hit.description||'';
+    const occupations=(entity.claims?.P106||[]).map(c=>c.mainsnak?.datavalue?.value?.id).filter(Boolean);
+    const isFootballer=/footballer|football player|soccer player|association football/i.test(description)||occupations.includes('Q937857');
+    if(!isFootballer)continue;
+    if(birthYear){const birth=entity.claims?.P569?.[0]?.mainsnak?.datavalue?.value?.time||'';const found=birth.match(/(?:19|20)\d{2}/)?.[0];if(found&&found!==birthYear)continue;}
+    const file=entity.claims?.P18?.[0]?.mainsnak?.datavalue?.value;if(file)return 'https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(file)+'?width=480';
+  }
+  return null;
+}
+async function processPlayerPhotoQueue(){
+  if(playerPhotoWorkers>=3||!playerPhotoQueue.length)return;
+  const job=playerPhotoQueue.shift();playerPhotoWorkers++;
+  try{const url=await findPlayerPhoto(job.player);playerPhotoCache.set(job.key,url||'');if(url){const img=document.querySelector('[data-player-photo="'+CSS.escape(job.key)+'"]'),placeholder=document.querySelector('[data-photo-placeholder="'+CSS.escape(job.key)+'"]');if(img){img.onload=()=>{img.hidden=false;if(placeholder)placeholder.hidden=true};img.onerror=()=>{img.hidden=true};img.src=url;}}}
+  catch(e){playerPhotoCache.set(job.key,'');}
+  finally{playerPhotoWorkers--;processPlayerPhotoQueue();}
+}
+function queuePlayerPhoto(img){
+  const key=img.dataset.playerPhoto;if(!key||playerPhotoCache.has(key))return;
+  if(playerPhotoQueue.some(j=>j.key===key))return;
+  const card=img.closest('.player-card');const name=card?.querySelector('.player-name')?.textContent||'';
+  const player=allRadarPlayers.find(p=>playerPhotoKey(p)===key);if(!player)return;
+  playerPhotoQueue.push({key,player});processPlayerPhotoQueue();
+}
+function observePlayerPhotos(){
+  if(!('IntersectionObserver' in window))return;
+  if(!playerPhotoObserver)playerPhotoObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){const img=entry.target.querySelector('[data-player-photo]');if(img)queuePlayerPhoto(img);playerPhotoObserver.unobserve(entry.target)}}),{rootMargin:'250px'});
+  document.querySelectorAll('.player-photo-wrap').forEach(wrap=>{if(!wrap.dataset.observed){wrap.dataset.observed='1';playerPhotoObserver.observe(wrap)}});
+}
+function renderPlayers(players){const grid=document.getElementById('playerGrid');if(!players.length){grid.innerHTML='<div class="empty">No hay jugadores que coincidan con la búsqueda.</div>';return}grid.innerHTML=players.map(p=>{const club=p.club||'Club no disponible',nat=p.nationality||'',flag=flagUrl(nat),photoKey=playerPhotoKey(p),initials=(p.name||'FR').split(/\\s+/).slice(0,2).map(x=>x[0]||'').join('').toUpperCase();return '<article class="player-card"><div class="player-photo-wrap"><div class="player-photo-placeholder" data-photo-placeholder="'+esc(photoKey)+'">'+esc(initials)+'</div><img class="player-photo" data-player-photo="'+esc(photoKey)+'" alt="Foto de '+esc(p.name||'jugador')+'" loading="lazy" hidden></div><div class="player-top"><span class="position">'+esc(cleanPosition(p.position))+'</span>'+(flag?'<img class="flag" src="'+flag+'" alt="'+esc(nat)+'" title="'+esc(nat)+'">':'<span class="flag">🌍</span>')+'</div><div class="player-main"><img class="crest" data-crest="'+esc(club)+'" src="'+crestUrl(club)+'" onerror="handleCrestError(this)" alt="Escudo de '+esc(club)+'"><div style="min-width:0"><h3 class="player-name">'+esc(p.name||'Jugador sin nombre')+'</h3><div class="player-club">'+esc(club)+'</div></div></div><div class="player-meta"><span>EDAD <b>'+(p.age??'—')+'</b></span><span>ALTURA <b>'+(p.heightCm?p.heightCm+' cm':'—')+'</b></span><span>TEMP. <b>'+esc(p.season||'26/27')+'</b></span></div></article>'}).join('');observePlayerPhotos();}
+function renderAcademies(){const term=document.getElementById('academySearch').value.trim().toLowerCase();const map=new Map();allRadarPlayers.forEach(p=>{const c=p.club||'Club no disponible';if(!map.has(c))map.set(c,[]);map.get(c).push(p)});const entries=[...map.entries()].sort((a,b)=>a[0].localeCompare(b[0],'es')).filter(([c])=>c.toLowerCase().includes(term));const el=document.getElementById('academiesContainer');if(!entries.length){el.innerHTML='<div class="empty">No se han encontrado canteras.</div>';return}el.innerHTML=entries.map(([c,ps])=>'<button class="academy-card" type="button" data-club="'+esc(c)+'"><img data-crest="'+esc(c)+'" src="'+crestUrl(c)+'" onerror="handleCrestError(this)" alt="Escudo de '+esc(c)+'"><span><strong>'+esc(c)+'</strong><small>'+ps.length+' jugadores registrados</small></span></button>').join('');el.querySelectorAll('[data-club]').forEach(btn=>btn.addEventListener('click',()=>openRoster(btn.dataset.club)));document.querySelectorAll('[data-crest]').forEach(img=>{img.onerror=()=>handleCrestError(img);img.src=crestUrl(img.dataset.crest)})}
+function openRoster(club){const players=allRadarPlayers.filter(p=>p.club===club).sort((a,b)=>(a.name||'').localeCompare(b.name||''));document.getElementById('rosterName').textContent=club;document.getElementById('rosterCount').textContent=players.length+' jugadores · Temporada 2026/27';const img=document.getElementById('rosterCrest');img.dataset.crest=club;img.onerror=()=>handleCrestError(img);img.src=crestUrl(club);document.getElementById('rosterList').innerHTML=players.map(p=>'<div class="roster-player"><div><strong>'+esc(p.name||'Sin nombre')+'</strong><small>'+esc(cleanPosition(p.position))+' · '+esc(p.clubCountry||'')+'</small></div><div class="roster-right">'+(flagUrl(p.nationality)?'<img src="'+flagUrl(p.nationality)+'" width="20" alt="">':'🌍')+'<div>'+((p.age??'—')+' años')+'</div></div></div>').join('');const panel=document.getElementById('rosterPanel');panel.classList.add('show');document.querySelectorAll('.academy-card').forEach(b=>b.classList.toggle('active',b.dataset.club===club));panel.scrollIntoView({behavior:'smooth',block:'nearest'})}
+function filterPlayers(){const term=document.getElementById('playerSearch').value.trim().toLowerCase();const pos=document.getElementById('positionFilter').value;renderPlayers(allRadarPlayers.filter(p=>(String(p.name||'').toLowerCase().includes(term)||String(p.club||'').toLowerCase().includes(term)||String(p.nationality||'').toLowerCase().includes(term))&&(pos==='ALL'||cleanPosition(p.position)===pos)))}
+
+let activeRankingTab='global';
+function playerRankingScores(p){
+ if(p.currentLevel===null||p.currentLevel===undefined||p.prospectScore===null||p.prospectScore===undefined)return null;
+ const current=Number(p.currentLevel),prospect=Number(p.prospectScore);
+ if(!Number.isFinite(current)||!Number.isFinite(prospect)||current<0||current>100||prospect<0||prospect>100)return null;
+ return {current,prospect,combined:Math.round((current+prospect)/2*10)/10};
+}
+function rankingEligible(p,tab){
+ const age=Number(p.age);
+ if(tab==='u18')return Number.isFinite(age)&&age<=18;
+ if(tab==='u21')return Number.isFinite(age)&&age>=19&&age<=21;
+ return true;
+}
+function renderRankings(){
+ const host=document.getElementById('rankingResults');if(!host)return;
+ const search=(document.getElementById('rankingSearch')?.value||'').trim().toLowerCase();
+ const position=document.getElementById('rankingPosition')?.value||'ALL';
+ const club=document.getElementById('rankingClub')?.value||'ALL';
+
+ if(activeRankingTab==='youth'){
+  const metric=document.getElementById('rankingMetric')?.value||'goals';
+  const labels={goals:'Goles',matchesPlayed:'Partidos',minutesPlayed:'Minutos',assists:'Asistencias',totalAttempts:'Disparos',goalsConceded:'Goles encajados'};
+  const players=allRadarPlayers.filter(p=>p.youthLeagueStats&&
+   (metric==='goalsConceded'?typeof p.youthLeagueStats.goalsConceded==='number':typeof p.youthLeagueStats[metric]==='number')&&
+   (position==='ALL'||cleanPosition(p.position)===position)&&
+   (club==='ALL'||p.club===club)&&
+   (!search||[p.name,p.club,p.nationality].some(v=>String(v||'').toLowerCase().includes(search))))
+   .sort((a,b)=>b.youthLeagueStats[metric]-a.youthLeagueStats[metric]||b.youthLeagueStats.matchesPlayed-a.youthLeagueStats.matchesPlayed)
+   .slice(0,100);
+  if(!players.length){host.innerHTML='<div class="rank-empty"><span class="rank-status">SIN DATOS PARA ESTE FILTRO</span><strong>No hay registros disponibles en esta categoría.</strong><p>Estamos ampliando la cobertura de la competición club por club. Las estadísticas se muestran únicamente cuando aparecen en una fuente oficial de UEFA.</p></div>';return;}
+  host.innerHTML='<table class="ranking-table"><thead><tr><th>#</th><th>Player</th><th>Age</th><th>Club</th><th>PJ</th><th>MIN</th><th>G</th><th>A</th><th>GC</th><th>Source</th></tr></thead><tbody>'+players.map((p,i)=>{const s=p.youthLeagueStats;return '<tr><td class="rank-number">'+(i+1)+'</td><td><div class="rank-player"><img src="'+crestUrl(p.club||'')+'" alt="" onerror="handleCrestError(this)" data-crest="'+esc(p.club||'')+'"><div><strong>'+esc(p.name)+'</strong><small>'+esc(cleanPosition(p.position))+'</small></div></div></td><td>'+esc(p.age??'—')+'</td><td>'+esc(p.club||'')+'</td><td>'+s.matchesPlayed+'</td><td>'+(s.minutesPlayed??'—')+'</td><td>'+(s.goals??'—')+'</td><td>'+(s.assists??'—')+'</td><td>'+(s.goalsConceded??'—')+'</td><td><a class="rank-source" href="'+esc(s.sourceUrl)+'" target="_blank" rel="noopener">UEFA</a></td></tr>'}).join('')+'</tbody></table><p class="rank-muted" style="padding:12px 14px">Ordenado por '+labels[metric]+'. Datos de la UEFA Youth League 2026/27; los campos no publicados se muestran como —.</p>';return;
+ }
+ if(activeRankingTab==='academies'){
+  const clubs=new Map();
+  allRadarPlayers.forEach(p=>{const s=playerRankingScores(p);if(!s)return;const name=p.club||'Club no disponible';if(!clubs.has(name))clubs.set(name,[]);clubs.get(name).push(s)});
+  const rows=[...clubs.entries()].map(([name,scores])=>({name,count:scores.length,score:scores.reduce((a,s)=>a+s.combined,0)/scores.length,current:scores.reduce((a,s)=>a+s.current,0)/scores.length,prospect:scores.reduce((a,s)=>a+s.prospect,0)/scores.length})).sort((a,b)=>b.score-a.score);
+  if(!rows.length){host.innerHTML='<div class="rank-empty"><span class="rank-status">EVALUACIONES PENDIENTES</span><strong>El ranking de academias está preparado.</strong><p>Se activará cuando existan jugadores evaluados con Current Level y Prospect Score. No clasificamos canteras por número de fichas: eso mediría el tamaño de la base, no la calidad de su formación.</p></div>';return;}
+  const filtered=rows.filter(r=>r.name.toLowerCase().includes(search));
+  host.innerHTML='<table class="ranking-table"><thead><tr><th>#</th><th>Academy</th><th>Players evaluated</th><th>Current avg.</th><th>Prospect avg.</th><th>Academy score</th></tr></thead><tbody>'+filtered.map((r,i)=>'<tr><td class="rank-number">'+(i+1)+'</td><td><div class="rank-player"><img src="'+crestUrl(r.name)+'" alt="" onerror="handleCrestError(this)" data-crest="'+esc(r.name)+'"><div><strong>'+esc(r.name)+'</strong><small>Academy ranking</small></div></div></td><td>'+r.count+'</td><td>'+r.current.toFixed(1)+'</td><td>'+r.prospect.toFixed(1)+'</td><td class="rank-score">'+r.score.toFixed(1)+'</td></tr>').join('')+'</tbody></table>';return;
+ }
+ const scored=allRadarPlayers.filter(p=>playerRankingScores(p)&&rankingEligible(p,activeRankingTab)&&
+  (position==='ALL'||cleanPosition(p.position)===position)&&
+  (club==='ALL'||p.club===club)&&
+  (!search||[p.name,p.club,p.nationality].some(v=>String(v||'').toLowerCase().includes(search))))
+ .map(p=>({...p,scores:playerRankingScores(p)})).sort((a,b)=>b.scores.combined-a.scores.combined||b.scores.prospect-a.scores.prospect).slice(0,100);
+ if(!scored.length){host.innerHTML='<div class="rank-empty"><span class="rank-status">EVALUACIONES PENDIENTES</span><strong>El ranking está listo. Faltan las primeras valoraciones.</strong><p>Ya contamos con estadísticas oficiales de la UEFA Youth League para parte de los jugadores. Para el Top 100 combinado aún necesitamos valoraciones individuales de Current Level y Prospect Score: no vamos a convertir goles o edad directamente en una nota de scouting.</p></div>';return;}
+ host.innerHTML='<table class="ranking-table"><thead><tr><th>#</th><th>Player</th><th>Age</th><th>Current Level</th><th>Prospect Score</th><th>Future Radar Score</th></tr></thead><tbody>'+scored.map((p,i)=>'<tr><td class="rank-number">'+(i+1)+'</td><td><div class="rank-player"><img src="'+crestUrl(p.club||'')+'" alt="" onerror="handleCrestError(this)" data-crest="'+esc(p.club||'')+'"><div><strong>'+esc(p.name)+'</strong><small>'+esc(p.club||'')+' · '+esc(p.nationality||'')+'</small></div></div></td><td>'+esc(p.age??'—')+'</td><td>'+p.scores.current.toFixed(1)+'</td><td>'+p.scores.prospect.toFixed(1)+'</td><td class="rank-score">'+p.scores.combined.toFixed(1)+'</td></tr>').join('')+'</tbody></table>';
+}
+function setupRankings(){
+ const clubSelect=document.getElementById('rankingClub');
+ [...new Set(allRadarPlayers.map(p=>p.club).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'es')).forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;clubSelect.appendChild(o)});
+ document.querySelectorAll('[data-ranking-tab]').forEach(btn=>btn.addEventListener('click',()=>{activeRankingTab=btn.dataset.rankingTab;document.querySelectorAll('[data-ranking-tab]').forEach(b=>b.classList.toggle('active',b===btn));document.getElementById('rankingPosition').disabled=activeRankingTab==='academies';document.getElementById('rankingClub').disabled=activeRankingTab==='academies';document.getElementById('rankingMetric').style.display=activeRankingTab==='youth'?'block':'none';renderRankings()}));
+ ['rankingSearch','rankingPosition','rankingClub','rankingMetric'].forEach(id=>document.getElementById(id).addEventListener(id==='rankingSearch'?'input':'change',renderRankings));
+ renderRankings();
+}
+
+
+const U17_DATA_URL='./u17-world-cup-2026.json';
+let u17Data=null;
+function u17DateLabel(date){return new Date(date+'T12:00:00Z').toLocaleDateString('es-ES',{weekday:'short',day:'2-digit',month:'short',timeZone:'UTC'});}
+function u17Team(code){return u17Data.teams.find(t=>t.code===code);}
+function u17Flag(team,extraClass='u17-flag'){return '<img class="'+extraClass+'" src="'+team.flag+'" alt="Bandera de '+team.name+'" loading="lazy" decoding="async">';}
+function renderU17Fixtures(){
+ const date=document.getElementById('u17Date').value,group=document.getElementById('u17Group').value,term=document.getElementById('u17TeamSearch').value.trim().toLowerCase();
+ const groups=new Map(u17Data.teams.map(t=>[t.code,t.group]));
+ const list=u17Data.matches.filter(m=>(date==='ALL'||m.date===date)&&(group==='ALL'||groups.get(m.home)===group)&&(!term||[m.home,m.away].some(code=>{const t=u17Team(code);return (t?.name+' '+code).toLowerCase().includes(term)})));
+ document.getElementById('u17Fixtures').innerHTML=list.length?list.map(m=>{const home=u17Team(m.home),away=u17Team(m.away);return '<article class="u17-match"><div class="u17-match-time">'+m.timeQatar+'<small>'+u17DateLabel(m.date)+'</small></div><div class="u17-match-teams"><div class="u17-match-side">'+u17Flag(home,'u17-match-flag')+'<b>'+home.name+'</b></div><span>VS</span><div class="u17-match-side">'+u17Flag(away,'u17-match-flag')+'<b>'+away.name+'</b></div></div><div class="u17-match-meta">Grupo '+groups.get(m.home)+'<br>Campo '+m.pitch+'</div></article>'}).join(''):'<div class="empty">No hay partidos para estos filtros.</div>';
+}
+function renderU17Groups(){
+ const letters='ABCDEFGHIJKL'.split('');
+ document.getElementById('u17Groups').innerHTML=letters.map(g=>'<article class="u17-group"><h3>GRUPO '+g+'</h3>'+u17Data.teams.filter(t=>t.group===g).map(t=>'<div class="u17-team"><span class="u17-team-main">'+u17Flag(t)+'<span>'+t.name+'</span></span><small>'+t.code+'</small></div>').join('')+'</article>').join('');
+}
+
+let u17SquadPlayers=[];
+let u17SquadsLoaded=false;
+let u17SelectedTeam='ALL';
+function renderU17SquadResults(){
+ const position=document.getElementById('u17SquadPosition').value,term=document.getElementById('u17SquadSearch').value.trim().toLowerCase();
+ const list=u17SquadPlayers.filter(p=>p.nationalTeamCode===u17SelectedTeam&&(position==='ALL'||p.position===position)&&(!term||[p.name,p.club,p.nationalTeam].some(v=>String(v||'').toLowerCase().includes(term))));
+ const selected=u17Data.teams.find(t=>t.code===u17SelectedTeam);
+ document.getElementById('u17SquadCount').textContent=list.length+' jugadores · '+(selected?.name||u17SelectedTeam);
+ document.getElementById('u17SquadResults').innerHTML=list.length?'<div class="u17-squad-table-wrap"><table class="u17-squad-table"><thead><tr><th>#</th><th>Jugador</th><th>Posición</th><th>Edad</th><th>Fecha nacimiento</th><th>Altura</th><th>Club</th></tr></thead><tbody>'+list.map(p=>'<tr><td>'+p.squadNumber+'</td><td class="u17-squad-player">'+esc(p.name)+'</td><td>'+esc(cleanPosition(p.position))+'</td><td>'+p.age+'</td><td>'+esc(p.dateOfBirth)+'</td><td>'+(p.heightCm?p.heightCm+' cm':'—')+'</td><td class="u17-squad-club">'+esc(p.club||'—')+'</td></tr>').join('')+'</tbody></table></div>':'<div class="empty">Esta selección no tiene jugadores en el PDF oficial recibido. No añadiremos nombres estimados.</div>';
+}
+function openU17SquadTeam(code){
+ const team=u17Data.teams.find(t=>t.code===code);if(!team)return;
+ u17SelectedTeam=code;
+ document.getElementById('u17SquadCountryGrid').hidden=true;
+ document.getElementById('u17SquadDetail').hidden=false;
+ document.getElementById('u17SquadSelected').innerHTML=u17Flag(team,'')+'<span>'+esc(team.name)+'</span><small style="font-size:11px;color:var(--muted);font-weight:500">Grupo '+esc(team.group||'—')+'</small>';
+ document.getElementById('u17SquadSearch').value='';document.getElementById('u17SquadPosition').value='ALL';renderU17SquadResults();
+}
+function renderU17SquadCountries(){
+ const counts=new Map();u17SquadPlayers.forEach(p=>counts.set(p.nationalTeamCode,(counts.get(p.nationalTeamCode)||0)+1));
+ const host=document.getElementById('u17SquadCountryGrid');
+ host.innerHTML=u17Data.teams.map(team=>'<button type="button" class="u17-country-card" data-u17-country="'+esc(team.code)+'">'+u17Flag(team,'u17-country-flag')+'<span class="u17-country-info"><strong>'+esc(team.name)+'</strong><small>Grupo '+esc(team.group||'—')+'</small></span><span class="u17-country-count">'+(counts.get(team.code)||0)+'/21</span></button>').join('');
+ host.querySelectorAll('[data-u17-country]').forEach(button=>button.addEventListener('click',()=>openU17SquadTeam(button.dataset.u17Country)));
+}
+async function loadU17Squads(){
+ if(u17SquadsLoaded){document.getElementById('u17SquadCountryGrid').hidden=false;document.getElementById('u17SquadDetail').hidden=true;return}
+ const status=document.getElementById('u17SquadStatus');status.innerHTML='Cargando las convocatorias oficiales de FIFA desde la base de datos…';
+ try{
+  const response=await fetch('./fifa-u17-world-cup-2026-squads.json');if(!response.ok)throw new Error('No se pudo cargar la base de convocatorias ('+response.status+')');
+  const payload=await response.json();if(!Array.isArray(payload.teams)||!payload.teams.length)throw new Error('La base de datos no contiene selecciones');
+  const positionMap={PO:'GK',DF:'DEF',MC:'CM',DC:'ST'},sourceUrl='https://fdp.fifa.org/assetspublic/ce303/pdf/SquadLists-Spanish.pdf';
+  u17SquadPlayers=payload.teams.flatMap(team=>(team.players||[]).map(p=>({...p,name:p.playerName,position:positionMap[p.positionCode]||p.positionCode,age:p.ageAtTournamentStart,squadNumber:p.shirtNumber,nationalTeam:team.teamName,nationalTeamCode:team.teamCode,competition:payload.tournament.name,sourceUrl})));
+  const known=new Map(allRadarPlayers.map((p,i)=>[[String(p.name||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(),String(p.dateOfBirth||'')].join('|'),i]));
+  let added=0,matched=0;
+  for(const player of u17SquadPlayers){const key=[String(player.name||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(),String(player.dateOfBirth||'')].join('|');const link={competition:player.competition,nationalTeam:player.nationalTeam,nationalTeamCode:player.nationalTeamCode,squadNumber:player.squadNumber,sourceUrl};if(known.has(key)){allRadarPlayers[known.get(key)].worldCupSquad=link;matched++}else{allRadarPlayers.push({...player,nationality:player.nationalTeamCode,worldCupSquad:link});known.set(key,allRadarPlayers.length-1);added++}}
+  u17SquadsLoaded=true;
+  document.getElementById('u17SquadBack').addEventListener('click',()=>{document.getElementById('u17SquadDetail').hidden=true;document.getElementById('u17SquadCountryGrid').hidden=false});
+  document.getElementById('u17SquadPosition').addEventListener('change',renderU17SquadResults);document.getElementById('u17SquadSearch').addEventListener('input',renderU17SquadResults);
+  document.getElementById('heroCount').innerHTML=allRadarPlayers.length+' <small>perfiles registrados</small>';const clubs=[...new Set(allRadarPlayers.map(p=>p.club).filter(Boolean))];document.getElementById('clubCount').textContent=clubs.length;renderPlayers(allRadarPlayers);renderAcademies();loadCrests(clubs);
+  const rankingClub=document.getElementById('rankingClub');if(rankingClub){const present=new Set([...rankingClub.options].map(o=>o.value));clubs.forEach(c=>{if(!present.has(c)){const o=document.createElement('option');o.value=c;o.textContent=c;rankingClub.appendChild(o)}})}
+  renderU17SquadCountries();
+  const missingTeams=payload.teams.filter(t=>!t.players?.length).map(t=>t.teamName);
+  status.innerHTML='<strong>Base FIFA cargada:</strong> '+u17SquadPlayers.length+' jugadores de '+payload.summary.teamsWithSquadsInDocument+' convocatorias completas. '+added+' perfiles nuevos añadidos a Future Radar y '+matched+' vinculados con perfiles existentes.'+(missingTeams.length?' Convocatoria no incluida en el PDF: '+missingTeams.join(', ')+'.':'')+' <a href="'+sourceUrl+'" target="_blank" rel="noopener" style="color:var(--green);text-decoration:underline">Fuente oficial FIFA ↗</a>';
+ }catch(error){status.textContent='No se pudo cargar la base de convocatorias: '+error.message+'. Puedes consultar el PDF oficial enlazado arriba.';console.error(error)}
+}
+
+async function setupU17(){
+ try{const r=await fetch(U17_DATA_URL);if(!r.ok)throw new Error('U17 data unavailable');u17Data=await r.json();
+ document.getElementById('u17TeamCount').textContent=u17Data.teams.length;document.getElementById('u17MatchCount').textContent=u17Data.matches.length;
+ [...new Set(u17Data.matches.map(m=>m.date))].sort().forEach(d=>{const o=document.createElement('option');o.value=d;o.textContent=u17DateLabel(d);document.getElementById('u17Date').appendChild(o)});
+ ['u17Date','u17Group'].forEach(id=>document.getElementById(id).addEventListener('change',renderU17Fixtures));document.getElementById('u17TeamSearch').addEventListener('input',renderU17Fixtures);
+ document.querySelectorAll('[data-u17-tab]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-u17-tab]').forEach(x=>x.classList.toggle('active',x===b));document.getElementById('u17FixturesPanel').hidden=b.dataset.u17Tab!=='fixtures';document.getElementById('u17GroupsPanel').hidden=b.dataset.u17Tab!=='groups';document.getElementById('u17SquadsPanel').hidden=b.dataset.u17Tab!=='squads';if(b.dataset.u17Tab==='squads')loadU17Squads()}));
+ renderU17Fixtures();renderU17Groups();
+ }catch(e){document.getElementById('u17Fixtures').innerHTML='<div class="empty">No se ha podido cargar el calendario U17.</div>';console.error(e)}
+}
+
+
+
+let youthLeagueMatches=[];
+const youthTeamKey={
+ 'AEK Athens':'AEK Athens U19','Arsenal':'Arsenal U19','Aston Villa':'Aston Villa U19','Atlético de Madrid':'Atlético de Madrid U19','Barcelona':'Barcelona U19','Bayern München':'Bayern München U19','Bodø/Glimt':'Bodø/Glimt U19','Borussia Dortmund':'Borussia Dortmund U19','Club Brugge':'Club Brugge U19','Como':'Como U20','Porto':'FC Porto U19','Fenerbahçe':'Fenerbahçe U19','Feyenoord':'Feyenoord U19','Galatasaray':'Galatasaray U19','Inter':'Inter U20','LASK':'LASK Linz U19','Lens':'Lens U19','Lille':'Lille U19','Liverpool':'Liverpool U19','Manchester City':'Manchester City U19','Manchester United':'Manchester United U19','Napoli':'Napoli U19','PSV Eindhoven':'PSV Eindhoven U19','Paris Saint-Germain':'Paris Saint-Germain U19','Leipzig':'RB Leipzig U19','Real Betis':'Real Betis U19','Real Madrid':'Real Madrid U19','Roma':'Roma U20','Sabah':'Sabah U19','Shakhtar Donetsk':'Shakhtar Donetsk U19','Slavia Praha':'Slavia Praha U19','Sporting CP':'Sporting CP U19','Stuttgart':'VfB Stuttgart U19','Viking':'Viking FK U19','Villarreal':'Villarreal U19','Slovan Bratislava':'ŠK Slovan Bratislava U19'
+};
+function youthCrest(team){const key=youthTeamKey[team];return key?crestUrl(key):crestFallback(team)}
+function renderYouthCalendar(){
+ const day=document.getElementById('youthMatchdayFilter').value;
+ const status=document.getElementById('youthMatchStatusFilter').value;
+ const q=document.getElementById('youthTeamFilter').value.trim().toLocaleLowerCase();
+ const matches=youthLeagueMatches.filter(m=>(day==='ALL'||String(m.matchday)===day)&&(status==='ALL'||m.status===status)&&(!q||(m.home+' '+m.away).toLocaleLowerCase().includes(q)));
+ const host=document.getElementById('youthCalendarGrid');
+ const fmt=d=>new Date(d+'T12:00:00').toLocaleDateString('es-ES',{weekday:'short',day:'2-digit',month:'short'});
+ host.innerHTML=matches.map(m=>{
+  const finished=m.status==='FT';
+  const homeScore=finished?m.homeScore:'—',awayScore=finished?m.awayScore:'—';
+  const when=finished?'Finalizado':(m.kickoff||'Hora por confirmar')+' CET';
+  const idx=youthLeagueMatches.indexOf(m);
+  return '<button type="button" class="youth-match" data-youth-match="'+idx+'" aria-label="Ver ficha del partido '+esc(m.home)+' contra '+esc(m.away)+'"><div class="youth-match-top"><span>Jornada '+m.matchday+' · '+fmt(m.date)+'</span><span class="youth-match-status '+(finished?'':'upcoming')+'">'+(finished?'FT':'PRÓXIMO')+'</span></div><div class="youth-match-row"><span class="youth-match-team-wrap"><img class="youth-match-crest" src="'+esc(youthCrest(m.home))+'" data-crest="'+esc(youthTeamKey[m.home]||m.home)+'" alt="" onerror="handleCrestError(this)"><span class="youth-match-team" title="'+esc(m.home)+'">'+esc(m.home)+'</span></span><span class="youth-match-score '+(finished?'':'pending')+'">'+homeScore+'</span></div><div class="youth-match-row"><span class="youth-match-team-wrap"><img class="youth-match-crest" src="'+esc(youthCrest(m.away))+'" data-crest="'+esc(youthTeamKey[m.away]||m.away)+'" alt="" onerror="handleCrestError(this)"><span class="youth-match-team" title="'+esc(m.away)+'">'+esc(m.away)+'</span></span><span class="youth-match-score '+(finished?'':'pending')+'">'+awayScore+'</span></div><div class="youth-match-bottom"><span class="youth-match-day">'+(finished?'RESULTADO':'HORARIO')+'</span><span>'+when+'</span></div><div class="youth-match-open">Ver ficha del partido ↗</div></button>';
+ }).join('')||'<div class="empty">No hay partidos que coincidan con tu búsqueda.</div>';
+}
+
+function apiStatValue(value,suffix=''){if(value===null||value===undefined||value===''||value==='-')return '—';if(typeof value==='number'&&!Number.isFinite(value))return '—';return String(value)+suffix;}
+function renderYouthApiStats(data,m){
+ const host=document.getElementById('youthMatchStats');if(!host)return;
+ if(!data||!data.available){host.innerHTML='<div class="youth-api-section"><div class="data-status"><i class="data-dot"></i> Estadísticas no disponibles</div><p class="youth-api-note">'+esc(data?.message||'La fuente todavía no ha devuelto datos para este encuentro. No mostramos cifras estimadas ni inventadas.')+'</p></div>';return;}
+ const s=data.stats||{},home=m.home,away=m.away;
+ const pairs=[['Posesión','team_a_possession','team_b_possession','%'],['Tiros totales','team_a_shots','team_b_shots',''],['Tiros a puerta','team_a_shotsOnTarget','team_b_shotsOnTarget',''],['Tiros fuera','team_a_shotsOffTarget','team_b_shotsOffTarget',''],['Córneres','team_a_corners','team_b_corners',''],['Faltas','team_a_fouls','team_b_fouls',''],['Fueras de juego','team_a_offsides','team_b_offsides',''],['Amarillas','team_a_yellow_cards','team_b_yellow_cards',''],['Rojas','team_a_red_cards','team_b_red_cards','']];
+ const cards=pairs.filter(p=>s[p[1]]!==undefined||s[p[2]]!==undefined).map(p=>{let a=s[p[1]],b=s[p[2]];if(p[0]==='Posesión'){if(Number(a)<=1&&a!==null&&a!==undefined)a=Number(a)*100;if(Number(b)<=1&&b!==null&&b!==undefined)b=Number(b)*100;}const av=apiStatValue(a,p[3]),bv=apiStatValue(b,p[3]);const na=Number(a),nb=Number(b),total=na+nb;const meter=p[0]==='Posesión'&&Number.isFinite(total)&&total>0?'<div class="youth-api-meter"><i style="width:'+Math.max(0,Math.min(100,na/total*100))+'%"></i><i style="width:'+Math.max(0,Math.min(100,nb/total*100))+'%"></i></div>':'';return '<div class="youth-api-stat"><small>'+p[0]+'</small><div class="youth-api-duel"><div><b>'+esc(home)+'</b><span>'+esc(av)+'</span></div><div><b>'+esc(away)+'</b><span>'+esc(bv)+'</span></div></div>'+meter+'</div>';}).join('');
+ const xi=data.lineups||{};const list=v=>Array.isArray(v)?v.map(x=>typeof x==='string'?x:(x.name||x.full_name||x.player_name||x.player?.name||'')).filter(Boolean):[];
+ const hxi=list(xi.home||xi.team_a||xi.localteam||[]),axi=list(xi.away||xi.team_b||xi.visitorteam||[]);
+ const lineup=(hxi.length||axi.length)?'<div class="youth-api-section"><h3>Alineaciones</h3><div class="youth-api-xi"><div><h4>'+esc(home)+'</h4><ol>'+hxi.map(n=>'<li>'+esc(n)+'</li>').join('')+'</ol></div><div><h4>'+esc(away)+'</h4><ol>'+axi.map(n=>'<li>'+esc(n)+'</li>').join('')+'</ol></div></div></div>':'';
+ host.innerHTML='<div class="youth-api-stats">'+(cards?'<div class="youth-api-section"><h3>Estadísticas de equipo</h3><div class="youth-api-grid">'+cards+'</div></div>':'<div class="youth-api-section"><p class="youth-api-note">La fuente no ha facilitado estadísticas de equipo para este partido.</p></div>')+lineup+'<div class="youth-api-source">Datos de partido · FootyStats API · Estadísticas posteriores al encuentro</div></div>';
+}
+async function loadYouthMatchStats(m){
+ const host=document.getElementById('youthMatchStats');if(!host)return;host.innerHTML='<div class="youth-api-section"><div class="data-status"><i class="data-dot"></i> Consultando proveedor de estadísticas…</div><p class="youth-api-note">Buscando el encuentro y sus datos contrastados.</p></div>';
+ try{const params=new URLSearchParams({date:m.date,home:m.home,away:m.away});const response=await fetch('/api/youth-match-stats?'+params.toString());const payload=await response.json();if(!response.ok)throw new Error(payload.message||payload.error||'No se pudo consultar el proveedor');renderYouthApiStats(payload,m);}catch(error){renderYouthApiStats({available:false,message:error.message||'Error de conexión con el proveedor.'},m);}
+}
+function openYouthMatch(index){
+ const m=youthLeagueMatches[index];if(!m)return;const finished=m.status==='FT';const modal=document.getElementById('youthMatchModal');const officialUrl=m.uefaMatchUrl||'https://www.uefa.com/uefayouthleague/fixtures-results/';const fmt=new Date(m.date+'T12:00:00').toLocaleDateString('es-ES',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+ document.getElementById('youthMatchModalContent').innerHTML='<h2 id="youthMatchModalTitle" style="font:700 22px Space Grotesk;margin:18px 0 0">Ficha del partido</h2>'+'<div class="youth-match-scoreboard"><div class="youth-match-club"><img src="'+esc(youthCrest(m.home))+'" alt="" onerror="handleCrestError(this)" data-crest="'+esc(youthTeamKey[m.home]||m.home)+'"><span>'+esc(m.home)+'</span></div><div class="youth-match-bigscore">'+(finished?m.homeScore+' - '+m.awayScore:'VS')+'</div><div class="youth-match-club"><img src="'+esc(youthCrest(m.away))+'" alt="" onerror="handleCrestError(this)" data-crest="'+esc(youthTeamKey[m.away]||m.away)+'"><span>'+esc(m.away)+'</span></div></div>'+'<div class="youth-match-detail-grid"><div class="youth-match-detail-cell"><small>Fecha</small><strong>'+fmt+'</strong></div><div class="youth-match-detail-cell"><small>Competición</small><strong>UEFA Youth League</strong></div><div class="youth-match-detail-cell"><small>Jornada</small><strong>'+m.matchday+'</strong></div><div class="youth-match-detail-cell"><small>Estado</small><strong>'+(finished?'Finalizado':'Próximo')+'</strong></div></div>'+'<div class="youth-match-data-head"><strong>Estadísticas del partido</strong><span>Datos integrados</span></div><div id="youthMatchStats" class="youth-match-data-panel"><p class="youth-api-note">Cargando datos…</p></div>'+'<div class="youth-match-source-actions"><a class="uefa-link" href="'+esc(officialUrl)+'" target="_blank" rel="noopener">CENTRO OFICIAL UEFA ↗</a></div>';
+ modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';loadYouthMatchStats(m);
+}
+function closeYouthMatch(){const modal=document.getElementById('youthMatchModal');modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+async function setupYouthCalendar(){
+ const host=document.getElementById('youthCalendarGrid');
+ try{
+  const response=await fetch('./uefa-youth-league-2026-27.json');
+  if(!response.ok)throw new Error('No se pudo cargar el calendario');
+  const data=await response.json();youthLeagueMatches=data.matches||[];
+  document.getElementById('youthMatchdayFilter').addEventListener('change',renderYouthCalendar);
+  document.getElementById('youthMatchStatusFilter').addEventListener('change',renderYouthCalendar);
+  document.getElementById('youthTeamFilter').addEventListener('input',renderYouthCalendar);
+  host.addEventListener('click',e=>{const card=e.target.closest('[data-youth-match]');if(card)openYouthMatch(Number(card.dataset.youthMatch));});
+  document.getElementById('youthMatchClose').addEventListener('click',closeYouthMatch);
+  document.getElementById('youthMatchModal').addEventListener('click',e=>{if(e.target.id==='youthMatchModal')closeYouthMatch();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeYouthMatch();});
+  renderYouthCalendar();
+  loadCrests([...new Set(youthLeagueMatches.flatMap(m=>[youthTeamKey[m.home],youthTeamKey[m.away]]).filter(Boolean))]);
+ }catch(error){host.innerHTML='<div class="empty">No se ha podido cargar el calendario de la Youth League. Recarga la página.</div>';console.error(error)}
+}
+
+async function init(){try{const r=await fetch('./future-radar-players.json');if(!r.ok)throw new Error('No se pudo cargar el archivo de jugadores');allRadarPlayers=await r.json();const clubs=[...new Set(allRadarPlayers.map(p=>p.club).filter(Boolean))];document.getElementById('heroCount').innerHTML=allRadarPlayers.length+' <small>perfiles registrados</small>';document.getElementById('clubCount').textContent=clubs.length;renderPlayers(allRadarPlayers);renderAcademies();setupRankings();loadCrests(clubs)}catch(e){document.getElementById('playerGrid').innerHTML='<div class="empty">No se ha podido cargar la base de datos. Recarga la página en unos segundos.</div>';document.getElementById('academiesContainer').innerHTML='<div class="empty">No se han podido cargar las canteras.</div>';console.error(e)}}
+document.getElementById('playerSearch').addEventListener('input',filterPlayers);document.getElementById('positionFilter').addEventListener('change',filterPlayers);document.getElementById('academySearch').addEventListener('input',renderAcademies);document.getElementById('closeRoster').addEventListener('click',()=>document.getElementById('rosterPanel').classList.remove('show'));document.addEventListener('DOMContentLoaded',()=>{init();setupU17();setupYouthCalendar()});
+</script></body></html>
