@@ -5,5 +5,31 @@
       "includeFiles": "node_modules/pdfjs-dist/legacy/build/pdf.worker.js",
       "maxDuration": 60
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/players/:slug",
+      "destination": "/detail.html"
+    },
+    {
+      "source": "/players/:slug/",
+      "destination": "/detail.html"
+    },
+    {
+      "source": "/academies/:slug",
+      "destination": "/detail.html"
+    },
+    {
+      "source": "/academies/:slug/",
+      "destination": "/detail.html"
+    },
+    {
+      "source": "/matches/:slug",
+      "destination": "/detail.html"
+    },
+    {
+      "source": "/matches/:slug/",
+      "destination": "/detail.html"
+    }
+  ]
 }
