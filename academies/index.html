@@ -194,8 +194,8 @@ footer{padding:28px 0;border-top:1px solid #26372c;color:#839389;font-size:10px}
 <p class="hero-copy">Una plataforma independiente para descubrir, seguir y analizar a las próximas generaciones del fútbol. Talento joven, academias y datos en un solo radar.</p>
 <div class="actions"><a class="btn btn-primary" href="/players/">Explorar jugadores ↗</a><a class="btn btn-secondary" href="/academies/">Descubrir canteras</a></div></div>
 <aside class="hero-panel"><div class="panel-top"><span class="panel-label">Future Radar · Database</span><span class="live">BASE ACTIVA</span></div>
-<div class="hero-number" id="heroCount">921 <small>perfiles registrados</small></div>
-<div class="hero-stats"><div class="hero-stat"><strong id="clubCount">36</strong><span>Clubes</span></div><div class="hero-stat"><strong>U18–U21</strong><span>Edades</span></div><div class="hero-stat"><strong>26/27</strong><span>Temporada</span></div></div>
+<div class="hero-number" id="heroCount">1908 <small>perfiles registrados</small></div>
+<div class="hero-stats"><div class="hero-stat"><strong id="clubCount">527</strong><span>Clubes</span></div><div class="hero-stat"><strong>U17–U21</strong><span>Edades</span></div><div class="hero-stat"><strong>26/27</strong><span>Temporada</span></div></div>
 </aside></div></section>
 <section class="section" id="jugadores"><div class="wrap">
 <div class="section-head"><div><div class="section-kicker">Player database / 01</div><h2>Explora el talento</h2><p class="section-desc">Busca perfiles por nombre, club o nacionalidad. Cada ficha reúne la información disponible de cada jugador.</p></div>
@@ -470,7 +470,7 @@ async function loadU17Squads(){
   const response=await fetch('./fifa-u17-world-cup-2026-squads.json');if(!response.ok)throw new Error('No se pudo cargar la base de convocatorias ('+response.status+')');
   const payload=await response.json();if(!Array.isArray(payload.teams)||!payload.teams.length)throw new Error('La base de datos no contiene selecciones');
   const positionMap={PO:'GK',DF:'DEF',MC:'CM',DC:'ST'},sourceUrl='https://fdp.fifa.org/assetspublic/ce303/pdf/SquadLists-Spanish.pdf';
-  u17SquadPlayers=payload.teams.flatMap(team=>(team.players||[]).map(p=>({...p,name:p.playerName,position:positionMap[p.positionCode]||p.positionCode,age:p.ageAtTournamentStart,squadNumber:p.shirtNumber,nationalTeam:team.teamName,nationalTeamCode:team.teamCode,competition:payload.tournament.name,sourceUrl})));
+  u17SquadPlayers=payload.teams.flatMap(team=>(team.players||[]).map(p=>({...p,name:[p.givenNames,p.surnames].filter(Boolean).join(' ')||p.playerName,position:positionMap[p.positionCode]||p.positionCode,age:p.ageAtTournamentStart,squadNumber:p.shirtNumber,nationalTeam:team.teamName,nationalTeamCode:team.teamCode,competition:payload.tournament.name,sourceUrl})));
   const known=new Map(allRadarPlayers.map((p,i)=>[[String(p.name||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(),String(p.dateOfBirth||'')].join('|'),i]));
   let added=0,matched=0;
   for(const player of u17SquadPlayers){const key=[String(player.name||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(),String(player.dateOfBirth||'')].join('|');const link={competition:player.competition,nationalTeam:player.nationalTeam,nationalTeamCode:player.nationalTeamCode,squadNumber:player.squadNumber,sourceUrl};if(known.has(key)){allRadarPlayers[known.get(key)].worldCupSquad=link;matched++}else{allRadarPlayers.push({...player,nationality:player.nationalTeamCode,worldCupSquad:link});known.set(key,allRadarPlayers.length-1);added++}}
