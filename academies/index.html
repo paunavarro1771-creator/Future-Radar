@@ -195,7 +195,7 @@ footer{padding:28px 0;border-top:1px solid #26372c;color:#839389;font-size:10px}
 <div class="actions"><a class="btn btn-primary" href="/players/">Explorar jugadores ↗</a><a class="btn btn-secondary" href="/academies/">Descubrir canteras</a></div></div>
 <aside class="hero-panel"><div class="panel-top"><span class="panel-label">Future Radar · Database</span><span class="live">BASE ACTIVA</span></div>
 <div class="hero-number" id="heroCount">1908 <small>perfiles registrados</small></div>
-<div class="hero-stats"><div class="hero-stat"><strong id="clubCount">527</strong><span>Clubes</span></div><div class="hero-stat"><strong>U17–U21</strong><span>Edades</span></div><div class="hero-stat"><strong>26/27</strong><span>Temporada</span></div></div>
+<div class="hero-stats"><div class="hero-stat"><strong id="clubCount">527</strong><span>Canteras agrupadas</span></div><div class="hero-stat"><strong>U17–U21</strong><span>Edades</span></div><div class="hero-stat"><strong>26/27</strong><span>Temporada</span></div></div>
 </aside></div></section>
 <section class="section" id="jugadores"><div class="wrap">
 <div class="section-head"><div><div class="section-kicker">Player database / 01</div><h2>Explora el talento</h2><p class="section-desc">Busca perfiles por nombre, club o nacionalidad. Cada ficha reúne la información disponible de cada jugador.</p></div>
@@ -514,7 +514,7 @@ async function loadU17Squads(){
   u17SquadsLoaded=true;
   document.getElementById('u17SquadBack').addEventListener('click',()=>{document.getElementById('u17SquadDetail').hidden=true;document.getElementById('u17SquadCountryGrid').hidden=false});
   document.getElementById('u17SquadPosition').addEventListener('change',renderU17SquadResults);document.getElementById('u17SquadSearch').addEventListener('input',renderU17SquadResults);
-  document.getElementById('heroCount').innerHTML=allRadarPlayers.length+' <small>perfiles registrados</small>';const clubs=[...new Set(allRadarPlayers.map(p=>p.club).filter(Boolean))];document.getElementById('clubCount').textContent=clubs.length;renderPlayers(allRadarPlayers);renderAcademies();loadCrests(clubs);
+  document.getElementById('heroCount').innerHTML=allRadarPlayers.length+' <small>perfiles registrados</small>';const clubs=[...new Set(allRadarPlayers.map(p=>p.club).filter(Boolean))];document.getElementById('clubCount').textContent=buildAcademyGroups(allRadarPlayers).length;renderPlayers(allRadarPlayers);renderAcademies();loadCrests(clubs);
   const rankingClub=document.getElementById('rankingClub');if(rankingClub){const present=new Set([...rankingClub.options].map(o=>o.value));clubs.forEach(c=>{if(!present.has(c)){const o=document.createElement('option');o.value=c;o.textContent=c;rankingClub.appendChild(o)}})}
   renderU17SquadCountries();
   const missingTeams=payload.teams.filter(t=>!t.players?.length).map(t=>t.teamName);
