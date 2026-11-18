@@ -69,6 +69,21 @@ function simplify(event) {
     winnerCode: event.winnerCode || null
   };
 }
+function codeForTeam(name) {
+  return Object.keys(ALIASES).find(code => sameTeam(code, name)) || null;
+}
+async function listMatches(dates) {
+  const uniqueDates = [...new Set(dates)].slice(0, 20);
+  const payloads = await Promise.all(uniqueDates.map(date =>
+    getJson('/sport/football/scheduled-events/' + encodeURIComponent(date)).catch(() => ({ events: [] }))
+  ));
+  const events = payloads.flatMap(payload => Array.isArray(payload.events) ? payload.events : []);
+  return events.filter(event => tournamentId(event) === TOURNAMENT_ID).map(event => ({
+    ...simplify(event),
+    homeCode: codeForTeam(event.homeTeam?.name),
+    awayCode: codeForTeam(event.awayTeam?.name)
+  })).filter(event => event.homeCode && event.awayCode);
+}
 async function findEvent(date, home, away) {
   const payload = await getJson('/sport/football/scheduled-events/' + encodeURIComponent(date));
   const events = Array.isArray(payload.events) ? payload.events : [];
