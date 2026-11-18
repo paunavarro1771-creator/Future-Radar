@@ -115,7 +115,7 @@ module.exports = async (req, res) => {
   if (req.method !== 'GET') return res.status(405).json({ available: false, message: 'Método no permitido.' });
   try {
     if (String(req.query.list || '') === '1') {
-      const dates = String(req.query.dates || '').split(',').filter(value => /^\\d{4}-\\d{2}-\\d{2}$/.test(value));
+      const dates = String(req.query.dates || '').split(',').filter(value => /^\d{4}-\d{2}-\d{2}$/.test(value));
       if (!dates.length) return res.status(400).json({ available: false, message: 'Faltan las fechas del calendario.' });
       const matches = await listMatches(dates);
       return res.status(200).json({ available: true, matches, source: 'SofaScore', sourceType: 'unofficial_public_endpoint', updatedAt: new Date().toISOString() });
