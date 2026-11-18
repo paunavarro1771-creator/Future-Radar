@@ -6,7 +6,7 @@ const $=id=>document.getElementById(id), esc=v=>String(v??'—').replace(/[&<>"'
 const flag=code=>{const c=String(code||'').toUpperCase();return /^[A-Z]{3}$/.test(c)?String.fromCodePoint(...[...c].map(x=>127397+x.charCodeAt(0))):'🌍'};
 const crest=name=>'https://www.google.com/s2/favicons?domain='+encodeURIComponent(name)+'.com&sz=128';
 function normalizeAcademyCrestName(v){return String(v||'').replace(/\b(?:U\s?\d{1,2}|Under\s?\d{1,2})\b/ig,'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\b(football club|soccer club|club de football|club de futbol|fc|f\.c\.|cf|c\.f\.|afc)\b/g,'').replace(/[^a-z0-9]+/g,' ').trim()}
-function academyCrestForms(v){const full=String(v||'').replace(/\b(?:U\s?\d{1,2}|Under\s?\d{1,2})\b/ig,'').trim();return [...new Set([full,full.replace(/^(?:FC|CF|AFC|SC|FK|SK|AS|US|RC|CA|CD|UD|RCD|AC|SV)\s+/i,'').trim(),full.replace(/\s+(?:FC|CF|AFC|SC|FK|SK|AS|US|RC|CA|CD|UD|AC)$/i,'').trim()].filter(Boolean))}
+function academyCrestForms(v){const full=String(v||'').replace(/\b(?:U\s?\d{1,2}|Under\s?\d{1,2})\b/ig,'').trim();return [...new Set([full,full.replace(/^(?:FC|CF|AFC|SC|FK|SK|AS|US|RC|CA|CD|UD|RCD|AC|SV)\s+/i,'').trim(),full.replace(/\s+(?:FC|CF|AFC|FK|SK|AS|US|RC|CA|CD|UD|AC)$/i,'').trim()].filter(Boolean))}
 async function findAcademyCrest(names){
  for(const name of names){
   try{
