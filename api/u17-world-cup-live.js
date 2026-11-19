@@ -2,7 +2,7 @@ const BASE = 'https://www.sofascore.com/api/v1';
 const TOURNAMENT_ID = 279; // U17 World Championship
 const ALIASES = {
   QAT:['qatar','catar'], PAN:['panama','panama'], EGY:['egypt','egipto'], GRE:['greece','grecia'],
-  KOR:['south korea','korea republic','korea','corea del sur'], UGA:['uganda'], NCL:['new caledonia','nueva caledonia'],
+  KOR:['south korea','korea republic','republic of korea','korea','corea del sur','corea republicana'], UGA:['uganda'], NCL:['new caledonia','nueva caledonia'],
   ECU:['ecuador'], ARG:['argentina'], AUS:['australia'], MOZ:['mozambique','mozambique'], DEN:['denmark','dinamarca'],
   FRA:['france','francia'], HAI:['haiti','haiti'], KSA:['saudi arabia','arabia saudita','saudi arabia'], URU:['uruguay'],
   ITA:['italy','italia'], JAM:['jamaica'], CIV:['ivory coast','cote d ivoire','costa de marfil'], UZB:['uzbekistan','uzbekistan'],
@@ -73,23 +73,47 @@ function codeForTeam(name) {
   return Object.keys(ALIASES).find(code => sameTeam(code, name)) || null;
 }
 async function listMatches(dates) {
-  const uniqueDates = [...new Set(dates)].slice(0, 20);
-  const payloads = await Promise.all(uniqueDates.map(date =>
-    getJson('/sport/football/scheduled-events/' + encodeURIComponent(date)).catch(() => ({ events: [] }))
-  ));
-  const events = payloads.flatMap(payload => Array.isArray(payload.events) ? payload.events : []);
-  return events.filter(event => tournamentId(event) === TOURNAMENT_ID).map(event => ({
-    ...simplify(event),
-    date: event.startTimestamp ? new Date(event.startTimestamp * 1000).toISOString().slice(0, 10) : null,
-    homeCode: codeForTeam(event.homeTeam?.name),
-    awayCode: codeForTeam(event.awayTeam?.name)
-  })).filter(event => event.homeCode && event.awayCode);
+  const requestedDates = new Set([...new Set(dates)].slice(0, 30));
+  let events = [];
+  let seasonFeedWorked = false;
+  try {
+    const seasons = await getJson('/unique-tournament/' + TOURNAMENT_ID + '/seasons');
+    const season = (seasons.seasons || []).find(item => Number(item.year) === 2026)
+      || (seasons.seasons || [])[0];
+    if (season?.id) {
+      const feeds = await Promise.all([
+        getJson('/unique-tournament/' + TOURNAMENT_ID + '/season/' + season.id + '/events/last/0'),
+        getJson('/unique-tournament/' + TOURNAMENT_ID + '/season/' + season.id + '/events/next/0')
+      ]);
+      events = feeds.flatMap(payload => Array.isArray(payload.events) ? payload.events : []);
+      seasonFeedWorked = events.length > 0;
+    }
+  } catch (error) {
+    console.warn('SofaScore tournament feed unavailable; using daily schedules:', error.message);
+  }
+  if (!seasonFeedWorked) {
+    const payloads = await Promise.all([...requestedDates].map(date =>
+      getJson('/sport/football/scheduled-events/' + encodeURIComponent(date)).catch(() => null)
+    ));
+    events = payloads.flatMap(payload => Array.isArray(payload?.events) ? payload.events : []);
+  }
+  const unique = new Map();
+  for (const event of events) {
+    const date = event.startTimestamp ? new Date(event.startTimestamp * 1000).toISOString().slice(0, 10) : null;
+    if (!date || !requestedDates.has(date) || tournamentId(event) !== TOURNAMENT_ID) continue;
+    const homeCode = codeForTeam(event.homeTeam?.name);
+    const awayCode = codeForTeam(event.awayTeam?.name);
+    if (homeCode && awayCode) unique.set(event.id, {
+      ...simplify(event), date, homeCode, awayCode
+    });
+  }
+  return [...unique.values()];
 }
 async function findEvent(date, home, away) {
-  const payload = await getJson('/sport/football/scheduled-events/' + encodeURIComponent(date));
-  const events = Array.isArray(payload.events) ? payload.events : [];
-  return events.find(event => tournamentId(event) === TOURNAMENT_ID &&
-    sameTeam(home, event.homeTeam?.name) && sameTeam(away, event.awayTeam?.name)) || null;
+  const matches = await listMatches([date]);
+  const match = matches.find(event => event.homeCode === home && event.awayCode === away);
+  if (!match) return null;
+  return { id: match.id };
 }
 async function matchDetails(eventId) {
   const [event, statistics, lineups, incidents] = await Promise.all([
