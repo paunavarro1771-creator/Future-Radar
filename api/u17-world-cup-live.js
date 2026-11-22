@@ -147,7 +147,31 @@ async function findEvent(date, home, away) {
   if (!match) return null;
   return match;
 }
-async function matchDetails(eventId) {
+async function findMadplayFixture(homeCode, awayCode) {
+  const championshipUrl = 'https://api.madplay.app/scores/_ys/en/championship/83188/FIFA-U-17-World-Cup';
+  const response = await fetch(championshipUrl, { headers: { 'Accept': 'text/html', 'User-Agent': 'Mozilla/5.0 FutureRadarFC/1.0' } });
+  if (!response.ok) throw new Error('Madplay respondió ' + response.status);
+  const html = await response.text();
+  const homeAliases = ALIASES[homeCode] || [];
+  const awayAliases = ALIASES[awayCode] || [];
+  const links = [...html.matchAll(/href=["']([^"'<>]*\/scores\/_ys\/(?:en|es)\/match\/(\d+)\/([^"'?#]+))/gi)];
+  const slugNorm = value => norm(decodeURIComponent(String(value || '').replace(/-/g, ' ')));
+  const hasAlias = (slug, aliases) => aliases.some(alias => slug.includes(norm(alias)));
+  for (const match of links) {
+    const url = match[1], id = match[2], slug = match[3];
+    const normalized = slugNorm(slug);
+    if (hasAlias(normalized, homeAliases) && hasAlias(normalized, awayAliases)) {
+      return {
+        id,
+        slug,
+        matchUrl: 'https://api.madplay.app/scores/_ys/en/match/' + id + '/' + slug,
+        lineupUrl: 'https://api.madplay.app/scores/_ys/en/lineup/' + id + '/' + slug
+      };
+    }
+  }
+  return null;
+}
+async function matchDetails(eventId, homeCode, awayCode) {
   const [scoreboard, incidents] = await Promise.all([
     fetch('https://prod-cdn-public-api.livescore.com/v1/api/app/scoreboard/soccer/' + encodeURIComponent(eventId) + '?locale=en')
       .then(r => r.ok ? r.json() : null).catch(() => null),
@@ -200,12 +224,18 @@ async function matchDetails(eventId) {
     status: liveScoreStatus(event),
     statusDescription: event.Eps || 'Programado'
   } : null;
+  let alternativeProvider = null;
+  if (!statistics || !lineups) {
+    try { alternativeProvider = await findMadplayFixture(homeCode, awayCode); }
+    catch (error) { console.warn('Madplay fallback unavailable:', error.message); }
+  }
   return {
     event: eventData,
     statistics,
     lineups,
     incidents: rawIncidents,
-    source: 'LiveScore public match centre',
+    alternativeProvider,
+    source: 'LiveScore + Madplay/YSscores fallback',
     sourceType: 'unofficial_public_endpoint',
     updatedAt: new Date().toISOString()
   };
@@ -234,7 +264,7 @@ module.exports = async (req, res) => {
       message: 'LiveScore todavía no ofrece una ficha identificable para este partido. Conservamos el calendario oficial y no inventamos resultados.'
     });
     if (details) {
-      const data = await matchDetails(event.id);
+      const data = await matchDetails(event.id, home, away);
       return res.status(200).json({ available: true, ...data });
     }
     return res.status(200).json({ available: true, match: event, source: 'LiveScore', sourceType: 'unofficial_public_endpoint', updatedAt: new Date().toISOString() });
