@@ -1,0 +1,28 @@
+name: Data Engine regression tests
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'api/data-engine.js'
+      - 'api/u17-world-cup-live.js'
+      - 'data/fifa-u17-2026-official-group-fixtures.json'
+      - 'tests/data-engine.test.js'
+      - '.github/workflows/data-engine-tests.yml'
+  pull_request:
+    paths:
+      - 'api/data-engine.js'
+      - 'api/u17-world-cup-live.js'
+      - 'data/fifa-u17-2026-official-group-fixtures.json'
+      - 'tests/data-engine.test.js'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/data-engine.test.js
