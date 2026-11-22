@@ -5,7 +5,7 @@ const fs=require('node:fs/promises');
 const path=require('node:path');
 const ROOT='https://www.futureradar.es';
 const OUT=path.join(__dirname,'../data/u17-2026-snapshot.json');
-const start='2026-11-19',end='2026-11-27';
+const start='2026-11-19',end='2026-12-13';
 const day=86400000;
 const dates=[];
 for(let t=Date.parse(start+'T00:00:00Z');t<=Date.parse(end+'T00:00:00Z');t+=day)dates.push(new Date(t).toISOString().slice(0,10));
