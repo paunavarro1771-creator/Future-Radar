@@ -21,8 +21,26 @@ function withOfficialSchedule(matches,dates){
  const merged=new Map(officialSchedule.fixtures.filter(m=>dates.includes(m.date)).map(m=>{
    const item=officialMatch(m);return [item.id,item];
  }));
- for(const match of matches){if(match?.id)merged.set(match.id,{...merged.get(match.id),...match,scheduleOnly:false});}
- return [...merged.values()].sort((a,b)=>a.date.localeCompare(b.date)||String(a.kickoff||'').localeCompare(String(b.kickoff||'')));
+ for(const match of matches){
+   if(!match?.id)continue;
+   // The canonical identity is the date plus both FIFA team codes.
+   // Provider-specific IDs must not create duplicate fixture cards.
+   const canonical=(match.date&&match.home?.code&&match.away?.code)
+     ?[match.date,match.home.code,match.away.code].join(':'):match.id;
+   const official=merged.get(canonical);
+   if(official){
+     merged.set(canonical,{...official,...match,id:canonical,
+       home:{...official.home,...match.home},
+       away:{...official.away,...match.away},
+       matchNumber:official.matchNumber,pitch:official.pitch,
+       officialScheduleSource:official.source,
+       scheduleOnly:false});
+   }else{
+     merged.set(canonical,{...match,id:canonical,scheduleOnly:false});
+   }
+ }
+ return [...merged.values()].sort((a,b)=>a.date.localeCompare(b.date)||
+   String(a.kickoff||'').localeCompare(String(b.kickoff||'')));
 }
 const COMP='fifa-u17-world-cup-2026';
 const VALID_DATE=/^20\d{2}-(0[1-9]|1[0-2])-([0-2]\d|3[01])$/;
@@ -34,7 +52,7 @@ const setCache=(key,value,ttl)=>{if(cache.size>150)cache.clear();cache.set(key,{
 function normalizeMatch(m){
   const date=m.date||null,homeCode=m.homeCode||null,awayCode=m.awayCode||null;
   return {
-    id:m.matchKey||[date,homeCode,awayCode].join(':'),competitionId:COMP,date,
+    id:date&&homeCode&&awayCode?[date,homeCode,awayCode].join(':'):(m.matchKey||m.id||null),competitionId:COMP,date,
     home:{id:m.homeTeamId||null,code:homeCode,name:m.home||m.homeName||null,score:m.homeScore??null},
     away:{id:m.awayTeamId||null,code:awayCode,name:m.away||m.awayName||null,score:m.awayScore??null},
     status:m.status||null,kickoff:m.time||m.kickoff||null,
@@ -58,6 +76,7 @@ module.exports=async(req,res)=>{
     const upstreamHealth=await callLegacy({health:'1'}).catch(()=>null);
     return res.status(200).json({engine:'Future Radar Data Engine',version:1,competition:COMP,
       provider:upstreamHealth?.body||null,guaranteedRealTime:false,persistentDatabase:false,
+      officialGroupFixtures:officialSchedule.fixtures.length,officialScheduleAvailable:true,
       note:'The engine normalizes provider data; it does not create missing lineups or statistics.',
       checkedAt:new Date().toISOString()});
   }
