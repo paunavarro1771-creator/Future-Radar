@@ -23,7 +23,8 @@ jobs:
         run: node scripts/archive-u17-data.js
       - name: Commit only when data changed
         run: |
-          git add data/u17-2026-snapshot.json\n          if git diff --cached --quiet -- data/u17-2026-snapshot.json; then
+          git add data/u17-2026-snapshot.json
+          if git diff --cached --quiet -- data/u17-2026-snapshot.json; then
             echo "No snapshot changes"
             exit 0
           fi
