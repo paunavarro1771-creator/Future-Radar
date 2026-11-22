@@ -1,3 +1,5 @@
+'use strict';
+const apiFootball=require('./u17-api-football');
 const BASE = 'https://www.sofascore.com/api/v1'; // Reserved for future licensed integration
 const LIVESCORE_BASE = 'https://prod-cdn-mev-api.livescore.com/v1/api/app';
 const ALIASES = {
@@ -299,6 +301,16 @@ module.exports = async (req, res) => {
       const settled=await Promise.allSettled(batches.map(batch=>listMatches(batch)));
       for(const result of settled){if(result.status==='fulfilled')matches.push(...result.value);else liveError=result.reason;}
       matches=[...new Map(matches.map(m=>[m.matchKey||m.id,m])).values()];
+      let apiCoverage=null;
+      if(apiFootball.configured()){
+        try{
+          const provider=await apiFootball.fixtures(dates,codeForTeam);
+          apiCoverage=provider.coverageCount;
+          const combined=new Map(matches.map(m=>[m.matchKey,m]));
+          provider.matches.forEach(m=>combined.set(m.matchKey,m));
+          matches=[...combined.values()];
+        }catch(error){console.warn('API-Football unavailable:',error.message);liveError=error;}
+      }
       const seen=new Set(matches.map(m=>m.matchKey||`${m.date}:${m.homeCode}:${m.awayCode}`));
       for (const [key,snapshot] of Object.entries(VERIFIED_SNAPSHOTS)) {
         const [date,homeCode,awayCode]=key.split(':');
@@ -308,7 +320,7 @@ module.exports = async (req, res) => {
           competitionId:'fifa-u17-world-cup-2026',sourceType:snapshot.sourceType});
       }
       if(liveError && !matches.length)throw liveError;
-      return res.status(200).json({ available: true, matches, partial:!!liveError, requestedDates:dates.length, coveredDates:liveError?null:dates.length, source: liveError?'LiveScore (cobertura parcial) + registros verificados':'LiveScore + registros verificados', sourceType: 'unofficial_public_endpoint', updatedAt: new Date().toISOString() });
+      return res.status(200).json({ available: true, matches, partial:!!liveError, apiFootballConfigured:apiFootball.configured(), apiFootballCoveredMatches:apiCoverage, requestedDates:dates.length, coveredDates:liveError?null:dates.length, source: liveError?'LiveScore (cobertura parcial) + registros verificados':'LiveScore + registros verificados', sourceType: 'unofficial_public_endpoint', updatedAt: new Date().toISOString() });
     }
     const date = String(req.query.date || '');
     const home = String(req.query.home || '').toUpperCase();
@@ -317,6 +329,24 @@ module.exports = async (req, res) => {
       return res.status(400).json({ available: false, message: 'Fecha o selecciones no válidas.' });
     }
     const snapshot=verifiedSnapshot(date,home,away);
+    let apiFixture=null;
+    if(apiFootball.configured()){
+      try{
+        const result=await apiFootball.fixtures([date],codeForTeam);
+        apiFixture=result.matches.find(m=>m.homeCode===home&&m.awayCode===away)||null;
+      }catch(error){console.warn('API-Football fixture lookup unavailable:',error.message);}
+    }
+    if(apiFixture){
+      const identity={matchKey:apiFixture.matchKey,competitionId:apiFixture.competitionId,homeTeamId:apiFixture.homeTeamId,awayTeamId:apiFixture.awayTeamId};
+      if(!details)return res.status(200).json({available:true,...identity,match:apiFixture,source:'API-Football',updatedAt:new Date().toISOString()});
+      const enriched=await apiFootball.details(apiFixture.id).catch(()=>null);
+      return res.status(200).json({available:true,...identity,event:apiFixture,
+        statistics:enriched?.statistics?.length?enriched.statistics:snapshot?.statistics||null,
+        lineups:enriched?.lineups?.home?.length||enriched?.lineups?.away?.length?enriched.lineups:null,
+        incidents:enriched?.incidents?.length?enriched.incidents:snapshot?.incidents||[],
+        source:enriched?.source||'API-Football',sourceType:'api_football',
+        updatedAt:new Date().toISOString()});
+    }
     let event=null;
     try { event = await findEvent(date, home, away); }
     catch (error) { if (!snapshot) throw error; }
