@@ -8,6 +8,22 @@
  * No credentials, no scraping bypass, no invented stats.
  */
 const upstream=require('./u17-world-cup-live');
+const officialSchedule=require('../data/fifa-u17-2026-official-group-fixtures.json');
+function officialMatch(m){return {
+ id:`${m.date}:${m.homeCode}:${m.awayCode}`,competitionId:'fifa-u17-world-cup-2026',date:m.date,
+ home:{id:`national:${m.homeCode}:u17`,code:m.homeCode,name:null,score:null},
+ away:{id:`national:${m.awayCode}:u17`,code:m.awayCode,name:null,score:null},
+ status:'SCHEDULED',kickoff:m.kickoffLocal,timezone:m.timezone,pitch:m.pitch,
+ matchNumber:m.matchNumber,source:m.sourceUrl,sourceType:'official_schedule_pdf',
+ scheduleOnly:true,verifiedAt:null
+};}
+function withOfficialSchedule(matches,dates){
+ const merged=new Map(officialSchedule.fixtures.filter(m=>dates.includes(m.date)).map(m=>{
+   const item=officialMatch(m);return [item.id,item];
+ }));
+ for(const match of matches){if(match?.id)merged.set(match.id,{...merged.get(match.id),...match,scheduleOnly:false});}
+ return [...merged.values()].sort((a,b)=>a.date.localeCompare(b.date)||String(a.kickoff||'').localeCompare(String(b.kickoff||'')));
+}
 const COMP='fifa-u17-world-cup-2026';
 const VALID_DATE=/^20\d{2}-(0[1-9]|1[0-2])-([0-2]\d|3[01])$/;
 const VALID_CODE=/^[A-Z]{3}$/;
@@ -63,8 +79,15 @@ module.exports=async(req,res)=>{
   if(cached)return res.status(200).json({...cached,cached:true});
   try{
     const result=await callLegacy(query);
-    if(result.status!==200||!result.body?.available)
+    if(result.status!==200||!result.body?.available){
+      if(!details){
+        const matches=withOfficialSchedule([],query.dates.split(','));
+        if(matches.length)return res.status(200).json({available:true,competitionId:COMP,matches,
+          partial:true,requestedDates:query.dates.split(',').length,coveredDates:0,
+          source:'Official FIFA schedule only; live provider unavailable',liveDataAvailable:false});
+      }
       return res.status(result.status===200?502:result.status).json({available:false,upstream:result.body||null});
+    }
     const payload=details?{
       available:true,competitionId:COMP,matchId:[query.date,query.home,query.away].join(':'),
       match:result.body.event?normalizeMatch(result.body.event):null,
@@ -73,7 +96,7 @@ module.exports=async(req,res)=>{
       source:result.body.source||null,sourceType:result.body.sourceType||null,
       dataAsOf:result.body.dataAsOf||null,updatedAt:result.body.updatedAt||null
     }:{
-      available:true,competitionId:COMP,matches:(result.body.matches||[]).map(normalizeMatch),
+      available:true,competitionId:COMP,matches:withOfficialSchedule((result.body.matches||[]).map(normalizeMatch),query.dates.split(',')),
       partial:!!result.body.partial,requestedDates:result.body.requestedDates,
       coveredDates:result.body.coveredDates,source:result.body.source||null,
       updatedAt:result.body.updatedAt||null
@@ -82,6 +105,10 @@ module.exports=async(req,res)=>{
     return res.status(200).json(payload);
   }catch(err){
     console.error('Data Engine upstream error',err.message);
+    if(!details){const matches=withOfficialSchedule([],query.dates.split(','));
+      if(matches.length)return res.status(200).json({available:true,competitionId:COMP,matches,partial:true,
+        requestedDates:query.dates.split(',').length,coveredDates:0,
+        source:'Official FIFA schedule only; live provider unavailable',liveDataAvailable:false});}
     return res.status(502).json({available:false,error:'upstream_unavailable'});
   }
 };
