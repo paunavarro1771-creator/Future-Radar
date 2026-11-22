@@ -74,7 +74,7 @@ function codeForTeam(name) {
 }
 function liveScoreDate(event) {
   const packed = String(event?.Esd || '');
-  const match = packed.match(/^(\\d{4})(\\d{2})(\\d{2})/);
+  const match = packed.match(/^(\d{4})(\d{2})(\d{2})/);
   if (match) return match[1] + '-' + match[2] + '-' + match[3];
   const timestamp = event?.Etm?.ATm ? Number(event.Etm.ATm) : null;
   return timestamp ? new Date(timestamp).toISOString().slice(0, 10) : null;
@@ -99,7 +99,7 @@ function simplifyLiveScore(event, date, homeCode, awayCode) {
     awayScore: event.Tr2 === undefined || event.Tr2 === null || event.Tr2 === '' ? null : Number(event.Tr2),
     status,
     statusDescription: event.Eps || (status === 'FT' ? 'FT' : status === 'LIVE' ? 'EN DIRECTO' : 'Programado'),
-    minute: event.Eps && /^\\d/.test(String(event.Eps)) ? String(event.Eps).replace(/[^0-9+]/g, '') : null,
+    minute: event.Eps && /^\d/.test(String(event.Eps)) ? String(event.Eps).replace(/[^0-9+]/g, '') : null,
     startTimestamp: event.Etm?.ATm ? Math.floor(Number(event.Etm.ATm) / 1000) : null,
     date, homeCode, awayCode,
     sourceUrl: event.Eid ? 'https://www.livescore.com/' : null
