@@ -145,7 +145,7 @@ async function findEvent(date, home, away) {
   const matches = await listMatches([date]);
   const match = matches.find(event => event.homeCode === home && event.awayCode === away);
   if (!match) return null;
-  return { id: match.id };
+  return match;
 }
 async function matchDetails(eventId) {
   const [scoreboard, incidents] = await Promise.all([
@@ -200,7 +200,7 @@ module.exports = async (req, res) => {
       const data = await matchDetails(event.id);
       return res.status(200).json({ available: true, ...data });
     }
-    return res.status(200).json({ available: true, match: simplify(event), source: 'SofaScore', sourceType: 'unofficial_public_endpoint', updatedAt: new Date().toISOString() });
+    return res.status(200).json({ available: true, match: event, source: 'LiveScore', sourceType: 'unofficial_public_endpoint', updatedAt: new Date().toISOString() });
   } catch (error) {
     console.error('FIFA U17 live data error:', error);
     return res.status(error.status || 502).json({
