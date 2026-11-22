@@ -35,7 +35,7 @@ async function main(){
       if(next.home.score==null&&old.home?.score!=null)next.home.score=old.home.score;
       if(next.away.score==null&&old.away?.score!=null)next.away.score=old.away.score;
     }
-    if(JSON.stringify(old?.match)!==JSON.stringify(next))changed++;
+    if(JSON.stringify(old&&{...old,archivedAt:undefined})!==JSON.stringify(next))changed++;
     map.set(match.id,{...next,archivedAt:new Date().toISOString()});
   }
   if(!changed){console.log('No changes');return;}
