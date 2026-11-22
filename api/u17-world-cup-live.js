@@ -91,12 +91,18 @@ async function listMatches(dates) {
   } catch (error) {
     console.warn('SofaScore tournament feed unavailable; using daily schedules:', error.message);
   }
-  if (!seasonFeedWorked) {
-    const payloads = await Promise.all([...requestedDates].map(date =>
-      getJson('/sport/football/scheduled-events/' + encodeURIComponent(date)).catch(() => null)
-    ));
-    events = payloads.flatMap(payload => Array.isArray(payload?.events) ? payload.events : []);
-  }
+  // The season feed is paginated and may return events from only a small
+  // window. A non-empty response does NOT mean it covers every requested day.
+  // Always merge the daily schedule feeds so matches later in the tournament
+  // are not silently dropped from the calendar.
+  const dailyPayloads = await Promise.all([...requestedDates].map(date =>
+    getJson('/sport/football/scheduled-events/' + encodeURIComponent(date)).catch(error => {
+      console.warn('SofaScore daily schedule unavailable for ' + date + ':', error.message);
+      return null;
+    })
+  ));
+  const dailyEvents = dailyPayloads.flatMap(payload => Array.isArray(payload?.events) ? payload.events : []);
+  events = [...events, ...dailyEvents];
   const unique = new Map();
   for (const event of events) {
     const date = event.startTimestamp ? new Date(event.startTimestamp * 1000).toISOString().slice(0, 10) : null;
