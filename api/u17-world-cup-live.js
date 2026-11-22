@@ -294,8 +294,18 @@ module.exports = async (req, res) => {
     if (String(req.query.list || '') === '1') {
       const dates = String(req.query.dates || '').split(',').filter(value => /^\d{4}-\d{2}-\d{2}$/.test(value));
       if (!dates.length) return res.status(400).json({ available: false, message: 'Faltan las fechas del calendario.' });
-      const matches = await listMatches(dates);
-      return res.status(200).json({ available: true, matches, source: 'LiveScore', sourceType: 'unofficial_public_endpoint', updatedAt: new Date().toISOString() });
+      let matches=[];let liveError=null;
+      try { matches=await listMatches(dates); } catch(error) { liveError=error; }
+      const seen=new Set(matches.map(m=>m.matchKey||`${m.date}:${m.homeCode}:${m.awayCode}`));
+      for (const [key,snapshot] of Object.entries(VERIFIED_SNAPSHOTS)) {
+        const [date,homeCode,awayCode]=key.split(':');
+        if(!dates.includes(date)||seen.has(key))continue;
+        matches.push({...snapshot.event,id:'verified:'+key,date,homeCode,awayCode,matchKey:key,
+          homeTeamId:`national:${homeCode}:u17`,awayTeamId:`national:${awayCode}:u17`,
+          competitionId:'fifa-u17-world-cup-2026',sourceType:snapshot.sourceType});
+      }
+      if(liveError && !matches.length)throw liveError;
+      return res.status(200).json({ available: true, matches, source: liveError?'Verified historical snapshots':'LiveScore + verified historical snapshots', sourceType: 'unofficial_public_endpoint', updatedAt: new Date().toISOString() });
     }
     const date = String(req.query.date || '');
     const home = String(req.query.home || '').toUpperCase();
