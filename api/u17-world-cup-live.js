@@ -293,6 +293,14 @@ module.exports = async (req, res) => {
   res.setHeader('Cache-Control', details ? 'public, s-maxage=25, stale-while-revalidate=45' : 'public, s-maxage=45, stale-while-revalidate=90');
   if (req.method !== 'GET') return res.status(405).json({ available: false, message: 'Método no permitido.' });
   try {
+    if (String(req.query.health || '') === '1') return res.status(200).json({
+      competition:'fifa-u17-world-cup-2026',season:2026,
+      sources:[
+        {name:'API-Football',enabled:apiFootball.configured(),freeSeason2026:false,coverage:'not_available_on_free_plan'},
+        {name:'LiveScore',enabled:true,coverage:'unverified_unofficial',note:'No guaranteed live detail coverage'},
+        {name:'Verified historical records',enabled:true,coverage:'partial',matches:Object.keys(VERIFIED_SNAPSHOTS).length}
+      ],guaranteedRealTime:false,updatedAt:new Date().toISOString()
+    });
     if (String(req.query.list || '') === '1') {
       const dates = String(req.query.dates || '').split(',').filter(value => /^\d{4}-\d{2}-\d{2}$/.test(value));
       if (!dates.length) return res.status(400).json({ available: false, message: 'Faltan las fechas del calendario.' });

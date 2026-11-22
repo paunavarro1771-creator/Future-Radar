@@ -5,6 +5,9 @@
 const ROOT='https://v3.football.api-sports.io';
 const key=()=>process.env.API_FOOTBALL_KEY||'';
 const leagueId=()=>Number(process.env.API_FOOTBALL_U17_LEAGUE_ID)||0;
+// Season 2026 is not included in the API-Football free plan (verified in dashboard).
+// Opt-in avoids burning the 100 daily free requests on known-denied calls.
+const paidSeasonAccess=()=>process.env.API_FOOTBALL_2026_ACCESS==='enabled';
 const cache=new Map();
 async function request(path,params={}){
   if(!key())throw new Error('API_FOOTBALL_KEY not configured');
@@ -57,4 +60,4 @@ async function details(id){
   const incidents=eventRows.map(e=>({type:e.type||'',name:e.player?.name||'',minute:e.time?.elapsed??null,detail:e.detail||''}));
   return {statistics,lineups,incidents,source:'API-Football',sourceType:'api_football',updatedAt:new Date().toISOString()};
 }
-module.exports={fixtures,details,configured:()=>Boolean(key()&&leagueId())};
+module.exports={fixtures,details,configured:()=>Boolean(key()&&leagueId()&&paidSeasonAccess())};
