@@ -24,9 +24,13 @@ async function main(){
         'Accept':'application/json','User-Agent':'FutureRadarFC-DataEngine-Archive/1.0'}});
       if(!response.ok)throw Error('HTTP '+response.status);
       const payload=await response.json();
-      if(!payload.available||!Array.isArray(payload.matches)||payload.partial||
-         payload.coveredDates!==batch.length)throw Error('Incomplete provider response');
+      if(!payload.available||!Array.isArray(payload.matches)||!payload.matches.length)
+        throw Error('Empty or invalid provider response');
+      // A partial live feed is useful for archiving verified results; the
+      // official schedule is never mistaken for a completed match.
       allMatches.push(...payload.matches);
+      if(payload.partial||payload.coveredDates!==batch.length)
+        failedBatches.push({dates:batch,error:'Incomplete live coverage'});
     }catch(error){
       failedBatches.push({dates:batch,error:String(error.message).slice(0,100)});
     }finally{clearTimeout(timeout);}
@@ -42,6 +46,9 @@ async function main(){
   let changed=0;
   for(const match of payload.matches){
     if(!match||!match.id||!match.date||!match.home||!match.away)continue;
+    // Store only matches with provider evidence of score/status; do not fill
+    // the archive with schedule-only records that have no live information.
+    if(match.scheduleOnly||match.sourceType==='official_schedule_pdf')continue;
     const old=map.get(match.id);
     const next={...match};
     if(old){
@@ -53,7 +60,10 @@ async function main(){
       map.set(match.id,{...next,archivedAt:new Date().toISOString()});
     }
   }
-  if(!changed){console.log('No match changes; failed windows:',failedBatches.length);return;}
+  if(!changed){
+    if(!map.size)throw Error('No verified provider matches available to archive');
+    console.log('No match changes; failed windows:',failedBatches.length);return;
+  }
   const result={competitionId:'fifa-u17-world-cup-2026',schemaVersion:1,
     archivedAt:new Date().toISOString(),source:'Existing Future Radar provider aggregator',
     realtime:false,partial:payload.partial,failedDateWindows:failedBatches.map(b=>b.dates),matches:[...map.values()].sort((a,b)=>a.date.localeCompare(b.date))};
