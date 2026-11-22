@@ -1,4 +1,4 @@
-const BASE = 'https://www.sofascore.com/api/v1'; // Match-detail fallback only
+const BASE = 'https://www.sofascore.com/api/v1'; // Reserved for future licensed integration
 const LIVESCORE_BASE = 'https://prod-cdn-mev-api.livescore.com/v1/api/app';
 const ALIASES = {
   QAT:['qatar','catar'], PAN:['panama','panama'], EGY:['egypt','egipto'], GRE:['greece','grecia'],
@@ -102,6 +102,7 @@ function simplifyLiveScore(event, date, homeCode, awayCode) {
     minute: event.Eps && /^\d/.test(String(event.Eps)) ? String(event.Eps).replace(/[^0-9+]/g, '') : null,
     startTimestamp: event.Etm?.ATm ? Math.floor(Number(event.Etm.ATm) / 1000) : null,
     date, homeCode, awayCode,
+    matchKey: `${date}:${homeCode}:${awayCode}`, homeTeamId: `national:${homeCode}:u17`, awayTeamId: `national:${awayCode}:u17`, competitionId: 'fifa-u17-world-cup-2026',
     sourceUrl: event.Eid ? 'https://www.livescore.com/' : null
   };
 }
@@ -125,6 +126,7 @@ async function listMatches(dates) {
       return null;
     })
   ));
+  if (payloads.every(payload => payload === null)) throw new Error('No se pudo consultar ninguna fecha del proveedor');
   const unique = new Map();
   for (const payload of payloads) {
     for (const event of extractLiveScoreEvents(payload)) {
@@ -166,7 +168,8 @@ async function findMadplayFixture(homeCode, awayCode) {
   for (const match of links) {
     const id = match[2], slug = match[3];
     const normalized = slugNorm(slug);
-    if (hasAlias(normalized, homeAliases) && hasAlias(normalized, awayAliases)) {
+    const [slugHome, slugAway] = normalized.split(/\s+vs\s+/);
+    if (slugHome && slugAway && hasAlias(slugHome, homeAliases) && hasAlias(slugAway, awayAliases)) {
       return {
         id,
         slug,
@@ -265,13 +268,14 @@ module.exports = async (req, res) => {
       return res.status(400).json({ available: false, message: 'Fecha o selecciones no válidas.' });
     }
     const event = await findEvent(date, home, away);
+    const identity = { matchKey: `${date}:${home}:${away}`, homeTeamId: `national:${home}:u17`, awayTeamId: `national:${away}:u17`, competitionId: 'fifa-u17-world-cup-2026' };
     if (!event) {
       if (details) {
         let alternativeProvider = null;
         try { alternativeProvider = await findMadplayFixture(home, away); }
         catch (error) { console.warn('Madplay fallback unavailable:', error.message); }
         if (alternativeProvider) return res.status(200).json({
-          available: true, event: null, statistics: null, lineups: null, incidents: [],
+          available: true, ...identity, event: null, statistics: null, lineups: null, incidents: [],
           alternativeProvider, source: 'Madplay/YSscores fallback',
           sourceType: 'public_match_centre_page', updatedAt: new Date().toISOString()
         });
@@ -283,9 +287,9 @@ module.exports = async (req, res) => {
     }
     if (details) {
       const data = await matchDetails(event.id, home, away);
-      return res.status(200).json({ available: true, ...data });
+      return res.status(200).json({ available: true, ...identity, ...data });
     }
-    return res.status(200).json({ available: true, match: event, source: 'LiveScore', sourceType: 'unofficial_public_endpoint', updatedAt: new Date().toISOString() });
+    return res.status(200).json({ available: true, ...identity, match: event, source: 'LiveScore', sourceType: 'unofficial_public_endpoint', updatedAt: new Date().toISOString() });
   } catch (error) {
     console.error('FIFA U17 live data error:', error);
     return res.status(error.status || 502).json({
