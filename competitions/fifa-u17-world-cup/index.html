@@ -55,6 +55,7 @@ footer{padding:28px 0;border-top:1px solid #26372c;color:#839389;font-size:10px}
 .ranking-metric{display:none;min-width:150px}
 .rank-source{color:#91a397;font-size:9px;text-decoration:underline;text-underline-offset:3px}
 
+.u17-match{cursor:pointer}.u17-match:hover{border-color:var(--green)}.u17-detail-overlay{position:fixed;inset:0;z-index:100;background:#000b;display:none;align-items:center;justify-content:center;padding:16px}.u17-detail-overlay.open{display:flex}.u17-detail-modal{width:min(900px,100%);max-height:90vh;overflow:auto;background:#0d1510;border:1px solid #3a513f;border-radius:16px;padding:20px}.u17-detail-head{display:flex;justify-content:space-between;align-items:center}.u17-detail-head h2{font:700 20px 'Space Grotesk'}.u17-detail-close{background:#1a281e;border:1px solid #405443;color:white;border-radius:8px;padding:8px 12px}.u17-detail-section{margin-top:14px;border:1px solid #293a2f;background:#101913;border-radius:12px;padding:15px}.u17-detail-section h3{font:700 14px 'Space Grotesk';color:var(--green)}.u17-detail-score{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;text-align:center;gap:12px;padding:18px;background:#121d15;border-radius:12px}.u17-detail-side img{display:block;width:38px;height:26px;object-fit:cover;margin:0 auto 8px}.u17-detail-result{font:700 26px 'Space Grotesk';color:var(--green)}.u17-detail-grid,.u17-detail-lineups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.u17-detail-stat,.u17-detail-event{background:#0b120e;border:1px solid #25352b;border-radius:8px;padding:10px;font-size:11px}.u17-detail-stat{display:flex;justify-content:space-between;gap:8px}.u17-detail-note{font-size:11px;color:var(--muted);line-height:1.6}.u17-detail-lineups ol{font-size:11px;line-height:1.8}.u17-match-open{display:block;color:var(--green);font-size:9px;text-align:right;font-weight:800}@media(max-width:600px){.u17-detail-grid,.u17-detail-lineups{grid-template-columns:1fr}}
 /* FIFA U17 World Cup */
 .u17-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}.u17-stat{border:1px solid #2b3d31;background:#121c15;border-radius:10px;padding:15px}.u17-stat strong{font:700 24px 'Space Grotesk';color:var(--green);display:block}.u17-stat span{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
 .u17-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.u17-tab{border:1px solid #304234;background:#101913;color:#aebdb2;border-radius:8px;padding:10px 14px;font-size:11px;font-weight:800;cursor:pointer}.u17-tab.active{background:var(--green);color:#10180e;border-color:var(--green)}
@@ -269,6 +270,7 @@ footer{padding:28px 0;border-top:1px solid #26372c;color:#839389;font-size:10px}
 
 </main>
 <footer><div class="wrap footer-inner"><span class="footer-brand">FUTURE RADAR FC</span><span>Proyecto independiente de scouting · Temporada 2026/27</span><span>© 2026 Future Radar</span></div></footer>
+<div class="u17-detail-overlay" id="u17DetailOverlay" aria-hidden="true"><div class="u17-detail-modal" role="dialog" aria-modal="true"><div class="u17-detail-head"><h2 id="u17DetailTitle">Ficha del partido</h2><button class="u17-detail-close" id="u17DetailClose">Cerrar ✕</button></div><div id="u17DetailContent"></div></div></div>
 <script>
 let allRadarPlayers=[];
 const flags={ALB:'al',ALG:'dz',ANG:'ao',ARG:'ar',AUS:'au',AUT:'at',AZE:'az',BEL:'be',BIH:'ba',BRA:'br',BUL:'bg',CIV:'ci',CMR:'cm',COD:'cd',COL:'co',COM:'km',CRO:'hr',CUW:'cw',CZE:'cz',EGY:'eg',ENG:'gb-eng',ESP:'es',FIN:'fi',FRA:'fr',GAB:'ga',GAM:'gm',GBS:'gw',GEO:'ge',GER:'de',GHA:'gh',GRE:'gr',GUI:'gn',HUN:'hu',IRL:'ie',ISL:'is',ITA:'it',JPN:'jp',KOR:'kr',KOS:'xk',LTU:'lt',LVA:'lv',MAR:'ma',MDA:'md',MKD:'mk',MNE:'me',NED:'nl',NGR:'ng',NIR:'gb-nir',NOR:'no',PER:'pe',POL:'pl',POR:'pt',ROU:'ro',RUS:'ru',SCO:'gb-sct',SEN:'sn',SLO:'si',SRB:'rs',SUI:'ch',SVK:'sk',SWE:'se',THA:'th',TUN:'tn',TUR:'tr',UKR:'ua',USA:'us',WAL:'gb-wls',QAT:'qa',PAN:'pa',UGA:'ug',NCL:'nc',ECU:'ec',MOZ:'mz',DEN:'dk',HAI:'ht',KSA:'sa',URU:'uy',JAM:'jm',UZB:'uz',MLI:'ml',NZL:'nz',VIE:'vn',CUB:'cu',TJK:'tj',FIJ:'fj',CHN:'cn',TAN:'tz',CHI:'cl',CRC:'cr',MEX:'mx',VEN:'ve',DOM:'do'};
@@ -458,9 +460,27 @@ function renderU17Fixtures(){
   const isLive=live?.status==='LIVE',finished=live?.status==='FT';
   const state=isLive?(live.statusDescription||'EN DIRECTO'):(finished?'FINALIZADO':live?.status==='POSTPONED'?'APLAZADO':live?.status==='CANCELLED'?'CANCELADO':'PROGRAMADO');
   const minute=isLive&&live.minute!==null?' · '+live.minute+"'":'';
-  return '<article class="u17-match '+(isLive?'u17-match-live':'')+'"><div class="u17-match-time">'+m.timeQatar+'<small>'+u17DateLabel(m.date)+'</small></div><div class="u17-match-teams"><div class="u17-match-side">'+u17Flag(home,'u17-match-flag')+'<b>'+home.name+'</b></div><span class="u17-match-score-live">'+score+'</span><div class="u17-match-side">'+u17Flag(away,'u17-match-flag')+'<b>'+away.name+'</b></div></div><div class="u17-match-meta">'+state+minute+'<br>Grupo '+groups.get(m.home)+' · Campo '+m.pitch+'</div></article>';
+  const matchIndex=u17Data.matches.indexOf(m);
+  return '<article class="u17-match '+(isLive?'u17-match-live':'')+'" tabindex="0" role="button" data-u17-match="'+matchIndex+'"><div class="u17-match-time">'+m.timeQatar+'<small>'+u17DateLabel(m.date)+'</small></div><div class="u17-match-teams"><div class="u17-match-side">'+u17Flag(home,'u17-match-flag')+'<b>'+home.name+'</b></div><span class="u17-match-score-live">'+score+'</span><div class="u17-match-side">'+u17Flag(away,'u17-match-flag')+'<b>'+away.name+'</b></div></div><div class="u17-match-meta">'+state+minute+'<br>Grupo '+groups.get(m.home)+' · Campo '+m.pitch+'<span class="u17-match-open">VER FICHA ↗</span></div></article>';
  }).join(''):'<div class="empty">No hay partidos para estos filtros.</div>';
 }
+function renderU17MatchDetail(payload,m){
+ const home=u17Team(m.home),away=u17Team(m.away),live=u17CompetitionLiveMatches[u17CompetitionMatchKey(m.date,m.home,m.away)],event=payload.event||live||{};
+ const score=event.homeScore!=null?event.homeScore+' - '+event.awayScore:'VS',stats=Array.isArray(payload.statistics)?payload.statistics:[];
+ const statHtml=stats.length?'<div class="u17-detail-section"><h3>ESTADÍSTICAS</h3><div class="u17-detail-grid">'+stats.map(x=>'<div class="u17-detail-stat"><b>'+esc(x.home??'—')+'</b><span>'+esc(x.name||'Dato')+'</span><b>'+esc(x.away??'—')+'</b></div>').join('')+'</div></div>':'<div class="u17-detail-section"><h3>ESTADÍSTICAS</h3><p class="u17-detail-note">El proveedor no facilita estadísticas verificables para este partido.</p></div>';
+ const xi=payload.lineups||{},h=xi.home||[],a=xi.away||[];
+ const lineup=(h.length||a.length)?'<div class="u17-detail-section"><h3>ALINEACIONES</h3><div class="u17-detail-lineups"><div><b>'+esc(home.name)+'</b><ol>'+h.map(p=>'<li>'+esc(p.number||'')+' '+esc(p.name)+'</li>').join('')+'</ol></div><div><b>'+esc(away.name)+'</b><ol>'+a.map(p=>'<li>'+esc(p.number||'')+' '+esc(p.name)+'</li>').join('')+'</ol></div></div></div>':'<div class="u17-detail-section"><h3>ALINEACIONES</h3><p class="u17-detail-note">Las alineaciones oficiales todavía no están disponibles en la fuente.</p></div>';
+ const incidents=payload.incidents||[],events=incidents.length?'<div class="u17-detail-section"><h3>EVENTOS</h3>'+incidents.map(i=>'<div class="u17-detail-event">'+esc(i.Ty||i.type||i.name||'Evento')+' · '+esc(i.Ps||i.minute||i.Min||'')+' '+esc(i.Pnm||i.Nm||'')+'</div>').join('')+'</div>':'<div class="u17-detail-section"><h3>EVENTOS</h3><p class="u17-detail-note">No hay eventos detallados disponibles.</p></div>';
+ document.getElementById('u17DetailContent').innerHTML='<div class="u17-detail-score"><div class="u17-detail-side">'+u17Flag(home,'')+esc(home.name)+'</div><div class="u17-detail-result">'+score+'</div><div class="u17-detail-side">'+u17Flag(away,'')+esc(away.name)+'</div></div><p class="u17-detail-note">'+u17DateLabel(m.date)+' · '+m.timeQatar+' · '+esc(event.statusDescription||live?.statusDescription||'Programado')+'</p>'+statHtml+lineup+events+'<p class="u17-detail-note">Fuente: LiveScore. Los datos dependen de la cobertura disponible.</p>';
+}
+async function openU17Match(index){
+ const m=u17Data.matches[index],home=u17Team(m.home),away=u17Team(m.away);document.getElementById('u17DetailTitle').textContent=home.name+' vs '+away.name;
+ const overlay=document.getElementById('u17DetailOverlay');overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('u17DetailContent').innerHTML='<p class="u17-detail-note">Consultando datos del encuentro…</p>';
+ try{const q=new URLSearchParams({date:m.date,home:m.home,away:m.away,details:'1'}),r=await fetch('/api/u17-world-cup-live?'+q,{cache:'no-store'}),p=await r.json();if(!r.ok)throw new Error(p.message||'Error al consultar');renderU17MatchDetail(p,m)}
+ catch(e){document.getElementById('u17DetailContent').innerHTML='<p class="u17-detail-note">No se han podido cargar los detalles. '+esc(e.message)+'</p>'}
+}
+function closeU17Match(){document.getElementById('u17DetailOverlay').classList.remove('open');document.getElementById('u17DetailOverlay').setAttribute('aria-hidden','true');document.body.style.overflow=''}
+
 async function refreshU17CompetitionLive(){
  if(!u17Data?.matches?.length)return;
  const status=document.getElementById('u17LiveStatus');
@@ -556,6 +576,12 @@ async function setupU17(){
  document.getElementById('u17TeamCount').textContent=u17Data.teams.length;document.getElementById('u17MatchCount').textContent=u17Data.matches.length;
  [...new Set(u17Data.matches.map(m=>m.date))].sort().forEach(d=>{const o=document.createElement('option');o.value=d;o.textContent=u17DateLabel(d);document.getElementById('u17Date').appendChild(o)});
  ['u17Date','u17Group'].forEach(id=>document.getElementById(id).addEventListener('change',renderU17Fixtures));document.getElementById('u17TeamSearch').addEventListener('input',renderU17Fixtures);
+ const fixtureHost=document.getElementById('u17Fixtures');
+ fixtureHost.addEventListener('click',e=>{const card=e.target.closest('[data-u17-match]');if(card)openU17Match(Number(card.dataset.u17Match))});
+ fixtureHost.addEventListener('keydown',e=>{const card=e.target.closest('[data-u17-match]');if(card&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openU17Match(Number(card.dataset.u17Match))}});
+ document.getElementById('u17DetailClose').addEventListener('click',closeU17Match);
+ document.getElementById('u17DetailOverlay').addEventListener('click',e=>{if(e.target.id==='u17DetailOverlay')closeU17Match()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeU17Match()});
  document.querySelectorAll('[data-u17-tab]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-u17-tab]').forEach(x=>x.classList.toggle('active',x===b));document.getElementById('u17FixturesPanel').hidden=b.dataset.u17Tab!=='fixtures';document.getElementById('u17GroupsPanel').hidden=b.dataset.u17Tab!=='groups';document.getElementById('u17SquadsPanel').hidden=b.dataset.u17Tab!=='squads';if(b.dataset.u17Tab==='squads')loadU17Squads()}));
  renderU17Fixtures();renderU17Groups();
  refreshU17CompetitionLive();setInterval(refreshU17CompetitionLive,60000);
