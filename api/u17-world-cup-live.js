@@ -119,7 +119,7 @@ function extractLiveScoreEvents(payload) {
   return stages.flatMap(stage => Array.isArray(stage.Events) ? stage.Events : []);
 }
 async function listMatches(dates) {
-  const requestedDates = new Set([...new Set(dates)].slice(0, 30));
+  const requestedDates = new Set([...new Set(dates)].slice(0, 7));
   const payloads = await Promise.all([...requestedDates].map(date =>
     getLiveScoreDay(date).catch(error => {
       console.warn('LiveScore daily feed unavailable for ' + date + ':', error.message);
@@ -295,7 +295,10 @@ module.exports = async (req, res) => {
       const dates = String(req.query.dates || '').split(',').filter(value => /^\d{4}-\d{2}-\d{2}$/.test(value));
       if (!dates.length) return res.status(400).json({ available: false, message: 'Faltan las fechas del calendario.' });
       let matches=[];let liveError=null;
-      try { matches=await listMatches(dates); } catch(error) { liveError=error; }
+      const batches=[];for(let i=0;i<dates.length;i+=7)batches.push(dates.slice(i,i+7));
+      const settled=await Promise.allSettled(batches.map(batch=>listMatches(batch)));
+      for(const result of settled){if(result.status==='fulfilled')matches.push(...result.value);else liveError=result.reason;}
+      matches=[...new Map(matches.map(m=>[m.matchKey||m.id,m])).values()];
       const seen=new Set(matches.map(m=>m.matchKey||`${m.date}:${m.homeCode}:${m.awayCode}`));
       for (const [key,snapshot] of Object.entries(VERIFIED_SNAPSHOTS)) {
         const [date,homeCode,awayCode]=key.split(':');
@@ -305,7 +308,7 @@ module.exports = async (req, res) => {
           competitionId:'fifa-u17-world-cup-2026',sourceType:snapshot.sourceType});
       }
       if(liveError && !matches.length)throw liveError;
-      return res.status(200).json({ available: true, matches, source: liveError?'Verified historical snapshots':'LiveScore + verified historical snapshots', sourceType: 'unofficial_public_endpoint', updatedAt: new Date().toISOString() });
+      return res.status(200).json({ available: true, matches, partial:!!liveError, requestedDates:dates.length, coveredDates:liveError?null:dates.length, source: liveError?'LiveScore (cobertura parcial) + registros verificados':'LiveScore + registros verificados', sourceType: 'unofficial_public_endpoint', updatedAt: new Date().toISOString() });
     }
     const date = String(req.query.date || '');
     const home = String(req.query.home || '').toUpperCase();

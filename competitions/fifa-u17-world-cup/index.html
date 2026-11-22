@@ -509,7 +509,7 @@ async function refreshU17CompetitionLive(){
   u17CompetitionLiveMatches=next;
   renderU17Fixtures();
   renderU17Groups();
-  if(status)status.textContent='Fuente: LiveScore · última consulta · '+new Date(payload.updatedAt||Date.now()).toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});
+  if(status)status.textContent=(payload.partial?'Cobertura parcial: algunas fechas no han respondido · ':'Fuente: LiveScore · ')+'última consulta · '+new Date(payload.updatedAt||Date.now()).toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});
  }catch(error){
   if(status)status.textContent='Sin conexión con la fuente de marcadores · mostrando últimos datos recibidos. Reintento automático.';
   console.warn('Mundial Sub-17 live data:',error);
