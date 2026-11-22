@@ -259,10 +259,22 @@ module.exports = async (req, res) => {
       return res.status(400).json({ available: false, message: 'Fecha o selecciones no válidas.' });
     }
     const event = await findEvent(date, home, away);
-    if (!event) return res.status(200).json({
-      available: false, covered: false, source: 'LiveScore',
-      message: 'LiveScore todavía no ofrece una ficha identificable para este partido. Conservamos el calendario oficial y no inventamos resultados.'
-    });
+    if (!event) {
+      if (details) {
+        let alternativeProvider = null;
+        try { alternativeProvider = await findMadplayFixture(home, away); }
+        catch (error) { console.warn('Madplay fallback unavailable:', error.message); }
+        if (alternativeProvider) return res.status(200).json({
+          available: true, event: null, statistics: null, lineups: null, incidents: [],
+          alternativeProvider, source: 'Madplay/YSscores fallback',
+          sourceType: 'public_match_centre_page', updatedAt: new Date().toISOString()
+        });
+      }
+      return res.status(200).json({
+        available: false, covered: false, source: 'LiveScore + Madplay',
+        message: 'No se ha encontrado una ficha de datos para este partido. Conservamos el calendario oficial y no inventamos resultados.'
+      });
+    }
     if (details) {
       const data = await matchDetails(event.id, home, away);
       return res.status(200).json({ available: true, ...data });
