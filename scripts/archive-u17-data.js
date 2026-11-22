@@ -60,7 +60,10 @@ async function main(){
       map.set(match.id,{...next,archivedAt:new Date().toISOString()});
     }
   }
-  if(!changed){console.log('No match changes; failed windows:',failedBatches.length);return;}
+  if(!changed){
+    if(!map.size)throw Error('No verified provider matches available to archive');
+    console.log('No match changes; failed windows:',failedBatches.length);return;
+  }
   const result={competitionId:'fifa-u17-world-cup-2026',schemaVersion:1,
     archivedAt:new Date().toISOString(),source:'Existing Future Radar provider aggregator',
     realtime:false,partial:payload.partial,failedDateWindows:failedBatches.map(b=>b.dates),matches:[...map.values()].sort((a,b)=>a.date.localeCompare(b.date))};
