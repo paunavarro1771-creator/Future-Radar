@@ -63,6 +63,23 @@ footer{padding:28px 0;border-top:1px solid #26372c;color:#839389;font-size:10px}
 @media(max-width:800px){.u17-groups{grid-template-columns:repeat(3,1fr)}}@media(max-width:600px){.u17-stats{grid-template-columns:repeat(2,1fr)}.u17-groups{grid-template-columns:repeat(2,1fr)}.u17-match{grid-template-columns:68px 1fr;gap:8px}.u17-match-meta{grid-column:2;text-align:center}.u17-match-teams{gap:7px;font-size:10px}}
 
 .u17-team{align-items:center}
+.u17-group{padding:13px 10px;min-width:0}
+.u17-group h3{display:flex;align-items:center;justify-content:space-between}
+.u17-group-table{width:100%;border-collapse:collapse;font-size:10px;font-variant-numeric:tabular-nums}
+.u17-group-table th{color:#819187;font-size:8px;font-weight:800;padding:7px 3px;text-align:right;border-bottom:1px solid #2a3b30}
+.u17-group-table th:first-child{text-align:left}
+.u17-group-table td{padding:8px 3px;text-align:right;border-bottom:1px solid #223128;color:#dce6de}
+.u17-group-table tr:last-child td{border-bottom:0}
+.u17-group-table td:first-child{text-align:left}
+.u17-group-team{display:flex;align-items:center;gap:6px;min-width:0;font-weight:700}
+.u17-group-team img{width:20px;height:14px;object-fit:cover;border-radius:2px;flex:0 0 auto}
+.u17-group-team span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.u17-group-table .u17-pos{color:var(--green);font-weight:800;width:16px}
+.u17-group-table .u17-points{color:var(--green);font-weight:800}
+.u17-group-foot{font-size:9px;color:var(--muted);margin-top:9px}
+.u17-group-legend{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:10px;margin:0 0 12px}
+.u17-group-legend b{color:var(--green)}
+
 .u17-team-main{display:flex;align-items:center;gap:9px;min-width:0}
 .u17-flag{width:25px;height:17px;object-fit:cover;border-radius:3px;flex:0 0 auto;border:1px solid #ffffff24;box-shadow:0 1px 3px #0005}
 .u17-match-side{display:flex;align-items:center;justify-content:center;gap:8px;min-width:0;flex:1}
@@ -457,15 +474,35 @@ async function refreshU17CompetitionLive(){
   payload.matches.forEach(match=>{next[u17CompetitionMatchKey(match.date,match.homeCode,match.awayCode)]=match});
   u17CompetitionLiveMatches=next;
   renderU17Fixtures();
-  if(status)status.textContent='Marcadores actualizados · '+new Date(payload.updatedAt||Date.now()).toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});
+  renderU17Groups();
+  if(status)status.textContent='Marcadores y clasificaciones actualizados · '+new Date(payload.updatedAt||Date.now()).toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});
  }catch(error){
   if(status)status.textContent='No se han podido actualizar los marcadores. Se reintentará automáticamente.';
   console.warn('Mundial Sub-17 live data:',error);
  }
 }
+function calculateU17GroupStandings(group){
+ const teams=u17Data.teams.filter(t=>t.group===group);
+ const table=new Map(teams.map(t=>[t.code,{team:t,played:0,wins:0,draws:0,losses:0,gf:0,ga:0,points:0,live:0}]));
+ for(const fixture of u17Data.matches.filter(m=>m.stage==='group'&&teams.some(t=>t.code===m.home)&&teams.some(t=>t.code===m.away))){
+  const result=u17CompetitionLiveMatches[u17CompetitionMatchKey(fixture.date,fixture.home,fixture.away)];
+  if(!result||!['FT','LIVE'].includes(result.status)||result.homeScore===null||result.awayScore===null||!Number.isFinite(Number(result.homeScore))||!Number.isFinite(Number(result.awayScore)))continue;
+  const home=table.get(fixture.home),away=table.get(fixture.away),hs=Number(result.homeScore),as=Number(result.awayScore);
+  home.played++;away.played++;home.gf+=hs;home.ga+=as;away.gf+=as;away.ga+=hs;
+  if(result.status==='LIVE'){home.live++;away.live++}
+  if(hs>as){home.wins++;home.points+=3;away.losses++}
+  else if(hs<as){away.wins++;away.points+=3;home.losses++}
+  else{home.draws++;away.draws++;home.points++;away.points++}
+ }
+ return [...table.values()].map(row=>({...row,gd:row.gf-row.ga})).sort((a,b)=>b.points-a.points||b.gd-a.gd||b.gf-a.gf||b.wins-a.wins||a.team.name.localeCompare(b.team.name,'es'));
+}
 function renderU17Groups(){
  const letters='ABCDEFGHIJKL'.split('');
- document.getElementById('u17Groups').innerHTML=letters.map(g=>'<article class="u17-group"><h3>GRUPO '+g+'</h3>'+u17Data.teams.filter(t=>t.group===g).map(t=>'<div class="u17-team"><span class="u17-team-main">'+u17Flag(t)+'<span>'+t.name+'</span></span><small>'+t.code+'</small></div>').join('')+'</article>').join('');
+ const host=document.getElementById('u17Groups');
+ host.innerHTML='<div class="u17-group-legend"><span><b>PJ</b> Partidos</span><span><b>DG</b> Diferencia</span><span><b>Pts</b> Puntos</span><span>Clasificación provisional · incluye partidos en directo</span></div>'+letters.map(g=>{
+  const rows=calculateU17GroupStandings(g);
+  return '<article class="u17-group"><h3><span>GRUPO '+g+'</span><small>'+rows.filter(r=>r.played>0).length+'/4</small></h3><div style="overflow-x:auto"><table class="u17-group-table"><thead><tr><th>Selección</th><th>PJ</th><th>G</th><th>E</th><th>P</th><th>DG</th><th>Pts</th></tr></thead><tbody>'+rows.map((r,i)=>'<tr><td><span class="u17-group-team"><b class="u17-pos">'+(i+1)+'</b>'+u17Flag(r.team,'')+'<span>'+esc(r.team.name)+(r.live?' <i style="color:var(--green);font-style:normal">●</i>':'')+'</span></span></td><td>'+r.played+'</td><td>'+r.wins+'</td><td>'+r.draws+'</td><td>'+r.losses+'</td><td>'+(r.gd>0?'+':'')+r.gd+'</td><td class="u17-points">'+r.points+'</td></tr>').join('')+'</tbody></table></div><div class="u17-group-foot">'+rows.reduce((n,r)=>n+r.played,0)/2+' partidos contabilizados</div></article>';
+ }).join('');
 }
 
 let u17SquadPlayers=[];
