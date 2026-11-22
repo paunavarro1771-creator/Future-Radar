@@ -495,24 +495,73 @@ async function openU17Match(index){
 }
 function closeU17Match(){activeU17MatchIndex=null;document.getElementById('u17DetailOverlay').classList.remove('open');document.getElementById('u17DetailOverlay').setAttribute('aria-hidden','true');document.body.style.overflow=''}
 
+function u17NormalizeEngineMatch(match){
+ const homeCode=match.home?.code||match.homeCode,awayCode=match.away?.code||match.awayCode;
+ if(!match.date||!homeCode||!awayCode)return null;
+ return {
+   date:match.date,homeCode,awayCode,
+   homeScore:match.home?.score??match.homeScore??null,
+   awayScore:match.away?.score??match.awayScore??null,
+   status:match.status||'SCHEDULED',
+   statusDescription:match.statusDescription||match.status||'',
+   minute:match.minute??null,
+   source:match.source||'',
+   verifiedAt:match.verifiedAt||match.archivedAt||null
+ };
+}
 async function refreshU17CompetitionLive(){
  if(!u17Data?.matches?.length)return;
  const status=document.getElementById('u17LiveStatus');
+ const next={...u17CompetitionLiveMatches};
+ let archiveCount=0,liveCount=0,liveError=null;
  try{
-  const dates=[...new Set(u17Data.matches.map(m=>m.date))];
-  const response=await fetch('/api/u17-world-cup-live?list=1&dates='+encodeURIComponent(dates.join(',')),{cache:'no-store'});
-  if(!response.ok)throw new Error('API '+response.status);
-  const payload=await response.json();
-  if(!payload.available||!Array.isArray(payload.matches))throw new Error('Respuesta de resultados no disponible');
-  const next={};
-  payload.matches.forEach(match=>{next[u17CompetitionMatchKey(match.date,match.homeCode,match.awayCode)]=match});
-  u17CompetitionLiveMatches=next;
-  renderU17Fixtures();
-  renderU17Groups();
-  if(status)status.textContent=(payload.partial?'Cobertura parcial: algunas fechas no han respondido · ':'Fuente: LiveScore · ')+'última consulta · '+new Date(payload.updatedAt||Date.now()).toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});
- }catch(error){
-  if(status)status.textContent='Sin conexión con la fuente de marcadores · mostrando últimos datos recibidos. Reintento automático.';
-  console.warn('Mundial Sub-17 live data:',error);
+   // Persistent snapshot is the historical baseline, not a live feed.
+   const archiveResponse=await fetch('/api/data-engine-archive',{cache:'no-store'});
+   if(archiveResponse.ok){
+     const archive=await archiveResponse.json();
+     if(Array.isArray(archive.matches)){
+       archive.matches.forEach(raw=>{
+         const match=u17NormalizeEngineMatch(raw);
+         if(!match)return;
+         next[u17CompetitionMatchKey(match.date,match.homeCode,match.awayCode)]=match;
+         archiveCount++;
+       });
+     }
+   }
+ }catch(error){console.warn('U17 historical archive:',error);}
+ try{
+   // The legacy provider supports at most seven dates per request.
+   // Fetch the current day and six previous days for live updates; do not
+   // discard the full tournament history held in the archive.
+   const today=new Date().toISOString().slice(0,10);
+   const dates=[...new Set(u17Data.matches.map(m=>m.date))]
+     .filter(d=>d<=today).sort().reverse().slice(0,7);
+   if(dates.length){
+     const response=await fetch('/api/u17-world-cup-live?list=1&dates='+encodeURIComponent(dates.join(',')),{cache:'no-store'});
+     if(!response.ok)throw new Error('API '+response.status);
+     const payload=await response.json();
+     if(!payload.available||!Array.isArray(payload.matches))throw new Error('Proveedor sin resultados');
+     payload.matches.forEach(raw=>{
+       const match=u17NormalizeEngineMatch(raw);
+       if(!match)return;
+       const key=u17CompetitionMatchKey(match.date,match.homeCode,match.awayCode);
+       const previous=next[key];
+       // Never replace an archived result with an empty scheduled record.
+       if(previous?.homeScore!=null&&previous?.awayScore!=null&&
+          (match.homeScore==null||match.awayScore==null))return;
+       next[key]=match;
+       liveCount++;
+     });
+   }
+ }catch(error){liveError=error;console.warn('U17 live updates:',error);}
+ u17CompetitionLiveMatches=next;
+ renderU17Fixtures();
+ renderU17Groups();
+ if(status){
+   const source=archiveCount?'Archivo histórico: '+archiveCount+' partidos':'Archivo histórico no disponible';
+   status.textContent=source+' · Actualizaciones del proveedor: '+liveCount+
+     (liveError?' · proveedor temporalmente no disponible':'')+
+     ' · consulta '+new Date().toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});
  }
 }
 function calculateU17GroupStandings(group){
