@@ -5,15 +5,21 @@
 const ROOT='https://v3.football.api-sports.io';
 const key=()=>process.env.API_FOOTBALL_KEY||'';
 const leagueId=()=>Number(process.env.API_FOOTBALL_U17_LEAGUE_ID)||0;
+const cache=new Map();
 async function request(path,params={}){
   if(!key())throw new Error('API_FOOTBALL_KEY not configured');
+  const cacheKey=path+JSON.stringify(params),cached=cache.get(cacheKey);
+  if(cached&&cached.expires>Date.now())return cached.data;
   const u=new URL(ROOT+path);
   Object.entries(params).forEach(([k,v])=>{if(v!==undefined&&v!==null)u.searchParams.set(k,String(v))});
   const r=await fetch(u,{headers:{'x-apisports-key':key()}});
   if(!r.ok)throw new Error('API-Football HTTP '+r.status);
   const data=await r.json();
   if(data.errors && Object.keys(data.errors).length)throw new Error('API-Football provider error');
-  return data.response||[];
+  const result=data.response||[];
+  const ttl=path==='/fixtures'?60*60*1000:path==='/fixtures/lineups'?60*60*1000:15*60*1000;
+  cache.set(cacheKey,{data:result,expires:Date.now()+ttl});
+  return result;
 }
 const normalize=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/u\s*-?\s*17/g,'').replace(/[^a-z0-9]+/g,' ').trim();
 function toMatch(row,codeForTeam){
