@@ -1,5 +1,5 @@
-const BASE = 'https://www.sofascore.com/api/v1';
-const TOURNAMENT_ID = 279; // U17 World Championship
+const BASE = 'https://www.sofascore.com/api/v1'; // Match-detail fallback only
+const LIVESCORE_BASE = 'https://prod-cdn-mev-api.livescore.com/v1/api/app';
 const ALIASES = {
   QAT:['qatar','catar'], PAN:['panama','panama'], EGY:['egypt','egipto'], GRE:['greece','grecia'],
   KOR:['south korea','korea republic','republic of korea','korea','corea del sur','corea republicana'], UGA:['uganda'], NCL:['new caledonia','nueva caledonia'],
@@ -72,46 +72,72 @@ function simplify(event) {
 function codeForTeam(name) {
   return Object.keys(ALIASES).find(code => sameTeam(code, name)) || null;
 }
+function liveScoreDate(event) {
+  const packed = String(event?.Esd || '');
+  const match = packed.match(/^(\\d{4})(\\d{2})(\\d{2})/);
+  if (match) return match[1] + '-' + match[2] + '-' + match[3];
+  const timestamp = event?.Etm?.ATm ? Number(event.Etm.ATm) : null;
+  return timestamp ? new Date(timestamp).toISOString().slice(0, 10) : null;
+}
+function liveScoreStatus(event) {
+  const esid = Number(event?.Esid);
+  const epr = Number(event?.Epr);
+  if (esid === 6 || esid === 13 || epr === 2 || event?.Eps === 'FT' || event?.Eps === 'AP') return 'FT';
+  if (esid === 10 || event?.Eps === 'HT') return 'LIVE';
+  if ([2, 3].includes(esid) || epr === 1) return 'LIVE';
+  return 'SCHEDULED';
+}
+function simplifyLiveScore(event, date, homeCode, awayCode) {
+  const status = liveScoreStatus(event);
+  const home = Array.isArray(event?.T1) ? event.T1[0] : event?.T1;
+  const away = Array.isArray(event?.T2) ? event.T2[0] : event?.T2;
+  return {
+    id: String(event.Eid || event.Id || ''),
+    home: home?.Nm || '',
+    away: away?.Nm || '',
+    homeScore: event.Tr1 === undefined || event.Tr1 === null || event.Tr1 === '' ? null : Number(event.Tr1),
+    awayScore: event.Tr2 === undefined || event.Tr2 === null || event.Tr2 === '' ? null : Number(event.Tr2),
+    status,
+    statusDescription: event.Eps || (status === 'FT' ? 'FT' : status === 'LIVE' ? 'EN DIRECTO' : 'Programado'),
+    minute: event.Eps && /^\\d/.test(String(event.Eps)) ? String(event.Eps).replace(/[^0-9+]/g, '') : null,
+    startTimestamp: event.Etm?.ATm ? Math.floor(Number(event.Etm.ATm) / 1000) : null,
+    date, homeCode, awayCode,
+    sourceUrl: event.Eid ? 'https://www.livescore.com/' : null
+  };
+}
+async function getLiveScoreDay(date) {
+  const compactDate = date.replace(/-/g, '');
+  const url = LIVESCORE_BASE + '/date/soccer/' + compactDate + '/1?countryCode=ES&locale=en';
+  const response = await fetch(url, { headers: { 'Accept': 'application/json', 'User-Agent': 'Mozilla/5.0 FutureRadarFC/1.0' } });
+  if (!response.ok) throw new Error('LiveScore respondió ' + response.status + ' para ' + date);
+  return response.json();
+}
+function extractLiveScoreEvents(payload) {
+  const root = payload?.data || payload;
+  const stages = root?.Stages || root?.data?.Stages || [];
+  return stages.flatMap(stage => Array.isArray(stage.Events) ? stage.Events : []);
+}
 async function listMatches(dates) {
   const requestedDates = new Set([...new Set(dates)].slice(0, 30));
-  let events = [];
-  let seasonFeedWorked = false;
-  try {
-    const seasons = await getJson('/unique-tournament/' + TOURNAMENT_ID + '/seasons');
-    const season = (seasons.seasons || []).find(item => Number(item.year) === 2026)
-      || (seasons.seasons || [])[0];
-    if (season?.id) {
-      const feeds = await Promise.all([
-        getJson('/unique-tournament/' + TOURNAMENT_ID + '/season/' + season.id + '/events/last/0'),
-        getJson('/unique-tournament/' + TOURNAMENT_ID + '/season/' + season.id + '/events/next/0')
-      ]);
-      events = feeds.flatMap(payload => Array.isArray(payload.events) ? payload.events : []);
-      seasonFeedWorked = events.length > 0;
-    }
-  } catch (error) {
-    console.warn('SofaScore tournament feed unavailable; using daily schedules:', error.message);
-  }
-  // The season feed is paginated and may return events from only a small
-  // window. A non-empty response does NOT mean it covers every requested day.
-  // Always merge the daily schedule feeds so matches later in the tournament
-  // are not silently dropped from the calendar.
-  const dailyPayloads = await Promise.all([...requestedDates].map(date =>
-    getJson('/sport/football/scheduled-events/' + encodeURIComponent(date)).catch(error => {
-      console.warn('SofaScore daily schedule unavailable for ' + date + ':', error.message);
+  const payloads = await Promise.all([...requestedDates].map(date =>
+    getLiveScoreDay(date).catch(error => {
+      console.warn('LiveScore daily feed unavailable for ' + date + ':', error.message);
       return null;
     })
   ));
-  const dailyEvents = dailyPayloads.flatMap(payload => Array.isArray(payload?.events) ? payload.events : []);
-  events = [...events, ...dailyEvents];
   const unique = new Map();
-  for (const event of events) {
-    const date = event.startTimestamp ? new Date(event.startTimestamp * 1000).toISOString().slice(0, 10) : null;
-    if (!date || !requestedDates.has(date) || tournamentId(event) !== TOURNAMENT_ID) continue;
-    const homeCode = codeForTeam(event.homeTeam?.name);
-    const awayCode = codeForTeam(event.awayTeam?.name);
-    if (homeCode && awayCode) unique.set(event.id, {
-      ...simplify(event), date, homeCode, awayCode
-    });
+  for (const payload of payloads) {
+    for (const event of extractLiveScoreEvents(payload)) {
+      const home = Array.isArray(event.T1) ? event.T1[0] : event.T1;
+      const away = Array.isArray(event.T2) ? event.T2[0] : event.T2;
+      const date = liveScoreDate(event);
+      if (!date || !requestedDates.has(date)) continue;
+      const homeCode = codeForTeam(home?.Nm || '');
+      const awayCode = codeForTeam(away?.Nm || '');
+      if (!homeCode || !awayCode) continue;
+      const match = simplifyLiveScore(event, date, homeCode, awayCode);
+      if (match.id) unique.set(match.id, match);
+    }
   }
   return [...unique.values()];
 }
@@ -122,18 +148,27 @@ async function findEvent(date, home, away) {
   return { id: match.id };
 }
 async function matchDetails(eventId) {
-  const [event, statistics, lineups, incidents] = await Promise.all([
-    getJson('/event/' + eventId),
-    getJson('/event/' + eventId + '/statistics').catch(() => null),
-    getJson('/event/' + eventId + '/lineups').catch(() => null),
-    getJson('/event/' + eventId + '/incidents').catch(() => null)
+  const [scoreboard, incidents] = await Promise.all([
+    fetch('https://prod-cdn-public-api.livescore.com/v1/api/app/scoreboard/soccer/' + encodeURIComponent(eventId) + '?locale=en')
+      .then(r => r.ok ? r.json() : null).catch(() => null),
+    fetch('https://prod-cdn-public-api.livescore.com/v1/api/app/incidents/soccer/' + encodeURIComponent(eventId) + '?locale=en')
+      .then(r => r.ok ? r.json() : null).catch(() => null)
   ]);
+  const event = scoreboard?.Event || scoreboard?.event || scoreboard;
   return {
-    event: simplify(event.event || event),
-    statistics: statistics?.statistics || null,
-    lineups: lineups || null,
-    incidents: incidents?.incidents || [],
-    source: 'SofaScore public match centre',
+    event: event ? {
+      id: String(event.Eid || eventId),
+      home: (Array.isArray(event.T1) ? event.T1[0] : event.T1)?.Nm || '',
+      away: (Array.isArray(event.T2) ? event.T2[0] : event.T2)?.Nm || '',
+      homeScore: event.Tr1 === undefined ? null : Number(event.Tr1),
+      awayScore: event.Tr2 === undefined ? null : Number(event.Tr2),
+      status: liveScoreStatus(event),
+      statusDescription: event.Eps || 'Programado'
+    } : null,
+    statistics: null,
+    lineups: null,
+    incidents: incidents?.Incs || incidents?.incidents || [],
+    source: 'LiveScore public match centre',
     sourceType: 'unofficial_public_endpoint',
     updatedAt: new Date().toISOString()
   };
@@ -148,7 +183,7 @@ module.exports = async (req, res) => {
       const dates = String(req.query.dates || '').split(',').filter(value => /^\d{4}-\d{2}-\d{2}$/.test(value));
       if (!dates.length) return res.status(400).json({ available: false, message: 'Faltan las fechas del calendario.' });
       const matches = await listMatches(dates);
-      return res.status(200).json({ available: true, matches, source: 'SofaScore', sourceType: 'unofficial_public_endpoint', updatedAt: new Date().toISOString() });
+      return res.status(200).json({ available: true, matches, source: 'LiveScore', sourceType: 'unofficial_public_endpoint', updatedAt: new Date().toISOString() });
     }
     const date = String(req.query.date || '');
     const home = String(req.query.home || '').toUpperCase();
@@ -158,8 +193,8 @@ module.exports = async (req, res) => {
     }
     const event = await findEvent(date, home, away);
     if (!event) return res.status(200).json({
-      available: false, covered: false, source: 'SofaScore',
-      message: 'SofaScore todavía no ofrece una ficha identificable para este partido. Conservamos el calendario oficial y no inventamos resultados.'
+      available: false, covered: false, source: 'LiveScore',
+      message: 'LiveScore todavía no ofrece una ficha identificable para este partido. Conservamos el calendario oficial y no inventamos resultados.'
     });
     if (details) {
       const data = await matchDetails(event.id);
@@ -169,10 +204,10 @@ module.exports = async (req, res) => {
   } catch (error) {
     console.error('FIFA U17 live data error:', error);
     return res.status(error.status || 502).json({
-      available: false, source: 'SofaScore',
+      available: false, source: 'LiveScore',
       message: error.status === 403 || error.status === 429
-        ? 'La fuente gratuita ha limitado temporalmente las consultas. El calendario sigue disponible.'
-        : 'No se ha podido conectar con la fuente gratuita. El calendario sigue disponible.',
+        ? 'LiveScore ha limitado temporalmente las consultas. El calendario sigue disponible.'
+        : 'No se ha podido conectar con LiveScore. El calendario sigue disponible.',
       detail: process.env.NODE_ENV === 'development' ? String(error.message || error) : undefined
     });
   }
