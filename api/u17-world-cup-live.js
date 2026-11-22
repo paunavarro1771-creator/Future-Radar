@@ -154,20 +154,57 @@ async function matchDetails(eventId) {
     fetch('https://prod-cdn-public-api.livescore.com/v1/api/app/incidents/soccer/' + encodeURIComponent(eventId) + '?locale=en')
       .then(r => r.ok ? r.json() : null).catch(() => null)
   ]);
-  const event = scoreboard?.Event || scoreboard?.event || scoreboard;
+  const event = scoreboard?.Event || scoreboard?.event || scoreboard?.data?.Event || scoreboard;
+  const findValue = (root, keys) => {
+    if (!root || typeof root !== 'object') return null;
+    for (const key of keys) if (root[key] !== undefined && root[key] !== null) return root[key];
+    for (const value of Object.values(root)) {
+      if (value && typeof value === 'object') { const found = findValue(value, keys); if (found !== null) return found; }
+    }
+    return null;
+  };
+  const rawStats = findValue(scoreboard, ['Stats','stats','Statistics','statistics']);
+  const statistics = Array.isArray(rawStats) ? rawStats.map(item => ({
+    name: item.Nm || item.name || item.N || item.Tp || item.type || '',
+    home: item.T1 ?? item.V1 ?? item.home ?? item.homeValue ?? item.S1 ?? null,
+    away: item.T2 ?? item.V2 ?? item.away ?? item.awayValue ?? item.S2 ?? null
+  })).filter(item => item.name) : (rawStats && typeof rawStats === 'object' ? rawStats : null);
+  const rawLineups = findValue(scoreboard, ['Lineups','lineups','Lu','lu','Teams','teams']);
+  const sidePlayers = (side) => {
+    if (Array.isArray(side)) return side.map(p => typeof p === 'string' ? {name:p} : ({
+      name:p.Nm || p.name || p.Pnm || p.player?.name || '',
+      number:p.Num ?? p.number ?? p.ShirtNo ?? null,
+      position:p.Pos || p.position || p.Ps || ''
+    })).filter(p => p.name);
+    if (side && typeof side === 'object') return side.Players || side.players || side.Starting || side.starting || [];
+    return [];
+  };
+  let lineups = null;
+  if (rawLineups && typeof rawLineups === 'object') {
+    const homeSide = rawLineups.T1 || rawLineups.home || rawLineups.Home || rawLineups.team1;
+    const awaySide = rawLineups.T2 || rawLineups.away || rawLineups.Away || rawLineups.team2;
+    const homePlayers = sidePlayers(homeSide), awayPlayers = sidePlayers(awaySide);
+    if (homePlayers.length || awayPlayers.length) lineups = {
+      home: homePlayers, away: awayPlayers,
+      homeFormation: homeSide?.Formation || homeSide?.formation || null,
+      awayFormation: awaySide?.Formation || awaySide?.formation || null
+    };
+  }
+  const rawIncidents = incidents?.Incs || incidents?.incidents || incidents?.data?.Incs || [];
+  const eventData = event ? {
+    id: String(event.Eid || eventId),
+    home: (Array.isArray(event.T1) ? event.T1[0] : event.T1)?.Nm || '',
+    away: (Array.isArray(event.T2) ? event.T2[0] : event.T2)?.Nm || '',
+    homeScore: event.Tr1 === undefined ? null : Number(event.Tr1),
+    awayScore: event.Tr2 === undefined ? null : Number(event.Tr2),
+    status: liveScoreStatus(event),
+    statusDescription: event.Eps || 'Programado'
+  } : null;
   return {
-    event: event ? {
-      id: String(event.Eid || eventId),
-      home: (Array.isArray(event.T1) ? event.T1[0] : event.T1)?.Nm || '',
-      away: (Array.isArray(event.T2) ? event.T2[0] : event.T2)?.Nm || '',
-      homeScore: event.Tr1 === undefined ? null : Number(event.Tr1),
-      awayScore: event.Tr2 === undefined ? null : Number(event.Tr2),
-      status: liveScoreStatus(event),
-      statusDescription: event.Eps || 'Programado'
-    } : null,
-    statistics: null,
-    lineups: null,
-    incidents: incidents?.Incs || incidents?.incidents || [],
+    event: eventData,
+    statistics,
+    lineups,
+    incidents: rawIncidents,
     source: 'LiveScore public match centre',
     sourceType: 'unofficial_public_endpoint',
     updatedAt: new Date().toISOString()
