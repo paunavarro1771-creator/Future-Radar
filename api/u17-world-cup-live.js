@@ -249,6 +249,42 @@ async function matchDetails(eventId, homeCode, awayCode) {
     updatedAt: new Date().toISOString()
   };
 }
+
+// Verified match snapshot, used only for this exact finished fixture when the live feed is missing details.
+// Source: https://www.ysscores.com/en/match/6139080/South-Korea-U17-vs-New-Caledonia-U17
+// These figures are historical, NOT a live API feed.
+const VERIFIED_SNAPSHOTS = {
+  '2026-11-22:KOR:NCL': {
+    event: {home:'South Korea U17',away:'New Caledonia U17',homeScore:6,awayScore:0,status:'FT',statusDescription:'Finalizado'},
+    statistics: [
+      {name:'Posesión',home:'75%',away:'25%'},{name:'Tiros totales',home:31,away:4},
+      {name:'Tiros a puerta',home:18,away:1},{name:'Tiros fuera',home:6,away:3},
+      {name:'Tiros bloqueados',home:7,away:0},{name:'Tiros dentro del área',home:24,away:2},
+      {name:'Tiros fuera del área',home:7,away:2},{name:'Pases',home:568,away:186},
+      {name:'Pases acertados',home:500,away:121},{name:'Precisión de pase',home:'88%',away:'65%'},
+      {name:'Córneres',home:15,away:1},{name:'Fueras de juego',home:1,away:1},
+      {name:'Faltas',home:4,away:9},{name:'Paradas',home:1,away:12},
+      {name:'Tarjetas amarillas',home:2,away:1}
+    ],
+    incidents: [
+      {type:'Gol',minute:5,name:'Park Joo-ho'},
+      {type:'Gol',minute:15,name:'Ji-woo Kim'},
+      {type:'Gol',minute:20,name:'Ji-woo Kim'},
+      {type:'Gol',minute:25,name:'Sun-hyun An'},
+      {type:'Gol',minute:27,name:'Seung-min Han'},
+      {type:'Gol',minute:53,name:'Ji-woo Kim'}
+    ],
+    lineups:null,
+    source:'YSscores (registro verificado)',sourceType:'verified_historical_snapshot',
+    sourceUrl:'https://www.ysscores.com/en/match/6139080/South-Korea-U17-vs-New-Caledonia-U17',
+    verifiedAt:'2026-11-22'
+  }
+};
+function verifiedSnapshot(date,home,away) {
+  const snapshot=VERIFIED_SNAPSHOTS[`${date}:${home}:${away}`];
+  return snapshot ? {...snapshot,updatedAt:new Date().toISOString(),dataAsOf:snapshot.verifiedAt} : null;
+}
+
 module.exports = async (req, res) => {
   const details = String(req.query.details || '') === '1';
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -267,9 +303,18 @@ module.exports = async (req, res) => {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !ALIASES[home] || !ALIASES[away]) {
       return res.status(400).json({ available: false, message: 'Fecha o selecciones no válidas.' });
     }
-    const event = await findEvent(date, home, away);
+    const snapshot=verifiedSnapshot(date,home,away);
+    let event=null;
+    try { event = await findEvent(date, home, away); }
+    catch (error) { if (!snapshot) throw error; }
+    if (details && snapshot) {
+      const liveDetails=event ? await matchDetails(event.id,home,away).catch(()=>null) : null;
+      const data={...snapshot,statistics:liveDetails?.statistics?.length?liveDetails.statistics:snapshot.statistics,incidents:liveDetails?.incidents?.length?liveDetails.incidents:snapshot.incidents,lineups:liveDetails?.lineups||snapshot.lineups,alternativeProvider:liveDetails?.alternativeProvider||{matchUrl:snapshot.sourceUrl,lineupUrl:'https://www.ysscores.com/en/lineup/6139080/South-Korea-U17-vs-New-Caledonia-U17'}};
+      return res.status(200).json({available:true,matchKey:`${date}:${home}:${away}`,competitionId:'fifa-u17-world-cup-2026',homeTeamId:`national:${home}:u17`,awayTeamId:`national:${away}:u17`,...data});
+    }
     const identity = { matchKey: `${date}:${home}:${away}`, homeTeamId: `national:${home}:u17`, awayTeamId: `national:${away}:u17`, competitionId: 'fifa-u17-world-cup-2026' };
     if (!event) {
+      if (snapshot && !details) return res.status(200).json({available:true,match:{...snapshot.event,date,homeCode:home,awayCode:away,matchKey:`${date}:${home}:${away}`},source:snapshot.source,sourceType:snapshot.sourceType,updatedAt:new Date().toISOString()});
       if (details) {
         let alternativeProvider = null;
         try { alternativeProvider = await findMadplayFixture(home, away); }
