@@ -21,6 +21,7 @@ async function main(){
   if(!payload.available||!Array.isArray(payload.matches)||!payload.matches.length)
     throw Error('No valid matches received; preserving previous snapshot');
   if(payload.partial)throw Error('Provider coverage partial; preserving previous snapshot');
+  if(payload.coveredDates!==dates.length)throw Error('Not all requested dates covered; preserving previous snapshot');
   let previous={matches:[]};
   try{previous=JSON.parse(await fs.readFile(OUT,'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
   // Preserve historical matches absent from latest feed, but never replace a known
