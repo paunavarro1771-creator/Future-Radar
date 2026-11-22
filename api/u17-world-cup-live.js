@@ -148,24 +148,30 @@ async function findEvent(date, home, away) {
   return match;
 }
 async function findMadplayFixture(homeCode, awayCode) {
-  const championshipUrl = 'https://api.madplay.app/scores/_ys/en/championship/83188/FIFA-U-17-World-Cup';
-  const response = await fetch(championshipUrl, { headers: { 'Accept': 'text/html', 'User-Agent': 'Mozilla/5.0 FutureRadarFC/1.0' } });
-  if (!response.ok) throw new Error('Madplay respondió ' + response.status);
+  // YSscores publishes the tournament index as normal HTML.
+  const championshipUrl = 'https://www.ysscores.com/en/championship/83188/FIFA-U-17-World-Cup';
+  const response = await fetch(championshipUrl, {
+    headers: { 'Accept': 'text/html', 'User-Agent': 'Mozilla/5.0 FutureRadarFC/1.0' }
+  });
+  if (!response.ok) throw new Error('YSscores respondió ' + response.status);
   const html = await response.text();
   const homeAliases = ALIASES[homeCode] || [];
   const awayAliases = ALIASES[awayCode] || [];
-  const links = [...html.matchAll(/href=["']([^"'<>]*\/scores\/_ys\/(?:en|es)\/match\/(\d+)\/([^"'?#]+))/gi)];
+  const links = [...html.matchAll(/href=["']([^"'<>]*\/en\/match\/(\d+)\/([^"'?#]+))/gi)];
   const slugNorm = value => norm(decodeURIComponent(String(value || '').replace(/-/g, ' ')));
-  const hasAlias = (slug, aliases) => aliases.some(alias => slug.includes(norm(alias)));
+  const hasAlias = (slug, aliases) => aliases.some(alias => {
+    const needle = norm(alias);
+    return slug === needle || slug.includes(needle + ' ') || slug.startsWith(needle + ' ');
+  });
   for (const match of links) {
-    const url = match[1], id = match[2], slug = match[3];
+    const id = match[2], slug = match[3];
     const normalized = slugNorm(slug);
     if (hasAlias(normalized, homeAliases) && hasAlias(normalized, awayAliases)) {
       return {
         id,
         slug,
-        matchUrl: 'https://api.madplay.app/scores/_ys/en/match/' + id + '/' + slug,
-        lineupUrl: 'https://api.madplay.app/scores/_ys/en/lineup/' + id + '/' + slug
+        matchUrl: 'https://www.ysscores.com/en/match/' + id + '/' + slug,
+        lineupUrl: 'https://www.ysscores.com/en/lineup/' + id + '/' + slug
       };
     }
   }
