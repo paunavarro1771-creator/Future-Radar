@@ -1,0 +1,30 @@
+name: Verify Future Radar U17 API
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'api/future-radar-u17.js'
+      - 'u17-world-cup-2026.json'
+      - 'data/fifa-u17-2026-official-match-reports.json'
+      - 'data/u17-2026-snapshot.json'
+      - 'tests/future-radar-u17.test.js'
+      - '.github/workflows/verify-future-radar-u17.yml'
+  pull_request:
+    paths:
+      - 'api/future-radar-u17.js'
+      - 'u17-world-cup-2026.json'
+      - 'data/fifa-u17-2026-official-match-reports.json'
+      - 'data/u17-2026-snapshot.json'
+      - 'tests/future-radar-u17.test.js'
+      - '.github/workflows/verify-future-radar-u17.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate API behavior against real repository data
+        run: node tests/future-radar-u17.test.js
