@@ -1,9 +1,10 @@
+const {controllerFor}=require('./future-radar-test-helper');
 'use strict';
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const pages=['index.html','players/index.html','academies/index.html','rankings/index.html','matches/index.html','competitions/uefa-youth-league/index.html','competitions/fifa-u17-world-cup/index.html'];
 for(const path of pages){
  const html=fs.readFileSync(path,'utf8');
- const code=html.includes('src="/assets/future-radar-page-core.js"')?fs.readFileSync('assets/future-radar-page-core.js','utf8'):html;
+ const code=controllerFor(html);
  assert(code.includes('data-youth-match="'+idx+'),path+' no modal trigger');
  assert(code.includes("openYouthMatch(Number(card.dataset.youthMatch))"),path+' no handler');
  assert(code.includes("FutureRadarData.response('youth')"),path+' incorrect dataset loader');
