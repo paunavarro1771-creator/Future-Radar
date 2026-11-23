@@ -1,3 +1,4 @@
+const {controllerFor}=require('./future-radar-test-helper');
 'use strict';
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const shared=fs.readFileSync('assets/future-radar-page-core.js','utf8');
@@ -6,7 +7,7 @@ const pages=['index.html','players/index.html','academies/index.html','rankings/
 for(const path of pages){
  const html=fs.readFileSync(path,'utf8');
  assert(html.includes('src="/assets/future-radar-data.js"'),path+' missing gateway');
- const controller=html.includes('src="/assets/future-radar-page-core.js"')?shared:html;
+ const controller=controllerFor(html);
  for(const key of ['players','youth','u17','u17Squads'])assert(controller.includes("FutureRadarData.response('"+key+"')"),path+' not using cached '+key);
 }
 for(const path of ['players/index.html','rankings/index.html','competitions/uefa-youth-league/index.html']){
