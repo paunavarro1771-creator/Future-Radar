@@ -1,8 +1,300 @@
 {
   "competitionId": "fifa-u17-world-cup-2026",
-  "importMethod": "manually verified against official FIFA PDF",
+  "importMethod": "FIFA public post-match PDF; first and third pages parsed; unverified fields omitted",
   "coverage": "partial",
   "reports": [
+    {
+      "matchKey": "2026-11-19:QAT:PAN",
+      "date": "2026-11-19",
+      "homeCode": "QAT",
+      "awayCode": "PAN",
+      "homeScore": 2,
+      "awayScore": 0,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M01-QAT-V-PAN.pdf",
+      "matchNumber": 1,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 2,
+          "away": 0
+        },
+        {
+          "name": "xG",
+          "home": "0.98",
+          "away": "0.7"
+        },
+        {
+          "name": "Remates",
+          "home": "4",
+          "away": "11"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 2,
+          "away": 1
+        },
+        {
+          "name": "Pases",
+          "home": "287",
+          "away": "510"
+        },
+        {
+          "name": "Pases completados",
+          "home": 233,
+          "away": 463
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "81%",
+          "away": "91%"
+        },
+        {
+          "name": "Centros",
+          "home": "7",
+          "away": "20"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "34",
+          "away": "19"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "34",
+          "away": "40"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "111.5 km",
+          "away": "98.3 km"
+        }
+      ],
+      "lineups": null,
+      "incidents": [],
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
+    },
+    {
+      "matchKey": "2026-11-19:EGY:GRE",
+      "date": "2026-11-19",
+      "homeCode": "EGY",
+      "awayCode": "GRE",
+      "homeScore": 1,
+      "awayScore": 2,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M02-EGY-V-GRE.pdf",
+      "matchNumber": 2,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 1,
+          "away": 2
+        },
+        {
+          "name": "xG",
+          "home": "0.24",
+          "away": "1.1"
+        },
+        {
+          "name": "Remates",
+          "home": "5",
+          "away": "16"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 2,
+          "away": 5
+        },
+        {
+          "name": "Pases",
+          "home": "308",
+          "away": "475"
+        },
+        {
+          "name": "Pases completados",
+          "home": 231,
+          "away": 420
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "75%",
+          "away": "88%"
+        },
+        {
+          "name": "Centros",
+          "home": "13",
+          "away": "23"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "36",
+          "away": "31"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "39",
+          "away": "38"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "102.7 km",
+          "away": "111.1 km"
+        }
+      ],
+      "lineups": null,
+      "incidents": [],
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
+    },
+    {
+      "matchKey": "2026-11-19:KOR:UGA",
+      "date": "2026-11-19",
+      "homeCode": "KOR",
+      "awayCode": "UGA",
+      "homeScore": 3,
+      "awayScore": 0,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M03-KOR-V-UGA.pdf",
+      "matchNumber": 3,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 3,
+          "away": 0
+        },
+        {
+          "name": "xG",
+          "home": "1.58",
+          "away": "0.31"
+        },
+        {
+          "name": "Remates",
+          "home": "17",
+          "away": "14"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 8,
+          "away": 4
+        },
+        {
+          "name": "Pases",
+          "home": "329",
+          "away": "600"
+        },
+        {
+          "name": "Pases completados",
+          "home": 272,
+          "away": 519
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "83%",
+          "away": "86%"
+        },
+        {
+          "name": "Centros",
+          "home": "20",
+          "away": "18"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "36",
+          "away": "36"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "41",
+          "away": "43"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "114.9 km",
+          "away": "111.6 km"
+        }
+      ],
+      "lineups": null,
+      "incidents": [],
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
+    },
+    {
+      "matchKey": "2026-11-19:NCL:ECU",
+      "date": "2026-11-19",
+      "homeCode": "NCL",
+      "awayCode": "ECU",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M04-NCL-V-ECU.pdf",
+      "matchNumber": 4,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 0,
+          "away": 1
+        },
+        {
+          "name": "xG",
+          "home": "0.06",
+          "away": "1.76"
+        },
+        {
+          "name": "Remates",
+          "home": "4",
+          "away": "27"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 0,
+          "away": 13
+        },
+        {
+          "name": "Pases",
+          "home": "302",
+          "away": "516"
+        },
+        {
+          "name": "Pases completados",
+          "home": 213,
+          "away": 449
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "71%",
+          "away": "87%"
+        },
+        {
+          "name": "Centros",
+          "home": "9",
+          "away": "38"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "13",
+          "away": "48"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "39",
+          "away": "47"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "114.2 km",
+          "away": "103.1 km"
+        }
+      ],
+      "lineups": null,
+      "incidents": [],
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
+    },
     {
       "matchKey": "2026-11-19:ARG:AUS",
       "date": "2026-11-19",
@@ -23,13 +315,13 @@
         },
         {
           "name": "xG",
-          "home": 0.63,
-          "away": 0.43
+          "home": "0.63",
+          "away": "0.43"
         },
         {
           "name": "Remates",
-          "home": 22,
-          "away": 8
+          "home": "22",
+          "away": "8"
         },
         {
           "name": "Remates a puerta",
@@ -38,8 +330,8 @@
         },
         {
           "name": "Pases",
-          "home": 525,
-          "away": 270
+          "home": "525",
+          "away": "270"
         },
         {
           "name": "Pases completados",
@@ -53,18 +345,18 @@
         },
         {
           "name": "Centros",
-          "home": 33,
-          "away": 9
+          "home": "33",
+          "away": "9"
         },
         {
           "name": "Progresiones de balón",
-          "home": 37,
-          "away": 20
+          "home": "37",
+          "away": "20"
         },
         {
           "name": "Recuperaciones forzadas",
-          "home": 52,
-          "away": 40
+          "home": "52",
+          "away": "40"
         },
         {
           "name": "Distancia recorrida",
@@ -174,7 +466,1102 @@
           "team": "AUS"
         }
       ],
-      "notes": "FIFA PDF includes additional events and extensive player metrics not yet imported. The PDF lists Argentina #2 with a goal icon at 60 despite 0-2 final score; omitted to avoid attributing an unverified own goal."
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
+    },
+    {
+      "matchKey": "2026-11-19:MOZ:DEN",
+      "date": "2026-11-19",
+      "homeCode": "MOZ",
+      "awayCode": "DEN",
+      "homeScore": 4,
+      "awayScore": 0,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M06-MOZ-V-DEN.pdf",
+      "matchNumber": 6,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 4,
+          "away": 0
+        },
+        {
+          "name": "xG",
+          "home": "1.71",
+          "away": "0.7"
+        },
+        {
+          "name": "Remates",
+          "home": "22",
+          "away": "10"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 8,
+          "away": 1
+        },
+        {
+          "name": "Pases",
+          "home": "410",
+          "away": "514"
+        },
+        {
+          "name": "Pases completados",
+          "home": 337,
+          "away": 415
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "82%",
+          "away": "81%"
+        },
+        {
+          "name": "Centros",
+          "home": "13",
+          "away": "26"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "40",
+          "away": "32"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "46",
+          "away": "46"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "118.6 km",
+          "away": "122.2 km"
+        }
+      ],
+      "lineups": null,
+      "incidents": [],
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
+    },
+    {
+      "matchKey": "2026-11-19:FRA:HAI",
+      "date": "2026-11-19",
+      "homeCode": "FRA",
+      "awayCode": "HAI",
+      "homeScore": 3,
+      "awayScore": 1,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M07-FRA-V-HAI.pdf",
+      "matchNumber": 7,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 3,
+          "away": 1
+        },
+        {
+          "name": "xG",
+          "home": "1.66",
+          "away": "0.22"
+        },
+        {
+          "name": "Remates",
+          "home": "17",
+          "away": "4"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 6,
+          "away": 3
+        },
+        {
+          "name": "Pases",
+          "home": "526",
+          "away": "385"
+        },
+        {
+          "name": "Pases completados",
+          "home": 473,
+          "away": 301
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "90%",
+          "away": "78%"
+        },
+        {
+          "name": "Centros",
+          "home": "21",
+          "away": "10"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "34",
+          "away": "27"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "38",
+          "away": "40"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "114.2 km",
+          "away": "110.7 km"
+        }
+      ],
+      "lineups": null,
+      "incidents": [],
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
+    },
+    {
+      "matchKey": "2026-11-19:KSA:URU",
+      "date": "2026-11-19",
+      "homeCode": "KSA",
+      "awayCode": "URU",
+      "homeScore": 2,
+      "awayScore": 3,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M08-KSA-V-URU.pdf",
+      "matchNumber": 8,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 2,
+          "away": 3
+        },
+        {
+          "name": "xG",
+          "home": "1.65",
+          "away": "0.91"
+        },
+        {
+          "name": "Remates",
+          "home": "3",
+          "away": "22"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 3,
+          "away": 7
+        },
+        {
+          "name": "Pases",
+          "home": "336",
+          "away": "321"
+        },
+        {
+          "name": "Pases completados",
+          "home": 239,
+          "away": 254
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "71%",
+          "away": "79%"
+        },
+        {
+          "name": "Centros",
+          "home": "5",
+          "away": "37"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "19",
+          "away": "38"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "45",
+          "away": "59"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "103.7 km",
+          "away": "101.6 km"
+        }
+      ],
+      "lineups": null,
+      "incidents": [],
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
+    },
+    {
+      "matchKey": "2026-11-20:ITA:JAM",
+      "date": "2026-11-20",
+      "homeCode": "ITA",
+      "awayCode": "JAM",
+      "homeScore": 6,
+      "awayScore": 0,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M09-ITA-V-JAM.pdf",
+      "matchNumber": 9,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 6,
+          "away": 0
+        },
+        {
+          "name": "xG",
+          "home": "2.57",
+          "away": "0.12"
+        },
+        {
+          "name": "Remates",
+          "home": "35",
+          "away": "7"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 17,
+          "away": 2
+        },
+        {
+          "name": "Pases",
+          "home": "478",
+          "away": "256"
+        },
+        {
+          "name": "Pases completados",
+          "home": 414,
+          "away": 197
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "87%",
+          "away": "77%"
+        },
+        {
+          "name": "Centros",
+          "home": "36",
+          "away": "3"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "37",
+          "away": "23"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "40",
+          "away": "37"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "111.3 km",
+          "away": "100.3 km"
+        }
+      ],
+      "lineups": null,
+      "incidents": [],
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
+    },
+    {
+      "matchKey": "2026-11-20:CIV:UZB",
+      "date": "2026-11-20",
+      "homeCode": "CIV",
+      "awayCode": "UZB",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M10-CIV-V-UZB.pdf",
+      "matchNumber": 10,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 2,
+          "away": 1
+        },
+        {
+          "name": "xG",
+          "home": "0.92",
+          "away": "0.97"
+        },
+        {
+          "name": "Remates",
+          "home": "10",
+          "away": "13"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 5,
+          "away": 3
+        },
+        {
+          "name": "Pases",
+          "home": "354",
+          "away": "449"
+        },
+        {
+          "name": "Pases completados",
+          "home": 264,
+          "away": 358
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "75%",
+          "away": "80%"
+        },
+        {
+          "name": "Centros",
+          "home": "6",
+          "away": "26"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "24",
+          "away": "34"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "58",
+          "away": "59"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "113.8 km",
+          "away": "115.5 km"
+        }
+      ],
+      "lineups": null,
+      "incidents": [],
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
+    },
+    {
+      "matchKey": "2026-11-20:SEN:CRO",
+      "date": "2026-11-20",
+      "homeCode": "SEN",
+      "awayCode": "CRO",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M11-SEN-V-CRO.pdf",
+      "matchNumber": 11,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 1,
+          "away": 1
+        },
+        {
+          "name": "xG",
+          "home": "0.45",
+          "away": "0.27"
+        },
+        {
+          "name": "Remates",
+          "home": "11",
+          "away": "9"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 3,
+          "away": 5
+        },
+        {
+          "name": "Pases",
+          "home": "303",
+          "away": "567"
+        },
+        {
+          "name": "Pases completados",
+          "home": 230,
+          "away": 485
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "76%",
+          "away": "86%"
+        },
+        {
+          "name": "Centros",
+          "home": "10",
+          "away": "35"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "14",
+          "away": "21"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "49",
+          "away": "41"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "108.8 km",
+          "away": "112 km"
+        }
+      ],
+      "lineups": null,
+      "incidents": [],
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
+    },
+    {
+      "matchKey": "2026-11-20:CUB:TJK",
+      "date": "2026-11-20",
+      "homeCode": "CUB",
+      "awayCode": "TJK",
+      "homeScore": 3,
+      "awayScore": 5,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M12-CUB-V-TJK.pdf",
+      "matchNumber": 12,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 3,
+          "away": 5
+        },
+        {
+          "name": "xG",
+          "home": "0.63",
+          "away": "1.18"
+        },
+        {
+          "name": "Remates",
+          "home": "12",
+          "away": "25"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 7,
+          "away": 11
+        },
+        {
+          "name": "Pases",
+          "home": "308",
+          "away": "400"
+        },
+        {
+          "name": "Pases completados",
+          "home": 224,
+          "away": 305
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "73%",
+          "away": "76%"
+        },
+        {
+          "name": "Centros",
+          "home": "19",
+          "away": "42"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "30",
+          "away": "31"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "48",
+          "away": "59"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "109.1 km",
+          "away": "112 km"
+        }
+      ],
+      "lineups": null,
+      "incidents": [],
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
+    },
+    {
+      "matchKey": "2026-11-20:MLI:NZL",
+      "date": "2026-11-20",
+      "homeCode": "MLI",
+      "awayCode": "NZL",
+      "homeScore": 3,
+      "awayScore": 0,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M13-MLI-V-NZL.pdf",
+      "matchNumber": 13,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 3,
+          "away": 0
+        },
+        {
+          "name": "xG",
+          "home": "1.74",
+          "away": "0.11"
+        },
+        {
+          "name": "Remates",
+          "home": "29",
+          "away": "4"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 11,
+          "away": 1
+        },
+        {
+          "name": "Pases",
+          "home": "574",
+          "away": "258"
+        },
+        {
+          "name": "Pases completados",
+          "home": 498,
+          "away": 178
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "87%",
+          "away": "69%"
+        },
+        {
+          "name": "Centros",
+          "home": "27",
+          "away": "6"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "24",
+          "away": "23"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "36",
+          "away": "37"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "109.4 km",
+          "away": "110.7 km"
+        }
+      ],
+      "lineups": null,
+      "incidents": [],
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
+    },
+    {
+      "matchKey": "2026-11-20:BEL:VIE",
+      "date": "2026-11-20",
+      "homeCode": "BEL",
+      "awayCode": "VIE",
+      "homeScore": 3,
+      "awayScore": 2,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M14-BEL-V-VIE.pdf",
+      "matchNumber": 14,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 3,
+          "away": 2
+        },
+        {
+          "name": "xG",
+          "home": "1.27",
+          "away": "0.39"
+        },
+        {
+          "name": "Remates",
+          "home": "14",
+          "away": "9"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 5,
+          "away": 3
+        },
+        {
+          "name": "Pases",
+          "home": "444",
+          "away": "386"
+        },
+        {
+          "name": "Pases completados",
+          "home": 392,
+          "away": 321
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "88%",
+          "away": "83%"
+        },
+        {
+          "name": "Centros",
+          "home": "27",
+          "away": "20"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "34",
+          "away": "28"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "42",
+          "away": "27"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "105.6 km",
+          "away": "105.9 km"
+        }
+      ],
+      "lineups": null,
+      "incidents": [],
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
+    },
+    {
+      "matchKey": "2026-11-20:ESP:CHN",
+      "date": "2026-11-20",
+      "homeCode": "ESP",
+      "awayCode": "CHN",
+      "homeScore": 5,
+      "awayScore": 0,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M15-ESP-V-CHN.pdf",
+      "matchNumber": 15,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 5,
+          "away": 0
+        },
+        {
+          "name": "xG",
+          "home": "1.93",
+          "away": "0.24"
+        },
+        {
+          "name": "Remates",
+          "home": "19",
+          "away": "3"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 11,
+          "away": 2
+        },
+        {
+          "name": "Pases",
+          "home": "675",
+          "away": "238"
+        },
+        {
+          "name": "Pases completados",
+          "home": 619,
+          "away": 174
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "92%",
+          "away": "73%"
+        },
+        {
+          "name": "Centros",
+          "home": "26",
+          "away": "4"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "45",
+          "away": "15"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "38",
+          "away": "39"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "105.4 km",
+          "away": "106.5 km"
+        }
+      ],
+      "lineups": null,
+      "incidents": [],
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
+    },
+    {
+      "matchKey": "2026-11-20:FIJ:MAR",
+      "date": "2026-11-20",
+      "homeCode": "FIJ",
+      "awayCode": "MAR",
+      "homeScore": 0,
+      "awayScore": 6,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M16-FIJ-V-MAR.pdf",
+      "matchNumber": 16,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 0,
+          "away": 6
+        },
+        {
+          "name": "xG",
+          "home": "0",
+          "away": "3.86"
+        },
+        {
+          "name": "Remates",
+          "home": "0",
+          "away": "33"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 0,
+          "away": 16
+        },
+        {
+          "name": "Pases",
+          "home": "231",
+          "away": "673"
+        },
+        {
+          "name": "Pases completados",
+          "home": 166,
+          "away": 626
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "72%",
+          "away": "93%"
+        },
+        {
+          "name": "Centros",
+          "home": "1",
+          "away": "41"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "20",
+          "away": "49"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "29",
+          "away": "42"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "114.2 km",
+          "away": "111.5 km"
+        }
+      ],
+      "lineups": null,
+      "incidents": [],
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
+    },
+    {
+      "matchKey": "2026-11-21:TAN:CRC",
+      "date": "2026-11-21",
+      "homeCode": "TAN",
+      "awayCode": "CRC",
+      "homeScore": 2,
+      "awayScore": 2,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M18-TAN-V-CRC.pdf",
+      "matchNumber": 18,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 2,
+          "away": 2
+        },
+        {
+          "name": "xG",
+          "home": "1.76",
+          "away": "0.23"
+        },
+        {
+          "name": "Remates",
+          "home": "22",
+          "away": "9"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 5,
+          "away": 2
+        },
+        {
+          "name": "Pases",
+          "home": "435",
+          "away": "289"
+        },
+        {
+          "name": "Pases completados",
+          "home": 357,
+          "away": 198
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "82%",
+          "away": "69%"
+        },
+        {
+          "name": "Centros",
+          "home": "27",
+          "away": "12"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "32",
+          "away": "22"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "46",
+          "away": "51"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "113.7 km",
+          "away": "110.8 km"
+        }
+      ],
+      "lineups": null,
+      "incidents": [],
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
+    },
+    {
+      "matchKey": "2026-11-21:CMR:VEN",
+      "date": "2026-11-21",
+      "homeCode": "CMR",
+      "awayCode": "VEN",
+      "homeScore": 1,
+      "awayScore": 2,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M22-CMR-V-VEN.pdf",
+      "matchNumber": 22,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 1,
+          "away": 2
+        },
+        {
+          "name": "xG",
+          "home": "0.55",
+          "away": "1.69"
+        },
+        {
+          "name": "Remates",
+          "home": "13",
+          "away": "15"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 4,
+          "away": 7
+        },
+        {
+          "name": "Pases",
+          "home": "418",
+          "away": "335"
+        },
+        {
+          "name": "Pases completados",
+          "home": 338,
+          "away": 261
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "81%",
+          "away": "78%"
+        },
+        {
+          "name": "Centros",
+          "home": "16",
+          "away": "22"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "20",
+          "away": "32"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "43",
+          "away": "46"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "104.6 km",
+          "away": "108 km"
+        }
+      ],
+      "lineups": null,
+      "incidents": [],
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
+    },
+    {
+      "matchKey": "2026-11-21:JPN:COL",
+      "date": "2026-11-21",
+      "homeCode": "JPN",
+      "awayCode": "COL",
+      "homeScore": 1,
+      "awayScore": 2,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M23-JPN-V-COL.pdf",
+      "matchNumber": 23,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 1,
+          "away": 2
+        },
+        {
+          "name": "xG",
+          "home": "0.74",
+          "away": "1.38"
+        },
+        {
+          "name": "Remates",
+          "home": "11",
+          "away": "8"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 2,
+          "away": 2
+        },
+        {
+          "name": "Pases",
+          "home": "330",
+          "away": "442"
+        },
+        {
+          "name": "Pases completados",
+          "home": 253,
+          "away": 354
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "77%",
+          "away": "80%"
+        },
+        {
+          "name": "Centros",
+          "home": "24",
+          "away": "10"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "15",
+          "away": "31"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "38",
+          "away": "50"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "113.3 km",
+          "away": "107.2 km"
+        }
+      ],
+      "lineups": null,
+      "incidents": [],
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
+    },
+    {
+      "matchKey": "2026-11-21:SRB:HON",
+      "date": "2026-11-21",
+      "homeCode": "SRB",
+      "awayCode": "HON",
+      "homeScore": 2,
+      "awayScore": 0,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M24-SRB-V-HON.pdf",
+      "matchNumber": 24,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 2,
+          "away": 0
+        },
+        {
+          "name": "xG",
+          "home": "0.24",
+          "away": "0.99"
+        },
+        {
+          "name": "Remates",
+          "home": "11",
+          "away": "17"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 5,
+          "away": 2
+        },
+        {
+          "name": "Pases",
+          "home": "296",
+          "away": "461"
+        },
+        {
+          "name": "Pases completados",
+          "home": 227,
+          "away": 395
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "77%",
+          "away": "86%"
+        },
+        {
+          "name": "Centros",
+          "home": "11",
+          "away": "30"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "26",
+          "away": "46"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "37",
+          "away": "36"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "110.2 km",
+          "away": "105.3 km"
+        }
+      ],
+      "lineups": null,
+      "incidents": [],
+      "notes": "Automated import of team statistics; starting XIs and player-level tables require separate verification."
     }
   ]
 }
