@@ -5,7 +5,8 @@ const pages=['index.html','players/index.html','academies/index.html','rankings/
 for(const path of pages){
  const html=fs.readFileSync(path,'utf8');
  const code=controllerFor(html);
- assert(code.includes('data-youth-match="'+idx+'),path+' no modal trigger');
+ assert(code.includes('data-youth-match='),path+' no modal trigger');
+ assert(code.includes('ESTADÍSTICAS EN SOFASCORE'),path+' missing match-specific stats source');
  assert(code.includes("openYouthMatch(Number(card.dataset.youthMatch))"),path+' no handler');
  assert(code.includes("FutureRadarData.response('youth')"),path+' incorrect dataset loader');
  const scripts=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)];
