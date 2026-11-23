@@ -15,7 +15,7 @@ module.exports=async(req,res)=>{
  if(!apiKey)return res.status(200).json({available:false,reason:'provider_not_configured',matches:[],realtime:false});
  if(cached&&Date.now()<expires)return res.status(200).json(cached);
  try{
-  const url=new URL(BASE+'/matches');url.searchParams.set('league_id',LEAGUE);url.searchParams.set('from','2026-11-19');url.searchParams.set('to','2026-12-13');url.searchParams.set('limit','200');url.searchParams.set('lang','en');
+  const url=new URL(BASE+'/matches/window');url.searchParams.set('from_days','-7');url.searchParams.set('to_days','2');url.searchParams.set('league_id',LEAGUE);
   const response=await fetch(url,{headers:{apikey:apiKey},signal:AbortSignal.timeout(9000)});
   if(!response.ok)return res.status(502).json({available:false,reason:'provider_http_error',providerStatus:response.status,matches:[],realtime:false});
   const body=await response.json();
