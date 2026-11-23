@@ -467,7 +467,7 @@ function renderU17Fixtures(){
 }
 function renderU17MatchDetail(payload,m){
  const home=u17Team(m.home),away=u17Team(m.away),live=u17CompetitionLiveMatches[u17CompetitionMatchKey(m.date,m.home,m.away)],event=payload.event||live||{};
- const score=event.homeScore!=null?event.homeScore+' - '+event.awayScore:'VS';
+ const score=event.homeScore!=null&&event.awayScore!=null?event.homeScore+' - '+event.awayScore:(live?.homeScore!=null&&live?.awayScore!=null?live.homeScore+' - '+live.awayScore:'VS');
  const rawStats=payload.statistics;let stats=Array.isArray(rawStats)?rawStats:[];
  if(!stats.length&&rawStats&&typeof rawStats==='object'){
   const hs=rawStats.T1||rawStats.home||rawStats.Home||rawStats.homeStats,as=rawStats.T2||rawStats.away||rawStats.Away||rawStats.awayStats;
@@ -490,8 +490,20 @@ async function openU17Match(index){
  activeU17MatchIndex=index;
  const m=u17Data.matches[index],home=u17Team(m.home),away=u17Team(m.away);document.getElementById('u17DetailTitle').textContent=home.name+' vs '+away.name;
  const overlay=document.getElementById('u17DetailOverlay');overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('u17DetailContent').innerHTML='<p class="u17-detail-note">Consultando datos del encuentro…</p>';
- try{const q=new URLSearchParams({date:m.date,home:m.home,away:m.away,details:'1'}),r=await fetch('/api/u17-world-cup-live?'+q,{cache:'no-store'}),p=await r.json();if(!r.ok)throw new Error(p.message||'Error al consultar');renderU17MatchDetail(p,m)}
- catch(e){document.getElementById('u17DetailContent').innerHTML='<p class="u17-detail-note">No se han podido cargar los detalles. '+esc(e.message)+'</p>'}
+ try{
+  const q=new URLSearchParams({date:m.date,home:m.home,away:m.away,details:'1'});
+  const r=await fetch('/api/u17-world-cup-live?'+q,{cache:'no-store'});
+  const p=await r.json();
+  if(!r.ok||!p.available)throw new Error(p.message||'Proveedor sin cobertura detallada');
+  renderU17MatchDetail(p,m);
+ }catch(e){
+  const archived=u17CompetitionLiveMatches[u17CompetitionMatchKey(m.date,m.home,m.away)];
+  renderU17MatchDetail({available:!!archived,event:archived||null,statistics:null,lineups:null,incidents:[],updatedAt:archived?.verifiedAt||null,source:archived?.source||'',matchKey:m.date+':'+m.home+':'+m.away},m);
+  const notice=document.createElement('p');
+  notice.className='u17-detail-note';
+  notice.textContent='Marcador histórico cuando existe. Estadísticas, alineaciones y eventos no disponibles en el proveedor para este partido.';
+  document.getElementById('u17DetailContent').prepend(notice);
+ }
 }
 function closeU17Match(){activeU17MatchIndex=null;document.getElementById('u17DetailOverlay').classList.remove('open');document.getElementById('u17DetailOverlay').setAttribute('aria-hidden','true');document.body.style.overflow=''}
 
