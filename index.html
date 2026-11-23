@@ -527,7 +527,7 @@ function renderYouthCalendar(){
   const homeScore=finished?m.homeScore:'—',awayScore=finished?m.awayScore:'—';
   const when=finished?'Finalizado':(m.kickoff||'Hora por confirmar')+' CET';
   const idx=youthLeagueMatches.indexOf(m);
-  return '<a class="youth-match" href="/matches/'+frSlug(m.home)+'-'+frSlug(m.away)+'-'+m.date+'" aria-label="Ver ficha del partido '+esc(m.home)+' contra '+esc(m.away)+'"><div class="youth-match-top"><span>Jornada '+m.matchday+' · '+fmt(m.date)+'</span><span class="youth-match-status '+(finished?'':'upcoming')+'">'+(finished?'FT':'PRÓXIMO')+'</span></div><div class="youth-match-row"><span class="youth-match-team-wrap"><img class="youth-match-crest" src="'+esc(youthCrest(m.home))+'" data-crest="'+esc(youthTeamKey[m.home]||m.home)+'" alt="" onerror="handleCrestError(this)"><span class="youth-match-team" title="'+esc(m.home)+'">'+esc(m.home)+'</span></span><span class="youth-match-score '+(finished?'':'pending')+'">'+homeScore+'</span></div><div class="youth-match-row"><span class="youth-match-team-wrap"><img class="youth-match-crest" src="'+esc(youthCrest(m.away))+'" data-crest="'+esc(youthTeamKey[m.away]||m.away)+'" alt="" onerror="handleCrestError(this)"><span class="youth-match-team" title="'+esc(m.away)+'">'+esc(m.away)+'</span></span><span class="youth-match-score '+(finished?'':'pending')+'">'+awayScore+'</span></div><div class="youth-match-bottom"><span class="youth-match-day">'+(finished?'RESULTADO':'HORARIO')+'</span><span>'+when+'</span></div><div class="youth-match-open">Ver ficha del partido ↗</div></a>';
+  return '<button type="button" class="youth-match" data-youth-match="'+idx+'" aria-label="Abrir ficha del partido '+esc(m.home)+' contra '+esc(m.away)+'"><div class="youth-match-top"><span>Jornada '+m.matchday+' · '+fmt(m.date)+'</span><span class="youth-match-status '+(finished?'':'upcoming')+'">'+(finished?'FT':'PRÓXIMO')+'</span></div><div class="youth-match-row"><span class="youth-match-team-wrap"><img class="youth-match-crest" src="'+esc(youthCrest(m.home))+'" data-crest="'+esc(youthTeamKey[m.home]||m.home)+'" alt="" onerror="handleCrestError(this)"><span class="youth-match-team" title="'+esc(m.home)+'">'+esc(m.home)+'</span></span><span class="youth-match-score '+(finished?'':'pending')+'">'+homeScore+'</span></div><div class="youth-match-row"><span class="youth-match-team-wrap"><img class="youth-match-crest" src="'+esc(youthCrest(m.away))+'" data-crest="'+esc(youthTeamKey[m.away]||m.away)+'" alt="" onerror="handleCrestError(this)"><span class="youth-match-team" title="'+esc(m.away)+'">'+esc(m.away)+'</span></span><span class="youth-match-score '+(finished?'':'pending')+'">'+awayScore+'</span></div><div class="youth-match-bottom"><span class="youth-match-day">'+(finished?'RESULTADO':'HORARIO')+'</span><span>'+when+'</span></div><div class="youth-match-open">Ver ficha del partido ↗</div></button>';
  }).join('')||'<div class="empty">No hay partidos que coincidan con tu búsqueda.</div>';
 }
 
@@ -556,7 +556,7 @@ function closeYouthMatch(){const modal=document.getElementById('youthMatchModal'
 async function setupYouthCalendar(){
  const host=document.getElementById('youthCalendarGrid');
  try{
-  const response=await fetch('./uefa-youth-league-2026-27.json');
+  const response=await fetch('/uefa-youth-league-2026-27.json');
   if(!response.ok)throw new Error('No se pudo cargar el calendario');
   const data=await response.json();youthLeagueMatches=data.matches||[];
   document.getElementById('youthMatchdayFilter').addEventListener('change',renderYouthCalendar);
