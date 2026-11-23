@@ -1,8 +1,9 @@
+const {controllerFor}=require('./future-radar-test-helper');
 'use strict';
 const fs=require('node:fs'),assert=require('node:assert/strict'),vm=require('node:vm');
 for(const path of ['index.html','players/index.html','academies/index.html','rankings/index.html','matches/index.html','competitions/uefa-youth-league/index.html','competitions/fifa-u17-world-cup/index.html']){
  const html=fs.readFileSync(path,'utf8');
- const code=html.includes('src="/assets/future-radar-page-core.js"')?fs.readFileSync('assets/future-radar-page-core.js','utf8'):html;
+ const code=controllerFor(html);
  assert(html.includes('id="frAgeFilter"')&&html.includes('id="frPlayerSort"')&&html.includes('id="frPlayerCount"'),path);
  assert(code.includes("addEventListener('change',filterPlayers)"),path);
  const scripts=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)];
