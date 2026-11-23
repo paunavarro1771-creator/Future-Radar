@@ -26,7 +26,7 @@
   if(stats.parentNode!==statsPane)statsPane.append(stats);
   const lineup=stats.querySelector('.youth-api-xi')?.closest('.youth-api-section');
   if(lineup&&lineup.parentNode!==lineupPane)lineupPane.append(lineup);
-  if(!lineupPane.querySelector('.youth-api-section'))lineupPane.innerHTML=unavailable;
+  if(!lineupPane.querySelector('.youth-api-section')&&!lineupPane.querySelector('.fr-match-unavailable'))lineupPane.innerHTML=unavailable;
   const eventPane=panels.querySelector('[data-fr-pane="events"]');
   if(!eventPane.hasChildNodes())eventPane.innerHTML=unavailable;
   const sourcesPane=panels.querySelector('[data-fr-pane="sources"]');
