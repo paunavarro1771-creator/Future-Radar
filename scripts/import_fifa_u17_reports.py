@@ -69,6 +69,15 @@ def main():
     links = Links()
     links.feed(html)
     accepted = 0
+    found = len(set(links.urls))
+    matched = 0
+    downloaded = 0
+    parsed = 0
+    skipped_existing = 0
+    skipped_fixture = 0
+    failures = 0
+    verified_existing = False
+    print(f"FIFA report links found in hub: {found}", flush=True)
     for url in sorted(set(links.urls)):
         match = PATTERN.search(urlparse(url).path)
         if not match:
@@ -76,17 +85,31 @@ def main():
         number, home, away = int(match[1]), match[2].upper(), match[3].upper()
         fixture = by_number.get(number)
         if not fixture or (fixture.get("home"), fixture.get("away")) != (home, away):
+            skipped_fixture += 1
             continue
+        matched += 1
         key = f"{fixture['date']}:{home}:{away}"
-        if key in existing:
+        is_existing = key in existing
+        if is_existing and verified_existing:
+            skipped_existing += 1
             continue
         try:
-            score = verified_score(download(url), home, away)
+            pdf = download(url)
+            downloaded += 1
+            score = verified_score(pdf, home, away)
+            parsed += 1
         except Exception as exc:
+            failures += 1
             print(f"Skipping match {number}: {type(exc).__name__}", file=sys.stderr)
             continue
         if score is None:
+            failures += 1
             print(f"Skipping match {number}: ambiguous score", file=sys.stderr)
+            continue
+        if is_existing:
+            verified_existing = True
+            skipped_existing += 1
+            print(f"Existing report PDF successfully downloaded and parsed: match {number}", flush=True)
             continue
         existing[key] = {
             "matchKey": key, "date": fixture["date"], "homeCode": home,
@@ -100,7 +123,14 @@ def main():
     if accepted:
         archive["reports"] = sorted(existing.values(), key=lambda x: (x["date"], x.get("matchNumber", 999)))
         REPORTS.write_text(json.dumps(archive, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"New verified official match reports: {accepted}; total: {len(existing)}")
+    print(f"FIFA report diagnostic: links={found} fixture_matches={matched} pdf_downloaded={downloaded} pdf_parsed={parsed} existing_skipped={skipped_existing} fixture_mismatches={skipped_fixture} failures={failures}", flush=True)
+    print(f"New verified official match reports: {accepted}; total: {len(existing)}", flush=True)
+    if found == 0:
+        print("WARNING: FIFA hub returned no matching PDF links; download capability NOT verified.", file=sys.stderr)
+    elif downloaded == 0:
+        print("WARNING: No PDF was downloaded; inspect fixture matching and report URLs.", file=sys.stderr)
+    elif parsed == 0:
+        print("WARNING: PDF bytes downloaded but none parsed successfully.", file=sys.stderr)
 
 
 if __name__ == "__main__":
