@@ -29,12 +29,12 @@ jobs:
         run: python scripts/import_fifa_u17_reports.py ${{ inputs.audit_all && '--audit-all' || '' }}
       - name: Commit verified report updates
         run: |
-          if git diff --quiet -- data/fifa-u17-2026-official-match-reports.json; then
+          if git diff --quiet -- data/fifa-u17-2026-official-match-reports.json && [ ! -f data/fifa-u17-2026-pdf-evidence.json ]; then
             echo 'No new verified reports'
             exit 0
           fi
           git config user.name 'future-radar-sync[bot]'
           git config user.email 'future-radar-sync[bot]@users.noreply.github.com'
-          git add data/fifa-u17-2026-official-match-reports.json
+          git add data/fifa-u17-2026-official-match-reports.json data/fifa-u17-2026-pdf-evidence.json
           git commit -m 'data: sync newly verified FIFA U17 reports'
           git push
