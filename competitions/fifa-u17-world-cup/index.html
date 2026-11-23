@@ -492,6 +492,13 @@ async function openU17Match(index){
  const overlay=document.getElementById('u17DetailOverlay');overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('u17DetailContent').innerHTML='<p class="u17-detail-note">Consultando datos del encuentro…</p>';
  try{
   const q=new URLSearchParams({date:m.date,home:m.home,away:m.away,details:'1'});
+  // Prefer verified official FIFA post-match reports for completed games.
+  const official=await fetch('/api/u17-official-match-report?'+q,{cache:'no-store'}).catch(()=>null);
+  if(official?.ok){
+    const verified=await official.json();
+    renderU17MatchDetail(verified,m);
+    return;
+  }
   const r=await fetch('/api/u17-world-cup-live?'+q,{cache:'no-store'});
   const p=await r.json();
   if(!r.ok||!p.available)throw new Error(p.message||'Proveedor sin cobertura detallada');
