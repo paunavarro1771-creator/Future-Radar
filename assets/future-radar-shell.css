@@ -93,3 +93,11 @@ header .nav-cta{display:none!important}
  #youth-league .youth-match-team{font-size:11px!important}
  #youth-league .youth-match-crest{width:16px!important;height:16px!important;flex-basis:16px!important}
 }
+
+/* Consistent four-tab match detail navigation */
+.fr-match-tabs{display:flex;gap:5px;overflow-x:auto;margin:17px 0 12px;padding-bottom:5px}
+.fr-match-tabs button{border:1px solid #304737;background:#132118;color:#b7cabe;border-radius:7px;padding:9px 12px;font:600 11px inherit;cursor:pointer;white-space:nowrap}
+.fr-match-tabs button.active,.fr-match-tabs button[aria-selected=true]{border-color:#48cf81;background:#21432d;color:#e8ffed}
+.fr-match-panels>[hidden]{display:none!important}
+.fr-match-unavailable{color:#9ab5a4;font-size:12px;padding:18px 12px;border:1px dashed #3a5441;border-radius:8px}
+@media(max-width:560px){.fr-match-tabs button{padding:9px 10px;font-size:10px}.youth-match-dialog{padding:14px!important}}
