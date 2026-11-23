@@ -25,6 +25,40 @@ METRICS=[
 ]
 def get(url,timeout=40):
  r=requests.get(url,headers=UA,timeout=timeout);r.raise_for_status();return r
+def extract_starting_xis(page):
+ """FIFA report page 2 contains STARTING blocks in left and right columns.
+ Read by positioned text blocks to avoid merging opposite teams.
+ Return null unless exactly 11 numbered players are found per side.
+ """
+ width=page.rect.width
+ sides=[[],[]]
+ for block in page.get_text('blocks'):
+  if len(block)<5:continue
+  x0,y0,x1,y1,txt=block[:5]
+  if y0<65 or y0>page.rect.height*0.72:continue
+  side=0 if (x0+x1)/2<width/2 else 1
+  sides[side].append((y0,txt))
+ result=[]
+ for side in sides:
+  content='\\n'.join(t for _,t in sorted(side))
+  if 'STARTING' not in content or 'SUBSTITUTES' not in content:return None
+  part=content.split('STARTING',1)[1].split('SUBSTITUTES',1)[0]
+  players=[]
+  for line in part.splitlines():
+   line=' '.join(line.split())
+   # Left: 1 GK NAME; right: NAME GK 12. Strip substitution minute markers.
+   a=re.match(r'^(\\d{1,2})\\s+(GK|DF|MF|FW)\\s+(.+)$',line)
+   z=re.match(r'^(.+?)\\s+(GK|DF|MF|FW)\\s+(\\d{1,2})$',line)
+   if a:number,pos,name=a.groups()
+   elif z:name,pos,number=z.groups()
+   else:continue
+   name=re.sub(r"\\s+\\d{1,3}(?:\\+\\d{1,2})?'(?:\\s+\\d{1,3}(?:\\+\\d{1,2})?')*$",'',name).strip()
+   if name and not any(p['number']==number for p in players):
+    players.append({'number':number,'name':name,'position':pos})
+  if len(players)!=11:return None
+  result.append(players)
+ return {'home':result[0],'away':result[1]}
+
 def parse(pdf,url):
  doc=fitz.open(stream=pdf,filetype='pdf')
  if len(doc)<3:raise ValueError('Report has fewer than 3 pages')
@@ -55,7 +89,7 @@ def parse(pdf,url):
  'homeScore':int(m.group(2)),'awayScore':int(m.group(3)),'status':'FT',
  'source':'FIFA Training Centre','sourceType':'official_fifa_post_match_summary',
  'sourceUrl':url,'matchNumber':int(filematch.group(1)),'statistics':stats,
- 'lineups':None,'incidents':[],'notes':'Automated import of team statistics; starting XIs and player-level tables require separate verification.'}
+ 'lineups':extract_starting_xis(doc[1]),'incidents':[],'notes':'Automated import of team statistics; starting XIs and player-level tables require separate verification.'}
 def main():
  existing=json.loads(DEST.read_text())
  old={x['matchKey']:x for x in existing.get('reports',[])}
@@ -74,7 +108,7 @@ def main():
     report=future.result()
     prev=old.get(report['matchKey'])
     if prev and prev.get('sourceUrl')==url:
-     if prev.get('lineups'):report['lineups']=prev['lineups']
+     if not report.get('lineups') and prev.get('lineups'):report['lineups']=prev['lineups']
      if prev.get('incidents'):report['incidents']=prev['incidents']
     old[report['matchKey']]=report
     print('OK',report['matchKey'],len(report['statistics']),'stats',flush=True)
