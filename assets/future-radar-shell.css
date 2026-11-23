@@ -46,3 +46,8 @@ header .nav-cta{display:none!important}
 .u17-detail-tabs{display:flex;gap:6px;overflow-x:auto}
 .u17-detail-tabs button{white-space:nowrap}
 @media(max-width:720px){.u17-match{grid-template-columns:60px minmax(0,1fr)!important;gap:8px;padding:9px!important}.u17-match-teams{grid-template-columns:minmax(0,1fr) 45px minmax(0,1fr);gap:4px!important}.u17-match-side{font-size:10px!important}.u17-match-score-live{font-size:12px!important}.u17-match-meta{grid-column:1/-1;text-align:left;display:flex;gap:8px}.u17-match-open{display:inline}.u17-match-flag{width:18px!important;height:14px!important}}
+
+.fr-filter-count{font-size:11px;color:#8caa98;margin:10px 0 8px;font-variant-numeric:tabular-nums}
+#jugadores .player-grid{gap:10px!important}
+#jugadores .player-card{padding:12px!important;border-radius:9px!important}
+#jugadores .player-meta{font-variant-numeric:tabular-nums}
