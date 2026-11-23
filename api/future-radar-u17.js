@@ -54,7 +54,10 @@ module.exports=(req,res)=>{
   verifiedOfficialScores:matches.filter(m=>m.verifiedOfficial&&m.homeScore!==null).length,
   completeLineups:matches.filter(m=>m.lineupsAvailable).length,
   archiveWithScores:matches.filter(m=>m.homeScore!==null&&m.awayScore!==null).length,
-  matchesWithVerifiedGoalEvents:matches.filter(m=>m.incidents.length>0).length,
+  matchesWithVerifiedGoalEvents:matches.filter(m=>m.incidents.some(i=>/goal|gol/i.test(String(i.type||i.Ty||i.name||'')))).length,
+  matchesWithNamedAndTimedGoals:matches.filter(m=>m.incidents.some(i=>/goal|gol/i.test(String(i.type||i.Ty||i.name||''))&&Boolean(i.player||i.Pnm||i.Nm)&&i.minute!=null)).length,
+  missingStatistics:matches.filter(m=>!m.statisticsAvailable).length,
+  missingCompleteLineups:matches.filter(m=>!m.lineupsAvailable).length,
   archiveTimestamp:snapshot.archivedAt,realtime:false};
  if(req.query?.health==='1')return res.status(200).json({available:true,coverage});
  const date=String(req.query?.date||''),home=clean(req.query?.home),away=clean(req.query?.away);
