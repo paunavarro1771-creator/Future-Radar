@@ -6,10 +6,8 @@ const pages=['index.html','players/index.html','academies/index.html','rankings/
 for(const path of pages){
  const html=fs.readFileSync(path,'utf8');
  assert(html.includes('src="/assets/future-radar-data.js"'),path+' missing gateway');
- assert(html.includes("FutureRadarData.response('players')"),path+' not using cached players');
- assert(html.includes("FutureRadarData.response('youth')"),path+' not using cached youth fixtures');
- assert(html.includes("FutureRadarData.response('u17')"),path+' not using cached U17 fixtures');
- assert(html.includes("FutureRadarData.response('u17Squads')"),path+' not using cached U17 squads');
+ const controller=html.includes('src="/assets/future-radar-page-core.js"')?shared:html;
+ for(const key of ['players','youth','u17','u17Squads'])assert(controller.includes("FutureRadarData.response('"+key+"')"),path+' not using cached '+key);
 }
 for(const path of ['players/index.html','rankings/index.html','competitions/uefa-youth-league/index.html']){
  const html=fs.readFileSync(path,'utf8');
