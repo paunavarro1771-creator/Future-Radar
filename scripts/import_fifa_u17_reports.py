@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 HUB = "https://www.fifatrainingcentre.com/en/game/tournaments/fu17wc/2026/match-report-hub-2026.php"
 REPORTS = ROOT / "data/fifa-u17-2026-official-match-reports.json"
 FIXTURES = ROOT / "u17-world-cup-2026.json"
+EVIDENCE = ROOT / "data/fifa-u17-2026-pdf-evidence.json"
 PATTERN = re.compile(r"PMSR-M(\d{1,3})-([A-Z]{3})-V-([A-Z]{3})\.pdf$", re.I)
 HEADERS = {"User-Agent": "FutureRadarFC-OfficialReportIndexer/1.0 (+https://www.futureradar.es)"}
 
@@ -58,6 +59,13 @@ def verified_score(pdf, home, away):
     return tuple(map(int, scores[0])) if len(scores) == 1 else None
 
 
+def extract_evidence(pdf, number, key, url):
+    with pymupdf.open(stream=pdf, filetype="pdf") as doc:
+        pages = [page.get_text(sort=True).strip() for page in doc]
+    return {"matchNumber": number, "matchKey": key, "sourceUrl": url,
+            "pageCount": len(pages), "pages": pages}
+
+
 def main():
     fixture_list = json.loads(FIXTURES.read_text(encoding="utf-8"))["matches"]
     by_number = {int(m["number"]): m for m in fixture_list if m.get("number") is not None}
@@ -79,6 +87,9 @@ def main():
     verified_existing = False
     audit_all = '--audit-all' in sys.argv
     audit = []
+    evidence = json.loads(EVIDENCE.read_text(encoding="utf-8")) if EVIDENCE.exists() else {
+        "competitionId": "fifa-u17-world-cup-2026", "source": "FIFA Training Centre PDFs", "reports": []}
+    evidence_by_key = {item["matchKey"]: item for item in evidence["reports"]}
     print(f"FIFA report links found in hub: {found}", flush=True)
     for url in sorted(set(links.urls)):
         match = PATTERN.search(urlparse(url).path)
@@ -92,7 +103,7 @@ def main():
         matched += 1
         key = f"{fixture['date']}:{home}:{away}"
         is_existing = key in existing
-        if is_existing and verified_existing and not audit_all:
+        if is_existing and key in evidence_by_key and verified_existing and not audit_all:
             skipped_existing += 1
             continue
         try:
@@ -100,6 +111,9 @@ def main():
             downloaded += 1
             score = verified_score(pdf, home, away)
             parsed += 1
+            if key not in evidence_by_key:
+                evidence_by_key[key] = extract_evidence(pdf, number, key, url)
+                print(f"Extracted full PDF text: match {number}, pages={evidence_by_key[key]['pageCount']}", flush=True)
             audit.append({'matchNumber':number,'matchKey':key,'downloaded':True,'parsed':True,'scoreDetected':score is not None,'alreadyRegistered':is_existing})
         except Exception as exc:
             failures += 1
@@ -123,6 +137,10 @@ def main():
             "notes": "Verified first-page score only; statistics and player events not yet extracted."
         }
         accepted += 1
+    if len(evidence_by_key) != len(evidence["reports"]):
+        evidence["reports"] = sorted(evidence_by_key.values(), key=lambda item: item["matchNumber"])
+        EVIDENCE.write_text(json.dumps(evidence, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"Saved official PDF text: {len(evidence_by_key)} reports", flush=True)
     if accepted:
         archive["reports"] = sorted(existing.values(), key=lambda x: (x["date"], x.get("matchNumber", 999)))
         REPORTS.write_text(json.dumps(archive, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
