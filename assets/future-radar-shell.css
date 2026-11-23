@@ -105,3 +105,22 @@ header .nav-cta{display:none!important}
 #canteras .academy-tools{flex-wrap:wrap}#canteras .academy-tools .control{min-height:35px}#canteras .fr-filter-count{margin:10px 0}
 .fr-ranking-methodology{border:1px solid #294534;background:#111d16;border-radius:8px;margin:0 0 13px;padding:11px 14px;color:#bdd3c4;font-size:11px}.fr-ranking-methodology summary{cursor:pointer;font-weight:700}.fr-ranking-methodology p{color:#9eb7a5;line-height:1.65;margin:11px 0 0}
 @media(max-width:600px){#canteras .academy-tools{width:100%}#canteras .academy-tools .control{flex:1;min-width:130px}.fr-ranking-methodology{font-size:12px}}
+
+/* Responsive safety: tables scroll within their own region, never the viewport. */
+html,body{max-width:100%;overflow-x:clip}
+.ranking-table-wrap,.fr-match-panels,.youth-match-data-panel{max-width:100%;min-width:0}
+.ranking-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ranking-table{width:100%}
+.youth-match-scoreboard,.u17-detail-score{min-width:0}
+.youth-match-club,.u17-detail-side{min-width:0;overflow-wrap:anywhere}
+.youth-match-bigscore,.u17-detail-result{white-space:nowrap;font-variant-numeric:tabular-nums}
+.fr-match-tabs{scrollbar-width:thin}
+@media(max-width:600px){
+ .youth-match-scoreboard,.u17-detail-score{gap:8px}
+ .youth-match-club img{max-width:34px;max-height:34px}
+ .youth-match-club span{font-size:11px;line-height:1.3}
+ .youth-match-bigscore{font-size:clamp(18px,5vw,28px)}
+ .youth-match-detail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .ranking-table th,.ranking-table td{white-space:nowrap}
+ .fr-match-panels{overflow-wrap:anywhere}
+}

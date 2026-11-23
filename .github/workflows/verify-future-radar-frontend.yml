@@ -32,6 +32,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Validate mobile layout and initial filter state
+        run: node tests/future-radar-mobile-and-init.test.js
       - name: Validate all extracted page controllers
         run: node tests/future-radar-external-controllers.test.js
       - name: Validate shared page controller
