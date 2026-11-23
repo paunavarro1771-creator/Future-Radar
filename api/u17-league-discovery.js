@@ -9,6 +9,17 @@ module.exports=async(req,res)=>{
  const key=process.env.ANYSPORT_API_KEY;
  if(!key)return res.status(200).json({available:false,reason:'provider_not_configured'});
  const id=isId(req.query?.league_id)?req.query.league_id:DEFAULT_ID;
+ if(req.query?.mode==='seasons'){
+  try{
+   const url=new URL(BASE+'/seasons');url.searchParams.set('league_id',id);
+   const response=await fetch(url,{headers:{apikey:key},signal:AbortSignal.timeout(9000)});
+   if(!response.ok)return res.status(502).json({available:false,stage:'seasons',providerStatus:response.status});
+   const body=await response.json();
+   if(body.success!==true||!Array.isArray(body.data))return res.status(502).json({available:false,reason:'unexpected_provider_schema'});
+   const seasons=body.data.map(x=>({season:String(x.season||''),hasResults:x.has_results??null})).filter(x=>x.season);
+   return res.status(200).json({available:true,leagueId:id,seasons,season2026Found:seasons.some(x=>x.season==='2026'),note:'Provider seasons only; match coverage not yet confirmed.'});
+  }catch(e){return res.status(502).json({available:false,reason:e?.name==='TimeoutError'?'provider_timeout':'provider_network_error'});}
+ }
  try{
   const url=new URL(BASE+'/leagues');url.searchParams.set('league_id',id);url.searchParams.set('lang','en');
   const upstream=await fetch(url,{headers:{apikey:key},signal:AbortSignal.timeout(9000)});
