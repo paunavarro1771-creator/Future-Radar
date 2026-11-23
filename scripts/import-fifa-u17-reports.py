@@ -14,8 +14,8 @@ BASE='https://www.fifatrainingcentre.com'
 UA={'User-Agent':'FutureRadarFC/1.0 (+https://www.futureradar.es; public FIFA report index)'}
 METRICS=[
  ('xG','xG (Expected Goals)',r'(\d+(?:\.\d+)?)\s+xG \(Expected Goals\)\s+(\d+(?:\.\d+)?)'),
- ('Remates','Attempts at Goal (On Target)',r'(\d+) \(\d+\) Attempts at Goal \(On Target\) (\d+) \(\d+\)'),
- ('Pases','Total Passes (Complete)',r'(\d+) \(\d+\) Total Passes \(Complete\) (\d+) \(\d+\)'),
+ ('Remates','Attempts at Goal (On Target)',r'(\d+) \((\d+)\) Attempts at Goal \(On Target\) (\d+) \((\d+)\)'),
+ ('Pases','Total Passes (Complete)',r'(\d+) \((\d+)\) Total Passes \(Complete\) (\d+) \((\d+)\)'),
  ('Precisión de pase','Pass Completion %',r'(\d+)\s*% Pass Completion % (\d+)\s*%'),
  ('Centros','Crosses',r'(\d+) Crosses (\d+)'),
  ('Progresiones de balón','Ball Progressions',r'(\d+) Ball Progressions (\d+)'),
@@ -29,7 +29,7 @@ def parse(pdf,url):
  if len(doc)<3:raise ValueError('Report has fewer than 3 pages')
  cover=' '.join(doc[0].get_text().split())
  summary=' '.join(doc[2].get_text().split())
- m=re.search(r'([A-Za-z][A-Za-z .’\'-]+?)\s+(\d+)\s*-\s*(\d+)\s+([A-Za-z][A-Za-z .’\'-]+?)\s+Group\s+([A-L])\s*-\s*Match\s+(\d+)',cover)
+ m=re.search(r'([A-Za-z][A-Za-z .’\'-]+?)\s+(\d+)\s*[-–]\s*(\d+)\s+([A-Za-z][A-Za-z .’\'-]+?)\s+Group\s+([A-L])\s*[-–]\s*Match\s+(\d+)',cover)
  if not m:raise ValueError('Unrecognized FIFA report cover: '+cover[:140])
  date=re.search(r'(\d{1,2}) (November|December) 2026',cover)
  if not date:raise ValueError('Match date missing')
@@ -41,7 +41,7 @@ def parse(pdf,url):
  for name,_,pattern in METRICS:
   x=re.search(pattern,summary,re.I)
   if x:
-   a,b=x.group(1),x.group(2)
+   a,b=(x.group(1),x.group(3)) if name in ('Remates','Pases') else (x.group(1),x.group(2))
    if name=='Precisión de pase':a+='%' ;b+='%'
    if name=='Distancia recorrida':a+=' km';b+=' km'
    stats.append({'name':name,'home':a,'away':b})
