@@ -480,7 +480,7 @@ function renderU17MatchDetail(payload,m){
  const incidents=payload.incidents||[],events=incidents.length?'<div class="u17-detail-section"><h3>EVENTOS</h3>'+incidents.map(i=>'<div class="u17-detail-event">'+esc(i.Ty||i.type||i.name||'Evento')+' · '+esc(i.Ps||i.minute||i.Min||'')+' '+esc(i.Pnm||i.Nm||'')+'</div>').join('')+'</div>':'<div class="u17-detail-section"><h3>EVENTOS</h3><p class="u17-detail-note">No hay eventos detallados disponibles.</p></div>';
  const provider=payload.alternativeProvider;
  const providerHtml=provider?'<div class="u17-detail-section" data-match-pane="sources"><h3>FUENTES ADICIONALES</h3><p class="u17-detail-note">YSscores dispone de una ficha externa para este encuentro. No se incrusta porque algunos proveedores bloquean la visualización y pueden dejar paneles vacíos.</p><p><a href="'+esc(provider.lineupUrl)+'" target="_blank" rel="noopener" style="color:var(--green);text-decoration:underline">Consultar alineaciones en YSscores ↗</a></p><p><a href="'+esc(provider.matchUrl)+'" target="_blank" rel="noopener" style="color:var(--green);text-decoration:underline">Consultar estadísticas y eventos en YSscores ↗</a></p></div>':'';
- document.getElementById('u17DetailContent').innerHTML='<div class="u17-detail-score"><div class="u17-detail-side">'+u17Flag(home,'')+esc(home.name)+'</div><div class="u17-detail-result">'+score+'</div><div class="u17-detail-side">'+u17Flag(away,'')+esc(away.name)+'</div></div><p class="u17-detail-note">'+u17DateLabel(m.date)+' · '+m.timeQatar+' · '+esc(event.statusDescription||live?.statusDescription||'Programado')+'</p><div class="u17-detail-tabs" role="tablist"><button type="button" class="active" data-detail-tab="stats">Estadísticas</button><button type="button" data-detail-tab="lineups">Alineaciones</button><button type="button" data-detail-tab="events">Eventos</button><button type="button" data-detail-tab="sources">Fuentes</button></div><p class="u17-detail-note">Última consulta: '+esc(payload.updatedAt?new Date(payload.updatedAt).toLocaleTimeString('es-ES'):'sin confirmar')+' · ID '+esc(payload.matchKey||m.date+':'+m.home+':'+m.away)+'</p>'+statHtml+lineup+events+providerHtml+'<p class="u17-detail-note">Fuentes: LiveScore y YSscores cuando hay cobertura. Los datos no disponibles no se estiman.</p>';
+ document.getElementById('u17DetailContent').innerHTML='<div class="u17-detail-score"><div class="u17-detail-side">'+u17Flag(home,'')+esc(home.name)+'</div><div class="u17-detail-result">'+score+'</div><div class="u17-detail-side">'+u17Flag(away,'')+esc(away.name)+'</div></div><p class="u17-detail-note">'+u17DateLabel(m.date)+' · '+m.timeQatar+' · '+esc(event.statusDescription||live?.statusDescription||'Programado')+'</p><div class="u17-detail-tabs" role="tablist"><button type="button" class="active" data-detail-tab="stats">Estadísticas</button><button type="button" data-detail-tab="lineups">Alineaciones</button><button type="button" data-detail-tab="events">Eventos</button><button type="button" data-detail-tab="sources">Fuentes</button></div><p class="u17-detail-note">Última consulta: '+esc(payload.updatedAt?new Date(payload.updatedAt).toLocaleTimeString('es-ES'):'sin confirmar')+' · ID '+esc(payload.matchKey||m.date+':'+m.home+':'+m.away)+'</p>'+statHtml+lineup+events+providerHtml+'<p class="u17-detail-note">Fuentes: informes oficiales FIFA y archivo histórico de Future Radar. Los datos no disponibles no se estiman.</p>';
  const content=document.getElementById('u17DetailContent');content.querySelectorAll('.u17-detail-section').forEach((section,i)=>{if(!section.dataset.matchPane)section.dataset.matchPane=['stats','lineups','events'][i]||'sources'});
  const activate=tab=>{content.querySelectorAll('[data-detail-tab]').forEach(b=>{b.classList.toggle('active',b.dataset.detailTab===tab);b.setAttribute('aria-selected',String(b.dataset.detailTab===tab))});content.querySelectorAll('[data-match-pane]').forEach(section=>{section.hidden=section.dataset.matchPane!==tab})};
  content.querySelectorAll('[data-detail-tab]').forEach(b=>b.addEventListener('click',()=>activate(b.dataset.detailTab)));activate('stats');
@@ -488,27 +488,24 @@ function renderU17MatchDetail(payload,m){
 let activeU17MatchIndex=null;
 async function openU17Match(index){
  activeU17MatchIndex=index;
- const m=u17Data.matches[index],home=u17Team(m.home),away=u17Team(m.away);document.getElementById('u17DetailTitle').textContent=home.name+' vs '+away.name;
- const overlay=document.getElementById('u17DetailOverlay');overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('u17DetailContent').innerHTML='<p class="u17-detail-note">Consultando datos del encuentro…</p>';
+ const m=u17Data.matches[index],home=u17Team(m.home),away=u17Team(m.away);
+ document.getElementById('u17DetailTitle').textContent=home.name+' vs '+away.name;
+ const overlay=document.getElementById('u17DetailOverlay');
+ overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');
+ document.body.style.overflow='hidden';
+ document.getElementById('u17DetailContent').innerHTML='<p class="u17-detail-note">Consultando Future Radar API…</p>';
  try{
-  const q=new URLSearchParams({date:m.date,home:m.home,away:m.away,details:'1'});
-  // Prefer verified official FIFA post-match reports for completed games.
-  const official=await fetch('/api/u17-official-match-report?'+q,{cache:'no-store'}).catch(()=>null);
-  if(official?.ok){
-    const verified=await official.json();
-    renderU17MatchDetail(verified,m);
-    return;
-  }
-  const r=await fetch('/api/u17-world-cup-live?'+q,{cache:'no-store'});
-  const p=await r.json();
-  if(!r.ok||!p.available)throw new Error(p.message||'Proveedor sin cobertura detallada');
-  renderU17MatchDetail(p,m);
- }catch(e){
+  const q=new URLSearchParams({date:m.date,home:m.home,away:m.away});
+  const response=await fetch('/api/future-radar-u17?'+q,{cache:'no-store'});
+  if(!response.ok)throw new Error('Future Radar API '+response.status);
+  const match=await response.json();
+  renderU17MatchDetail(match,m);
+ }catch(error){
   const archived=u17CompetitionLiveMatches[u17CompetitionMatchKey(m.date,m.home,m.away)];
-  renderU17MatchDetail({available:!!archived,event:archived||null,statistics:null,lineups:null,incidents:[],updatedAt:archived?.verifiedAt||null,source:archived?.source||'',matchKey:m.date+':'+m.home+':'+m.away},m);
+  renderU17MatchDetail({event:archived||null,statistics:null,lineups:null,incidents:[],matchKey:m.date+':'+m.home+':'+m.away},m);
   const notice=document.createElement('p');
   notice.className='u17-detail-note';
-  notice.textContent='Marcador histórico cuando existe. Estadísticas, alineaciones y eventos no disponibles en el proveedor para este partido.';
+  notice.textContent='No se pudo consultar Future Radar API. Mostrando el último marcador almacenado.';
   document.getElementById('u17DetailContent').prepend(notice);
  }
 }
@@ -531,56 +528,23 @@ function u17NormalizeEngineMatch(match){
 async function refreshU17CompetitionLive(){
  if(!u17Data?.matches?.length)return;
  const status=document.getElementById('u17LiveStatus');
- const next={...u17CompetitionLiveMatches};
- let archiveCount=0,liveCount=0,liveError=null;
  try{
-   // Persistent snapshot is the historical baseline, not a live feed.
-   const archiveResponse=await fetch('/api/data-engine-archive',{cache:'no-store'});
-   if(archiveResponse.ok){
-     const archive=await archiveResponse.json();
-     if(Array.isArray(archive.matches)){
-       archive.matches.forEach(raw=>{
-         const match=u17NormalizeEngineMatch(raw);
-         if(!match)return;
-         next[u17CompetitionMatchKey(match.date,match.homeCode,match.awayCode)]=match;
-         archiveCount++;
-       });
-     }
-   }
- }catch(error){console.warn('U17 historical archive:',error);}
- try{
-   // The legacy provider supports at most seven dates per request.
-   // Fetch the current day and six previous days for live updates; do not
-   // discard the full tournament history held in the archive.
-   const today=new Date().toISOString().slice(0,10);
-   const dates=[...new Set(u17Data.matches.map(m=>m.date))]
-     .filter(d=>d<=today).sort().reverse().slice(0,7);
-   if(dates.length){
-     const response=await fetch('/api/u17-world-cup-live?list=1&dates='+encodeURIComponent(dates.join(',')),{cache:'no-store'});
-     if(!response.ok)throw new Error('API '+response.status);
-     const payload=await response.json();
-     if(!payload.available||!Array.isArray(payload.matches))throw new Error('Proveedor sin resultados');
-     payload.matches.forEach(raw=>{
-       const match=u17NormalizeEngineMatch(raw);
-       if(!match)return;
-       const key=u17CompetitionMatchKey(match.date,match.homeCode,match.awayCode);
-       const previous=next[key];
-       // Never replace an archived result with an empty scheduled record.
-       if(previous?.homeScore!=null&&previous?.awayScore!=null&&
-          (match.homeScore==null||match.awayScore==null))return;
-       next[key]=match;
-       liveCount++;
-     });
-   }
- }catch(error){liveError=error;console.warn('U17 live updates:',error);}
- u17CompetitionLiveMatches=next;
- renderU17Fixtures();
- renderU17Groups();
- if(status){
-   const source=archiveCount?'Archivo histórico: '+archiveCount+' partidos':'Archivo histórico no disponible';
-   status.textContent=source+' · Actualizaciones del proveedor: '+liveCount+
-     (liveError?' · proveedor temporalmente no disponible':'')+
-     ' · consulta '+new Date().toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});
+  const response=await fetch('/api/future-radar-u17',{cache:'no-store'});
+  if(!response.ok)throw new Error('Future Radar API '+response.status);
+  const data=await response.json();
+  if(!Array.isArray(data.matches))throw new Error('Invalid Future Radar API response');
+  const next={};
+  for(const raw of data.matches){
+   const match=u17NormalizeEngineMatch(raw);
+   if(match)next[u17CompetitionMatchKey(match.date,match.homeCode,match.awayCode)]=match;
+  }
+  u17CompetitionLiveMatches=next;
+  renderU17Fixtures();
+  renderU17Groups();
+  if(status)status.textContent='Future Radar API · '+data.coverage.archiveWithScores+' marcadores · '+data.coverage.officialReports+' informes FIFA · '+data.coverage.completeLineups+' alineaciones completas · Archivo '+(data.coverage.archiveTimestamp||'sin fecha')+' · No es un servicio en directo';
+ }catch(error){
+  console.warn('Future Radar API:',error);
+  if(status)status.textContent='Future Radar API no disponible; mostrando datos almacenados';
  }
 }
 function calculateU17GroupStandings(group){
