@@ -42,7 +42,7 @@ def parse_html(html):
  results={}
  date=None
  for line in lines:
-  day=re.search(r'(?:lunes|martes|miercoles|jueves|viernes|sabado|domingo|monday|tuesday|wednesday|thursday|friday|saturday|sunday)\s+(\d{1,2})\s+de\s+(noviembre|diciembre)',norm(line))
+  day=re.search(r'(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)\s+(\d{1,2})\s+(november|december)',norm(line))
   if day:date='2026-%02d-%02d'%(MONTHS[day.group(2)],int(day.group(1)))
   if not date:continue
   # Official FIFA lines: Grupo A: Egipto 1-2 Grecia - Player (Greece)
