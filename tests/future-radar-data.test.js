@@ -1,9 +1,10 @@
 'use strict';
 const fs=require('node:fs'),assert=require('node:assert/strict'),vm=require('node:vm');
+const {controllerFor}=require('./future-radar-test-helper');
 const code=fs.readFileSync('assets/future-radar-data.js','utf8');
 new vm.Script(code);
 const pages=['index.html','players/index.html','academies/index.html','rankings/index.html','matches/index.html','competitions/uefa-youth-league/index.html','competitions/fifa-u17-world-cup/index.html'];
-for(const path of pages){const html=fs.readFileSync(path,'utf8');assert(html.includes('/assets/future-radar-data.js'),path);assert(html.includes("FutureRadarData.response('players')"),path);}
+for(const path of pages){const html=fs.readFileSync(path,'utf8');assert(html.includes('/assets/future-radar-data.js'),path);assert(controllerFor(html).includes("FutureRadarData.response('players')"),path);}
 const cache=new Map();let calls=0;
 const window={};
 const fetch=async url=>{calls++;return {ok:true,json:async()=>({url})}};
