@@ -23,6 +23,21 @@ jobs:
         run: python -m pip install requests beautifulsoup4 pymupdf
       - name: Import all currently published official FIFA reports
         run: python scripts/import-fifa-u17-reports.py
+      - name: Report imported coverage and validate dataset
+        if: always()
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          p=Path('data/fifa-u17-2026-official-match-reports.json')
+          d=json.loads(p.read_text())
+          reports=d.get('reports',[])
+          xi=sum(bool(r.get('lineups') and len(r['lineups'].get('home',[]))==11 and len(r['lineups'].get('away',[]))==11) for r in reports)
+          lines=['## FIFA U17 official report coverage',f'- Imported reports: **{len(reports)}**',f'- Complete starting XIs: **{xi}**',f'- Missing from 104 planned games: **{104-len(reports)}**','- Unpublished PDFs cannot be imported.']
+          Path(os.environ['GITHUB_STEP_SUMMARY']).write_text('\\n'.join(lines)+'\\n')
+          print(' | '.join(lines))
+          assert len({r['matchKey'] for r in reports})==len(reports),'Duplicate match keys'
+          PY
       - name: Commit only changed verified data
         run: |
           if git diff --quiet -- data/fifa-u17-2026-official-match-reports.json; then
