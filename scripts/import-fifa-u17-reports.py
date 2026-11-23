@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Import published FIFA U17 2026 post-match PDF summaries. Requires requests, beautifulsoup4, pymupdf."""
 import json,re,sys,datetime
+from concurrent.futures import ThreadPoolExecutor,as_completed
 from pathlib import Path
 from urllib.parse import urljoin
 import requests
@@ -62,19 +63,24 @@ def main():
  links=sorted(set(urljoin(BASE,a.get('href')) for a in soup.select('a[href]') if re.search(r'/PMSR-M\d+-[A-Z]{3}-V-[A-Z]{3}\.pdf(?:\?.*)?$',a.get('href',''),re.I)))
  if not links:raise SystemExit('No FIFA PDF links discovered: refusing to overwrite')
  failures=[]
- for url in links:
-  try:
-   report=parse(get(url,timeout=65).content,url)
-   prev=old.get(report['matchKey'])
-   # Preserve previously hand-verified player data when report identity matches.
-   if prev and prev.get('sourceUrl')==url:
-    if prev.get('lineups'):report['lineups']=prev['lineups']
-    if prev.get('incidents'):report['incidents']=prev['incidents']
-   old[report['matchKey']]=report
-   print('OK',report['matchKey'],len(report['statistics']),'stats',flush=True)
-  except Exception as e:
-   failures.append({'url':url,'error':str(e)[:180]})
-   print('SKIP',url,str(e)[:150],file=sys.stderr,flush=True)
+ def download_and_parse(url):
+  return parse(get(url,timeout=65).content,url)
+ # Process all published PDFs in one batch instead of sequential requests.
+ with ThreadPoolExecutor(max_workers=8) as pool:
+  jobs={pool.submit(download_and_parse,url):url for url in links}
+  for future in as_completed(jobs):
+   url=jobs[future]
+   try:
+    report=future.result()
+    prev=old.get(report['matchKey'])
+    if prev and prev.get('sourceUrl')==url:
+     if prev.get('lineups'):report['lineups']=prev['lineups']
+     if prev.get('incidents'):report['incidents']=prev['incidents']
+    old[report['matchKey']]=report
+    print('OK',report['matchKey'],len(report['statistics']),'stats',flush=True)
+   except Exception as e:
+    failures.append({'url':url,'error':str(e)[:180]})
+    print('SKIP',url,str(e)[:150],file=sys.stderr,flush=True)
  if not old:raise SystemExit('No verified reports: refusing to overwrite')
  result={'competitionId':'fifa-u17-world-cup-2026','importMethod':'FIFA public post-match PDF; first and third pages parsed; unverified fields omitted','coverage':'partial','reports':sorted(old.values(),key=lambda x:(x['date'],x['matchNumber']))}
  DEST.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
