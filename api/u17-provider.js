@@ -15,12 +15,12 @@ module.exports=async(req,res)=>{
  if(!apiKey)return res.status(200).json({available:false,reason:'provider_not_configured',matches:[],realtime:false});
  if(cached&&Date.now()<expires)return res.status(200).json(cached);
  try{
-  const url=new URL(BASE+'/matches');url.searchParams.set('league_id',LEAGUE);url.searchParams.set('season','2026');url.searchParams.set('lang','en');
+  const url=new URL(BASE+'/matches');url.searchParams.set('league_id',LEAGUE);url.searchParams.set('from','2026-11-19');url.searchParams.set('to','2026-12-13');url.searchParams.set('limit','200');url.searchParams.set('lang','en');
   const response=await fetch(url,{headers:{apikey:apiKey},signal:AbortSignal.timeout(9000)});
   if(!response.ok)throw Error('provider_http_'+response.status);
   const body=await response.json();
   if(body.success!==true||!Array.isArray(body.data))throw Error('invalid_provider_response');
-  const matches=body.data.map(m=>({providerId:String(m.match_id||''),date:String(m.date||''),home:String(m.home?.name||m.home||''),away:String(m.away?.name||m.away||''),status:String(m.status||''),homeScore:Number.isInteger(m.home_score)?m.home_score:null,awayScore:Number.isInteger(m.away_score)?m.away_score:null})).filter(m=>m.providerId&&/^2026-\d{2}-\d{2}$/.test(m.date));
+  const matches=body.data.map(m=>{const score=typeof m.score==='string'&&/^\\d+-\\d+$/.test(m.score)?m.score.split('-').map(Number):null;return {providerId:String(m.match_id||''),date:String(m.date||''),home:String(m.home?.name||m.home||''),away:String(m.away?.name||m.away||''),status:String(m.status||''),homeScore:score?score[0]:null,awayScore:score?score[1]:null,goals:Array.isArray(m.goals)?m.goals.filter(g=>g&&g.player&&g.time).map(g=>({player:g.player,minute:g.time,side:g.team,type:g.type||'goal'})):[],lineups:m.lineups||null,stats:Array.isArray(m.stats)?m.stats:[]}}).filter(m=>m.providerId&&/^2026-\\d{2}-\\d{2}$/.test(m.date));
   cached={available:true,realtime:false,source:'AnySport',fetchedAt:new Date().toISOString(),matches};expires=Date.now()+TTL;
   return res.status(200).json(cached);
  }catch(error){return res.status(502).json({available:false,reason:'provider_unavailable',matches:[],realtime:false});}
