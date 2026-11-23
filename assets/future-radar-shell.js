@@ -15,8 +15,8 @@
   if(loaded)return;
   if(pending)return pending;
   pending=Promise.allSettled([
-   fetch('/future-radar-players.json').then(r=>{if(!r.ok)throw Error('players');return r.json()}),
-   fetch('/u17-world-cup-2026.json').then(r=>{if(!r.ok)throw Error('teams');return r.json()})
+   FutureRadarData.load('players'),
+   FutureRadarData.load('u17')
   ]).then(([p,t])=>{
    const players=p.status==='fulfilled'&&Array.isArray(p.value)?p.value:[];
    const teams=t.status==='fulfilled'&&Array.isArray(t.value?.teams)?t.value.teams:[];
