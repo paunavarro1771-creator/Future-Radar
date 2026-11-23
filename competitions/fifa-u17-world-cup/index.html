@@ -443,7 +443,7 @@ function setupRankings(){
 }
 
 
-const U17_DATA_URL='./u17-world-cup-2026.json';
+const U17_DATA_URL='/u17-world-cup-2026.json';
 let u17Data=null;
 let u17CompetitionLiveMatches={};
 function u17CompetitionMatchKey(date,home,away){return [date,home,away].join('|')}
@@ -635,7 +635,7 @@ async function loadU17Squads(){
  if(u17SquadsLoaded){document.getElementById('u17SquadCountryGrid').hidden=false;document.getElementById('u17SquadDetail').hidden=true;return}
  const status=document.getElementById('u17SquadStatus');status.innerHTML='Cargando las convocatorias oficiales de FIFA desde la base de datos…';
  try{
-  const response=await fetch('./fifa-u17-world-cup-2026-squads.json');if(!response.ok)throw new Error('No se pudo cargar la base de convocatorias ('+response.status+')');
+  const response=await fetch('/fifa-u17-world-cup-2026-squads.json');if(!response.ok)throw new Error('No se pudo cargar la base de convocatorias ('+response.status+')');
   const payload=await response.json();if(!Array.isArray(payload.teams)||!payload.teams.length)throw new Error('La base de datos no contiene selecciones');
   const positionMap={PO:'GK',DF:'DEF',MC:'CM',DC:'ST'},sourceUrl='https://fdp.fifa.org/assetspublic/ce303/pdf/SquadLists-Spanish.pdf';
   u17SquadPlayers=payload.teams.flatMap(team=>(team.players||[]).map(p=>({...p,name:[p.givenNames,p.surnames].filter(Boolean).join(' ')||p.playerName,position:positionMap[p.positionCode]||p.positionCode,age:p.ageAtTournamentStart,squadNumber:p.shirtNumber,nationalTeam:team.teamName,nationalTeamCode:team.teamCode,competition:payload.tournament.name,sourceUrl})));
@@ -718,7 +718,7 @@ function closeYouthMatch(){const modal=document.getElementById('youthMatchModal'
 async function setupYouthCalendar(){
  const host=document.getElementById('youthCalendarGrid');
  try{
-  const response=await fetch('./uefa-youth-league-2026-27.json');
+  const response=await fetch('/uefa-youth-league-2026-27.json');
   if(!response.ok)throw new Error('No se pudo cargar el calendario');
   const data=await response.json();youthLeagueMatches=data.matches||[];
   document.getElementById('youthMatchdayFilter').addEventListener('change',renderYouthCalendar);
@@ -733,6 +733,6 @@ async function setupYouthCalendar(){
  }catch(error){host.innerHTML='<div class="empty">No se ha podido cargar el calendario de la Youth League. Recarga la página.</div>';console.error(error)}
 }
 
-async function init(){try{const r=await fetch('./future-radar-players.json');if(!r.ok)throw new Error('No se pudo cargar el archivo de jugadores');allRadarPlayers=await r.json();const clubs=[...new Set(allRadarPlayers.map(p=>p.club).filter(Boolean))];document.getElementById('heroCount').innerHTML=allRadarPlayers.length+' <small>perfiles registrados</small>';document.getElementById('clubCount').textContent=clubs.length;renderPlayers(allRadarPlayers);renderAcademies();setupRankings();loadCrests(clubs)}catch(e){document.getElementById('playerGrid').innerHTML='<div class="empty">No se ha podido cargar la base de datos. Recarga la página en unos segundos.</div>';document.getElementById('academiesContainer').innerHTML='<div class="empty">No se han podido cargar las canteras.</div>';console.error(e)}}
+async function init(){try{const r=await fetch('/future-radar-players.json');if(!r.ok)throw new Error('No se pudo cargar el archivo de jugadores');allRadarPlayers=await r.json();const clubs=[...new Set(allRadarPlayers.map(p=>p.club).filter(Boolean))];document.getElementById('heroCount').innerHTML=allRadarPlayers.length+' <small>perfiles registrados</small>';document.getElementById('clubCount').textContent=clubs.length;renderPlayers(allRadarPlayers);renderAcademies();setupRankings();loadCrests(clubs)}catch(e){document.getElementById('playerGrid').innerHTML='<div class="empty">No se ha podido cargar la base de datos. Recarga la página en unos segundos.</div>';document.getElementById('academiesContainer').innerHTML='<div class="empty">No se han podido cargar las canteras.</div>';console.error(e)}}
 document.getElementById('playerSearch').addEventListener('input',filterPlayers);document.getElementById('positionFilter').addEventListener('change',filterPlayers);document.getElementById('academySearch').addEventListener('input',renderAcademies);document.getElementById('closeRoster').addEventListener('click',()=>document.getElementById('rosterPanel').classList.remove('show'));document.addEventListener('DOMContentLoaded',()=>{init();setupU17();setupYouthCalendar()});
 </script></body></html>
