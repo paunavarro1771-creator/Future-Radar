@@ -32,6 +32,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Validate shared page controller
+        run: node tests/future-radar-shared-controller.test.js
       - name: Validate shared data gateway
         run: node tests/future-radar-data.test.js
       - name: Validate shared shell
