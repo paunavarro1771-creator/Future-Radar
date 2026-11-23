@@ -32,6 +32,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Validate shared data gateway
+        run: node tests/future-radar-data.test.js
       - name: Validate shared shell
         run: node tests/future-radar-shell.test.js
       - name: Validate player filters and scripts
