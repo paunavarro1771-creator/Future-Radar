@@ -36,16 +36,16 @@ for t in FIXTURES['teams']:ALIASES[norm(t['name'])]=t['code']
 def parse_html(html):
  soup=BeautifulSoup(html,'html.parser')
  for node in soup(['script','style','nav','footer']):node.decompose()
- lines=[re.sub(r'\\s+',' ',s).strip() for s in soup.get_text('\\n').splitlines()]
+ lines=[re.sub(r'\s+',' ',s).strip() for s in soup.get_text('\n').splitlines()]
  lines=[s for s in lines if s]
  results={}
  date=None
  for line in lines:
-  day=re.search(r'(?:lunes|martes|miercoles|jueves|viernes|sabado|domingo|monday|tuesday|wednesday|thursday|friday|saturday|sunday)\\s+(\\d{1,2})\\s+de\\s+(noviembre|diciembre)',norm(line))
+  day=re.search(r'(?:lunes|martes|miercoles|jueves|viernes|sabado|domingo|monday|tuesday|wednesday|thursday|friday|saturday|sunday)\s+(\d{1,2})\s+de\s+(noviembre|diciembre)',norm(line))
   if day:date='2026-%02d-%02d'%(MONTHS[day.group(2)],int(day.group(1)))
   if not date:continue
   # Official FIFA lines: Grupo A: Egipto 1-2 Grecia - Player (Greece)
-  m=re.search(r'(?:Grupo|Group)\\s+([A-L])\\s*:\\s*(.+?)\\s+(\\d{1,2})\\s*[-–]\\s*(\\d{1,2})\\s+(.+?)\\s*[-–]\\s*.+',line,re.I)
+  m=re.search(r'(?:Grupo|Group)\s+([A-L])\s*:\s*(.+?)\s+(\d{1,2})\s*[-–]\s*(\d{1,2})\s+(.+?)\s*[-–]\s*.+',line,re.I)
   if not m:continue
   group,h,hs,aws,a=m.groups()
   hc,ac=ALIASES.get(norm(h)),ALIASES.get(norm(a))
@@ -67,6 +67,6 @@ def main():
    raise SystemExit(f'Conflicting official result {k}: manual review required')
  old.update(incoming)
  payload={'competitionId':'fifa-u17-world-cup-2026','source':URL,'coverage':'published_only','results':sorted(old.values(),key=lambda x:x['matchKey'])}
- DEST.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\\n')
+ DEST.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n')
  print(f'Official FIFA results: {len(incoming)} parsed, {len(old)} total')
 if __name__=='__main__':main()
