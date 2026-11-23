@@ -51,3 +51,17 @@ header .nav-cta{display:none!important}
 #jugadores .player-grid{gap:10px!important}
 #jugadores .player-card{padding:12px!important;border-radius:9px!important}
 #jugadores .player-meta{font-variant-numeric:tabular-nums}
+
+/* Dense academy explorer and sortable scouting tables */
+#canteras .academy-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));gap:7px!important}
+#canteras .academy-card{padding:10px 12px!important;border-radius:8px!important;min-height:61px}
+#canteras .academy-card img{width:36px!important;height:36px!important;padding:3px!important}
+#canteras .academy-card strong{font-size:12px!important}
+#canteras .academy-card small{font-size:10px!important;margin-top:2px!important;font-variant-numeric:tabular-nums}
+#rankings .ranking-table-wrap{overflow-x:auto!important}
+#rankings .ranking-table{font-variant-numeric:tabular-nums}
+#rankings .ranking-table th[role=button]{cursor:pointer;user-select:none;white-space:nowrap}
+#rankings .ranking-table th[role=button]:hover{color:#57ec9b;background:#1b2c21}
+#rankings .ranking-table th[aria-sort=ascending]::after{content:' ↑';color:#57ec9b}
+#rankings .ranking-table th[aria-sort=descending]::after{content:' ↓';color:#57ec9b}
+#rankings .ranking-table th:focus-visible{outline:2px solid #57ec9b;outline-offset:-2px}
