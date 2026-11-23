@@ -2,7 +2,7 @@
 (()=>{'use strict';
  const $=(s,p=document)=>p.querySelector(s);
  const nav=$('header .nav');if(!nav)return;
- const norm=s=>String(s??'').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase();
+ const norm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
  const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const wrapper=document.createElement('div');wrapper.className='fr-search';
  wrapper.innerHTML='<label class="fr-sr" for="fr-global-search">Buscar jugadores, canteras o selecciones</label><input id="fr-global-search" class="fr-search-input" type="search" placeholder="Buscar en Future Radar…  /" autocomplete="off" aria-controls="fr-search-results" aria-expanded="false"><div id="fr-search-results" class="fr-search-panel" role="listbox" hidden></div>';
@@ -25,7 +25,7 @@
     if(!player?.name)continue;
     const club=String(player.club||'').trim();
     index.push({type:'Jugadores',title:player.name,subtitle:[club,player.position].filter(Boolean).join(' · '),url:'/players/?q='+encodeURIComponent(player.name)});
-    if(club){const name=club.replace(/\\s+(?:U|Sub)[- ]?\\d{2}\\b/gi,'').trim();const k=norm(name);if(!clubs.has(k))clubs.set(k,{type:'Canteras',title:name,subtitle:'Plantilla registrada',url:'/academies/?q='+encodeURIComponent(name)});}
+    if(club){const name=club.replace(/\s+(?:U|Sub)[- ]?\d{2}\b/gi,'').trim();const k=norm(name);if(!clubs.has(k))clubs.set(k,{type:'Canteras',title:name,subtitle:'Plantilla registrada',url:'/academies/?q='+encodeURIComponent(name)});}
    }
    index.push(...clubs.values());
    for(const team of teams)if(team?.name)index.push({type:'Selecciones',title:team.name,subtitle:team.group?'Grupo '+team.group:'',url:'/competitions/fifa-u17-world-cup/?q='+encodeURIComponent(team.name)});
