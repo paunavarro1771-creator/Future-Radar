@@ -4,7 +4,7 @@ for(const path of ['index.html','players/index.html','academies/index.html','ran
  const html=fs.readFileSync(path,'utf8');
  assert(html.includes('id="frAgeFilter"')&&html.includes('id="frPlayerSort"')&&html.includes('id="frPlayerCount"'),path);
  assert(html.includes("addEventListener('change',filterPlayers)"),path);
- const scripts=[...html.matchAll(/<script(?:\\s[^>]*)?>([\\s\\S]*?)<\\/script>/g)];
+ const scripts=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)];
  for(const [i,match] of scripts.entries())new vm.Script(match[1],{filename:path+':script'+i});
 }
 const players=JSON.parse(fs.readFileSync('future-radar-players.json','utf8'));
