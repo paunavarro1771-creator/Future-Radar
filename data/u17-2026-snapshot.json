@@ -1,7 +1,7 @@
 {
   "competitionId": "fifa-u17-world-cup-2026",
   "schemaVersion": 1,
-  "archivedAt": "2026-11-23T17:14:47.138Z",
+  "archivedAt": "2026-11-23T18:13:02.127Z",
   "source": "Existing Future Radar provider aggregator",
   "realtime": false,
   "partial": true,
@@ -1719,7 +1719,7 @@
         "name": "Belgium U17",
         "score": 1
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 7,
@@ -1734,10 +1734,10 @@
         "away": "Belgium U17",
         "homeScore": 2,
         "awayScore": 1,
-        "status": "LIVE",
-        "statusDescription": "87'",
-        "minute": "87",
-        "startTimestamp": 1795454026,
+        "status": "FT",
+        "statusDescription": "FT",
+        "minute": null,
+        "startTimestamp": null,
         "date": "2026-11-23",
         "homeCode": "MLI",
         "awayCode": "BEL",
@@ -1748,7 +1748,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-23T17:14:47.137Z"
+      "archivedAt": "2026-11-23T18:13:02.127Z"
     },
     {
       "id": "2026-11-23:VIE:NZL",
@@ -1758,7 +1758,7 @@
         "id": "national:VIE:u17",
         "code": "VIE",
         "name": "Vietnam U17",
-        "score": 2
+        "score": 3
       },
       "away": {
         "id": "national:NZL:u17",
@@ -1766,7 +1766,7 @@
         "name": "New Zealand U17",
         "score": 3
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 8,
@@ -1779,12 +1779,12 @@
         "id": "1885762",
         "home": "Vietnam U17",
         "away": "New Zealand U17",
-        "homeScore": 2,
+        "homeScore": 3,
         "awayScore": 3,
-        "status": "LIVE",
-        "statusDescription": "88'",
-        "minute": "88",
-        "startTimestamp": 1795454066,
+        "status": "FT",
+        "statusDescription": "FT",
+        "minute": null,
+        "startTimestamp": null,
         "date": "2026-11-23",
         "homeCode": "VIE",
         "awayCode": "NZL",
@@ -1795,7 +1795,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-23T17:14:47.137Z"
+      "archivedAt": "2026-11-23T18:13:02.127Z"
     },
     {
       "id": "2026-11-23:ESP:FIJ",
