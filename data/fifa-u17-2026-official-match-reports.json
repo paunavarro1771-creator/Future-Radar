@@ -1,0 +1,180 @@
+{
+  "competitionId": "fifa-u17-world-cup-2026",
+  "importMethod": "manually verified against official FIFA PDF",
+  "coverage": "partial",
+  "reports": [
+    {
+      "matchKey": "2026-11-19:ARG:AUS",
+      "date": "2026-11-19",
+      "homeCode": "ARG",
+      "awayCode": "AUS",
+      "homeScore": 0,
+      "awayScore": 2,
+      "status": "FT",
+      "source": "FIFA Training Centre",
+      "sourceType": "official_fifa_post_match_summary",
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M05-ARG-V-AUS.pdf",
+      "matchNumber": 5,
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 0,
+          "away": 2
+        },
+        {
+          "name": "xG",
+          "home": 0.63,
+          "away": 0.43
+        },
+        {
+          "name": "Remates",
+          "home": 22,
+          "away": 8
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 7,
+          "away": 4
+        },
+        {
+          "name": "Pases",
+          "home": 525,
+          "away": 270
+        },
+        {
+          "name": "Pases completados",
+          "home": 443,
+          "away": 181
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "84%",
+          "away": "67%"
+        },
+        {
+          "name": "Centros",
+          "home": 33,
+          "away": 9
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": 37,
+          "away": 20
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": 52,
+          "away": 40
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "107.9 km",
+          "away": "117.3 km"
+        }
+      ],
+      "lineups": {
+        "home": [
+          {
+            "number": "1",
+            "name": "Valentin REIGIA"
+          },
+          {
+            "number": "2",
+            "name": "Alvaro GUICH"
+          },
+          {
+            "number": "4",
+            "name": "Thiago PEREZ"
+          },
+          {
+            "number": "5",
+            "name": "Matheo MACHUCA"
+          },
+          {
+            "number": "6",
+            "name": "Julio CORIA"
+          },
+          {
+            "number": "7",
+            "name": "Tobias GOYTIA"
+          },
+          {
+            "number": "8",
+            "name": "Marcos ORTIZ"
+          },
+          {
+            "number": "10",
+            "name": "Giovanni BARONI"
+          },
+          {
+            "number": "16",
+            "name": "Alex CARDOZO"
+          },
+          {
+            "number": "17",
+            "name": "Emiliano BARRIONUEVO"
+          },
+          {
+            "number": "19",
+            "name": "Facundo SALINAS"
+          }
+        ],
+        "away": [
+          {
+            "number": "1",
+            "name": "Charlie WILSON-PAPPS"
+          },
+          {
+            "number": "2",
+            "name": "Max LYALL-RAJENDRA"
+          },
+          {
+            "number": "3",
+            "name": "Emmett SHAW"
+          },
+          {
+            "number": "5",
+            "name": "Archie MITCHELL"
+          },
+          {
+            "number": "6",
+            "name": "Besian KUTLESHI"
+          },
+          {
+            "number": "8",
+            "name": "Jariyah SHAH"
+          },
+          {
+            "number": "9",
+            "name": "Luke BECVINOVSKI"
+          },
+          {
+            "number": "10",
+            "name": "Akol AKON"
+          },
+          {
+            "number": "11",
+            "name": "Max COURT"
+          },
+          {
+            "number": "13",
+            "name": "Callum MCCASKEY"
+          },
+          {
+            "number": "17",
+            "name": "Harrison BOND"
+          }
+        ]
+      },
+      "incidents": [
+        {
+          "type": "Gol",
+          "minute": 71,
+          "name": "Akol AKON",
+          "team": "AUS"
+        }
+      ],
+      "notes": "FIFA PDF includes additional events and extensive player metrics not yet imported. The PDF lists Argentina #2 with a goal icon at 60 despite 0-2 final score; omitted to avoid attributing an unverified own goal."
+    }
+  ]
+}
