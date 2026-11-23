@@ -101,3 +101,7 @@ header .nav-cta{display:none!important}
 .fr-match-panels>[hidden]{display:none!important}
 .fr-match-unavailable{color:#9ab5a4;font-size:12px;padding:18px 12px;border:1px dashed #3a5441;border-radius:8px}
 @media(max-width:560px){.fr-match-tabs button{padding:9px 10px;font-size:10px}.youth-match-dialog{padding:14px!important}}
+
+#canteras .academy-tools{flex-wrap:wrap}#canteras .academy-tools .control{min-height:35px}#canteras .fr-filter-count{margin:10px 0}
+.fr-ranking-methodology{border:1px solid #294534;background:#111d16;border-radius:8px;margin:0 0 13px;padding:11px 14px;color:#bdd3c4;font-size:11px}.fr-ranking-methodology summary{cursor:pointer;font-weight:700}.fr-ranking-methodology p{color:#9eb7a5;line-height:1.65;margin:11px 0 0}
+@media(max-width:600px){#canteras .academy-tools{width:100%}#canteras .academy-tools .control{flex:1;min-width:130px}.fr-ranking-methodology{font-size:12px}}
