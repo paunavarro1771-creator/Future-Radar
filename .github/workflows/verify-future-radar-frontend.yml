@@ -1,0 +1,40 @@
+name: Verify Future Radar frontend
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/**'
+      - 'index.html'
+      - 'players/**'
+      - 'academies/**'
+      - 'rankings/**'
+      - 'matches/**'
+      - 'competitions/**'
+      - 'tests/future-radar-*.test.js'
+      - '.github/workflows/verify-future-radar-frontend.yml'
+  pull_request:
+    paths:
+      - 'assets/**'
+      - 'index.html'
+      - 'players/**'
+      - 'academies/**'
+      - 'rankings/**'
+      - 'matches/**'
+      - 'competitions/**'
+      - 'tests/future-radar-*.test.js'
+      - '.github/workflows/verify-future-radar-frontend.yml'
+  workflow_dispatch:
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate shared shell
+        run: node tests/future-radar-shell.test.js
+      - name: Validate player filters and scripts
+        run: node tests/future-radar-player-filters.test.js
+      - name: Validate ranking sorter
+        run: node tests/future-radar-ranking-sort.test.js
