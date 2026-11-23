@@ -1,0 +1,118 @@
+{
+  "competitionId": "fifa-u17-world-cup-2026",
+  "source": "https://www.fifa.com/en/articles/matchday-4-round-up-doha",
+  "description": "Goals explicitly identified in FIFA's official 22 November matchday report; partial coverage, not all events.",
+  "matches": [
+    {
+      "matchKey": "2026-11-22:GRE:PAN",
+      "incidents": [
+        {
+          "type": "Goal",
+          "player": "Siozios",
+          "minute": 39,
+          "side": "home",
+          "source": "FIFA official matchday report"
+        },
+        {
+          "type": "Goal",
+          "player": "Papasarafianos",
+          "minute": "90+5",
+          "side": "home",
+          "source": "FIFA official matchday report"
+        },
+        {
+          "type": "Goal",
+          "player": "Estevis López",
+          "minute": 84,
+          "side": "away",
+          "source": "FIFA official matchday report"
+        }
+      ]
+    },
+    {
+      "matchKey": "2026-11-22:KOR:NCL",
+      "incidents": [
+        {
+          "type": "Goal",
+          "player": "Park Jooho",
+          "minute": 5,
+          "side": "home",
+          "source": "FIFA official matchday report"
+        },
+        {
+          "type": "Goal",
+          "player": "Kim Jiwoo",
+          "minute": 15,
+          "side": "home",
+          "source": "FIFA official matchday report"
+        },
+        {
+          "type": "Goal",
+          "player": "Kim Jiwoo",
+          "minute": 20,
+          "side": "home",
+          "source": "FIFA official matchday report"
+        },
+        {
+          "type": "Goal",
+          "player": "Ahn Sunhyun",
+          "minute": 25,
+          "side": "home",
+          "source": "FIFA official matchday report"
+        },
+        {
+          "type": "Goal",
+          "player": "Han Seungmin",
+          "minute": 27,
+          "side": "home",
+          "source": "FIFA official matchday report"
+        },
+        {
+          "type": "Goal",
+          "player": "Kim Jiwoo",
+          "minute": 53,
+          "side": "home",
+          "source": "FIFA official matchday report"
+        }
+      ]
+    },
+    {
+      "matchKey": "2026-11-22:ARG:MOZ",
+      "incidents": [
+        {
+          "type": "Goal",
+          "player": "Matheo Machuca",
+          "minute": 5,
+          "side": "home",
+          "source": "FIFA official matchday report"
+        },
+        {
+          "type": "Goal",
+          "player": "Simón Escobar",
+          "minute": 32,
+          "side": "home",
+          "source": "FIFA official matchday report"
+        },
+        {
+          "type": "Goal",
+          "player": "Alirio Cuna",
+          "minute": "45+1",
+          "side": "away",
+          "source": "FIFA official matchday report"
+        }
+      ]
+    },
+    {
+      "matchKey": "2026-11-22:FRA:KSA",
+      "incidents": [
+        {
+          "type": "Goal",
+          "player": "Shaman Alkahtani",
+          "minute": 73,
+          "side": "away",
+          "source": "FIFA official matchday report"
+        }
+      ]
+    }
+  ]
+}
