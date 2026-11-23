@@ -9,9 +9,10 @@ from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[1]
 FIXTURES=json.loads((ROOT/'u17-world-cup-2026.json').read_text())
 DEST=ROOT/'data/fifa-u17-2026-official-results.json'
-URL='https://www.fifa.com/es/tournaments/mens/u17worldcup/qatar-2026/articles/cada-jugador-del-partido-doha'
+URL='https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/articles/every-player-of-the-match-doha'
 MONTHS={'noviembre':11,'diciembre':12,'november':11,'december':12}
 ALIASES={
+ 'korea republic':'KOR','republic of ireland':'IRL','cote divoire':'CIV','china pr':'CHN','saudi arabia':'KSA','new caledonia':'NCL','new zealand':'NZL','dominican republic':'DOM','tajikistan':'TJK','fiji':'FIJ','morocco':'MAR','algeria':'ALG','cameroon':'CMR','ivory coast':'CIV','haiti':'HAI','mozambique':'MOZ','croatia':'CRO','tanzania':'TAN','uzbekistan':'UZB','montenegro':'MNE','romania':'ROU','serbia':'SRB','honduras':'HON','vietnam':'VIE','uganda':'UGA','ecuador':'ECU','australia':'AUS','denmark':'DEN','greece':'GRE','egypt':'EGY','panama':'PAN','qatar':'QAT','argentina':'ARG','uruguay':'URU','france':'FRA','spain':'ESP','italy':'ITA','jamaica':'JAM','senegal':'SEN','belgium':'BEL','mali':'MLI','mexico':'MEX','brazil':'BRA','japan':'JPN','colombia':'COL','chile':'CHI','venezuela':'VEN','costa rica':'CRC','cuba':'CUB',
  'republica de corea':'KOR','rp china':'CHN','china pr':'CHN','china':'CHN',
  'catar':'QAT','qatar':'QAT','costa de marfil':'CIV','cote d ivoire':'CIV',
  'republica de irlanda':'IRL','irlanda':'IRL','arabia saudi':'KSA',
@@ -45,7 +46,7 @@ def parse_html(html):
   if day:date='2026-%02d-%02d'%(MONTHS[day.group(2)],int(day.group(1)))
   if not date:continue
   # Official FIFA lines: Grupo A: Egipto 1-2 Grecia - Player (Greece)
-  m=re.search(r'(?:Grupo|Group)\s+([A-L])\s*:\s*(.+?)\s+(\d{1,2})\s*[-–]\s*(\d{1,2})\s+(.+?)\s*[-–]\s*.+',line,re.I)
+  m=re.search(r'Group\s+([A-L])\s*:\s*(.+?)\s+(\d{1,2})\s*[-–]\s*(\d{1,2})\s+(.+?)\s*[|–-]\s*.+',line,re.I)
   if not m:continue
   group,h,hs,aws,a=m.groups()
   hc,ac=ALIASES.get(norm(h)),ALIASES.get(norm(a))
