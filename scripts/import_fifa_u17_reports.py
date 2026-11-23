@@ -14,7 +14,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
-import fitz
+import pymupdf
 
 ROOT = Path(__file__).resolve().parents[1]
 HUB = "https://www.fifatrainingcentre.com/en/game/tournaments/fu17wc/2026/match-report-hub-2026.php"
@@ -49,7 +49,7 @@ def download(url):
 
 
 def verified_score(pdf, home, away):
-    with fitz.open(stream=pdf, filetype="pdf") as doc:
+    with pymupdf.open(stream=pdf, filetype="pdf") as doc:
         text = doc[0].get_text(sort=True)
     # FIFA report headers have the full team names, not necessarily 3-letter codes.
     # Accept a score only if the first-page summary contains exactly one result.
@@ -77,6 +77,8 @@ def main():
     skipped_fixture = 0
     failures = 0
     verified_existing = False
+    audit_all = '--audit-all' in sys.argv
+    audit = []
     print(f"FIFA report links found in hub: {found}", flush=True)
     for url in sorted(set(links.urls)):
         match = PATTERN.search(urlparse(url).path)
@@ -90,7 +92,7 @@ def main():
         matched += 1
         key = f"{fixture['date']}:{home}:{away}"
         is_existing = key in existing
-        if is_existing and verified_existing:
+        if is_existing and verified_existing and not audit_all:
             skipped_existing += 1
             continue
         try:
@@ -98,6 +100,7 @@ def main():
             downloaded += 1
             score = verified_score(pdf, home, away)
             parsed += 1
+            audit.append({'matchNumber':number,'matchKey':key,'downloaded':True,'parsed':True,'scoreDetected':score is not None,'alreadyRegistered':is_existing})
         except Exception as exc:
             failures += 1
             print(f"Skipping match {number}: {type(exc).__name__}", file=sys.stderr)
@@ -125,6 +128,10 @@ def main():
         REPORTS.write_text(json.dumps(archive, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"FIFA report diagnostic: links={found} fixture_matches={matched} pdf_downloaded={downloaded} pdf_parsed={parsed} existing_skipped={skipped_existing} fixture_mismatches={skipped_fixture} failures={failures}", flush=True)
     print(f"New verified official match reports: {accepted}; total: {len(existing)}", flush=True)
+    if audit_all:
+        print("FULL PDF AUDIT:", json.dumps(audit, ensure_ascii=False), flush=True)
+        if downloaded != matched or parsed != matched:
+            raise RuntimeError(f"Incomplete PDF audit: matched={matched}, downloaded={downloaded}, parsed={parsed}")
     if found == 0:
         print("WARNING: FIFA hub returned no matching PDF links; download capability NOT verified.", file=sys.stderr)
     elif downloaded == 0:
