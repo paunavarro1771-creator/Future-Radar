@@ -13,6 +13,10 @@ const reports=require('../data/fifa-u17-2026-official-match-reports.json');
 const snapshot=require('../data/u17-2026-snapshot.json');
 const fifaResults=require('../data/fifa-u17-2026-official-results.json');
 const fifaEvents=require('../data/fifa-u17-2026-official-events.json');
+const fs=require('fs');
+const structuredPath=require('path').join(__dirname,'../data/fifa-u17-2026-pdf-structured.json');
+const structured=fs.existsSync(structuredPath)?require(structuredPath):{matches:[]};
+const structuredByKey=new Map(structured.matches.map(x=>[x.matchKey,x]));
 const clean=x=>String(x||'').trim().toUpperCase();
 const key=(d,h,a)=>[d,clean(h),clean(a)].join(':');
 const official=new Map(reports.reports.map(x=>[key(x.date,x.homeCode,x.awayCode),x]));
@@ -20,7 +24,7 @@ const archived=new Map(snapshot.matches.map(x=>[key(x.date,x.home?.code,x.away?.
 const verifiedResults=new Map(fifaResults.results.map(x=>[x.matchKey,x]));
 const verifiedEvents=new Map(fifaEvents.matches.map(x=>[x.matchKey,x.incidents]));
 function normalize(f){
- const id=key(f.date,f.home,f.away),o=official.get(id),a=archived.get(id),v=verifiedResults.get(id);
+ const id=key(f.date,f.home,f.away),o=official.get(id),a=archived.get(id),v=verifiedResults.get(id),pdf=structuredByKey.get(id);
  const hasArchivedScore=Number.isInteger(a?.home?.score)&&Number.isInteger(a?.away?.score);
  const hasOfficialScore=Number.isInteger(o?.homeScore)&&Number.isInteger(o?.awayScore);
  const scoreSource=hasOfficialScore?'official_fifa_report':v?'official_fifa_article':hasArchivedScore?'unofficial_archive':null;
@@ -33,14 +37,15 @@ function normalize(f){
   status:status==='SCHEDULED'?'SCHEDULED':status,
   statusDescription:status==='FT'?'Finalizado':status,
   timeQatar:f.timeQatar,pitch:f.pitch,
-  statistics:o?.statistics||null,lineups:o?.lineups||null,
-  playerOfTheMatch:v?.playerOfTheMatch||null,incidents:o?.incidents?.length?o.incidents:(verifiedEvents.get(id)||[]),
+  statistics:pdf?.statistics?.length?pdf.statistics:(o?.statistics||null),lineups:pdf?.lineups||o?.lineups||null,
+  playerOfTheMatch:v?.playerOfTheMatch||null,incidents:pdf?.incidents?.length?pdf.incidents:(o?.incidents?.length?o.incidents:(verifiedEvents.get(id)||[])),
   source:o?.sourceUrl||v?.sourceUrl||a?.source||null,sourceType:scoreSource,
   verifiedOfficial:!!(o||v),statisticsAvailable:!!o?.statistics?.length,
   lineupsAvailable:!!(o?.lineups?.home?.length===11&&o?.lineups?.away?.length===11),
   archiveTimestamp:a?.archivedAt||snapshot.archivedAt||null,
   eventSource:verifiedEvents.has(id)?fifaEvents.source:null,
   officialReportUrl:o?.sourceUrl||null,
+  pdfExtraction:{available:!!pdf,statisticsVerified:!!pdf?.statisticsVerified,goalEventsVerified:!!pdf?.goalEventsVerified,lineupsVerified:!!pdf?.lineupsVerified},
   event:{homeScore:hasOfficialScore?o.homeScore:v?v.homeScore:hasArchivedScore?a.home.score:null,
     awayScore:hasOfficialScore?o.awayScore:v?v.awayScore:hasArchivedScore?a.away.score:null,
     status,statusDescription:status==='FT'?'Finalizado':status},
