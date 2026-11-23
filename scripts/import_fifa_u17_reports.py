@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 HUB = "https://www.fifatrainingcentre.com/en/game/tournaments/fu17wc/2026/match-report-hub-2026.php"
 REPORTS = ROOT / "data/fifa-u17-2026-official-match-reports.json"
 FIXTURES = ROOT / "u17-world-cup-2026.json"
-PATTERN = re.compile(r"PMSR-M(\\d{1,3})-([A-Z]{3})-V-([A-Z]{3})\\.pdf$", re.I)
+PATTERN = re.compile(r"PMSR-M(\d{1,3})-([A-Z]{3})-V-([A-Z]{3})\.pdf$", re.I)
 HEADERS = {"User-Agent": "FutureRadarFC-OfficialReportIndexer/1.0 (+https://www.futureradar.es)"}
 
 
@@ -54,7 +54,7 @@ def verified_score(pdf, home, away):
     # FIFA report headers have the full team names, not necessarily 3-letter codes.
     # Accept a score only if the first-page summary contains exactly one result.
     first = text[:1800]
-    scores = re.findall(r"(?<!\\d)(\\d{1,2})\\s*[–—-]\\s*(\\d{1,2})(?!\\d)", first)
+    scores = re.findall(r"(?<!\d)(\d{1,2})\s*[–—-]\s*(\d{1,2})(?!\d)", first)
     return tuple(map(int, scores[0])) if len(scores) == 1 else None
 
 
@@ -99,7 +99,7 @@ def main():
         accepted += 1
     if accepted:
         archive["reports"] = sorted(existing.values(), key=lambda x: (x["date"], x.get("matchNumber", 999)))
-        REPORTS.write_text(json.dumps(archive, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+        REPORTS.write_text(json.dumps(archive, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"New verified official match reports: {accepted}; total: {len(existing)}")
 
 
