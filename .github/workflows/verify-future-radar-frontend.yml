@@ -42,5 +42,7 @@ jobs:
         run: node tests/future-radar-json-paths.test.js
       - name: Validate Youth League match centre
         run: node tests/future-radar-youth-match-centre.test.js
+      - name: Validate Youth League tabs
+        run: node tests/future-radar-youth-tabs.test.js
       - name: Validate ranking sorter
         run: node tests/future-radar-ranking-sort.test.js
