@@ -1,5 +1,10 @@
 name: Import official FIFA U17 reports
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/import-fifa-u17-reports.py'
+      - '.github/workflows/import-fifa-u17-reports.yml'
   workflow_dispatch:
   schedule:
     - cron: '42 8,20 * * *'
