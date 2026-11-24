@@ -124,3 +124,17 @@ html,body{max-width:100%;overflow-x:clip}
  .ranking-table th,.ranking-table td{white-space:nowrap}
  .fr-match-panels{overflow-wrap:anywhere}
 }
+
+
+/* World Cup standings: local table headers must never stick inside group cards. */
+#partidos .u17-group-table th{position:static;top:auto;z-index:auto;font-size:10px;text-align:right;white-space:nowrap}
+#partidos .u17-group-table th:first-child{text-align:left}
+#u17Groups.u17-groups{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+#u17Groups .u17-group-legend{grid-column:1/-1}
+#u17Groups .u17-group-table{table-layout:fixed;width:100%;font-size:12px}
+#u17Groups .u17-group-table th:first-child{width:47%}
+#u17Groups .u17-group-table th,#u17Groups .u17-group-table td{padding:9px 2px}
+#u17Groups .u17-group-team span{white-space:normal;overflow-wrap:anywhere}
+#u17Groups .u17-group-team .u17-pos{flex:0 0 13px}
+@media(max-width:1050px){#u17Groups.u17-groups{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){#u17Groups.u17-groups{grid-template-columns:minmax(0,1fr)}}
