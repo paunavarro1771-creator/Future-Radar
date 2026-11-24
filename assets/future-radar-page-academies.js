@@ -21,7 +21,9 @@ const crestOverrides={
 function flagUrl(code){const iso=flags[String(code||'').toUpperCase()];return iso?'https://flagcdn.com/w40/'+iso+'.png':''}
 function initials(name){return (name||'FR').replace(/[^A-Za-zÀ-ÿ ]/g,' ').split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join('').toUpperCase()||'FR'}
 function crestFallback(name){return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><rect width="80" height="80" rx="15" fill="#1b2a20"/><text x="40" y="47" font-family="Arial" font-size="25" font-weight="bold" text-anchor="middle" fill="#b7f36b">'+initials(name)+'</text></svg>')}
-function crestUrl(club){return crestOverrides[club]||crestCache[club]||crestFallback(club)}
+const academyCrestIds={"Real Madrid":418,"Feyenoord":234,"Slavia Praha":62,"Villarreal":1050,"Atlético de Madrid":13,"PSV Eindhoven":383,"Viking FK":1268,"FC Porto":720,"Liverpool":31,"Borussia Dortmund":16,"Roma":12,"Paris Saint-Germain":583,"Club Brugge":2282,"Sporting CP":336,"Lille":1082,"Lens":826,"Real Betis":150,"Barcelona":131,"AEK Athens":2441,"VfB Stuttgart":79,"Manchester United":985,"Bayern München":27,"Arsenal":11,"Como":1047,"Aston Villa":405,"LASK Linz":413,"Manchester City":281,"Inter":46,"Napoli":619,"ŠK Slovan Bratislava":540,"Bodø/Glimt":1490,"Galatasaray":141,"RB Leipzig":23826,"Shakhtar Donetsk":660,"Fenerbahçe":36,"Olympique Marseille":244,"Toulouse FC":415,"OGC Nice":417,"Olympique Lyonnais":1041,"FC Basel":26,"Levante UD":3368,"FC Volendam":724,"FC Internazionale Milano":46,"Bayer 04 Leverkusen":15,"Montpellier HSC":969,"RC Lens":826,"Le Havre AC":738,"Amiens SC":1416,"RC Strasbourg":667,"CA Boca Juniors":189,"CA River Plate":209,"Brighton & Hove Albion FC":1237,"AFC Bournemouth":989,"Manchester United FC":985,"Manchester City FC":281,"FC Bayern München":27,"RSC Anderlecht":58,"KRC Genk":1184,"KAA Gent":157,"Royal Antwerp FC":1096,"KV Kortrijk":601,"Standard Liège":305,"CR Flamengo":614,"Fluminense FC":2462,"EC Bahia":10010,"Cruzeiro EC":609,"SC Corinthians":199,"SE Palmeiras":1023,"Santos FC":221,"Grêmio FBPA":210,"Atlético Mineiro":330,"Botafogo":537,"FC Nantes":995,"SS Lazio":398,"Athletic Club":621,"Villarreal CF":1050,"Paris FC":10004,"FC Metz":347,"GNK Dinamo Zagreb":419,"HNK Hajduk Split":447,"TSG Hoffenheim":533,"TSV 1860 München":72};
+function catalogCrest(club){const key=String(club||'').replace(/\s+(?:U\s?\d{1,2}|Under\s?\d{1,2})$/i,'').trim();const id=academyCrestIds[key];return id?'https://tmssl.akamaized.net/images/wappen/head/'+id+'.png':null}
+function crestUrl(club){return crestOverrides[club]||crestCache[club]||catalogCrest(club)||crestFallback(club)}
 async function fetchClubLogo(page){
   // Primero intentamos recuperar el escudo oficial desde Wikidata.
   try{
@@ -42,7 +44,7 @@ async function fetchClubLogo(page){
   return null;
 }
 async function loadCrests(clubs){
-  await Promise.all(clubs.map(async club=>{if(crestOverrides[club])return;const page=wikiPages[club];if(!page)return;const logo=await fetchClubLogo(page);if(logo)crestCache[club]=logo;}));
+  await Promise.all(clubs.map(async club=>{if(crestOverrides[club]||catalogCrest(club))return;const page=wikiPages[club];if(!page)return;const logo=await fetchClubLogo(page);if(logo)crestCache[club]=logo;}));
   document.querySelectorAll('[data-crest]').forEach(img=>{const club=img.dataset.crest;img.src=crestUrl(club);});
 }
 function handleCrestError(img){img.onerror=null;img.src=crestFallback(img.dataset.crest||img.alt||'FR');}
@@ -163,7 +165,7 @@ function observeAcademyCrests(){
  const images=[...document.querySelectorAll('#academiesContainer img[data-crest]')];
  if(!('IntersectionObserver' in window)){images.forEach(img=>loadAcademyCrest(img));return}
  if(!academyCrestObserver)academyCrestObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){academyCrestObserver.unobserve(entry.target);loadAcademyCrest(entry.target)}}),{rootMargin:'350px'});
- images.forEach(img=>{if(!crestOverrides[img.dataset.crest]&&!crestCache[img.dataset.crest]&&!academyCrestMisses.has(img.dataset.crest))academyCrestObserver.observe(img)});
+ images.forEach(img=>{if(!catalogCrest(img.dataset.crest)&&!crestOverrides[img.dataset.crest]&&!crestCache[img.dataset.crest]&&!academyCrestMisses.has(img.dataset.crest))academyCrestObserver.observe(img)});
 }
 async function loadAcademyCrest(img){
  const club=img.dataset.crest;if(!club||crestOverrides[club]||crestCache[club]||academyCrestMisses.has(club)){img.src=crestUrl(club);return}
