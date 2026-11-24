@@ -311,7 +311,7 @@ function renderU17Groups(){
  const host=document.getElementById('u17Groups');
  host.innerHTML='<div class="u17-group-legend"><span><b>PJ</b> Partidos</span><span><b>DG</b> Diferencia</span><span><b>Pts</b> Puntos</span><span>Clasificación provisional · incluye partidos en directo</span></div>'+letters.map(g=>{
   const rows=calculateU17GroupStandings(g);
-  return '<article class="u17-group"><h3><span>GRUPO '+g+'</span><small>'+rows.filter(r=>r.played>0).length+'/4</small></h3><div style="overflow-x:auto"><table class="u17-group-table"><thead><tr><th>Selección</th><th>PJ</th><th>G</th><th>E</th><th>P</th><th>DG</th><th>Pts</th></tr></thead><tbody>'+rows.map((r,i)=>'<tr><td><span class="u17-group-team"><b class="u17-pos">'+(i+1)+'</b>'+u17Flag(r.team,'')+'<span>'+esc(r.team.name)+(r.live?' <i style="color:var(--green);font-style:normal">●</i>':'')+'</span></span></td><td>'+r.played+'</td><td>'+r.wins+'</td><td>'+r.draws+'</td><td>'+r.losses+'</td><td>'+(r.gd>0?'+':'')+r.gd+'</td><td class="u17-points">'+r.points+'</td></tr>').join('')+'</tbody></table></div><div class="u17-group-foot">'+rows.reduce((n,r)=>n+r.played,0)/2+' partidos contabilizados</div></article>';
+  return '<article class="u17-group"><h3><span>GRUPO '+g+'</span><small>'+rows.filter(r=>r.played>0).length+'/4</small></h3><div style="overflow-x:auto"><table class="u17-group-table"><thead><tr><th>Selección</th><th>PJ</th><th>G</th><th>E</th><th>P</th><th>DG</th><th>Pts</th></tr></thead><tbody>'+rows.map((r,i)=>'<tr><td><button type="button" class="u17-group-team fr-squad-link" style="background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:0;text-align:left" data-squad-code="'+esc(r.team.code)+'"><b class="u17-pos">'+(i+1)+'</b>'+u17Flag(r.team,'')+'<span>'+esc(r.team.name)+(r.live?' <i style="color:var(--green);font-style:normal">●</i>':'')+'</span></button></td><td>'+r.played+'</td><td>'+r.wins+'</td><td>'+r.draws+'</td><td>'+r.losses+'</td><td>'+(r.gd>0?'+':'')+r.gd+'</td><td class="u17-points">'+r.points+'</td></tr>').join('')+'</tbody></table></div><div class="u17-group-foot">'+rows.reduce((n,r)=>n+r.played,0)/2+' partidos contabilizados</div></article>';
  }).join('');
 }
 
@@ -323,14 +323,18 @@ function renderU17SquadResults(){
  const list=u17SquadPlayers.filter(p=>p.nationalTeamCode===u17SelectedTeam&&(position==='ALL'||p.position===position)&&(!term||[p.name,p.club,p.nationalTeam].some(v=>String(v||'').toLowerCase().includes(term))));
  const selected=u17Data.teams.find(t=>t.code===u17SelectedTeam);
  document.getElementById('u17SquadCount').textContent=list.length+' jugadores · '+(selected?.name||u17SelectedTeam);
- document.getElementById('u17SquadResults').innerHTML=list.length?'<div class="u17-squad-table-wrap"><table class="u17-squad-table"><thead><tr><th>#</th><th>Jugador</th><th>Posición</th><th>Edad</th><th>Fecha nacimiento</th><th>Altura</th><th>Club</th></tr></thead><tbody>'+list.map(p=>'<tr><td>'+p.squadNumber+'</td><td class="u17-squad-player">'+esc(p.name)+'</td><td>'+esc(cleanPosition(p.position))+'</td><td>'+p.age+'</td><td>'+esc(p.dateOfBirth)+'</td><td>'+(p.heightCm?p.heightCm+' cm':'—')+'</td><td class="u17-squad-club">'+esc(p.club||'—')+'</td></tr>').join('')+'</tbody></table></div>':'<div class="empty">Esta selección no tiene jugadores en el PDF oficial recibido. No añadiremos nombres estimados.</div>';
+ const groups=[['GK','Porteros'],['DEF','Defensas'],['CM','Centrocampistas'],['ST','Delanteros']];
+ const table=rows=>'<div style="overflow-x:auto;border:1px solid #293d30;border-radius:12px"><table class="fr-roster-table" style="width:100%;border-collapse:collapse;min-width:600px"><thead><tr><th>Dorsal</th><th>Jugador</th><th>Edad</th><th>Nacimiento</th><th>Altura</th><th>Club</th></tr></thead><tbody>'+rows.sort((a,b)=>Number(a.squadNumber)-Number(b.squadNumber)).map(p=>'<tr><td><b style="color:#b4f76a">'+esc(p.squadNumber??'—')+'</b></td><td><strong>'+esc(p.name)+'</strong></td><td>'+esc(p.age??'—')+'</td><td>'+esc(p.dateOfBirth||'—')+'</td><td>'+esc(p.heightCm?p.heightCm+' cm':'—')+'</td><td>'+esc(p.club||'—')+'</td></tr>').join('')+'</tbody></table></div>';
+ const sections=groups.map(([key,label])=>[label,list.filter(p=>p.position===key)]);sections.push(['Otras posiciones',list.filter(p=>!groups.some(g=>g[0]===p.position))]);
+ document.getElementById('u17SquadResults').innerHTML='<style>.fr-roster-table th{position:static!important;top:auto!important;background:#18251d;color:#a5b9aa;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.08em}.fr-roster-table th,.fr-roster-table td{padding:13px;border-bottom:1px solid #293d30}.fr-roster-table tr:hover td{background:#17271c}.fr-squad-link:hover{color:#b4f76a!important;text-decoration:underline}#u17SquadDetail{scroll-margin-top:150px}</style>'+ (list.length?sections.filter(x=>x[1].length).map(([label,rows])=>'<section style="margin:22px 0"><h3 style="color:#b4f76a;font-size:15px;margin-bottom:10px">'+label+' <small style="color:#a5b9aa">· '+rows.length+'</small></h3>'+table(rows)+'</section>').join(''):'<div class="empty">No hay jugadores disponibles para esta selección o filtro.</div>');
+
 }
 function openU17SquadTeam(code){
  const team=u17Data.teams.find(t=>t.code===code);if(!team)return;
  u17SelectedTeam=code;
  document.getElementById('u17SquadCountryGrid').hidden=true;
  document.getElementById('u17SquadDetail').hidden=false;
- document.getElementById('u17SquadSelected').innerHTML=u17Flag(team,'')+'<span>'+esc(team.name)+'</span><small style="font-size:11px;color:var(--muted);font-weight:500">Grupo '+esc(team.group||'—')+'</small>';
+ document.getElementById('u17SquadSelected').innerHTML='<img src="'+esc(team.flag)+'" alt="" style="width:64px;height:44px;object-fit:cover;border-radius:7px"> <span style="font-size:26px;font-weight:800">'+esc(team.name)+'</span><small style="font-size:12px;color:#b4f76a">Grupo '+esc(team.group||'—')+' · '+u17SquadPlayers.filter(p=>p.nationalTeamCode===code).length+' convocados</small>';
  document.getElementById('u17SquadSearch').value='';document.getElementById('u17SquadPosition').value='ALL';renderU17SquadResults();
 }
 function renderU17SquadCountries(){
@@ -339,7 +343,9 @@ function renderU17SquadCountries(){
  host.innerHTML=u17Data.teams.map(team=>'<button type="button" class="u17-country-card" data-u17-country="'+esc(team.code)+'">'+u17Flag(team,'u17-country-flag')+'<span class="u17-country-info"><strong>'+esc(team.name)+'</strong><small>Grupo '+esc(team.group||'—')+'</small></span><span class="u17-country-count">'+(counts.get(team.code)||0)+'/21</span></button>').join('');
  host.querySelectorAll('[data-u17-country]').forEach(button=>button.addEventListener('click',()=>openU17SquadTeam(button.dataset.u17Country)));
 }
-async function loadU17Squads(){
+let u17SquadPending=null;
+function loadU17Squads(){if(u17SquadPending)return u17SquadPending;u17SquadPending=loadU17SquadsInternal().finally(()=>{u17SquadPending=null});return u17SquadPending}
+async function loadU17SquadsInternal(){
  if(u17SquadsLoaded){document.getElementById('u17SquadCountryGrid').hidden=false;document.getElementById('u17SquadDetail').hidden=true;return}
  const status=document.getElementById('u17SquadStatus');status.innerHTML='Cargando las convocatorias oficiales de FIFA desde la base de datos…';
  try{
@@ -373,6 +379,7 @@ async function setupU17(){
  document.getElementById('u17DetailOverlay').addEventListener('click',e=>{if(e.target.id==='u17DetailOverlay')closeU17Match()});
  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeU17Match()});
  document.querySelectorAll('[data-u17-tab]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-u17-tab]').forEach(x=>x.classList.toggle('active',x===b));document.getElementById('u17FixturesPanel').hidden=b.dataset.u17Tab!=='fixtures';document.getElementById('u17GroupsPanel').hidden=b.dataset.u17Tab!=='groups';document.getElementById('u17SquadsPanel').hidden=b.dataset.u17Tab!=='squads';const statsPanel=document.getElementById('u17PlayerStatsPanel');if(statsPanel)statsPanel.hidden=b.dataset.u17Tab!=='playerstats';if(b.dataset.u17Tab==='playerstats'&&statsPanel)loadU17PlayerStats();if(b.dataset.u17Tab==='squads')loadU17Squads()}));
+ document.getElementById('u17Groups').addEventListener('click',async e=>{const b=e.target.closest('[data-squad-code]');if(!b)return;const code=b.dataset.squadCode;const tab=document.querySelector('[data-u17-tab="squads"]');if(!tab)return;tab.click();await loadU17Squads();if(u17SquadsLoaded){openU17SquadTeam(code);document.getElementById('u17SquadDetail').scrollIntoView({block:'start',behavior:'smooth'})}});
  renderU17Fixtures();renderU17Groups();
  refreshU17CompetitionLive();setInterval(()=>{refreshU17CompetitionLive();if(activeU17MatchIndex!==null)openU17Match(activeU17MatchIndex)},60000);
  }catch(e){document.getElementById('u17Fixtures').innerHTML='<div class="empty">No se ha podido cargar el calendario U17.</div>';console.error(e)}
