@@ -372,7 +372,7 @@ async function setupU17(){
  document.getElementById('u17DetailClose').addEventListener('click',closeU17Match);
  document.getElementById('u17DetailOverlay').addEventListener('click',e=>{if(e.target.id==='u17DetailOverlay')closeU17Match()});
  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeU17Match()});
- document.querySelectorAll('[data-u17-tab]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-u17-tab]').forEach(x=>x.classList.toggle('active',x===b));document.getElementById('u17FixturesPanel').hidden=b.dataset.u17Tab!=='fixtures';document.getElementById('u17GroupsPanel').hidden=b.dataset.u17Tab!=='groups';document.getElementById('u17SquadsPanel').hidden=b.dataset.u17Tab!=='squads';if(b.dataset.u17Tab==='squads')loadU17Squads()}));
+ document.querySelectorAll('[data-u17-tab]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-u17-tab]').forEach(x=>x.classList.toggle('active',x===b));document.getElementById('u17FixturesPanel').hidden=b.dataset.u17Tab!=='fixtures';document.getElementById('u17GroupsPanel').hidden=b.dataset.u17Tab!=='groups';document.getElementById('u17SquadsPanel').hidden=b.dataset.u17Tab!=='squads';const statsPanel=document.getElementById('u17PlayerStatsPanel');if(statsPanel)statsPanel.hidden=b.dataset.u17Tab!=='playerstats';if(b.dataset.u17Tab==='playerstats'&&statsPanel)loadU17PlayerStats();if(b.dataset.u17Tab==='squads')loadU17Squads()}));
  renderU17Fixtures();renderU17Groups();
  refreshU17CompetitionLive();setInterval(()=>{refreshU17CompetitionLive();if(activeU17MatchIndex!==null)openU17Match(activeU17MatchIndex)},60000);
  }catch(e){document.getElementById('u17Fixtures').innerHTML='<div class="empty">No se ha podido cargar el calendario U17.</div>';console.error(e)}
@@ -443,3 +443,37 @@ async function setupYouthCalendar(){
 
 async function init(){try{const r=await FutureRadarData.response('players');if(!r.ok)throw new Error('No se pudo cargar el archivo de jugadores');allRadarPlayers=await r.json();const clubs=[...new Set(allRadarPlayers.map(p=>p.club).filter(Boolean))];document.getElementById('heroCount').innerHTML=allRadarPlayers.length+' <small>perfiles registrados</small>';document.getElementById('clubCount').textContent=clubs.length;filterPlayers();renderAcademies();setupRankings();loadCrests(clubs)}catch(e){document.getElementById('playerGrid').innerHTML='<div class="empty">No se ha podido cargar la base de datos. Recarga la página en unos segundos.</div>';document.getElementById('academiesContainer').innerHTML='<div class="empty">No se han podido cargar las canteras.</div>';console.error(e)}}
 document.getElementById('playerSearch').addEventListener('input',filterPlayers);document.getElementById('positionFilter').addEventListener('change',filterPlayers);document.getElementById('frAgeFilter').addEventListener('change',filterPlayers);document.getElementById('frPlayerSort').addEventListener('change',filterPlayers);document.getElementById('academySearch').addEventListener('input',renderAcademies);document.getElementById('closeRoster').addEventListener('click',()=>document.getElementById('rosterPanel').classList.remove('show'));document.addEventListener('DOMContentLoaded',()=>{init();setupU17();setupYouthCalendar();setInterval(()=>{if(!document.hidden&&u17Data?.matches?.length)refreshU17CompetitionLive()},60000)});
+
+let u17PlayerStatsLoaded=false;
+async function loadU17PlayerStats(){
+ const host=document.getElementById('u17PlayerStatsPanel');
+ if(u17PlayerStatsLoaded)return;
+ host.innerHTML='<p class="rank-muted">Cargando informes oficiales FIFA…</p>';
+ try{
+ const response=await fetch('/api/future-radar-u17',{cache:'no-store'});
+ if(!response.ok)throw Error('HTTP '+response.status);
+ const data=await response.json(),players=new Map();
+ const get=(team,number,name)=>{const id=team+':'+(number??String(name).trim().toUpperCase());if(!players.has(id))players.set(id,{team,number,name,starts:0,goals:0});return players.get(id)};
+ let lineupMatches=0,goalMatches=0;
+ for(const m of data.matches||[]){
+ if(m.pdfExtraction?.lineupsVerified&&m.lineups?.home?.length===11&&m.lineups?.away?.length===11){
+ lineupMatches++;
+ for(const [team,xi] of [[m.homeCode,m.lineups.home],[m.awayCode,m.lineups.away]])for(const p of xi)get(team,p.number,p.name).starts++;
+ }
+ if(!m.pdfExtraction?.goalEventsVerified)continue;
+ goalMatches++;
+ for(const g of m.incidents||[]){
+ if(g.type!=='goal'||!g.player||![m.homeCode,m.awayCode].includes(g.team)||g.ownGoal)continue;
+ get(g.team,g.number,g.player).goals++;
+ }
+ }
+ host.innerHTML='<div class="ranking-model"><h3>Estadísticas individuales · FIFA</h3><p>'+lineupMatches+' partidos con once inicial verificado · '+goalMatches+' partidos con cronología de goles verificada. Totales parciales: no equivalen al total del torneo. No se contabilizan suplencias, asistencias ni minutos sin evidencia.</p></div><div class="ranking-filters" style="margin-top:16px"><input class="control" id="u17StatsSearch" placeholder="Buscar jugador"><select class="control" id="u17StatsTeam"><option value="">Todas las selecciones</option></select><select class="control" id="u17StatsSort"><option value="goals">Máximos goleadores</option><option value="starts">Más titularidades</option></select></div><div class="ranking-table-wrap" style="overflow:auto"><table class="ranking-table"><thead><tr><th>#</th><th>Jugador</th><th>Selección</th><th>Goles verificados</th><th>Titularidades</th></tr></thead><tbody id="u17StatsRows"></tbody></table></div>';
+ const teamSelect=document.getElementById('u17StatsTeam');
+ for(const team of [...new Set([...players.values()].map(p=>p.team))].sort()){const opt=document.createElement('option');opt.value=team;opt.textContent=u17Team(team).name||team;teamSelect.append(opt)}
+ const render=()=>{const q=document.getElementById('u17StatsSearch').value.toLowerCase(),team=teamSelect.value,sort=document.getElementById('u17StatsSort').value;
+ const rows=[...players.values()].filter(p=>(!team||p.team===team)&&String(p.name).toLowerCase().includes(q)&&p[sort]>0).sort((a,b)=>b[sort]-a[sort]||b.goals-a.goals||b.starts-a.starts||String(a.name).localeCompare(String(b.name)));
+ document.getElementById('u17StatsRows').innerHTML=rows.map((p,i)=>'<tr><td>'+(i+1)+'</td><td><strong>'+esc(p.name)+'</strong></td><td>'+esc(u17Team(p.team).name||p.team)+'</td><td>'+p.goals+'</td><td>'+p.starts+'</td></tr>').join('')||'<tr><td colspan="5">Sin registros verificados.</td></tr>'};
+ for(const id of ['u17StatsSearch','u17StatsTeam','u17StatsSort'])document.getElementById(id).addEventListener(id==='u17StatsSearch'?'input':'change',render);
+ render();u17PlayerStatsLoaded=true;
+ }catch(e){host.textContent='No se pudieron cargar las estadísticas. Vuelve a abrir la pestaña para reintentar.'}
+}
