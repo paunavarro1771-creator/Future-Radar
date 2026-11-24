@@ -1,7 +1,7 @@
 {
   "competitionId": "fifa-u17-world-cup-2026",
   "schemaVersion": 1,
-  "archivedAt": "2026-11-23T18:13:02.127Z",
+  "archivedAt": "2026-11-24T13:29:35.050Z",
   "source": "Existing Future Radar provider aggregator",
   "realtime": false,
   "partial": true,
@@ -1946,15 +1946,15 @@
         "id": "national:CRC:u17",
         "code": "CRC",
         "name": "Costa Rica U17",
-        "score": null
+        "score": 0
       },
       "away": {
         "id": "national:IRL:u17",
         "code": "IRL",
         "name": "Ireland U17",
-        "score": null
+        "score": 0
       },
-      "status": "SCHEDULED",
+      "status": "LIVE",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 4,
@@ -1967,10 +1967,10 @@
         "id": "1885793",
         "home": "Costa Rica U17",
         "away": "Ireland U17",
-        "homeScore": null,
-        "awayScore": null,
-        "status": "SCHEDULED",
-        "statusDescription": "NS",
+        "homeScore": 0,
+        "awayScore": 0,
+        "status": "LIVE",
+        "statusDescription": "HT",
         "minute": null,
         "startTimestamp": null,
         "date": "2026-11-24",
@@ -1983,7 +1983,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-22T23:53:01.153Z"
+      "archivedAt": "2026-11-24T13:29:35.050Z"
     },
     {
       "id": "2026-11-24:ALG:MNE",
@@ -2087,15 +2087,15 @@
         "id": "national:VEN:u17",
         "code": "VEN",
         "name": "Venezuela U17",
-        "score": null
+        "score": 0
       },
       "away": {
         "id": "national:ROU:u17",
         "code": "ROU",
         "name": "Romania U17",
-        "score": null
+        "score": 0
       },
-      "status": "SCHEDULED",
+      "status": "LIVE",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 9,
@@ -2108,10 +2108,10 @@
         "id": "1885786",
         "home": "Venezuela U17",
         "away": "Romania U17",
-        "homeScore": null,
-        "awayScore": null,
-        "status": "SCHEDULED",
-        "statusDescription": "NS",
+        "homeScore": 0,
+        "awayScore": 0,
+        "status": "LIVE",
+        "statusDescription": "HT",
         "minute": null,
         "startTimestamp": null,
         "date": "2026-11-24",
@@ -2124,7 +2124,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-22T23:53:01.153Z"
+      "archivedAt": "2026-11-24T13:29:35.050Z"
     },
     {
       "id": "2026-11-24:JPN:SRB",
@@ -2134,15 +2134,15 @@
         "id": "national:JPN:u17",
         "code": "JPN",
         "name": "Japan U17",
-        "score": null
+        "score": 0
       },
       "away": {
         "id": "national:SRB:u17",
         "code": "SRB",
         "name": "Serbia U17",
-        "score": null
+        "score": 1
       },
-      "status": "SCHEDULED",
+      "status": "LIVE",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 1,
@@ -2155,12 +2155,12 @@
         "id": "1885774",
         "home": "Japan U17",
         "away": "Serbia U17",
-        "homeScore": null,
-        "awayScore": null,
-        "status": "SCHEDULED",
-        "statusDescription": "NS",
-        "minute": null,
-        "startTimestamp": null,
+        "homeScore": 0,
+        "awayScore": 1,
+        "status": "LIVE",
+        "statusDescription": "28'",
+        "minute": "28",
+        "startTimestamp": 1795526921,
         "date": "2026-11-24",
         "homeCode": "JPN",
         "awayCode": "SRB",
@@ -2171,7 +2171,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-22T23:53:01.153Z"
+      "archivedAt": "2026-11-24T13:29:35.050Z"
     },
     {
       "id": "2026-11-24:HON:COL",
