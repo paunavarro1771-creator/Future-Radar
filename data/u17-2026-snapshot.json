@@ -1,7 +1,7 @@
 {
   "competitionId": "fifa-u17-world-cup-2026",
   "schemaVersion": 1,
-  "archivedAt": "2026-11-24T16:29:43.266Z",
+  "archivedAt": "2026-11-24T18:02:45.185Z",
   "source": "Existing Future Radar provider aggregator",
   "realtime": false,
   "partial": true,
@@ -1907,7 +1907,7 @@
         "name": "Tanzania U17",
         "score": 0
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 2,
@@ -1922,10 +1922,10 @@
         "away": "Tanzania U17",
         "homeScore": 1,
         "awayScore": 0,
-        "status": "LIVE",
-        "statusDescription": "69'",
-        "minute": "69",
-        "startTimestamp": 1795537753,
+        "status": "FT",
+        "statusDescription": "FT",
+        "minute": null,
+        "startTimestamp": null,
         "date": "2026-11-24",
         "homeCode": "BRA",
         "awayCode": "TAN",
@@ -1936,7 +1936,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-24T16:29:43.266Z"
+      "archivedAt": "2026-11-24T18:02:45.185Z"
     },
     {
       "id": "2026-11-24:CRC:IRL",
@@ -1993,7 +1993,7 @@
         "id": "national:ALG:u17",
         "code": "ALG",
         "name": "Algeria U17",
-        "score": 0
+        "score": 2
       },
       "away": {
         "id": "national:MNE:u17",
@@ -2001,7 +2001,7 @@
         "name": "Montenegro U17",
         "score": 1
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 5,
@@ -2014,10 +2014,10 @@
         "id": "1885768",
         "home": "Algeria U17",
         "away": "Montenegro U17",
-        "homeScore": 0,
+        "homeScore": 2,
         "awayScore": 1,
-        "status": "LIVE",
-        "statusDescription": "HT",
+        "status": "FT",
+        "statusDescription": "FT",
         "minute": null,
         "startTimestamp": null,
         "date": "2026-11-24",
@@ -2030,7 +2030,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-24T16:29:43.266Z"
+      "archivedAt": "2026-11-24T18:02:45.185Z"
     },
     {
       "id": "2026-11-24:MEX:CMR",
@@ -2187,9 +2187,9 @@
         "id": "national:COL:u17",
         "code": "COL",
         "name": "Colombia U17",
-        "score": 0
+        "score": 2
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 8,
@@ -2203,9 +2203,9 @@
         "home": "Honduras U17",
         "away": "Colombia U17",
         "homeScore": 0,
-        "awayScore": 0,
-        "status": "LIVE",
-        "statusDescription": "HT",
+        "awayScore": 2,
+        "status": "FT",
+        "statusDescription": "FT",
         "minute": null,
         "startTimestamp": null,
         "date": "2026-11-24",
@@ -2218,7 +2218,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-24T16:29:43.266Z"
+      "archivedAt": "2026-11-24T18:02:45.185Z"
     },
     {
       "id": "2026-11-24:DOM:CHI",
