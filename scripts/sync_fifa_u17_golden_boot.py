@@ -48,6 +48,8 @@ with sync_playwright() as p:
             break
         page.wait_for_timeout(1000)
     print("Initial table rows:", len(extract(page)))
+    print("Table count:",page.locator('table,[role=table],[role=grid]').count())
+    print("Body excerpt:",page.locator('body').inner_text(timeout=10000)[:2200])
     page.wait_for_timeout(4000)
     results={}
     for _ in range(100):
@@ -63,7 +65,8 @@ with sync_playwright() as p:
         else:
             break
     browser.close()
-if len(results)<3: raise RuntimeError("FIFA table not parsed; preserving previous snapshot")
+if len(results)<3:
+    raise RuntimeError("FIFA Golden Boot rows unavailable or not parsed; previous snapshot preserved")
 players=sorted(results.values(),key=lambda r:(-r["goals"],-r["assists"],r["minutes"],r["name"]))
 if OUT.exists():
     old=json.loads(OUT.read_text())
