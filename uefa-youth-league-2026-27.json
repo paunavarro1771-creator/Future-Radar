@@ -2,9 +2,9 @@
   "competition": "UEFA Youth League",
   "season": "2026/27",
   "phase": "Champions League path league phase",
-  "source": "UEFA official fixtures and results, updated 4 November 2026",
+  "source": "UEFA official fixtures and results through matchday 4; matchday 5 results cross-checked with Manchester United official fixtures and Global Sports Archive, 24 November 2026",
   "timezone": "CET",
-  "lastUpdated": "2026-11-17",
+  "lastUpdated": "2026-11-24",
   "matchdays": [
     1,
     2,
@@ -741,8 +741,11 @@
       "away": "LASK",
       "kickoff": "11:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING",
-      "sofascoreUrl": "https://www.sofascore.com/football/match/lask-linz-u19-bodoglimt-u19/ujtcsvFik"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/lask-linz-u19-bodoglimt-u19/ujtcsvFik",
+      "homeScore": 2,
+      "awayScore": 6,
+      "resultSource": "https://www.manutd.com/en/matches/men-u19s/fixtures?competition=uefa-youth-league&mode=all-teams&month=2026-11"
     },
     {
       "matchday": 5,
@@ -751,8 +754,11 @@
       "away": "Aston Villa",
       "kickoff": "11:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING",
-      "sofascoreUrl": "https://www.sofascore.com/football/match/galatasaray-u19-aston-villa-u19/xcLstrY"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/galatasaray-u19-aston-villa-u19/xcLstrY",
+      "homeScore": 3,
+      "awayScore": 1,
+      "resultSource": "https://www.manutd.com/en/matches/men-u19s/fixtures?competition=uefa-youth-league&mode=all-teams&month=2026-11"
     },
     {
       "matchday": 5,
@@ -761,8 +767,11 @@
       "away": "Borussia Dortmund",
       "kickoff": "14:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING",
-      "sofascoreUrl": "https://www.sofascore.com/football/match/arsenal-u19-borussia-dortmund-u19/uzrsvcL"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/arsenal-u19-borussia-dortmund-u19/uzrsvcL",
+      "homeScore": 3,
+      "awayScore": 2,
+      "resultSource": "https://www.manutd.com/en/matches/men-u19s/fixtures?competition=uefa-youth-league&mode=all-teams&month=2026-11"
     },
     {
       "matchday": 5,
@@ -771,8 +780,11 @@
       "away": "Real Betis",
       "kickoff": "14:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING",
-      "sofascoreUrl": "https://www.sofascore.com/football/match/real-betis-u19-sk-slovan-bratislava-u19/hpUsOpkc"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/real-betis-u19-sk-slovan-bratislava-u19/hpUsOpkc",
+      "homeScore": 1,
+      "awayScore": 2,
+      "resultSource": "https://www.manutd.com/en/matches/men-u19s/fixtures?competition=uefa-youth-league&mode=all-teams&month=2026-11"
     },
     {
       "matchday": 5,
@@ -781,8 +793,11 @@
       "away": "Porto",
       "kickoff": "14:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING",
-      "sofascoreUrl": "https://www.sofascore.com/football/match/feyenoord-u19-fc-porto-u19/rmGsCTDb"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/feyenoord-u19-fc-porto-u19/rmGsCTDb",
+      "homeScore": 0,
+      "awayScore": 1,
+      "resultSource": "https://www.manutd.com/en/matches/men-u19s/fixtures?competition=uefa-youth-league&mode=all-teams&month=2026-11"
     },
     {
       "matchday": 5,
@@ -791,8 +806,11 @@
       "away": "AEK Athens",
       "kickoff": "15:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING",
-      "sofascoreUrl": "https://www.sofascore.com/football/match/aek-athens-u19-como-u20/eAHbspQtc"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/aek-athens-u19-como-u20/eAHbspQtc",
+      "homeScore": 1,
+      "awayScore": 1,
+      "resultSource": "https://www.manutd.com/en/matches/men-u19s/fixtures?competition=uefa-youth-league&mode=all-teams&month=2026-11"
     },
     {
       "matchday": 5,
@@ -801,8 +819,11 @@
       "away": "Napoli",
       "kickoff": "16:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING",
-      "sofascoreUrl": "https://www.sofascore.com/football/match/napoli-u20-manchester-city-u19/grYsRQGg"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/napoli-u20-manchester-city-u19/grYsRQGg",
+      "homeScore": 4,
+      "awayScore": 1,
+      "resultSource": "https://www.manutd.com/en/matches/men-u19s/fixtures?competition=uefa-youth-league&mode=all-teams&month=2026-11"
     },
     {
       "matchday": 5,
@@ -811,8 +832,11 @@
       "away": "Lens",
       "kickoff": "16:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING",
-      "sofascoreUrl": "https://www.sofascore.com/football/match/lens-u19-rb-leipzig-u19/UAebskztc"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/lens-u19-rb-leipzig-u19/UAebskztc",
+      "homeScore": 2,
+      "awayScore": 3,
+      "resultSource": "https://www.manutd.com/en/matches/men-u19s/fixtures?competition=uefa-youth-league&mode=all-teams&month=2026-11"
     },
     {
       "matchday": 5,
@@ -821,8 +845,11 @@
       "away": "PSV Eindhoven",
       "kickoff": "16:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING",
-      "sofascoreUrl": "https://www.sofascore.com/football/match/real-madrid-u19-psv-eindhoven-u19/PcLserY"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/real-madrid-u19-psv-eindhoven-u19/PcLserY",
+      "homeScore": 3,
+      "awayScore": 3,
+      "resultSource": "https://www.manutd.com/en/matches/men-u19s/fixtures?competition=uefa-youth-league&mode=all-teams&month=2026-11"
     },
     {
       "matchday": 5,
