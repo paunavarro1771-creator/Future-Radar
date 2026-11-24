@@ -47,6 +47,12 @@ def extract(page):
 with sync_playwright() as p:
     browser=p.chromium.launch(headless=True)
     page=browser.new_page(viewport={"width":1920,"height":1080},locale="en-US")
+    def all_rows():
+        rows=[]
+        for frame in page.frames:
+            try: rows.extend(extract(frame))
+            except Exception: pass
+        return rows
     page.on("response", inspect_response)
     page.on("requestfailed", lambda req: print("FAILED",safe_url(req.url),req.failure,flush=True) if req.resource_type in ("xhr","fetch") else None)
     page.on("pageerror", lambda err: print("PAGE ERROR",str(err)[:300],flush=True))
@@ -67,29 +73,31 @@ with sync_playwright() as p:
             page.locator(".save-preference-btn-handler").first.click(timeout=10000)
     # Golden Boot is the default tab; no click is necessary if its table is already present.
     page.wait_for_timeout(2000)
-    if not extract(page):
+    if not all_rows():
         page.get_by_text("adidas Golden Boot",exact=False).first.click(timeout=15000)
     for _ in range(60):
-        if extract(page):
+        if all_rows():
             break
         page.wait_for_timeout(1000)
-    print("Initial table rows:", len(extract(page)))
+    print("Initial table rows:", len(all_rows()))
+    print("Frames:", [safe_url(f.url) for f in page.frames])
     print("Table count:",page.locator('table,[role=table],[role=grid]').count())
     print("Body excerpt:",page.locator('body').inner_text(timeout=10000)[:2200])
     page.wait_for_timeout(4000)
     results={}
     for _ in range(100):
-        for r in extract(page):
+        for r in all_rows():
             parts=r["player"].splitlines()
             team=re.search(r"\b([A-Z]{3})\s+(?:FW|MF|DF|GK)\b",r["player"])
             if not team: continue
             name=parts[0].strip()
             results[(team[1],name)]={"name":name,"team":team[1],"goals":r["goals"],"assists":r["assists"],"minutes":r["minutes"]}
-        more=page.get_by_role("button",name=re.compile(r"^(show more|load more|view more|next(?: page)?)$",re.I))
-        if more.count() and more.last.is_visible() and more.last.is_enabled():
-            more.last.click();page.wait_for_timeout(1500)
-        else:
-            break
+        clicked=False
+        for frame in page.frames:
+            more=frame.get_by_role("button",name=re.compile(r"^(show more|load more|view more|next(?: page)?)$",re.I))
+            if more.count() and more.last.is_visible() and more.last.is_enabled():
+                more.last.click();page.wait_for_timeout(2000);clicked=True;break
+        if not clicked: break
     browser.close()
 if len(results)<3:
     raise RuntimeError("FIFA Golden Boot rows unavailable or not parsed; previous snapshot preserved")
