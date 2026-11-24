@@ -1,7 +1,7 @@
 {
   "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/statistics/player-statistics",
-  "updatedAt": "2026-11-24T13:17:21.012Z",
-  "coverage": "First 50 displayed rows; manual FIFA browser export; more rows available",
+  "updatedAt": "2026-11-24T13:34:15Z",
+  "coverage": "Partial cloud browser extraction; reported total inconsistent with returned rows; completeness not verified",
   "players": [
     {
       "rank": 1,
@@ -452,6 +452,1356 @@
       "goals": 1,
       "assists": 0,
       "minutes": 70
+    },
+    {
+      "rank": 51,
+      "name": "Rodrigo Jr",
+      "team": "BRA",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 74
+    },
+    {
+      "rank": 52,
+      "name": "Simon Escobar",
+      "team": "ARG",
+      "position": "DF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 76
+    },
+    {
+      "rank": 53,
+      "name": "Ibrahima Konte",
+      "team": "SEN",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 76
+    },
+    {
+      "rank": 54,
+      "name": "Ziad Souidi",
+      "team": "EGY",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 78
+    },
+    {
+      "rank": 55,
+      "name": "Nicolas Rodriguez",
+      "team": "URU",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 79
+    },
+    {
+      "rank": 56,
+      "name": "Facundo Rodriguez",
+      "team": "URU",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 79
+    },
+    {
+      "rank": 57,
+      "name": "Thomas Corigliano",
+      "team": "ITA",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 81
+    },
+    {
+      "rank": 58,
+      "name": "Jorshuad Pilarte",
+      "team": "CRC",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 81
+    },
+    {
+      "rank": 59,
+      "name": "John Woldegiorgis",
+      "team": "NZL",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 81
+    },
+    {
+      "rank": 60,
+      "name": "Amaro Perez",
+      "team": "CHI",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 82
+    },
+    {
+      "rank": 61,
+      "name": "Kakeru Saito",
+      "team": "JPN",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 83
+    },
+    {
+      "rank": 62,
+      "name": "Mark Djokaj",
+      "team": "MNE",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 84
+    },
+    {
+      "rank": 63,
+      "name": "Kim Jiho",
+      "team": "KOR",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 93
+    },
+    {
+      "rank": 64,
+      "name": "Jefrey Urbina",
+      "team": "CRC",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 95
+    },
+    {
+      "rank": 65,
+      "name": "Santiago Sanchez",
+      "team": "VEN",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 95
+    },
+    {
+      "rank": 66,
+      "name": "Park Jooho",
+      "team": "KOR",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 95
+    },
+    {
+      "rank": 67,
+      "name": "Jordi Pesquer",
+      "team": "ESP",
+      "position": "DF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 96
+    },
+    {
+      "rank": 68,
+      "name": "Aviel Hentcho",
+      "team": "CMR",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 96
+    },
+    {
+      "rank": 68,
+      "name": "Roman Lozada",
+      "team": "VEN",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 96
+    },
+    {
+      "rank": 70,
+      "name": "Yacine Abed",
+      "team": "ALG",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 97
+    },
+    {
+      "rank": 70,
+      "name": "Lucas Lopez",
+      "team": "CHI",
+      "position": "DF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 97
+    },
+    {
+      "rank": 70,
+      "name": "Ilyes Mekkaoui",
+      "team": "ALG",
+      "position": "DF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 97
+    },
+    {
+      "rank": 73,
+      "name": "Eduardo Conceicao",
+      "team": "BRA",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 97
+    },
+    {
+      "rank": 73,
+      "name": "Ryan Sheridan",
+      "team": "IRL",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 97
+    },
+    {
+      "rank": 75,
+      "name": "Kamil Castillo",
+      "team": "DOM",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 99
+    },
+    {
+      "rank": 76,
+      "name": "Miguel Agamez",
+      "team": "COL",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 100
+    },
+    {
+      "rank": 77,
+      "name": "Muhammad Khakimov",
+      "team": "UZB",
+      "position": "DF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 106
+    },
+    {
+      "rank": 78,
+      "name": "Akhrorbek Ravshanbekov",
+      "team": "UZB",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 108
+    },
+    {
+      "rank": 79,
+      "name": "Abass Diarrassouba",
+      "team": "CIV",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 113
+    },
+    {
+      "rank": 80,
+      "name": "Francesco Olivieri",
+      "team": "ITA",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 114
+    },
+    {
+      "rank": 81,
+      "name": "Laziz Abduraimov",
+      "team": "UZB",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 115
+    },
+    {
+      "rank": 82,
+      "name": "Mouhamed Faye",
+      "team": "SEN",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 118
+    },
+    {
+      "rank": 83,
+      "name": "Imran Talai",
+      "team": "MAR",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 119
+    },
+    {
+      "rank": 84,
+      "name": "Gioele Giammattei",
+      "team": "ITA",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 124
+    },
+    {
+      "rank": 85,
+      "name": "Maurice Biaye",
+      "team": "SEN",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 125
+    },
+    {
+      "rank": 86,
+      "name": "Hubert Yao",
+      "team": "CIV",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 129
+    },
+    {
+      "rank": 87,
+      "name": "Jack Clegg",
+      "team": "NZL",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 141
+    },
+    {
+      "rank": 88,
+      "name": "Dai Nhan",
+      "team": "VIE",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 141
+    },
+    {
+      "rank": 89,
+      "name": "Marvenly Exilas",
+      "team": "HAI",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 144
+    },
+    {
+      "rank": 90,
+      "name": "Diego Perillo",
+      "team": "ITA",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 145
+    },
+    {
+      "rank": 91,
+      "name": "Noha Tiehi",
+      "team": "FRA",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 146
+    },
+    {
+      "rank": 92,
+      "name": "Matheo Machuca",
+      "team": "ARG",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 147
+    },
+    {
+      "rank": 93,
+      "name": "Djigui Koita",
+      "team": "MLI",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 148
+    },
+    {
+      "rank": 94,
+      "name": "Sy Bach",
+      "team": "VIE",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 149
+    },
+    {
+      "rank": 95,
+      "name": "Niels Filippo",
+      "team": "BEL",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 155
+    },
+    {
+      "rank": 96,
+      "name": "Luka Bartolovic",
+      "team": "CRO",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 158
+    },
+    {
+      "rank": 97,
+      "name": "Jhon Guerrero",
+      "team": "ECU",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 159
+    },
+    {
+      "rank": 98,
+      "name": "Khenzane",
+      "team": "MOZ",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 161
+    },
+    {
+      "rank": 99,
+      "name": "Yankarlos Iglesias",
+      "team": "CUB",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 165
+    },
+    {
+      "rank": 100,
+      "name": "Anthony Philips",
+      "team": "BEL",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 166
+    },
+    {
+      "rank": 101,
+      "name": "Jakov Dedic",
+      "team": "CRO",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 166
+    },
+    {
+      "rank": 102,
+      "name": "Han Seungmin",
+      "team": "KOR",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 168
+    },
+    {
+      "rank": 103,
+      "name": "Harafat Diabate",
+      "team": "CIV",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 169
+    },
+    {
+      "rank": 104,
+      "name": "Parviz Bobonazarov",
+      "team": "TJK",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 171
+    },
+    {
+      "rank": 105,
+      "name": "Tinus Moorthamer",
+      "team": "BEL",
+      "position": "DF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 171
+    },
+    {
+      "rank": 106,
+      "name": "Yaya Niang",
+      "team": "MLI",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 182
+    },
+    {
+      "rank": 107,
+      "name": "Georgios Siozios",
+      "team": "GRE",
+      "position": "DF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 185
+    },
+    {
+      "rank": 108,
+      "name": "Shaman Alkahtani",
+      "team": "KSA",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 190
+    },
+    {
+      "rank": 109,
+      "name": "Ethan Dyer",
+      "team": "NZL",
+      "position": "DF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 191
+    },
+    {
+      "rank": 110,
+      "name": "Makan Sacko",
+      "team": "MLI",
+      "position": "DF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 191
+    },
+    {
+      "rank": 111,
+      "name": "Lautaro Muniz",
+      "team": "URU",
+      "position": "DF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 192
+    },
+    {
+      "rank": 111,
+      "name": "Alan Soares De Lima",
+      "team": "URU",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 192
+    },
+    {
+      "rank": 113,
+      "name": "Amirkhon Erkinov",
+      "team": "UZB",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 192
+    },
+    {
+      "rank": 114,
+      "name": "Akol Akon",
+      "team": "AUS",
+      "position": "FW",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 194
+    },
+    {
+      "rank": 115,
+      "name": "Taha Nassir",
+      "team": "QAT",
+      "position": "DF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 197
+    },
+    {
+      "rank": 116,
+      "name": "Estevis Lopez",
+      "team": "PAN",
+      "position": "MF",
+      "goals": 1,
+      "assists": 0,
+      "minutes": 199
+    },
+    {
+      "rank": 117,
+      "name": "Iu Martinez",
+      "team": "ESP",
+      "position": "FW",
+      "goals": 0,
+      "assists": 3,
+      "minutes": 77
+    },
+    {
+      "rank": 118,
+      "name": "Lee Inwoo",
+      "team": "KOR",
+      "position": "MF",
+      "goals": 0,
+      "assists": 3,
+      "minutes": 142
+    },
+    {
+      "rank": 119,
+      "name": "Asilbek Aliev",
+      "team": "UZB",
+      "position": "FW",
+      "goals": 0,
+      "assists": 3,
+      "minutes": 200
+    },
+    {
+      "rank": 120,
+      "name": "Richard Wendel",
+      "team": "BRA",
+      "position": "DF",
+      "goals": 0,
+      "assists": 2,
+      "minutes": 97
+    },
+    {
+      "rank": 121,
+      "name": "Mateo Sobral",
+      "team": "ESP",
+      "position": "MF",
+      "goals": 0,
+      "assists": 2,
+      "minutes": 98
+    },
+    {
+      "rank": 122,
+      "name": "Marcello Fugazzola",
+      "team": "ITA",
+      "position": "FW",
+      "goals": 0,
+      "assists": 2,
+      "minutes": 104
+    },
+    {
+      "rank": 123,
+      "name": "Issiaka Kone",
+      "team": "MLI",
+      "position": "FW",
+      "goals": 0,
+      "assists": 2,
+      "minutes": 167
+    },
+    {
+      "rank": 124,
+      "name": "Mirkomilbek Murodov",
+      "team": "UZB",
+      "position": "MF",
+      "goals": 0,
+      "assists": 2,
+      "minutes": 170
+    },
+    {
+      "rank": 125,
+      "name": "Deiby Borrell",
+      "team": "CUB",
+      "position": "MF",
+      "goals": 0,
+      "assists": 2,
+      "minutes": 183
+    },
+    {
+      "rank": 126,
+      "name": "Mehrubon Odilzoda",
+      "team": "TJK",
+      "position": "MF",
+      "goals": 0,
+      "assists": 2,
+      "minutes": 195
+    },
+    {
+      "rank": 127,
+      "name": "Wael Jolissaint",
+      "team": "MAR",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 32
+    },
+    {
+      "rank": 128,
+      "name": "Bashiri Kibaila",
+      "team": "TAN",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 50
+    },
+    {
+      "rank": 129,
+      "name": "Walid Nechab",
+      "team": "ALG",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 55
+    },
+    {
+      "rank": 130,
+      "name": "Jelani Bradshaw",
+      "team": "JAM",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 57
+    },
+    {
+      "rank": 131,
+      "name": "Jerome Albis",
+      "team": "SEN",
+      "position": "FW",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 57
+    },
+    {
+      "rank": 132,
+      "name": "Carlos Martinez",
+      "team": "DOM",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 58
+    },
+    {
+      "rank": 133,
+      "name": "Salia Traore",
+      "team": "CIV",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 66
+    },
+    {
+      "rank": 134,
+      "name": "Davian Kimbrough",
+      "team": "MEX",
+      "position": "FW",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 70
+    },
+    {
+      "rank": 135,
+      "name": "Razaki Mbegelendi",
+      "team": "TAN",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 72
+    },
+    {
+      "rank": 136,
+      "name": "Sebastian Melgarejo",
+      "team": "CHI",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 74
+    },
+    {
+      "rank": 137,
+      "name": "Andy Saavedra",
+      "team": "VEN",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 75
+    },
+    {
+      "rank": 138,
+      "name": "Andher Gonzalez",
+      "team": "CHI",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 82
+    },
+    {
+      "rank": 139,
+      "name": "Maki Kitahara",
+      "team": "JPN",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 83
+    },
+    {
+      "rank": 140,
+      "name": "Aly Traore",
+      "team": "FRA",
+      "position": "FW",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 84
+    },
+    {
+      "rank": 141,
+      "name": "Shaher Roustom",
+      "team": "QAT",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 87
+    },
+    {
+      "rank": 142,
+      "name": "Matej Strika",
+      "team": "SRB",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 90
+    },
+    {
+      "rank": 143,
+      "name": "Firmin Thetiot",
+      "team": "FRA",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 90
+    },
+    {
+      "rank": 144,
+      "name": "Baba Kourouma",
+      "team": "ESP",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 91
+    },
+    {
+      "rank": 145,
+      "name": "Enmanuel Brito",
+      "team": "VEN",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 96
+    },
+    {
+      "rank": 146,
+      "name": "Antonio Cannoni",
+      "team": "CHI",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 97
+    },
+    {
+      "rank": 146,
+      "name": "Ayoub Dahmas",
+      "team": "ALG",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 97
+    },
+    {
+      "rank": 146,
+      "name": "Vicente Villegas",
+      "team": "CHI",
+      "position": "GK",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 97
+    },
+    {
+      "rank": 149,
+      "name": "Cillian Murphy",
+      "team": "IRL",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 97
+    },
+    {
+      "rank": 150,
+      "name": "Petar Vujovic",
+      "team": "MNE",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 99
+    },
+    {
+      "rank": 151,
+      "name": "Adrian Mosquera",
+      "team": "COL",
+      "position": "FW",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 100
+    },
+    {
+      "rank": 152,
+      "name": "James Wenceslao",
+      "team": "NZL",
+      "position": "FW",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 101
+    },
+    {
+      "rank": 153,
+      "name": "Al Hassan Kamara",
+      "team": "BEL",
+      "position": "FW",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 104
+    },
+    {
+      "rank": 154,
+      "name": "Nikolaos Chaldezos",
+      "team": "GRE",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 107
+    },
+    {
+      "rank": 156,
+      "name": "Zaid Alburi",
+      "team": "KSA",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 119
+    },
+    {
+      "rank": 157,
+      "name": "Seydou Konate",
+      "team": "FRA",
+      "position": "FW",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 121
+    },
+    {
+      "rank": 158,
+      "name": "Jacopo Landi",
+      "team": "ITA",
+      "position": "FW",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 133
+    },
+    {
+      "rank": 159,
+      "name": "Sergi Mayans",
+      "team": "ESP",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 143
+    },
+    {
+      "rank": 160,
+      "name": "Chauson",
+      "team": "MOZ",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 143
+    },
+    {
+      "rank": 161,
+      "name": "Holger Quintero",
+      "team": "ECU",
+      "position": "FW",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 150
+    },
+    {
+      "rank": 162,
+      "name": "Thiago Brizuela",
+      "team": "URU",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 161
+    },
+    {
+      "rank": 163,
+      "name": "Juan Gancheff",
+      "team": "URU",
+      "position": "FW",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 162
+    },
+    {
+      "rank": 164,
+      "name": "Guivens Barjon",
+      "team": "HAI",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 164
+    },
+    {
+      "rank": 165,
+      "name": "Luka Posavec",
+      "team": "CRO",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 166
+    },
+    {
+      "rank": 166,
+      "name": "Furqon Rahimzoda",
+      "team": "TJK",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 168
+    },
+    {
+      "rank": 167,
+      "name": "Minh Thuy",
+      "team": "VIE",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 169
+    },
+    {
+      "rank": 168,
+      "name": "He Sifan",
+      "team": "CHN",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 169
+    },
+    {
+      "rank": 169,
+      "name": "Ivan Paunovic",
+      "team": "CRO",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 169
+    },
+    {
+      "rank": 170,
+      "name": "Emmett Shaw",
+      "team": "AUS",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 171
+    },
+    {
+      "rank": 171,
+      "name": "Mohamed Zinbi",
+      "team": "MAR",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 171
+    },
+    {
+      "rank": 172,
+      "name": "Ismail Kamissoko",
+      "team": "MLI",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 176
+    },
+    {
+      "rank": 173,
+      "name": "Matias Nunez",
+      "team": "NZL",
+      "position": "FW",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 177
+    },
+    {
+      "rank": 174,
+      "name": "Sena Vesty",
+      "team": "NZL",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 179
+    },
+    {
+      "rank": 175,
+      "name": "Miguel Joseph",
+      "team": "HAI",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 184
+    },
+    {
+      "rank": 176,
+      "name": "Xander Dierckx",
+      "team": "BEL",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 189
+    },
+    {
+      "rank": 176,
+      "name": "Louie Van Gelder",
+      "team": "BEL",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 189
+    },
+    {
+      "rank": 178,
+      "name": "Allan",
+      "team": "MOZ",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 190
+    },
+    {
+      "rank": 178,
+      "name": "Joao",
+      "team": "MOZ",
+      "position": "GK",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 190
+    },
+    {
+      "rank": 178,
+      "name": "Diego",
+      "team": "MOZ",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 190
+    },
+    {
+      "rank": 181,
+      "name": "Emile Sadio",
+      "team": "SEN",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 191
+    },
+    {
+      "rank": 182,
+      "name": "Lamine Mbengue",
+      "team": "SEN",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 193
+    },
+    {
+      "rank": 183,
+      "name": "Ahmed Beshir",
+      "team": "EGY",
+      "position": "MF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 194
+    },
+    {
+      "rank": 184,
+      "name": "Mirjamol Anvarov",
+      "team": "UZB",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 200
+    },
+    {
+      "rank": 185,
+      "name": "Adam Soudi",
+      "team": "MAR",
+      "position": "DF",
+      "goals": 0,
+      "assists": 1,
+      "minutes": 204
+    },
+    {
+      "rank": 186,
+      "name": "Abdelaziz Mahmoud",
+      "team": "EGY",
+      "position": "GK",
+      "goals": 0,
+      "assists": 0,
+      "minutes": 0
+    },
+    {
+      "rank": 186,
+      "name": "Ramazon Abdulozoda",
+      "team": "TJK",
+      "position": "GK",
+      "goals": 0,
+      "assists": 0,
+      "minutes": 0
+    },
+    {
+      "rank": 186,
+      "name": "Husam Haider",
+      "team": "QAT",
+      "position": "GK",
+      "goals": 0,
+      "assists": 0,
+      "minutes": 0
+    },
+    {
+      "rank": 186,
+      "name": "Giancarlo Aleman",
+      "team": "PAN",
+      "position": "DF",
+      "goals": 0,
+      "assists": 0,
+      "minutes": 0
+    },
+    {
+      "rank": 186,
+      "name": "Zafir Ali",
+      "team": "FIJ",
+      "position": "MF",
+      "goals": 0,
+      "assists": 0,
+      "minutes": 0
+    },
+    {
+      "rank": 186,
+      "name": "Lachlan Allen",
+      "team": "AUS",
+      "position": "GK",
+      "goals": 0,
+      "assists": 0,
+      "minutes": 0
+    },
+    {
+      "rank": 186,
+      "name": "Abdullah Alnakhli",
+      "team": "KSA",
+      "position": "GK",
+      "goals": 0,
+      "assists": 0,
+      "minutes": 0
+    },
+    {
+      "rank": 186,
+      "name": "Naif Alqahtani",
+      "team": "KSA",
+      "position": "DF",
+      "goals": 0,
+      "assists": 0,
+      "minutes": 0
+    },
+    {
+      "rank": 186,
+      "name": "Musaad Alshammari",
+      "team": "KSA",
+      "position": "GK",
+      "goals": 0,
+      "assists": 0,
+      "minutes": 0
+    },
+    {
+      "rank": 186,
+      "name": "Kevin Baez",
+      "team": "ARG",
+      "position": "GK",
+      "goals": 0,
+      "assists": 0,
+      "minutes": 0
+    },
+    {
+      "rank": 186,
+      "name": "Mamadou Bah",
+      "team": "MLI",
+      "position": "DF",
+      "goals": 0,
+      "assists": 0,
+      "minutes": 0
+    },
+    {
+      "rank": 186,
+      "name": "Alexios Bairamidis",
+      "team": "GRE",
+      "position": "FW",
+      "goals": 0,
+      "assists": 0,
+      "minutes": 0
+    },
+    {
+      "rank": 186,
+      "name": "Roko Banovac",
+      "team": "CRO",
+      "position": "GK",
+      "goals": 0,
+      "assists": 0,
+      "minutes": 0
+    },
+    {
+      "rank": 186,
+      "name": "Bayron Barrera",
+      "team": "CHI",
+      "position": "FW",
+      "goals": 0,
+      "assists": 0,
+      "minutes": 0
+    },
+    {
+      "rank": 186,
+      "name": "Martin Barrios",
+      "team": "CHI",
+      "position": "DF",
+      "goals": 0,
+      "assists": 0,
+      "minutes": 0
+    },
+    {
+      "rank": 186,
+      "name": "Viktor Bastrup",
+      "team": "DEN",
+      "position": "MF",
+      "goals": 0,
+      "assists": 0,
+      "minutes": 0
     }
   ]
 }
