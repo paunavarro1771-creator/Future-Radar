@@ -1,0 +1,4138 @@
+{
+  "competitionId": "fifa-u17-world-cup-2026",
+  "method": "verified PDF evidence plus existing official team statistics",
+  "matches": [
+    {
+      "matchKey": "2026-11-19:QAT:PAN",
+      "matchNumber": 1,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M01-QAT-V-PAN.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 2,
+          "away": 0
+        },
+        {
+          "name": "xG",
+          "home": "0.98",
+          "away": "0.7"
+        },
+        {
+          "name": "Remates",
+          "home": "4",
+          "away": "11"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 2,
+          "away": 1
+        },
+        {
+          "name": "Pases",
+          "home": "287",
+          "away": "510"
+        },
+        {
+          "name": "Pases completados",
+          "home": 233,
+          "away": 463
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "81%",
+          "away": "91%"
+        },
+        {
+          "name": "Centros",
+          "home": "7",
+          "away": "20"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "34",
+          "away": "19"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "34",
+          "away": "40"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "111.5 km",
+          "away": "98.3 km"
+        }
+      ],
+      "incidents": [
+        {
+          "type": "goal",
+          "minute": 90,
+          "number": 5,
+          "player": "TAHA NASSIR",
+          "team": "QAT",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M01-QAT-V-PAN.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 94,
+          "number": 20,
+          "player": "ABDOULAYE NDIAYE",
+          "team": "QAT",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M01-QAT-V-PAN.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        }
+      ],
+      "lineups": {
+        "home": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "BAKRI MOHAMED"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "MATEO ESPARZAARIZA"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "ADHAM ADNAN"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "SAMI DARANI"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "TAHA NASSIR"
+          },
+          {
+            "number": 6,
+            "position": "MF",
+            "name": "HADI KHALIL"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "DHIAEDDINE BENYATLA"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "MOHAMED FADL"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "MOHSAIN ALHAJRI"
+          },
+          {
+            "number": 11,
+            "position": "FW",
+            "name": "KUNLE TOKODE"
+          },
+          {
+            "number": 14,
+            "position": "MF",
+            "name": "OMAR AYMAN"
+          }
+        ],
+        "away": [
+          {
+            "number": 12,
+            "position": "GK",
+            "name": "Isaias ABUABARA"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "Stephen DOMINGUEZ"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Neir MARRUGO"
+          },
+          {
+            "number": 5,
+            "position": "MF",
+            "name": "Lucas NORTE"
+          },
+          {
+            "number": 6,
+            "position": "MF",
+            "name": "Jossimar INSTURAIN"
+          },
+          {
+            "number": 7,
+            "position": "MF",
+            "name": "Alexander TULL"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Thiago CHALMERS"
+          },
+          {
+            "number": 10,
+            "position": "MF",
+            "name": "Estevis LOPEZ"
+          },
+          {
+            "number": 13,
+            "position": "DF",
+            "name": "Alberto ADAMS"
+          },
+          {
+            "number": 16,
+            "position": "FW",
+            "name": "Cristian MORAN"
+          },
+          {
+            "number": 20,
+            "position": "MF",
+            "name": "Gabriel QUIROZ"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": true,
+      "lineupsVerified": true
+    },
+    {
+      "matchKey": "2026-11-19:EGY:GRE",
+      "matchNumber": 2,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M02-EGY-V-GRE.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 1,
+          "away": 2
+        },
+        {
+          "name": "xG",
+          "home": "0.24",
+          "away": "1.1"
+        },
+        {
+          "name": "Remates",
+          "home": "5",
+          "away": "16"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 2,
+          "away": 5
+        },
+        {
+          "name": "Pases",
+          "home": "308",
+          "away": "475"
+        },
+        {
+          "name": "Pases completados",
+          "home": 231,
+          "away": 420
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "75%",
+          "away": "88%"
+        },
+        {
+          "name": "Centros",
+          "home": "13",
+          "away": "23"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "36",
+          "away": "31"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "39",
+          "away": "38"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "102.7 km",
+          "away": "111.1 km"
+        }
+      ],
+      "incidents": [
+        {
+          "type": "goal",
+          "minute": 53,
+          "number": 9,
+          "player": "Konstantinos SOUVLATZIS",
+          "team": "GRE",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M02-EGY-V-GRE.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 61,
+          "number": 3,
+          "player": "Konstantinos KARANGELIS",
+          "team": "GRE",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M02-EGY-V-GRE.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 70,
+          "number": 14,
+          "player": "ZIAD SOUIDI",
+          "team": "EGY",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M02-EGY-V-GRE.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        }
+      ],
+      "lineups": {
+        "home": [
+          {
+            "number": 16,
+            "position": "GK",
+            "name": "MALEK AMR"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "MOHAMED DEIZL"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "ADAM YOUSSEF"
+          },
+          {
+            "number": 5,
+            "position": "FW",
+            "name": "EZZAT MOHAMED"
+          },
+          {
+            "number": 6,
+            "position": "DF",
+            "name": "ADEL ALAA"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "MOHAMED GAMAL"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "AHMED BESHIR"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "ADHAM HASSEIB"
+          },
+          {
+            "number": 10,
+            "position": "FW",
+            "name": "AHMED SAFWAT"
+          },
+          {
+            "number": 11,
+            "position": "FW",
+            "name": "DANIEL TAMER"
+          },
+          {
+            "number": 15,
+            "position": "MF",
+            "name": "OMAR ABDELRAHIM"
+          }
+        ],
+        "away": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Christos GEITONAS"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "Georgios SIOZIOS"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "Konstantinos KARANGELIS"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Vasileios LAVDAS"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "Athanasios FILIPPIADIS"
+          },
+          {
+            "number": 6,
+            "position": "MF",
+            "name": "Panagiotis BINIARIS"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "Iason NEMPIS"
+          },
+          {
+            "number": 10,
+            "position": "FW",
+            "name": "Ioannis KOSTOGLOU"
+          },
+          {
+            "number": 11,
+            "position": "DF",
+            "name": "Nikolaos CHALDEZOS"
+          },
+          {
+            "number": 14,
+            "position": "MF",
+            "name": "Giannis NETO"
+          },
+          {
+            "number": 17,
+            "position": "DF",
+            "name": "Stefanos TSIGKAS"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": true,
+      "lineupsVerified": true
+    },
+    {
+      "matchKey": "2026-11-19:KOR:UGA",
+      "matchNumber": 3,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M03-KOR-V-UGA.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 3,
+          "away": 0
+        },
+        {
+          "name": "xG",
+          "home": "1.58",
+          "away": "0.31"
+        },
+        {
+          "name": "Remates",
+          "home": "17",
+          "away": "14"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 8,
+          "away": 4
+        },
+        {
+          "name": "Pases",
+          "home": "329",
+          "away": "600"
+        },
+        {
+          "name": "Pases completados",
+          "home": 272,
+          "away": 519
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "83%",
+          "away": "86%"
+        },
+        {
+          "name": "Centros",
+          "home": "20",
+          "away": "18"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "36",
+          "away": "36"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "41",
+          "away": "43"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "114.9 km",
+          "away": "111.6 km"
+        }
+      ],
+      "incidents": [],
+      "lineups": {
+        "home": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "JANG Junyeong"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "CHOI Jaehyeok"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "SEONG Minsu"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "CHOI Minjun"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "KANG Musung"
+          },
+          {
+            "number": 6,
+            "position": "MF",
+            "name": "JUNG Hawon"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "BAEK Geon"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "HAN Seungmin"
+          },
+          {
+            "number": 11,
+            "position": "MF",
+            "name": "KIM Jiho"
+          },
+          {
+            "number": 14,
+            "position": "MF",
+            "name": "LEE Inwoo"
+          },
+          {
+            "number": 20,
+            "position": "FW",
+            "name": "NAM Ian"
+          }
+        ],
+        "away": [
+          {
+            "number": 19,
+            "position": "GK",
+            "name": "Ashraf LUKYAMUZI"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Musa SUUNA"
+          },
+          {
+            "number": 5,
+            "position": "MF",
+            "name": "John OWINO"
+          },
+          {
+            "number": 6,
+            "position": "MF",
+            "name": "Henry MUHOOZI"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Joseph DORONGIN"
+          },
+          {
+            "number": 10,
+            "position": "FW",
+            "name": "Owen MUKISA"
+          },
+          {
+            "number": 11,
+            "position": "FW",
+            "name": "Fahad ISMAIL"
+          },
+          {
+            "number": 12,
+            "position": "DF",
+            "name": "Ukashsa JEMBA"
+          },
+          {
+            "number": 13,
+            "position": "DF",
+            "name": "Travor MUBIRU"
+          },
+          {
+            "number": 17,
+            "position": "DF",
+            "name": "Mujad MBALIRE"
+          },
+          {
+            "number": 20,
+            "position": "MF",
+            "name": "Isima MAGALA"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": false,
+      "lineupsVerified": true
+    },
+    {
+      "matchKey": "2026-11-19:NCL:ECU",
+      "matchNumber": 4,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M04-NCL-V-ECU.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 0,
+          "away": 1
+        },
+        {
+          "name": "xG",
+          "home": "0.06",
+          "away": "1.76"
+        },
+        {
+          "name": "Remates",
+          "home": "4",
+          "away": "27"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 0,
+          "away": 13
+        },
+        {
+          "name": "Pases",
+          "home": "302",
+          "away": "516"
+        },
+        {
+          "name": "Pases completados",
+          "home": 213,
+          "away": 449
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "71%",
+          "away": "87%"
+        },
+        {
+          "name": "Centros",
+          "home": "9",
+          "away": "38"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "13",
+          "away": "48"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "39",
+          "away": "47"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "114.2 km",
+          "away": "103.1 km"
+        }
+      ],
+      "incidents": [
+        {
+          "type": "goal",
+          "minute": 45,
+          "number": 9,
+          "player": "Jhon GUERRERO",
+          "team": "ECU",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M04-NCL-V-ECU.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        }
+      ],
+      "lineups": {
+        "home": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Sylvain IPEZE"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "Nestor NYIKEINE"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Steevy ANDREW"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "Andre MENANGO"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "Lenddy WEDE"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Ethan DUPUIS"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Darryl HMALOKO"
+          },
+          {
+            "number": 11,
+            "position": "MF",
+            "name": "Kylan NEKOENG"
+          },
+          {
+            "number": 12,
+            "position": "FW",
+            "name": "Yoel ATTAWA"
+          },
+          {
+            "number": 17,
+            "position": "FW",
+            "name": "Leon SCIENDI"
+          },
+          {
+            "number": 20,
+            "position": "MF",
+            "name": "Pahaze QAEZE"
+          }
+        ],
+        "away": [
+          {
+            "number": 12,
+            "position": "GK",
+            "name": "Mijail VACA"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Nicolas SOTOMAYOR"
+          },
+          {
+            "number": 5,
+            "position": "MF",
+            "name": "Nixon AYOVI"
+          },
+          {
+            "number": 6,
+            "position": "DF",
+            "name": "Jhon CHICA"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Brayson ZAMORA"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Jhon GUERRERO"
+          },
+          {
+            "number": 10,
+            "position": "FW",
+            "name": "Holger QUINTERO"
+          },
+          {
+            "number": 11,
+            "position": "FW",
+            "name": "Edwin QUINTERO"
+          },
+          {
+            "number": 13,
+            "position": "DF",
+            "name": "Carlos MEDINA"
+          },
+          {
+            "number": 16,
+            "position": "MF",
+            "name": "Jordin MINA"
+          },
+          {
+            "number": 20,
+            "position": "FW",
+            "name": "Luis FRAGOZO"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": true,
+      "lineupsVerified": true
+    },
+    {
+      "matchKey": "2026-11-19:ARG:AUS",
+      "matchNumber": 5,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M05-ARG-V-AUS.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 0,
+          "away": 2
+        },
+        {
+          "name": "xG",
+          "home": "0.63",
+          "away": "0.43"
+        },
+        {
+          "name": "Remates",
+          "home": "22",
+          "away": "8"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 7,
+          "away": 4
+        },
+        {
+          "name": "Pases",
+          "home": "525",
+          "away": "270"
+        },
+        {
+          "name": "Pases completados",
+          "home": 443,
+          "away": 181
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "84%",
+          "away": "67%"
+        },
+        {
+          "name": "Centros",
+          "home": "33",
+          "away": "9"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "37",
+          "away": "20"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "52",
+          "away": "40"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "107.9 km",
+          "away": "117.3 km"
+        }
+      ],
+      "incidents": [],
+      "lineups": {
+        "home": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Valentin REIGIA"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "Alvaro GUICH"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Thiago PEREZ"
+          },
+          {
+            "number": 5,
+            "position": "MF",
+            "name": "Matheo MACHUCA"
+          },
+          {
+            "number": 6,
+            "position": "DF",
+            "name": "Julio CORIA"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "Tobias GOYTIA"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Marcos ORTIZ"
+          },
+          {
+            "number": 10,
+            "position": "MF",
+            "name": "Giovanni BARONI"
+          },
+          {
+            "number": 16,
+            "position": "DF",
+            "name": "Alex CARDOZO"
+          },
+          {
+            "number": 17,
+            "position": "FW",
+            "name": "Emiliano BARRIONUEVO"
+          },
+          {
+            "number": 19,
+            "position": "FW",
+            "name": "Facundo SALINAS"
+          }
+        ],
+        "away": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Charlie WILSON-PAPPS"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "Max LYALL-RAJENDRA"
+          },
+          {
+            "number": 3,
+            "position": "MF",
+            "name": "Emmett SHAW"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "Archie MITCHELL"
+          },
+          {
+            "number": 6,
+            "position": "MF",
+            "name": "Besian KUTLESHI"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Jariyah SHAH"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Luke BECVINOVSKI"
+          },
+          {
+            "number": 10,
+            "position": "FW",
+            "name": "Akol AKON"
+          },
+          {
+            "number": 11,
+            "position": "FW",
+            "name": "Max COURT"
+          },
+          {
+            "number": 13,
+            "position": "DF",
+            "name": "Callum MCCASKEY"
+          },
+          {
+            "number": 17,
+            "position": "DF",
+            "name": "Harrison BOND"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": false,
+      "lineupsVerified": true
+    },
+    {
+      "matchKey": "2026-11-19:MOZ:DEN",
+      "matchNumber": 6,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M06-MOZ-V-DEN.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 4,
+          "away": 0
+        },
+        {
+          "name": "xG",
+          "home": "1.71",
+          "away": "0.7"
+        },
+        {
+          "name": "Remates",
+          "home": "22",
+          "away": "10"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 8,
+          "away": 1
+        },
+        {
+          "name": "Pases",
+          "home": "410",
+          "away": "514"
+        },
+        {
+          "name": "Pases completados",
+          "home": 337,
+          "away": 415
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "82%",
+          "away": "81%"
+        },
+        {
+          "name": "Centros",
+          "home": "13",
+          "away": "26"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "40",
+          "away": "32"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "46",
+          "away": "46"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "118.6 km",
+          "away": "122.2 km"
+        }
+      ],
+      "incidents": [
+        {
+          "type": "goal",
+          "minute": 3,
+          "number": 5,
+          "player": "KHENZANE",
+          "team": "MOZ",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M06-MOZ-V-DEN.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 31,
+          "number": 7,
+          "player": "ALIRIO CUNA",
+          "team": "MOZ",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M06-MOZ-V-DEN.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 43,
+          "number": 7,
+          "player": "ALIRIO CUNA",
+          "team": "MOZ",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M06-MOZ-V-DEN.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 90,
+          "number": 18,
+          "player": "MUBAI",
+          "team": "MOZ",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M06-MOZ-V-DEN.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        }
+      ],
+      "lineups": {
+        "home": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "JOAO"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "PIRES"
+          },
+          {
+            "number": 5,
+            "position": "MF",
+            "name": "KHENZANE"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "ALIRIO CUNA"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "VALENTIM"
+          },
+          {
+            "number": 10,
+            "position": "MF",
+            "name": "CHAUSON"
+          },
+          {
+            "number": 11,
+            "position": "FW",
+            "name": "NHAMPULE JUNIOR"
+          },
+          {
+            "number": 15,
+            "position": "MF",
+            "name": "DIEGO"
+          },
+          {
+            "number": 17,
+            "position": "DF",
+            "name": "PASCOAL"
+          },
+          {
+            "number": 19,
+            "position": "DF",
+            "name": "FLORESNALDO"
+          },
+          {
+            "number": 20,
+            "position": "DF",
+            "name": "ALLAN"
+          }
+        ],
+        "away": [
+          {
+            "number": 16,
+            "position": "GK",
+            "name": "Elias MEDINA"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "Xander POULSEN"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Noah MADSEN"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "Magnus DALAGER"
+          },
+          {
+            "number": 6,
+            "position": "MF",
+            "name": "Hector LUX"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Frederik VESTERGAARD"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Elvin MEHICIC"
+          },
+          {
+            "number": 10,
+            "position": "FW",
+            "name": "Omran KHATAR"
+          },
+          {
+            "number": 14,
+            "position": "FW",
+            "name": "Ishaq HOLALAM"
+          },
+          {
+            "number": 17,
+            "position": "DF",
+            "name": "Daryosh POPALZAI"
+          },
+          {
+            "number": 20,
+            "position": "FW",
+            "name": "Chukwuemeka OBI"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": true,
+      "lineupsVerified": true
+    },
+    {
+      "matchKey": "2026-11-19:FRA:HAI",
+      "matchNumber": 7,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M07-FRA-V-HAI.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 3,
+          "away": 1
+        },
+        {
+          "name": "xG",
+          "home": "1.66",
+          "away": "0.22"
+        },
+        {
+          "name": "Remates",
+          "home": "17",
+          "away": "4"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 6,
+          "away": 3
+        },
+        {
+          "name": "Pases",
+          "home": "526",
+          "away": "385"
+        },
+        {
+          "name": "Pases completados",
+          "home": 473,
+          "away": 301
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "90%",
+          "away": "78%"
+        },
+        {
+          "name": "Centros",
+          "home": "21",
+          "away": "10"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "34",
+          "away": "27"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "38",
+          "away": "40"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "114.2 km",
+          "away": "110.7 km"
+        }
+      ],
+      "incidents": [
+        {
+          "type": "goal",
+          "minute": 4,
+          "number": 11,
+          "player": "Loan MERRIFIELD",
+          "team": "FRA",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M07-FRA-V-HAI.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 40,
+          "number": 11,
+          "player": "Loan MERRIFIELD",
+          "team": "FRA",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M07-FRA-V-HAI.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 46,
+          "number": 7,
+          "player": "Noha TIEHI",
+          "team": "FRA",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M07-FRA-V-HAI.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 87,
+          "number": 20,
+          "player": "Macenat PROPHETE",
+          "team": "HAI",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M07-FRA-V-HAI.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        }
+      ],
+      "lineups": {
+        "home": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Thao MOUAPA"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "Mathis CHAMBON"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "Firmin THETIOT"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "Mohamed SYLLA"
+          },
+          {
+            "number": 6,
+            "position": "MF",
+            "name": "Idrissa DIA"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Aly TRAORE"
+          },
+          {
+            "number": 10,
+            "position": "MF",
+            "name": "Noah LOUFOUNDOU"
+          },
+          {
+            "number": 11,
+            "position": "FW",
+            "name": "Loan MERRIFIELD"
+          },
+          {
+            "number": 15,
+            "position": "DF",
+            "name": "Leo LEMAITRE"
+          },
+          {
+            "number": 17,
+            "position": "MF",
+            "name": "Aymen AMAAOUCH"
+          },
+          {
+            "number": 20,
+            "position": "FW",
+            "name": "Mamadou MEITE"
+          }
+        ],
+        "away": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Clifford GENE"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "Guivens BARJON"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "Leonardo DIEUJUSTE"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Stanley LOUIS"
+          },
+          {
+            "number": 5,
+            "position": "MF",
+            "name": "Miguel JOSEPH"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Mickenley CHERY"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Marvenly EXILAS"
+          },
+          {
+            "number": 10,
+            "position": "MF",
+            "name": "Emerson LAISSE"
+          },
+          {
+            "number": 17,
+            "position": "MF",
+            "name": "Germisson CHERY"
+          },
+          {
+            "number": 18,
+            "position": "DF",
+            "name": "Jourdlyn CLERVIUS"
+          },
+          {
+            "number": 19,
+            "position": "FW",
+            "name": "Stephen RAMOS"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": true,
+      "lineupsVerified": true
+    },
+    {
+      "matchKey": "2026-11-19:KSA:URU",
+      "matchNumber": 8,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M08-KSA-V-URU.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 2,
+          "away": 3
+        },
+        {
+          "name": "xG",
+          "home": "1.65",
+          "away": "0.91"
+        },
+        {
+          "name": "Remates",
+          "home": "3",
+          "away": "22"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 3,
+          "away": 7
+        },
+        {
+          "name": "Pases",
+          "home": "336",
+          "away": "321"
+        },
+        {
+          "name": "Pases completados",
+          "home": 239,
+          "away": 254
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "71%",
+          "away": "79%"
+        },
+        {
+          "name": "Centros",
+          "home": "5",
+          "away": "37"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "19",
+          "away": "38"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "45",
+          "away": "59"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "103.7 km",
+          "away": "101.6 km"
+        }
+      ],
+      "incidents": [],
+      "lineups": {
+        "home": [
+          {
+            "number": 21,
+            "position": "GK",
+            "name": "ABDULLAH ALMAS"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "YAHIA TARIQ"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "JAWAD ALHASHEMALSAYED"
+          },
+          {
+            "number": 6,
+            "position": "DF",
+            "name": "ABDULRAHMAN ALMAMI"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "FARIS BUSHAQRAA"
+          },
+          {
+            "number": 10,
+            "position": "FW",
+            "name": "ABDULLAH ALDAWSARI"
+          },
+          {
+            "number": 12,
+            "position": "DF",
+            "name": "MARWAN ALYAMI"
+          },
+          {
+            "number": 13,
+            "position": "DF",
+            "name": "AMMAR MAIMANI"
+          },
+          {
+            "number": 17,
+            "position": "MF",
+            "name": "SHAMAN ALKAHTANI"
+          },
+          {
+            "number": 18,
+            "position": "MF",
+            "name": "ABDULLAH ALBATLI"
+          },
+          {
+            "number": 19,
+            "position": "DF",
+            "name": "ZAID ALBURI"
+          }
+        ],
+        "away": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Luis MACHIN"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "Lautaro MUNIZ"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Dahel GUEDES"
+          },
+          {
+            "number": 5,
+            "position": "MF",
+            "name": "Pablo BARREIRO"
+          },
+          {
+            "number": 6,
+            "position": "DF",
+            "name": "Felipe DE LEON"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Ramiro GARCIA"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Juan GANCHEFF"
+          },
+          {
+            "number": 10,
+            "position": "MF",
+            "name": "Thiago BRIZUELA"
+          },
+          {
+            "number": 11,
+            "position": "FW",
+            "name": "Alan SOARES DE LIMA"
+          },
+          {
+            "number": 13,
+            "position": "MF",
+            "name": "Johann FERNANDEZ"
+          },
+          {
+            "number": 17,
+            "position": "FW",
+            "name": "Facundo SALDANA"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": false,
+      "lineupsVerified": true
+    },
+    {
+      "matchKey": "2026-11-20:ITA:JAM",
+      "matchNumber": 9,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M09-ITA-V-JAM.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 6,
+          "away": 0
+        },
+        {
+          "name": "xG",
+          "home": "2.57",
+          "away": "0.12"
+        },
+        {
+          "name": "Remates",
+          "home": "35",
+          "away": "7"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 17,
+          "away": 2
+        },
+        {
+          "name": "Pases",
+          "home": "478",
+          "away": "256"
+        },
+        {
+          "name": "Pases completados",
+          "home": 414,
+          "away": 197
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "87%",
+          "away": "77%"
+        },
+        {
+          "name": "Centros",
+          "home": "36",
+          "away": "3"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "37",
+          "away": "23"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "40",
+          "away": "37"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "111.3 km",
+          "away": "100.3 km"
+        }
+      ],
+      "incidents": [],
+      "lineups": {
+        "home": [
+          {
+            "number": 18,
+            "position": "GK",
+            "name": "Carlo GALLIERA"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "Giampaolo BONIFAZI"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "Matteo ALBINI"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Djibril DIALLO"
+          },
+          {
+            "number": 6,
+            "position": "DF",
+            "name": "Andrea DONATO"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "Jacopo LANDI"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Francesco GASPARELLO"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Diego PERILLO"
+          },
+          {
+            "number": 15,
+            "position": "MF",
+            "name": "Gianluca OKON-ENGSTLER"
+          },
+          {
+            "number": 20,
+            "position": "MF",
+            "name": "Gioele GIAMMATTEI"
+          },
+          {
+            "number": 21,
+            "position": "FW",
+            "name": "Federico CROCI"
+          }
+        ],
+        "away": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Omario WHITE"
+          },
+          {
+            "number": 3,
+            "position": "MF",
+            "name": "Jaeshawn EDWARDS"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "Jamone LYLE"
+          },
+          {
+            "number": 8,
+            "position": "DF",
+            "name": "Romie HENRY"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Kelvin BROWN"
+          },
+          {
+            "number": 10,
+            "position": "DF",
+            "name": "Jahmarie NOLAN"
+          },
+          {
+            "number": 12,
+            "position": "MF",
+            "name": "Jaheem BENNETT"
+          },
+          {
+            "number": 15,
+            "position": "MF",
+            "name": "Kelvin BROWN"
+          },
+          {
+            "number": 16,
+            "position": "MF",
+            "name": "Nathaniel MCCARTHY"
+          },
+          {
+            "number": 19,
+            "position": "MF",
+            "name": "Duwayne BURGHER"
+          },
+          {
+            "number": 20,
+            "position": "FW",
+            "name": "Tyrique ROBINSON"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": false,
+      "lineupsVerified": true
+    },
+    {
+      "matchKey": "2026-11-20:CIV:UZB",
+      "matchNumber": 10,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M10-CIV-V-UZB.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 2,
+          "away": 1
+        },
+        {
+          "name": "xG",
+          "home": "0.92",
+          "away": "0.97"
+        },
+        {
+          "name": "Remates",
+          "home": "10",
+          "away": "13"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 5,
+          "away": 3
+        },
+        {
+          "name": "Pases",
+          "home": "354",
+          "away": "449"
+        },
+        {
+          "name": "Pases completados",
+          "home": 264,
+          "away": 358
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "75%",
+          "away": "80%"
+        },
+        {
+          "name": "Centros",
+          "home": "6",
+          "away": "26"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "24",
+          "away": "34"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "58",
+          "away": "59"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "113.8 km",
+          "away": "115.5 km"
+        }
+      ],
+      "incidents": [
+        {
+          "type": "goal",
+          "minute": 6,
+          "number": 9,
+          "player": "Hubert YAO",
+          "team": "CIV",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M10-CIV-V-UZB.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 50,
+          "number": 4,
+          "player": "Muhammad KHAKIMOV",
+          "team": "UZB",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M10-CIV-V-UZB.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 88,
+          "number": 18,
+          "player": "Abass DIARRASSOUBA",
+          "team": "CIV",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M10-CIV-V-UZB.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        }
+      ],
+      "lineups": {
+        "home": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Djibril KEITA"
+          },
+          {
+            "number": 2,
+            "position": "MF",
+            "name": "Abdoul DOUMBIA"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Abdoul ABDOURAMANE"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "Koudougnon DREBO"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "Harafat DIABATE"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Hamza COULIBALY"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Hubert YAO"
+          },
+          {
+            "number": 10,
+            "position": "MF",
+            "name": "Yann CISSE"
+          },
+          {
+            "number": 14,
+            "position": "MF",
+            "name": "Youssouf DIABATE"
+          },
+          {
+            "number": 15,
+            "position": "DF",
+            "name": "Ange ZOKO"
+          },
+          {
+            "number": 20,
+            "position": "DF",
+            "name": "Mory DOUMBIA"
+          }
+        ],
+        "away": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Olimjon SHAMURATOV"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "Abubakir RAKHIMOV"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Muhammad KHAKIMOV"
+          },
+          {
+            "number": 7,
+            "position": "MF",
+            "name": "Amirkhon ERKINOV"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Islom RAVSHANOV"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Asilbek ALIEV"
+          },
+          {
+            "number": 10,
+            "position": "MF",
+            "name": "Mirkomilbek MURODOV"
+          },
+          {
+            "number": 11,
+            "position": "FW",
+            "name": "Sukhrob SADIRJANOV"
+          },
+          {
+            "number": 13,
+            "position": "DF",
+            "name": "Mirjamol ANVAROV"
+          },
+          {
+            "number": 17,
+            "position": "DF",
+            "name": "Jakhongirmirzo UKTAMBOEV"
+          },
+          {
+            "number": 19,
+            "position": "MF",
+            "name": "Akhrorbek RAVSHANBEKOV"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": true,
+      "lineupsVerified": true
+    },
+    {
+      "matchKey": "2026-11-20:SEN:CRO",
+      "matchNumber": 11,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M11-SEN-V-CRO.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 1,
+          "away": 1
+        },
+        {
+          "name": "xG",
+          "home": "0.45",
+          "away": "0.27"
+        },
+        {
+          "name": "Remates",
+          "home": "11",
+          "away": "9"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 3,
+          "away": 5
+        },
+        {
+          "name": "Pases",
+          "home": "303",
+          "away": "567"
+        },
+        {
+          "name": "Pases completados",
+          "home": 230,
+          "away": 485
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "76%",
+          "away": "86%"
+        },
+        {
+          "name": "Centros",
+          "home": "10",
+          "away": "35"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "14",
+          "away": "21"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "49",
+          "away": "41"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "108.8 km",
+          "away": "112 km"
+        }
+      ],
+      "incidents": [
+        {
+          "type": "goal",
+          "minute": 7,
+          "number": 7,
+          "player": "Luka BARTOLOVIC",
+          "team": "CRO",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M11-SEN-V-CRO.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 44,
+          "number": 7,
+          "player": "Sega MBODJI",
+          "team": "SEN",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M11-SEN-V-CRO.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        }
+      ],
+      "lineups": {
+        "home": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Baba CAMARA"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "Lamine MBENGUE"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Cheikh THIOR"
+          },
+          {
+            "number": 5,
+            "position": "MF",
+            "name": "Emile SADIO"
+          },
+          {
+            "number": 6,
+            "position": "MF",
+            "name": "Maurice BIAYE"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "Sega MBODJI"
+          },
+          {
+            "number": 8,
+            "position": "FW",
+            "name": "Sidy Barhama NDIAYE"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Ibrahima DIONE"
+          },
+          {
+            "number": 14,
+            "position": "DF",
+            "name": "Cheikh DIENG"
+          },
+          {
+            "number": 19,
+            "position": "DF",
+            "name": "Abdou Karim DIALLO"
+          },
+          {
+            "number": 21,
+            "position": "MF",
+            "name": "El Hadji SOW"
+          }
+        ],
+        "away": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Lovro LOJEN"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "Luka POSAVEC"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "Ivan PAUNOVIC"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Karlo ZIRDUM"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "Filip PAVIC"
+          },
+          {
+            "number": 6,
+            "position": "MF",
+            "name": "Marin MODRIC"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "Luka BARTOLOVIC"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Juraj FRIGAN"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Jakov DEDIC"
+          },
+          {
+            "number": 10,
+            "position": "MF",
+            "name": "Jona BENKOTIC"
+          },
+          {
+            "number": 17,
+            "position": "MF",
+            "name": "Vid SEITZ"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": true,
+      "lineupsVerified": true
+    },
+    {
+      "matchKey": "2026-11-20:CUB:TJK",
+      "matchNumber": 12,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M12-CUB-V-TJK.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 3,
+          "away": 5
+        },
+        {
+          "name": "xG",
+          "home": "0.63",
+          "away": "1.18"
+        },
+        {
+          "name": "Remates",
+          "home": "12",
+          "away": "25"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 7,
+          "away": 11
+        },
+        {
+          "name": "Pases",
+          "home": "308",
+          "away": "400"
+        },
+        {
+          "name": "Pases completados",
+          "home": 224,
+          "away": 305
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "73%",
+          "away": "76%"
+        },
+        {
+          "name": "Centros",
+          "home": "19",
+          "away": "42"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "30",
+          "away": "31"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "48",
+          "away": "59"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "109.1 km",
+          "away": "112 km"
+        }
+      ],
+      "incidents": [
+        {
+          "type": "goal",
+          "minute": 43,
+          "number": 9,
+          "player": "Yojanny GONZALEZ",
+          "team": "CUB",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M12-CUB-V-TJK.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 47,
+          "number": 2,
+          "player": "Komiljon SHARIPOV",
+          "team": "TJK",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M12-CUB-V-TJK.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 56,
+          "number": 17,
+          "player": "Parviz BOBONAZAROV",
+          "team": "TJK",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M12-CUB-V-TJK.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 60,
+          "number": 7,
+          "player": "Asadbek MAKHTUMOV",
+          "team": "TJK",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M12-CUB-V-TJK.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 63,
+          "number": 7,
+          "player": "Asadbek MAKHTUMOV",
+          "team": "TJK",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M12-CUB-V-TJK.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 66,
+          "number": 9,
+          "player": "Yojanny GONZALEZ",
+          "team": "CUB",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M12-CUB-V-TJK.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 69,
+          "number": 10,
+          "player": "Yankarlos IGLESIAS",
+          "team": "CUB",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M12-CUB-V-TJK.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 75,
+          "number": 18,
+          "player": "Bikhishti RADZHABZOD",
+          "team": "TJK",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M12-CUB-V-TJK.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        }
+      ],
+      "lineups": {
+        "home": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Noslen GODINEZ"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "Eliecer SIDOS"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "Erik LA O CARNET"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Erick MARTN"
+          },
+          {
+            "number": 6,
+            "position": "MF",
+            "name": "Deiby BORRELL"
+          },
+          {
+            "number": 8,
+            "position": "DF",
+            "name": "Kevin DIAZ"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Yojanny GONZALEZ"
+          },
+          {
+            "number": 10,
+            "position": "FW",
+            "name": "Yankarlos IGLESIAS"
+          },
+          {
+            "number": 14,
+            "position": "MF",
+            "name": "Dylan LEIVA"
+          },
+          {
+            "number": 15,
+            "position": "MF",
+            "name": "David ESTRADA"
+          },
+          {
+            "number": 16,
+            "position": "MF",
+            "name": "Alessandro SEVILLANO"
+          }
+        ],
+        "away": [
+          {
+            "number": 16,
+            "position": "GK",
+            "name": "Abubakr RAHMONQULOV"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "Dilan ODINAEV"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Sadriddin SATTOROV"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "Mustafo HASANBEKOV"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "Asadbek MAKHTUMOV"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Mehrubon ODILZODA"
+          },
+          {
+            "number": 10,
+            "position": "FW",
+            "name": "Parviz SANGINOV"
+          },
+          {
+            "number": 11,
+            "position": "DF",
+            "name": "Furqon RAHIMZODA"
+          },
+          {
+            "number": 17,
+            "position": "MF",
+            "name": "Parviz BOBONAZAROV"
+          },
+          {
+            "number": 19,
+            "position": "MF",
+            "name": "Firdavsi KHALIMOV"
+          },
+          {
+            "number": 20,
+            "position": "MF",
+            "name": "Azizjon SHODIEV"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": true,
+      "lineupsVerified": true
+    },
+    {
+      "matchKey": "2026-11-20:MLI:NZL",
+      "matchNumber": 13,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M13-MLI-V-NZL.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 3,
+          "away": 0
+        },
+        {
+          "name": "xG",
+          "home": "1.74",
+          "away": "0.11"
+        },
+        {
+          "name": "Remates",
+          "home": "29",
+          "away": "4"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 11,
+          "away": 1
+        },
+        {
+          "name": "Pases",
+          "home": "574",
+          "away": "258"
+        },
+        {
+          "name": "Pases completados",
+          "home": 498,
+          "away": 178
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "87%",
+          "away": "69%"
+        },
+        {
+          "name": "Centros",
+          "home": "27",
+          "away": "6"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "24",
+          "away": "23"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "36",
+          "away": "37"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "109.4 km",
+          "away": "110.7 km"
+        }
+      ],
+      "incidents": [
+        {
+          "type": "goal",
+          "minute": 10,
+          "number": 14,
+          "player": "Halidou MAIGA",
+          "team": "MLI",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M13-MLI-V-NZL.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 49,
+          "number": 14,
+          "player": "Halidou MAIGA",
+          "team": "MLI",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M13-MLI-V-NZL.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 53,
+          "number": 5,
+          "player": "Makan SACKO",
+          "team": "MLI",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M13-MLI-V-NZL.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        }
+      ],
+      "lineups": {
+        "home": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Abdoul COULIBALY"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Cheickna COULIBALY"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "Makan SACKO"
+          },
+          {
+            "number": 6,
+            "position": "MF",
+            "name": "Lassana DIAWARA"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Yaya NIANG"
+          },
+          {
+            "number": 10,
+            "position": "MF",
+            "name": "Ismail KAMISSOKO"
+          },
+          {
+            "number": 12,
+            "position": "DF",
+            "name": "Youssouf SYLLA"
+          },
+          {
+            "number": 13,
+            "position": "FW",
+            "name": "Issiaka KONE"
+          },
+          {
+            "number": 14,
+            "position": "MF",
+            "name": "Halidou MAIGA"
+          },
+          {
+            "number": 20,
+            "position": "FW",
+            "name": "Djigui KOITA"
+          },
+          {
+            "number": 21,
+            "position": "DF",
+            "name": "Moussa DIANESSI"
+          }
+        ],
+        "away": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Joseph CHALABI"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Ethan DYER"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "Keigo SHIMOKAWA"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "Willem DES TOMBE"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Cailean HAMILTON"
+          },
+          {
+            "number": 10,
+            "position": "FW",
+            "name": "Matias NUNEZ"
+          },
+          {
+            "number": 11,
+            "position": "MF",
+            "name": "Ben TRENBERTH"
+          },
+          {
+            "number": 13,
+            "position": "MF",
+            "name": "Joe McINTYRE"
+          },
+          {
+            "number": 14,
+            "position": "FW",
+            "name": "Jack CLEGG"
+          },
+          {
+            "number": 15,
+            "position": "MF",
+            "name": "Sena VESTY"
+          },
+          {
+            "number": 18,
+            "position": "DF",
+            "name": "Sean KANE"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": true,
+      "lineupsVerified": true
+    },
+    {
+      "matchKey": "2026-11-20:BEL:VIE",
+      "matchNumber": 14,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M14-BEL-V-VIE.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 3,
+          "away": 2
+        },
+        {
+          "name": "xG",
+          "home": "1.27",
+          "away": "0.39"
+        },
+        {
+          "name": "Remates",
+          "home": "14",
+          "away": "9"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 5,
+          "away": 3
+        },
+        {
+          "name": "Pases",
+          "home": "444",
+          "away": "386"
+        },
+        {
+          "name": "Pases completados",
+          "home": 392,
+          "away": 321
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "88%",
+          "away": "83%"
+        },
+        {
+          "name": "Centros",
+          "home": "27",
+          "away": "20"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "34",
+          "away": "28"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "42",
+          "away": "27"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "105.6 km",
+          "away": "105.9 km"
+        }
+      ],
+      "incidents": [],
+      "lineups": {
+        "home": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Mattis SEGHERS"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "Tinus MOORTHAMER"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "Elie MBAVU"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Preben BLONDEEL"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "Assil SAIDI"
+          },
+          {
+            "number": 6,
+            "position": "MF",
+            "name": "Louie VAN GELDER"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Xander DIERCKX"
+          },
+          {
+            "number": 10,
+            "position": "MF",
+            "name": "Jelle DRIESSEN"
+          },
+          {
+            "number": 11,
+            "position": "FW",
+            "name": "Kiyan ACHAHBAR"
+          },
+          {
+            "number": 16,
+            "position": "FW",
+            "name": "Niels FILIPPO"
+          },
+          {
+            "number": 17,
+            "position": "FW",
+            "name": "Anthony PHILIPS"
+          }
+        ],
+        "away": [
+          {
+            "number": 21,
+            "position": "GK",
+            "name": "XUAN HOA"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "MINH DUC"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "MANH CUONG"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "DANG KHOA"
+          },
+          {
+            "number": 6,
+            "position": "MF",
+            "name": "QUY VUONG"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "MINH THUY"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "DAI NHAN"
+          },
+          {
+            "number": 10,
+            "position": "MF",
+            "name": "NGUYEN LUC"
+          },
+          {
+            "number": 13,
+            "position": "DF",
+            "name": "ANH HAO"
+          },
+          {
+            "number": 18,
+            "position": "FW",
+            "name": "TRI DUNG"
+          },
+          {
+            "number": 20,
+            "position": "FW",
+            "name": "SY BACH"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": false,
+      "lineupsVerified": true
+    },
+    {
+      "matchKey": "2026-11-20:ESP:CHN",
+      "matchNumber": 15,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M15-ESP-V-CHN.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 5,
+          "away": 0
+        },
+        {
+          "name": "xG",
+          "home": "1.93",
+          "away": "0.24"
+        },
+        {
+          "name": "Remates",
+          "home": "19",
+          "away": "3"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 11,
+          "away": 2
+        },
+        {
+          "name": "Pases",
+          "home": "675",
+          "away": "238"
+        },
+        {
+          "name": "Pases completados",
+          "home": 619,
+          "away": 174
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "92%",
+          "away": "73%"
+        },
+        {
+          "name": "Centros",
+          "home": "26",
+          "away": "4"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "45",
+          "away": "15"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "38",
+          "away": "39"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "105.4 km",
+          "away": "106.5 km"
+        }
+      ],
+      "incidents": [
+        {
+          "type": "goal",
+          "minute": 39,
+          "number": 3,
+          "player": "Jordi PESQUER",
+          "team": "ESP",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M15-ESP-V-CHN.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 46,
+          "number": 10,
+          "player": "Ebrima TUNKARA",
+          "team": "ESP",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M15-ESP-V-CHN.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 72,
+          "number": 7,
+          "player": "Owen EMEKA",
+          "team": "ESP",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M15-ESP-V-CHN.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 78,
+          "number": 7,
+          "player": "Owen EMEKA",
+          "team": "ESP",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M15-ESP-V-CHN.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 84,
+          "number": 9,
+          "player": "Guillermo TRUJILLANO",
+          "team": "ESP",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M15-ESP-V-CHN.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        }
+      ],
+      "lineups": {
+        "home": [
+          {
+            "number": 21,
+            "position": "GK",
+            "name": "Diego PIQUERAS"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "Jordi PESQUER"
+          },
+          {
+            "number": 4,
+            "position": "MF",
+            "name": "Junior ZAMORANO"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "Sergi MAYANS"
+          },
+          {
+            "number": 6,
+            "position": "MF",
+            "name": "Eloi GOMEZ"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "Owen EMEKA"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Marco COMPANY"
+          },
+          {
+            "number": 10,
+            "position": "MF",
+            "name": "Ebrima TUNKARA"
+          },
+          {
+            "number": 11,
+            "position": "FW",
+            "name": "Christian IMGA"
+          },
+          {
+            "number": 12,
+            "position": "DF",
+            "name": "Arnau CASES"
+          },
+          {
+            "number": 19,
+            "position": "FW",
+            "name": "Roberto TOMAS"
+          }
+        ],
+        "away": [
+          {
+            "number": 21,
+            "position": "GK",
+            "name": "JIANG Yuhan"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "ZHANG Xuyao"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "JIN Yucheng"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "NAN Zixun"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "LI Junpeng"
+          },
+          {
+            "number": 6,
+            "position": "MF",
+            "name": "ZHOU Yunuo"
+          },
+          {
+            "number": 7,
+            "position": "MF",
+            "name": "KUANG Zhaolei"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "XU Zhengpeng"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "ZHAO Songyuan"
+          },
+          {
+            "number": 10,
+            "position": "MF",
+            "name": "WAN Xiang"
+          },
+          {
+            "number": 11,
+            "position": "MF",
+            "name": "HE Sifan"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": true,
+      "lineupsVerified": true
+    },
+    {
+      "matchKey": "2026-11-20:FIJ:MAR",
+      "matchNumber": 16,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M16-FIJ-V-MAR.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 0,
+          "away": 6
+        },
+        {
+          "name": "xG",
+          "home": "0",
+          "away": "3.86"
+        },
+        {
+          "name": "Remates",
+          "home": "0",
+          "away": "33"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 0,
+          "away": 16
+        },
+        {
+          "name": "Pases",
+          "home": "231",
+          "away": "673"
+        },
+        {
+          "name": "Pases completados",
+          "home": 166,
+          "away": 626
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "72%",
+          "away": "93%"
+        },
+        {
+          "name": "Centros",
+          "home": "1",
+          "away": "41"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "20",
+          "away": "49"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "29",
+          "away": "42"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "114.2 km",
+          "away": "111.5 km"
+        }
+      ],
+      "incidents": [
+        {
+          "type": "goal",
+          "minute": 2,
+          "number": 7,
+          "player": "Ismail EL AOUD",
+          "team": "MAR",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M16-FIJ-V-MAR.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 4,
+          "number": 17,
+          "player": "Ibrahim RABBAJ",
+          "team": "MAR",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M16-FIJ-V-MAR.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 41,
+          "number": 6,
+          "player": "Imran TALAI",
+          "team": "MAR",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M16-FIJ-V-MAR.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 48,
+          "number": 9,
+          "player": "Ziyad BAHA",
+          "team": "MAR",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M16-FIJ-V-MAR.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 54,
+          "number": 9,
+          "player": "Ziyad BAHA",
+          "team": "MAR",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M16-FIJ-V-MAR.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 84,
+          "number": 11,
+          "player": "Rami LOUGMANI",
+          "team": "MAR",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M16-FIJ-V-MAR.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        }
+      ],
+      "lineups": {
+        "home": [
+          {
+            "number": 20,
+            "position": "GK",
+            "name": "Kirikiti BIU"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "Sialesi VATANITAWAKE"
+          },
+          {
+            "number": 5,
+            "position": "MF",
+            "name": "Jone LOGA"
+          },
+          {
+            "number": 6,
+            "position": "MF",
+            "name": "Maikah Lomax DAU"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Bai TITO"
+          },
+          {
+            "number": 10,
+            "position": "MF",
+            "name": "Ryan ACHARI"
+          },
+          {
+            "number": 13,
+            "position": "FW",
+            "name": "Ryan SWAMI"
+          },
+          {
+            "number": 15,
+            "position": "FW",
+            "name": "Saula MUATINI"
+          },
+          {
+            "number": 16,
+            "position": "MF",
+            "name": "Akuila VATA"
+          },
+          {
+            "number": 17,
+            "position": "DF",
+            "name": "Ayush NAIDU"
+          },
+          {
+            "number": 18,
+            "position": "DF",
+            "name": "Jack RAIYAWA"
+          }
+        ],
+        "away": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Adam MOUAK"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "Mehdi LAHMADI"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Adam SOUDI"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "Mohamed ZINBI"
+          },
+          {
+            "number": 6,
+            "position": "MF",
+            "name": "Imran TALAI"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "Ismail EL AOUD"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Nassim LAAREJ"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Ziyad BAHA"
+          },
+          {
+            "number": 10,
+            "position": "MF",
+            "name": "Ilian HADIDI"
+          },
+          {
+            "number": 14,
+            "position": "DF",
+            "name": "Adam BOUAHDADI"
+          },
+          {
+            "number": 17,
+            "position": "FW",
+            "name": "Ibrahim RABBAJ"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": true,
+      "lineupsVerified": true
+    },
+    {
+      "matchKey": "2026-11-21:TAN:CRC",
+      "matchNumber": 18,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M18-TAN-V-CRC.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 2,
+          "away": 2
+        },
+        {
+          "name": "xG",
+          "home": "1.76",
+          "away": "0.23"
+        },
+        {
+          "name": "Remates",
+          "home": "22",
+          "away": "9"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 5,
+          "away": 2
+        },
+        {
+          "name": "Pases",
+          "home": "435",
+          "away": "289"
+        },
+        {
+          "name": "Pases completados",
+          "home": 357,
+          "away": 198
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "82%",
+          "away": "69%"
+        },
+        {
+          "name": "Centros",
+          "home": "27",
+          "away": "12"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "32",
+          "away": "22"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "46",
+          "away": "51"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "113.7 km",
+          "away": "110.8 km"
+        }
+      ],
+      "incidents": [
+        {
+          "type": "goal",
+          "minute": 7,
+          "number": 20,
+          "player": "Jefrey URBINA",
+          "team": "CRC",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M18-TAN-V-CRC.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 14,
+          "number": 10,
+          "player": "Jorshuad PILARTE",
+          "team": "CRC",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M18-TAN-V-CRC.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 50,
+          "number": 20,
+          "player": "Faraji KAYANDA",
+          "team": "TAN",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M18-TAN-V-CRC.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 72,
+          "number": 20,
+          "player": "Faraji KAYANDA",
+          "team": "TAN",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M18-TAN-V-CRC.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        }
+      ],
+      "lineups": {
+        "home": [
+          {
+            "number": 18,
+            "position": "GK",
+            "name": "Haji ABDALAH"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "Kassim Seleman MAHIMBO"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "Hussein MBEGU"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Issa CHOLE"
+          },
+          {
+            "number": 10,
+            "position": "FW",
+            "name": "Luqman MBALASALU"
+          },
+          {
+            "number": 11,
+            "position": "MF",
+            "name": "Razaki MBEGELENDI"
+          },
+          {
+            "number": 12,
+            "position": "DF",
+            "name": "Elick LUPUGA"
+          },
+          {
+            "number": 14,
+            "position": "DF",
+            "name": "Idrisa KILENDEMO"
+          },
+          {
+            "number": 17,
+            "position": "MF",
+            "name": "Hamis Chenga MIHAMBO"
+          },
+          {
+            "number": 19,
+            "position": "MF",
+            "name": "Sadam HAMIS"
+          },
+          {
+            "number": 20,
+            "position": "FW",
+            "name": "Faraji KAYANDA"
+          }
+        ],
+        "away": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Fabian ARAYA"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "Brayan CALDERON"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "Thiago CORDERO"
+          },
+          {
+            "number": 5,
+            "position": "MF",
+            "name": "Yordi ALFARO"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "Akenai SAMUELS"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Ethan BARLEY"
+          },
+          {
+            "number": 10,
+            "position": "MF",
+            "name": "Jorshuad PILARTE"
+          },
+          {
+            "number": 11,
+            "position": "FW",
+            "name": "Paul GONZALEZ"
+          },
+          {
+            "number": 16,
+            "position": "DF",
+            "name": "Ian BADILLA"
+          },
+          {
+            "number": 17,
+            "position": "DF",
+            "name": "Paul JIMENEZ"
+          },
+          {
+            "number": 20,
+            "position": "FW",
+            "name": "Jefrey URBINA"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": true,
+      "lineupsVerified": true
+    },
+    {
+      "matchKey": "2026-11-21:CMR:VEN",
+      "matchNumber": 22,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M22-CMR-V-VEN.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 1,
+          "away": 2
+        },
+        {
+          "name": "xG",
+          "home": "0.55",
+          "away": "1.69"
+        },
+        {
+          "name": "Remates",
+          "home": "13",
+          "away": "15"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 4,
+          "away": 7
+        },
+        {
+          "name": "Pases",
+          "home": "418",
+          "away": "335"
+        },
+        {
+          "name": "Pases completados",
+          "home": 338,
+          "away": 261
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "81%",
+          "away": "78%"
+        },
+        {
+          "name": "Centros",
+          "home": "16",
+          "away": "22"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "20",
+          "away": "32"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "43",
+          "away": "46"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "104.6 km",
+          "away": "108 km"
+        }
+      ],
+      "incidents": [
+        {
+          "type": "goal",
+          "minute": 28,
+          "number": 8,
+          "player": "Roman LOZADA",
+          "team": "VEN",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M22-CMR-V-VEN.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 58,
+          "number": 9,
+          "player": "Santiago SANCHEZ",
+          "team": "VEN",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M22-CMR-V-VEN.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 91,
+          "number": 11,
+          "player": "Aviel HENTCHO",
+          "team": "CMR",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M22-CMR-V-VEN.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        }
+      ],
+      "lineups": {
+        "home": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Glory KINGUE"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "Marc MBONGA"
+          },
+          {
+            "number": 3,
+            "position": "FW",
+            "name": "Yann NDZIE"
+          },
+          {
+            "number": 7,
+            "position": "MF",
+            "name": "Douka NKOTO"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Bassirou NKOTO"
+          },
+          {
+            "number": 11,
+            "position": "MF",
+            "name": "Aviel HENTCHO"
+          },
+          {
+            "number": 14,
+            "position": "DF",
+            "name": "Esingila GEORGES"
+          },
+          {
+            "number": 15,
+            "position": "DF",
+            "name": "Eric BOLO"
+          },
+          {
+            "number": 17,
+            "position": "MF",
+            "name": "William GUEKE"
+          },
+          {
+            "number": 18,
+            "position": "MF",
+            "name": "Karel KRYS"
+          },
+          {
+            "number": 20,
+            "position": "MF",
+            "name": "Joel ANONG"
+          }
+        ],
+        "away": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Sebastian ANGULO"
+          },
+          {
+            "number": 2,
+            "position": "DF",
+            "name": "Kevin GUZMAN"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "Javier HERNANDEZ"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Enmanuel BRITO"
+          },
+          {
+            "number": 5,
+            "position": "MF",
+            "name": "Piero GARCIA"
+          },
+          {
+            "number": 6,
+            "position": "DF",
+            "name": "Angel LOPEZ"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Roman LOZADA"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Santiago SANCHEZ"
+          },
+          {
+            "number": 10,
+            "position": "FW",
+            "name": "Junior ARAUJO"
+          },
+          {
+            "number": 17,
+            "position": "MF",
+            "name": "Andy SAAVEDRA"
+          },
+          {
+            "number": 20,
+            "position": "MF",
+            "name": "Daniel CHIRINOS"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": true,
+      "lineupsVerified": true
+    },
+    {
+      "matchKey": "2026-11-21:JPN:COL",
+      "matchNumber": 23,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M23-JPN-V-COL.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 1,
+          "away": 2
+        },
+        {
+          "name": "xG",
+          "home": "0.74",
+          "away": "1.38"
+        },
+        {
+          "name": "Remates",
+          "home": "11",
+          "away": "8"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 2,
+          "away": 2
+        },
+        {
+          "name": "Pases",
+          "home": "330",
+          "away": "442"
+        },
+        {
+          "name": "Pases completados",
+          "home": 253,
+          "away": 354
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "77%",
+          "away": "80%"
+        },
+        {
+          "name": "Centros",
+          "home": "24",
+          "away": "10"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "15",
+          "away": "31"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "38",
+          "away": "50"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "113.3 km",
+          "away": "107.2 km"
+        }
+      ],
+      "incidents": [
+        {
+          "type": "goal",
+          "minute": 4,
+          "number": 16,
+          "player": "Miguel AGAMEZ",
+          "team": "COL",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M23-JPN-V-COL.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 37,
+          "number": 11,
+          "player": "Kakeru SAITO",
+          "team": "JPN",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M23-JPN-V-COL.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 92,
+          "number": 10,
+          "player": "Samuel MARTINEZ",
+          "team": "COL",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M23-JPN-V-COL.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        }
+      ],
+      "lineups": {
+        "home": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Kosei OSHITA"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "Anthony MOTOSUNA"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "Koki KURAHASHI"
+          },
+          {
+            "number": 7,
+            "position": "MF",
+            "name": "Takeshi WADA"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Tafuku SATOMI"
+          },
+          {
+            "number": 10,
+            "position": "MF",
+            "name": "Maki KITAHARA"
+          },
+          {
+            "number": 11,
+            "position": "FW",
+            "name": "Kakeru SAITO"
+          },
+          {
+            "number": 13,
+            "position": "DF",
+            "name": "Chimezie EZEMUOKWE"
+          },
+          {
+            "number": 14,
+            "position": "MF",
+            "name": "Riku NAKASHIMA"
+          },
+          {
+            "number": 15,
+            "position": "MF",
+            "name": "Kazato KIMURA"
+          },
+          {
+            "number": 16,
+            "position": "MF",
+            "name": "Sosuke HOSHI"
+          }
+        ],
+        "away": [
+          {
+            "number": 12,
+            "position": "GK",
+            "name": "Samuel MARTINEZ CORREA"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "Santiago VALLECILLA"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Edwin ESTRELLA"
+          },
+          {
+            "number": 6,
+            "position": "MF",
+            "name": "Eider CARRILLO"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "Matias CAICEDO"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Adrian MOSQUERA"
+          },
+          {
+            "number": 13,
+            "position": "DF",
+            "name": "Anderson MURILLO"
+          },
+          {
+            "number": 16,
+            "position": "MF",
+            "name": "Miguel AGAMEZ"
+          },
+          {
+            "number": 18,
+            "position": "MF",
+            "name": "Luis MATURANA"
+          },
+          {
+            "number": 19,
+            "position": "MF",
+            "name": "Jose ESCORCIA"
+          },
+          {
+            "number": 20,
+            "position": "DF",
+            "name": "Juan FORI"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": true,
+      "lineupsVerified": true
+    },
+    {
+      "matchKey": "2026-11-21:SRB:HON",
+      "matchNumber": 24,
+      "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M24-SRB-V-HON.pdf",
+      "statistics": [
+        {
+          "name": "Goles",
+          "home": 2,
+          "away": 0
+        },
+        {
+          "name": "xG",
+          "home": "0.24",
+          "away": "0.99"
+        },
+        {
+          "name": "Remates",
+          "home": "11",
+          "away": "17"
+        },
+        {
+          "name": "Remates a puerta",
+          "home": 5,
+          "away": 2
+        },
+        {
+          "name": "Pases",
+          "home": "296",
+          "away": "461"
+        },
+        {
+          "name": "Pases completados",
+          "home": 227,
+          "away": 395
+        },
+        {
+          "name": "Precisión de pase",
+          "home": "77%",
+          "away": "86%"
+        },
+        {
+          "name": "Centros",
+          "home": "11",
+          "away": "30"
+        },
+        {
+          "name": "Progresiones de balón",
+          "home": "26",
+          "away": "46"
+        },
+        {
+          "name": "Recuperaciones forzadas",
+          "home": "37",
+          "away": "36"
+        },
+        {
+          "name": "Distancia recorrida",
+          "home": "110.2 km",
+          "away": "105.3 km"
+        }
+      ],
+      "incidents": [
+        {
+          "type": "goal",
+          "minute": 49,
+          "number": 15,
+          "player": "Tadija SAMARDZIC",
+          "team": "SRB",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M24-SRB-V-HON.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        },
+        {
+          "type": "goal",
+          "minute": 70,
+          "number": 15,
+          "player": "Tadija SAMARDZIC",
+          "team": "SRB",
+          "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fu17wc/2026/PMSR-M24-SRB-V-HON.pdf",
+          "minuteConvention": "FIFA attempts-at-goal table"
+        }
+      ],
+      "lineups": {
+        "home": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "Savo RADANOVIC"
+          },
+          {
+            "number": 4,
+            "position": "MF",
+            "name": "Dragan ANOKIC"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "Strahinja BAUCAL"
+          },
+          {
+            "number": 6,
+            "position": "DF",
+            "name": "Vojin MARINKOVIC"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "Nebojsa GRUJIC"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Ognjen MATANOVIC"
+          },
+          {
+            "number": 10,
+            "position": "MF",
+            "name": "Tadija COJIC"
+          },
+          {
+            "number": 17,
+            "position": "DF",
+            "name": "Vukasin DAVIDOV"
+          },
+          {
+            "number": 18,
+            "position": "MF",
+            "name": "Novak STEVANOVIC"
+          },
+          {
+            "number": 19,
+            "position": "FW",
+            "name": "Danilo ZARKOVIC"
+          },
+          {
+            "number": 21,
+            "position": "DF",
+            "name": "Matej STRIKA"
+          }
+        ],
+        "away": [
+          {
+            "number": 1,
+            "position": "GK",
+            "name": "David PAZ"
+          },
+          {
+            "number": 3,
+            "position": "DF",
+            "name": "Alfredo RODRIGUEZ"
+          },
+          {
+            "number": 4,
+            "position": "DF",
+            "name": "Kevin GYAMFI"
+          },
+          {
+            "number": 5,
+            "position": "DF",
+            "name": "Denzel ARZU"
+          },
+          {
+            "number": 7,
+            "position": "FW",
+            "name": "Diego MATUTE"
+          },
+          {
+            "number": 8,
+            "position": "MF",
+            "name": "Darwin CRUZ"
+          },
+          {
+            "number": 9,
+            "position": "FW",
+            "name": "Jeremy RODRIGUEZ"
+          },
+          {
+            "number": 10,
+            "position": "FW",
+            "name": "Mike ARANA"
+          },
+          {
+            "number": 13,
+            "position": "DF",
+            "name": "Yago MATUTE"
+          },
+          {
+            "number": 15,
+            "position": "MF",
+            "name": "Christopher CONNOR"
+          },
+          {
+            "number": 18,
+            "position": "MF",
+            "name": "Yeiron ARZU"
+          }
+        ]
+      },
+      "statisticsVerified": true,
+      "goalEventsVerified": true,
+      "lineupsVerified": true
+    }
+  ]
+}
