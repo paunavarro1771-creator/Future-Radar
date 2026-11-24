@@ -41,7 +41,7 @@ function normalize(f){
   playerOfTheMatch:v?.playerOfTheMatch||null,incidents:pdf?.incidents?.length?pdf.incidents:(o?.incidents?.length?o.incidents:(verifiedEvents.get(id)||[])),
   source:o?.sourceUrl||v?.sourceUrl||a?.source||null,sourceType:scoreSource,
   verifiedOfficial:!!(o||v),statisticsAvailable:!!o?.statistics?.length,
-  lineupsAvailable:!!(o?.lineups?.home?.length===11&&o?.lineups?.away?.length===11),
+  lineupsAvailable:!!((pdf?.lineups||o?.lineups)?.home?.length===11&&(pdf?.lineups||o?.lineups)?.away?.length===11),
   archiveTimestamp:a?.archivedAt||snapshot.archivedAt||null,
   eventSource:verifiedEvents.has(id)?fifaEvents.source:null,
   officialReportUrl:o?.sourceUrl||null,
