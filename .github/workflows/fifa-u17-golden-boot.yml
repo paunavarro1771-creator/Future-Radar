@@ -1,0 +1,30 @@
+name: FIFA U17 Golden Boot sync
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '25 */3 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: fifa-u17-golden-boot
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright==1.56.0
+      - run: python -m playwright install --with-deps chromium
+      - run: python scripts/sync_fifa_u17_golden_boot.py
+      - run: |
+          git add data/fifa-u17-2026-golden-boot.json
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'future-radar-sync[bot]'
+          git config user.email 'future-radar-sync[bot]@users.noreply.github.com'
+          git commit -m 'data: sync FIFA U17 Golden Boot'
+          git pull --rebase origin main
+          git push origin HEAD:main
