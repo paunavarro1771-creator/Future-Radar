@@ -26,7 +26,28 @@ with sync_playwright() as p:
     page=browser.new_page(viewport={"width":1920,"height":1080},locale="en-US")
     page.goto(URL,wait_until="domcontentloaded",timeout=90000)
     page.get_by_text("adidas Golden Boot",exact=False).first.wait_for(timeout=90000)
-    page.get_by_text("adidas Golden Boot",exact=False).first.click()
+    # Dismiss OneTrust using its consent controls, not by bypassing the overlay.
+    reject = page.locator("#onetrust-reject-all-handler, #reject-recommended-btn-handler")
+    if reject.count() and reject.first.is_visible():
+        reject.first.click(timeout=10000)
+    else:
+        settings = page.locator("#onetrust-pc-btn-handler")
+        if settings.count() and settings.first.is_visible():
+            settings.first.click(timeout=10000)
+            save = page.locator(".save-preference-btn-handler")
+            if save.count() and save.first.is_visible():
+                save.first.click(timeout=10000)
+        elif page.locator(".save-preference-btn-handler").count() and page.locator(".save-preference-btn-handler").first.is_visible():
+            page.locator(".save-preference-btn-handler").first.click(timeout=10000)
+    # Golden Boot is the default tab; no click is necessary if its table is already present.
+    page.wait_for_timeout(2000)
+    if not extract(page):
+        page.get_by_text("adidas Golden Boot",exact=False).first.click(timeout=15000)
+    for _ in range(30):
+        if extract(page):
+            break
+        page.wait_for_timeout(1000)
+    print("Initial table rows:", len(extract(page)))
     page.wait_for_timeout(4000)
     results={}
     for _ in range(100):
