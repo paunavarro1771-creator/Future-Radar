@@ -481,7 +481,47 @@ async function loadU17PlayerStats(){
 }
 
 function renderGoldenBoot(host,data){
- host.innerHTML='<div class="ranking-model"><h3>Bota de Oro · FIFA</h3><p>Fuente oficial · '+esc(data.players.length)+' registros extraídos · cobertura no certificada como completa · '+esc(data.updatedAt)+'</p><a href="'+esc(data.source)+'" target="_blank" rel="noopener">Fuente FIFA</a></div><div class="ranking-filters"><input class="control" id="gbSearch" placeholder="Buscar jugador"><select class="control" id="gbTeam"><option value="">Todas las selecciones</option></select><select class="control" id="gbSort"><option value="goals">Máximos goleadores</option><option value="assists">Máximos asistentes</option><option value="minutes">Minutos disputados</option></select></div><div class="ranking-table-wrap"><table class="ranking-table"><thead><tr><th>#</th><th>Jugador</th><th>Selección</th><th>Posición</th><th>Goles</th><th>Asistencias</th><th>Minutos</th></tr></thead><tbody id="gbRows"></tbody></table></div>';
- const team=host.querySelector('#gbTeam'),search=host.querySelector('#gbSearch'),sort=host.querySelector('#gbSort');for(const code of [...new Set(data.players.map(p=>p.team))].sort()){const o=document.createElement('option');o.value=code;o.textContent=code;team.append(o)}
- const draw=()=>{const key=sort.value;host.querySelector('#gbRows').innerHTML=data.players.filter(p=>(!team.value||p.team===team.value)&&p.name.toLowerCase().includes(search.value.toLowerCase())).sort((a,b)=>b[key]-a[key]||b.goals-a.goals||b.assists-a.assists||a.minutes-b.minutes).map((p,i)=>'<tr><td>'+(i+1)+'</td><td>'+esc(p.name)+'</td><td>'+esc(p.team)+'</td><td>'+esc(p.position)+'</td><td>'+esc(p.goals)+'</td><td>'+esc(p.assists)+'</td><td>'+esc(p.minutes)+'</td></tr>').join('')};search.oninput=draw;team.onchange=sort.onchange=draw;draw();
+ const pos={FW:'Delantero',MF:'Centrocampista',DF:'Defensa',GK:'Portero'};
+ const country=p=>u17Data?.teams?.find(t=>t.code===p.team);
+ const flag=p=>country(p)?.flag?'<img class="gb-flag" src="'+esc(country(p).flag)+'" alt="">':'';
+ const leader=[...data.players].sort((a,b)=>b.goals-a.goals||b.assists-a.assists||a.minutes-b.minutes)[0];
+ host.innerHTML=`<style>
+ #u17PlayerStatsPanel .gb-hero{padding:24px;border:1px solid #294536;border-radius:18px;background:linear-gradient(120deg,#14291c,#101914);margin-bottom:18px}
+ #u17PlayerStatsPanel .gb-kicker{color:#b4f76a;font-size:11px;letter-spacing:.18em;font-weight:800}
+ #u17PlayerStatsPanel .gb-hero h3{font-size:26px;margin:8px 0}
+ #u17PlayerStatsPanel .gb-meta{color:#a4b7aa;font-size:12px;margin-top:10px}
+ #u17PlayerStatsPanel .gb-leader{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:20px}
+ #u17PlayerStatsPanel .gb-leader strong{font-size:22px;color:#b4f76a}
+ #u17PlayerStatsPanel .gb-wrap{overflow-x:auto;border:1px solid #293b30;border-radius:14px;margin-top:16px}
+ #u17PlayerStatsPanel .gb-table{width:100%;border-collapse:collapse;min-width:720px}
+ #u17PlayerStatsPanel .gb-table th{position:static!important;top:auto!important;background:#18251d;color:#a5b9aa;font-size:11px;text-transform:uppercase;letter-spacing:.08em;text-align:left;padding:15px 12px}
+ #u17PlayerStatsPanel .gb-table td{padding:14px 12px;border-top:1px solid #24362a}
+ #u17PlayerStatsPanel .gb-table tr:hover td{background:#17271c}
+ #u17PlayerStatsPanel .gb-name{background:none;border:0;color:inherit;font:inherit;font-weight:700;text-align:left;cursor:pointer;padding:0}
+ #u17PlayerStatsPanel .gb-name:hover{color:#b4f76a;text-decoration:underline}
+ #u17PlayerStatsPanel .gb-flag{width:24px;height:17px;object-fit:cover;border-radius:3px;vertical-align:middle;margin-right:8px}
+ #u17PlayerStatsPanel .gb-goals{color:#b4f76a;font-weight:800}
+ #u17PlayerStatsPanel .gb-dialog{color:#eaf4ec;background:#111d16;border:1px solid #38533e;border-radius:20px;padding:26px;width:min(520px,92vw);max-height:85vh;overflow:auto}
+ #u17PlayerStatsPanel .gb-dialog::backdrop{background:#000b}
+ #u17PlayerStatsPanel .gb-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}
+ #u17PlayerStatsPanel .gb-metrics div{background:#1a2b20;border-radius:12px;padding:12px;text-align:center}
+ #u17PlayerStatsPanel .gb-metrics b{display:block;font-size:26px;color:#b4f76a}
+ #u17PlayerStatsPanel .gb-metrics small{color:#a5b9aa}
+ #u17PlayerStatsPanel .gb-close{float:right;cursor:pointer;background:#24382a;border:0;border-radius:8px;color:white;padding:8px 12px}
+ </style><section class="gb-hero"><div class="gb-kicker">FIFA U-17 WORLD CUP · PLAYER STATS</div><h3>Golden Boot</h3><div class="gb-leader"><span>Máximo goleador</span><strong>${esc(leader.name)}</strong><span>${leader.goals} goles · ${leader.assists} asistencias</span></div><div class="gb-meta">${data.players.length} registros · Cobertura no certificada como completa · ${esc(data.updatedAt)} · <a href="${esc(data.source)}" target="_blank" rel="noopener">Fuente FIFA</a></div></section><div class="ranking-filters"><input class="control" id="gbSearch" placeholder="Buscar jugador"><select class="control" id="gbTeam"><option value="">Todas las selecciones</option></select><select class="control" id="gbSort"><option value="goals">Máximos goleadores</option><option value="assists">Máximos asistentes</option><option value="minutes">Minutos disputados</option></select></div><div class="gb-wrap"><table class="gb-table"><thead><tr><th>#</th><th>Jugador</th><th>Selección</th><th>Posición</th><th>Goles</th><th>Asistencias</th><th>Minutos</th></tr></thead><tbody id="gbRows"></tbody></table></div><dialog class="gb-dialog" id="gbProfile"><button class="gb-close" type="button" aria-label="Cerrar">Cerrar</button><div id="gbProfileBody"></div></dialog>`;
+ const team=host.querySelector('#gbTeam'),search=host.querySelector('#gbSearch'),sort=host.querySelector('#gbSort'),dialog=host.querySelector('#gbProfile');
+ for(const code of [...new Set(data.players.map(p=>p.team))].sort()){const o=document.createElement('option');o.value=code;o.textContent=country({team:code})?.name||code;team.append(o)}
+ const normalize=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+ let squadPromise;
+ async function profile(p){
+ const body=host.querySelector('#gbProfileBody');body.innerHTML='<div class="gb-kicker">PLAYER PROFILE · U17</div><h2>'+esc(p.name)+'</h2><p>'+flag(p)+esc(country(p)?.name||p.team)+' · '+esc(pos[p.position]||p.position)+'</p><div class="gb-metrics"><div><b>'+p.goals+'</b><small>Goles</small></div><div><b>'+p.assists+'</b><small>Asistencias</small></div><div><b>'+p.minutes+'</b><small>Minutos</small></div></div><p class="gb-meta">Ranking FIFA: '+esc(p.rank)+' · '+(p.minutes>0?((p.goals+p.assists)*90/p.minutes).toFixed(2)+' G+A por 90 min':'G+A por 90 min no disponible')+'</p><div class="gb-extra">Consultando convocatoria oficial…</div>';
+ dialog.showModal();
+ const extra=body.querySelector('.gb-extra');
+ try{if(!squadPromise)squadPromise=FutureRadarData.response('u17Squads').then(r=>{if(!r.ok)throw Error('squads');return r.json()}).catch(()=>null);
+ const payload=await squadPromise;const candidates=(payload?.teams||[]).filter(t=>t.teamCode===p.team).flatMap(t=>t.players||[]).filter(x=>[x.playerName,[x.givenNames,x.surnames].filter(Boolean).join(' ')].some(n=>normalize(n)===normalize(p.name)));
+ if(candidates.length===1){const x=candidates[0];extra.innerHTML='<p><strong>Club:</strong> '+esc(x.club||'No disponible')+'</p><p><strong>Dorsal:</strong> '+esc(x.shirtNumber??'No disponible')+'</p><p><strong>Edad:</strong> '+esc(x.ageAtTournamentStart??'No disponible')+'</p>'}else extra.textContent='Datos adicionales de convocatoria no vinculados de forma inequívoca.';
+ }catch(e){extra.textContent='Convocatoria no disponible.'}
+ }
+ dialog.querySelector('.gb-close').onclick=()=>dialog.close();dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
+ const draw=()=>{const key=sort.value;const rows=data.players.filter(p=>(!team.value||p.team===team.value)&&normalize(p.name).includes(normalize(search.value))).sort((a,b)=>b[key]-a[key]||b.goals-a.goals||b.assists-a.assists||a.minutes-b.minutes);const tbody=host.querySelector('#gbRows');tbody.innerHTML=rows.map((p,i)=>'<tr><td>'+esc(key==='goals'?p.rank:i+1)+'</td><td><button type="button" class="gb-name" data-index="'+i+'">'+esc(p.name)+' ↗</button></td><td>'+flag(p)+esc(country(p)?.name||p.team)+'</td><td>'+esc(pos[p.position]||p.position)+'</td><td class="gb-goals">'+esc(p.goals)+'</td><td>'+esc(p.assists)+'</td><td>'+esc(p.minutes)+'</td></tr>').join('')||'<tr><td colspan="7">Sin resultados</td></tr>';tbody.querySelectorAll('.gb-name').forEach(b=>b.onclick=()=>profile(rows[Number(b.dataset.index)]))};search.oninput=draw;team.onchange=sort.onchange=draw;draw();
 }
