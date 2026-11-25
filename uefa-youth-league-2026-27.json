@@ -2,9 +2,9 @@
   "competition": "UEFA Youth League",
   "season": "2026/27",
   "phase": "Champions League path league phase",
-  "source": "UEFA official fixtures and results through matchday 4; matchday 5 results cross-checked with Manchester United official fixtures and Global Sports Archive, 24 November 2026",
+  "source": "UEFA official fixtures and results through matchday 4; matchday 5 results cross-checked with Manchester United official fixtures and Global Sports Archive, 24 November 2026; Sabah–Barcelona matchday 5 result cross-checked with AS and Report.az, 25 November 2026",
   "timezone": "CET",
-  "lastUpdated": "2026-11-24",
+  "lastUpdated": "2026-11-25",
   "matchdays": [
     1,
     2,
@@ -858,8 +858,11 @@
       "away": "Barcelona",
       "kickoff": "12:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING",
-      "sofascoreUrl": "https://www.sofascore.com/football/match/sabah-u19-barcelona-u19/DcLsfvxh"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/sabah-u19-barcelona-u19/DcLsfvxh",
+      "homeScore": 0,
+      "awayScore": 7,
+      "resultSource": "https://as.com/futbol/el-nuevo-barca-de-albert-peris-si-gana-en-la-youth-league-f202611-n/"
     },
     {
       "matchday": 5,
