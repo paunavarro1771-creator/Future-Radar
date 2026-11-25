@@ -1,7 +1,7 @@
 {
   "competitionId": "fifa-u17-world-cup-2026",
   "schemaVersion": 1,
-  "archivedAt": "2026-11-25T17:14:05.241Z",
+  "archivedAt": "2026-11-25T17:59:29.446Z",
   "source": "Existing Future Radar provider aggregator",
   "realtime": false,
   "partial": true,
@@ -2467,7 +2467,7 @@
         "name": "Argentina U17",
         "score": 3
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 7,
@@ -2482,10 +2482,10 @@
         "away": "Argentina U17",
         "homeScore": 3,
         "awayScore": 3,
-        "status": "LIVE",
-        "statusDescription": "80'",
-        "minute": "80",
-        "startTimestamp": 1795626831,
+        "status": "FT",
+        "statusDescription": "FT",
+        "minute": null,
+        "startTimestamp": null,
         "date": "2026-11-25",
         "homeCode": "DEN",
         "awayCode": "ARG",
@@ -2496,7 +2496,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-25T17:14:05.241Z"
+      "archivedAt": "2026-11-25T17:59:29.446Z"
     },
     {
       "id": "2026-11-25:AUS:MOZ",
@@ -2514,7 +2514,7 @@
         "name": "Mozambique U17",
         "score": 2
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 8,
@@ -2529,10 +2529,10 @@
         "away": "Mozambique U17",
         "homeScore": 2,
         "awayScore": 2,
-        "status": "LIVE",
-        "statusDescription": "83'",
-        "minute": "83",
-        "startTimestamp": 1795626791,
+        "status": "FT",
+        "statusDescription": "FT",
+        "minute": null,
+        "startTimestamp": null,
         "date": "2026-11-25",
         "homeCode": "AUS",
         "awayCode": "MOZ",
@@ -2543,7 +2543,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-25T17:14:05.241Z"
+      "archivedAt": "2026-11-25T17:59:29.446Z"
     },
     {
       "id": "2026-11-25:URU:FRA",
