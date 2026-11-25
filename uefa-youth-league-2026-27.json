@@ -2,7 +2,7 @@
   "competition": "UEFA Youth League",
   "season": "2026/27",
   "phase": "Champions League path league phase",
-  "source": "UEFA official fixtures and results through matchday 4; matchday 5 results cross-checked with Manchester United official fixtures and Global Sports Archive, 24 November 2026; Sabah–Barcelona matchday 5 result cross-checked with AS and Report.az, 25 November 2026",
+  "source": "UEFA official fixtures and results through matchday 4; matchday 5 results cross-checked with Manchester United official fixtures and Global Sports Archive, 24 November 2026; Sabah–Barcelona matchday 5 result cross-checked with AS and Report.az, 25 November 2026; 25 November: Rotascore final results cross-checked with Haberler and Castellón Base",
   "timezone": "CET",
   "lastUpdated": "2026-11-25",
   "matchdays": [
@@ -871,8 +871,11 @@
       "away": "Fenerbahçe",
       "kickoff": "13:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING",
-      "sofascoreUrl": "https://www.sofascore.com/football/match/fenerbahce-u19-shakhtar-donetsk-u19/yeTsaBXb"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/fenerbahce-u19-shakhtar-donetsk-u19/yeTsaBXb",
+      "homeScore": 6,
+      "awayScore": 0,
+      "resultSource": "https://en.haberler.com/shakhtar-donetsk-u19-beat-fenerbahce-u19-6-0-2344625"
     },
     {
       "matchday": 5,
@@ -881,8 +884,11 @@
       "away": "Villarreal",
       "kickoff": "13:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING",
-      "sofascoreUrl": "https://www.sofascore.com/football/match/villarreal-u19-slavia-praha-u19/nIrsfCHb"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/villarreal-u19-slavia-praha-u19/nIrsfCHb",
+      "homeScore": 1,
+      "awayScore": 2,
+      "resultSource": "https://castellonbase.com/el-villarreal-cf-lidera-la-youth-league-con-el-real-madrid/"
     },
     {
       "matchday": 5,
