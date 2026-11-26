@@ -1,7 +1,7 @@
 {
   "competitionId": "fifa-u17-world-cup-2026",
   "schemaVersion": 1,
-  "archivedAt": "2026-11-26T18:02:06.622Z",
+  "archivedAt": "2026-11-26T23:09:54.759Z",
   "source": "Existing Future Radar provider aggregator",
   "realtime": false,
   "partial": true,
@@ -3773,6 +3773,49 @@
       },
       "scheduleOnly": false,
       "archivedAt": "2026-11-22T23:53:01.153Z"
+    },
+    {
+      "id": "2026-11-30:ESP:ITA",
+      "competitionId": "fifa-u17-world-cup-2026",
+      "date": "2026-11-30",
+      "home": {
+        "id": "national:ESP:u17",
+        "code": "ESP",
+        "name": "Spain U19 W",
+        "score": null
+      },
+      "away": {
+        "id": "national:ITA:u17",
+        "code": "ITA",
+        "name": "Italy U19 W",
+        "score": null
+      },
+      "status": "SCHEDULED",
+      "kickoff": null,
+      "source": "existing_u17_aggregator",
+      "sourceType": "unofficial_public_endpoint",
+      "verifiedAt": null,
+      "raw": {
+        "id": "1923034",
+        "home": "Spain U19 W",
+        "away": "Italy U19 W",
+        "homeScore": null,
+        "awayScore": null,
+        "status": "SCHEDULED",
+        "statusDescription": "NS",
+        "minute": null,
+        "startTimestamp": null,
+        "date": "2026-11-30",
+        "homeCode": "ESP",
+        "awayCode": "ITA",
+        "matchKey": "2026-11-30:ESP:ITA",
+        "homeTeamId": "national:ESP:u17",
+        "awayTeamId": "national:ITA:u17",
+        "competitionId": "fifa-u17-world-cup-2026",
+        "sourceUrl": "https://www.livescore.com/"
+      },
+      "scheduleOnly": false,
+      "archivedAt": "2026-11-26T23:09:54.759Z"
     },
     {
       "id": "2026-12-01:MAR:VEN",
