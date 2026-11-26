@@ -1,7 +1,7 @@
 {
   "competitionId": "fifa-u17-world-cup-2026",
   "schemaVersion": 1,
-  "archivedAt": "2026-11-25T17:59:29.446Z",
+  "archivedAt": "2026-11-26T13:36:57.014Z",
   "source": "Existing Future Radar provider aggregator",
   "realtime": false,
   "partial": true,
@@ -2835,15 +2835,15 @@
         "id": "national:VIE:u17",
         "code": "VIE",
         "name": "Vietnam U17",
-        "score": null
+        "score": 0
       },
       "away": {
         "id": "national:MLI:u17",
         "code": "MLI",
         "name": "Mali U17",
-        "score": null
+        "score": 0
       },
-      "status": "SCHEDULED",
+      "status": "LIVE",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 9,
@@ -2856,12 +2856,12 @@
         "id": "1885765",
         "home": "Vietnam U17",
         "away": "Mali U17",
-        "homeScore": null,
-        "awayScore": null,
-        "status": "SCHEDULED",
-        "statusDescription": "NS",
-        "minute": null,
-        "startTimestamp": null,
+        "homeScore": 0,
+        "awayScore": 0,
+        "status": "LIVE",
+        "statusDescription": "36'",
+        "minute": "36",
+        "startTimestamp": 1795700171,
         "date": "2026-11-26",
         "homeCode": "VIE",
         "awayCode": "MLI",
@@ -2872,7 +2872,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-22T23:53:01.153Z"
+      "archivedAt": "2026-11-26T13:36:57.014Z"
     },
     {
       "id": "2026-11-26:NZL:BEL",
@@ -2882,15 +2882,15 @@
         "id": "national:NZL:u17",
         "code": "NZL",
         "name": "New Zealand U17",
-        "score": null
+        "score": 0
       },
       "away": {
         "id": "national:BEL:u17",
         "code": "BEL",
         "name": "Belgium U17",
-        "score": null
+        "score": 4
       },
-      "status": "SCHEDULED",
+      "status": "LIVE",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 4,
@@ -2903,12 +2903,12 @@
         "id": "1885763",
         "home": "New Zealand U17",
         "away": "Belgium U17",
-        "homeScore": null,
-        "awayScore": null,
-        "status": "SCHEDULED",
-        "statusDescription": "NS",
-        "minute": null,
-        "startTimestamp": null,
+        "homeScore": 0,
+        "awayScore": 4,
+        "status": "LIVE",
+        "statusDescription": "36'",
+        "minute": "36",
+        "startTimestamp": 1795700171,
         "date": "2026-11-26",
         "homeCode": "NZL",
         "awayCode": "BEL",
@@ -2919,7 +2919,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-22T23:53:01.153Z"
+      "archivedAt": "2026-11-26T13:36:57.014Z"
     },
     {
       "id": "2026-11-26:MAR:ESP",
