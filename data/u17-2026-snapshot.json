@@ -1,7 +1,7 @@
 {
   "competitionId": "fifa-u17-world-cup-2026",
   "schemaVersion": 1,
-  "archivedAt": "2026-11-26T16:25:10.198Z",
+  "archivedAt": "2026-11-26T18:02:06.622Z",
   "source": "Existing Future Radar provider aggregator",
   "realtime": false,
   "partial": true,
@@ -2741,15 +2741,15 @@
         "id": "national:TJK:u17",
         "code": "TJK",
         "name": "Tajikistan U17",
-        "score": 0
+        "score": 1
       },
       "away": {
         "id": "national:SEN:u17",
         "code": "SEN",
         "name": "Senegal U17",
-        "score": 0
+        "score": 1
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 7,
@@ -2762,12 +2762,12 @@
         "id": "1885740",
         "home": "Tajikistan U17",
         "away": "Senegal U17",
-        "homeScore": 0,
-        "awayScore": 0,
-        "status": "LIVE",
-        "statusDescription": "25'",
-        "minute": "25",
-        "startTimestamp": 1795710296,
+        "homeScore": 1,
+        "awayScore": 1,
+        "status": "FT",
+        "statusDescription": "FT",
+        "minute": null,
+        "startTimestamp": null,
         "date": "2026-11-26",
         "homeCode": "TJK",
         "awayCode": "SEN",
@@ -2778,7 +2778,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-26T16:25:10.198Z"
+      "archivedAt": "2026-11-26T18:02:06.622Z"
     },
     {
       "id": "2026-11-26:CRO:CUB",
@@ -2788,7 +2788,7 @@
         "id": "national:CRO:u17",
         "code": "CRO",
         "name": "Croatia U17",
-        "score": 2
+        "score": 7
       },
       "away": {
         "id": "national:CUB:u17",
@@ -2796,7 +2796,7 @@
         "name": "Cuba U17",
         "score": 0
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 8,
@@ -2809,12 +2809,12 @@
         "id": "1885741",
         "home": "Croatia U17",
         "away": "Cuba U17",
-        "homeScore": 2,
+        "homeScore": 7,
         "awayScore": 0,
-        "status": "LIVE",
-        "statusDescription": "25'",
-        "minute": "25",
-        "startTimestamp": 1795710296,
+        "status": "FT",
+        "statusDescription": "FT",
+        "minute": null,
+        "startTimestamp": null,
         "date": "2026-11-26",
         "homeCode": "CRO",
         "awayCode": "CUB",
@@ -2825,7 +2825,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-26T16:25:10.198Z"
+      "archivedAt": "2026-11-26T18:02:06.622Z"
     },
     {
       "id": "2026-11-26:VIE:MLI",
@@ -2937,7 +2937,7 @@
         "name": "Spain U17",
         "score": 2
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 2,
@@ -2952,10 +2952,10 @@
         "away": "Spain U17",
         "homeScore": 0,
         "awayScore": 2,
-        "status": "LIVE",
-        "statusDescription": "66'",
-        "minute": "66",
-        "startTimestamp": 1795710291,
+        "status": "FT",
+        "statusDescription": "FT",
+        "minute": null,
+        "startTimestamp": null,
         "date": "2026-11-26",
         "homeCode": "MAR",
         "awayCode": "ESP",
@@ -2966,7 +2966,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-26T16:25:10.198Z"
+      "archivedAt": "2026-11-26T18:02:06.622Z"
     },
     {
       "id": "2026-11-26:CHN:FIJ",
@@ -2976,7 +2976,7 @@
         "id": "national:CHN:u17",
         "code": "CHN",
         "name": "China U17",
-        "score": 6
+        "score": 8
       },
       "away": {
         "id": "national:FIJ:u17",
@@ -2984,7 +2984,7 @@
         "name": "Fiji U17",
         "score": 0
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 3,
@@ -2997,12 +2997,12 @@
         "id": "1885782",
         "home": "China U17",
         "away": "Fiji U17",
-        "homeScore": 6,
+        "homeScore": 8,
         "awayScore": 0,
-        "status": "LIVE",
-        "statusDescription": "66'",
-        "minute": "66",
-        "startTimestamp": 1795710291,
+        "status": "FT",
+        "statusDescription": "FT",
+        "minute": null,
+        "startTimestamp": null,
         "date": "2026-11-26",
         "homeCode": "CHN",
         "awayCode": "FIJ",
@@ -3013,7 +3013,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-26T16:25:10.198Z"
+      "archivedAt": "2026-11-26T18:02:06.622Z"
     },
     {
       "id": "2026-11-27:CRC:BRA",
