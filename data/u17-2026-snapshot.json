@@ -1,7 +1,7 @@
 {
   "competitionId": "fifa-u17-world-cup-2026",
   "schemaVersion": 1,
-  "archivedAt": "2026-11-26T15:16:18.871Z",
+  "archivedAt": "2026-11-26T16:25:10.198Z",
   "source": "Existing Future Radar provider aggregator",
   "realtime": false,
   "partial": true,
@@ -2647,7 +2647,7 @@
         "id": "national:UZB:u17",
         "code": "UZB",
         "name": "Uzbekistan U17",
-        "score": 0
+        "score": 1
       },
       "away": {
         "id": "national:ITA:u17",
@@ -2655,7 +2655,7 @@
         "name": "Italy U17",
         "score": 3
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 5,
@@ -2668,12 +2668,12 @@
         "id": "1885723",
         "home": "Uzbekistan U17",
         "away": "Italy U17",
-        "homeScore": 0,
+        "homeScore": 1,
         "awayScore": 3,
-        "status": "LIVE",
-        "statusDescription": "55'",
-        "minute": "55",
-        "startTimestamp": 1795706131,
+        "status": "FT",
+        "statusDescription": "FT",
+        "minute": null,
+        "startTimestamp": null,
         "date": "2026-11-26",
         "homeCode": "UZB",
         "awayCode": "ITA",
@@ -2684,7 +2684,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-26T15:16:18.871Z"
+      "archivedAt": "2026-11-26T16:25:10.198Z"
     },
     {
       "id": "2026-11-26:JAM:CIV",
@@ -2702,7 +2702,7 @@
         "name": "Ivory Coast",
         "score": 3
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 1,
@@ -2717,10 +2717,10 @@
         "away": "Ivory Coast",
         "homeScore": 1,
         "awayScore": 3,
-        "status": "LIVE",
-        "statusDescription": "55'",
-        "minute": "55",
-        "startTimestamp": 1795706171,
+        "status": "FT",
+        "statusDescription": "FT",
+        "minute": null,
+        "startTimestamp": null,
         "date": "2026-11-26",
         "homeCode": "JAM",
         "awayCode": "CIV",
@@ -2731,7 +2731,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-26T15:16:18.871Z"
+      "archivedAt": "2026-11-26T16:25:10.198Z"
     },
     {
       "id": "2026-11-26:TJK:SEN",
@@ -2741,15 +2741,15 @@
         "id": "national:TJK:u17",
         "code": "TJK",
         "name": "Tajikistan U17",
-        "score": null
+        "score": 0
       },
       "away": {
         "id": "national:SEN:u17",
         "code": "SEN",
         "name": "Senegal U17",
-        "score": null
+        "score": 0
       },
-      "status": "SCHEDULED",
+      "status": "LIVE",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 7,
@@ -2762,12 +2762,12 @@
         "id": "1885740",
         "home": "Tajikistan U17",
         "away": "Senegal U17",
-        "homeScore": null,
-        "awayScore": null,
-        "status": "SCHEDULED",
-        "statusDescription": "NS",
-        "minute": null,
-        "startTimestamp": null,
+        "homeScore": 0,
+        "awayScore": 0,
+        "status": "LIVE",
+        "statusDescription": "25'",
+        "minute": "25",
+        "startTimestamp": 1795710296,
         "date": "2026-11-26",
         "homeCode": "TJK",
         "awayCode": "SEN",
@@ -2778,7 +2778,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-22T23:53:01.153Z"
+      "archivedAt": "2026-11-26T16:25:10.198Z"
     },
     {
       "id": "2026-11-26:CRO:CUB",
@@ -2788,15 +2788,15 @@
         "id": "national:CRO:u17",
         "code": "CRO",
         "name": "Croatia U17",
-        "score": null
+        "score": 2
       },
       "away": {
         "id": "national:CUB:u17",
         "code": "CUB",
         "name": "Cuba U17",
-        "score": null
+        "score": 0
       },
-      "status": "SCHEDULED",
+      "status": "LIVE",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 8,
@@ -2809,12 +2809,12 @@
         "id": "1885741",
         "home": "Croatia U17",
         "away": "Cuba U17",
-        "homeScore": null,
-        "awayScore": null,
-        "status": "SCHEDULED",
-        "statusDescription": "NS",
-        "minute": null,
-        "startTimestamp": null,
+        "homeScore": 2,
+        "awayScore": 0,
+        "status": "LIVE",
+        "statusDescription": "25'",
+        "minute": "25",
+        "startTimestamp": 1795710296,
         "date": "2026-11-26",
         "homeCode": "CRO",
         "awayCode": "CUB",
@@ -2825,7 +2825,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-22T23:53:01.153Z"
+      "archivedAt": "2026-11-26T16:25:10.198Z"
     },
     {
       "id": "2026-11-26:VIE:MLI",
@@ -2935,7 +2935,7 @@
         "id": "national:ESP:u17",
         "code": "ESP",
         "name": "Spain U17",
-        "score": 0
+        "score": 2
       },
       "status": "LIVE",
       "kickoff": null,
@@ -2951,11 +2951,11 @@
         "home": "Morocco U17",
         "away": "Spain U17",
         "homeScore": 0,
-        "awayScore": 0,
+        "awayScore": 2,
         "status": "LIVE",
-        "statusDescription": "16'",
-        "minute": "16",
-        "startTimestamp": 1795706136,
+        "statusDescription": "66'",
+        "minute": "66",
+        "startTimestamp": 1795710291,
         "date": "2026-11-26",
         "homeCode": "MAR",
         "awayCode": "ESP",
@@ -2966,7 +2966,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-26T15:16:18.871Z"
+      "archivedAt": "2026-11-26T16:25:10.198Z"
     },
     {
       "id": "2026-11-26:CHN:FIJ",
@@ -2976,7 +2976,7 @@
         "id": "national:CHN:u17",
         "code": "CHN",
         "name": "China U17",
-        "score": 1
+        "score": 6
       },
       "away": {
         "id": "national:FIJ:u17",
@@ -2997,12 +2997,12 @@
         "id": "1885782",
         "home": "China U17",
         "away": "Fiji U17",
-        "homeScore": 1,
+        "homeScore": 6,
         "awayScore": 0,
         "status": "LIVE",
-        "statusDescription": "16'",
-        "minute": "16",
-        "startTimestamp": 1795706136,
+        "statusDescription": "66'",
+        "minute": "66",
+        "startTimestamp": 1795710291,
         "date": "2026-11-26",
         "homeCode": "CHN",
         "awayCode": "FIJ",
@@ -3013,7 +3013,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-26T15:16:18.871Z"
+      "archivedAt": "2026-11-26T16:25:10.198Z"
     },
     {
       "id": "2026-11-27:CRC:BRA",
@@ -3472,6 +3472,49 @@
       },
       "scheduleOnly": false,
       "archivedAt": "2026-11-22T23:53:01.153Z"
+    },
+    {
+      "id": "2026-11-27:CIV:SEN",
+      "competitionId": "fifa-u17-world-cup-2026",
+      "date": "2026-11-27",
+      "home": {
+        "id": "national:CIV:u17",
+        "code": "CIV",
+        "name": "Ivory Coast Women",
+        "score": null
+      },
+      "away": {
+        "id": "national:SEN:u17",
+        "code": "SEN",
+        "name": "Senegal W",
+        "score": null
+      },
+      "status": "SCHEDULED",
+      "kickoff": null,
+      "source": "existing_u17_aggregator",
+      "sourceType": "unofficial_public_endpoint",
+      "verifiedAt": null,
+      "raw": {
+        "id": "1922878",
+        "home": "Ivory Coast Women",
+        "away": "Senegal W",
+        "homeScore": null,
+        "awayScore": null,
+        "status": "SCHEDULED",
+        "statusDescription": "NS",
+        "minute": null,
+        "startTimestamp": null,
+        "date": "2026-11-27",
+        "homeCode": "CIV",
+        "awayCode": "SEN",
+        "matchKey": "2026-11-27:CIV:SEN",
+        "homeTeamId": "national:CIV:u17",
+        "awayTeamId": "national:SEN:u17",
+        "competitionId": "fifa-u17-world-cup-2026",
+        "sourceUrl": "https://www.livescore.com/"
+      },
+      "scheduleOnly": false,
+      "archivedAt": "2026-11-26T16:25:10.198Z"
     },
     {
       "id": "2026-11-28:AUS:COL",
