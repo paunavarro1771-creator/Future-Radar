@@ -2,9 +2,9 @@
   "competition": "UEFA Youth League",
   "season": "2026/27",
   "phase": "Champions League path league phase",
-  "source": "UEFA official fixtures and results through matchday 4; matchday 5 results cross-checked with Manchester United official fixtures and Global Sports Archive, 24 November 2026; Sabah–Barcelona matchday 5 result cross-checked with AS and Report.az, 25 November 2026; 25 November: Rotascore final results cross-checked with Haberler and Castellón Base",
+  "source": "UEFA official fixtures and results through matchday 4; matchday 5 results cross-checked with Manchester United official fixtures and Global Sports Archive, 24 November 2026; Sabah–Barcelona matchday 5 result cross-checked with AS and Report.az, 25 November 2026; 25 November: Rotascore final results cross-checked with Haberler and Castellón Base; 26 November 2026: remaining matchday 5 results verified against UEFA official matchday 5 round-up",
   "timezone": "CET",
-  "lastUpdated": "2026-11-25",
+  "lastUpdated": "2026-11-26",
   "matchdays": [
     1,
     2,
@@ -897,7 +897,10 @@
       "away": "AS Roma",
       "kickoff": "14:30",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING"
+      "status": "FT",
+      "homeScore": 1,
+      "awayScore": 2,
+      "resultSource": "https://www.uefa.com/uefayouthleague/news/02a9-217f1797a7df-a124ba203d2c-1000--uefa-youth-league-see-who-has-gone-through-from-the-leag/"
     },
     {
       "matchday": 5,
@@ -906,8 +909,11 @@
       "away": "Liverpool",
       "kickoff": "15:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING",
-      "sofascoreUrl": "https://www.sofascore.com/football/match/club-brugge-u19-liverpool-u19/JcLsBORb"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/club-brugge-u19-liverpool-u19/JcLsBORb",
+      "homeScore": 4,
+      "awayScore": 3,
+      "resultSource": "https://www.uefa.com/uefayouthleague/news/02a9-217f1797a7df-a124ba203d2c-1000--uefa-youth-league-see-who-has-gone-through-from-the-leag/"
     },
     {
       "matchday": 5,
@@ -916,8 +922,11 @@
       "away": "Stuttgart",
       "kickoff": "15:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING",
-      "sofascoreUrl": "https://www.sofascore.com/football/match/inter-u20-vfb-stuttgart-u19/HzrseLFg"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/inter-u20-vfb-stuttgart-u19/HzrseLFg",
+      "homeScore": 0,
+      "awayScore": 3,
+      "resultSource": "https://www.uefa.com/uefayouthleague/news/02a9-217f1797a7df-a124ba203d2c-1000--uefa-youth-league-see-who-has-gone-through-from-the-leag/"
     },
     {
       "matchday": 5,
@@ -926,8 +935,11 @@
       "away": "Bayern München",
       "kickoff": "15:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING",
-      "sofascoreUrl": "https://www.sofascore.com/football/match/lille-u19-fc-bayern-munchen-u19/Dzrsnztc"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/lille-u19-fc-bayern-munchen-u19/Dzrsnztc",
+      "homeScore": 2,
+      "awayScore": 3,
+      "resultSource": "https://www.uefa.com/uefayouthleague/news/02a9-217f1797a7df-a124ba203d2c-1000--uefa-youth-league-see-who-has-gone-through-from-the-leag/"
     },
     {
       "matchday": 5,
@@ -936,8 +948,11 @@
       "away": "Manchester United",
       "kickoff": "15:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING",
-      "sofascoreUrl": "https://www.sofascore.com/football/match/manchester-united-u19-sporting-u19/bnGsYqY"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/manchester-united-u19-sporting-u19/bnGsYqY",
+      "homeScore": 2,
+      "awayScore": 2,
+      "resultSource": "https://www.uefa.com/uefayouthleague/news/02a9-217f1797a7df-a124ba203d2c-1000--uefa-youth-league-see-who-has-gone-through-from-the-leag/"
     },
     {
       "matchday": 5,
@@ -946,8 +961,11 @@
       "away": "Viking",
       "kickoff": "16:00",
       "kickoffTimezone": "CET",
-      "status": "UPCOMING",
-      "sofascoreUrl": "https://www.sofascore.com/football/match/viking-fk-u19-atletico-madrid-u19/xPDsCTec"
+      "status": "FT",
+      "sofascoreUrl": "https://www.sofascore.com/football/match/viking-fk-u19-atletico-madrid-u19/xPDsCTec",
+      "homeScore": 2,
+      "awayScore": 0,
+      "resultSource": "https://www.uefa.com/uefayouthleague/news/02a9-217f1797a7df-a124ba203d2c-1000--uefa-youth-league-see-who-has-gone-through-from-the-leag/"
     },
     {
       "matchday": 6,
