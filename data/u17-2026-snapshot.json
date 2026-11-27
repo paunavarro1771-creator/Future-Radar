@@ -1,7 +1,7 @@
 {
   "competitionId": "fifa-u17-world-cup-2026",
   "schemaVersion": 1,
-  "archivedAt": "2026-11-27T18:01:25.815Z",
+  "archivedAt": "2026-11-27T20:10:33.662Z",
   "source": "Existing Future Radar provider aggregator",
   "realtime": false,
   "partial": true,
@@ -3352,15 +3352,15 @@
         "id": "national:FRA:u17",
         "code": "FRA",
         "name": "France Women",
-        "score": null
+        "score": 0
       },
       "away": {
         "id": "national:VEN:u17",
         "code": "VEN",
         "name": "Venezuela W",
-        "score": null
+        "score": 0
       },
-      "status": "SCHEDULED",
+      "status": "LIVE",
       "kickoff": null,
       "source": "existing_u17_aggregator",
       "sourceType": "unofficial_public_endpoint",
@@ -3369,12 +3369,12 @@
         "id": "1914701",
         "home": "France Women",
         "away": "Venezuela W",
-        "homeScore": null,
-        "awayScore": null,
-        "status": "SCHEDULED",
-        "statusDescription": "NS",
-        "minute": null,
-        "startTimestamp": null,
+        "homeScore": 0,
+        "awayScore": 0,
+        "status": "LIVE",
+        "statusDescription": "9'",
+        "minute": "9",
+        "startTimestamp": 1795810211,
         "date": "2026-11-27",
         "homeCode": "FRA",
         "awayCode": "VEN",
@@ -3385,7 +3385,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "scheduleOnly": false,
-      "archivedAt": "2026-11-22T23:53:01.153Z"
+      "archivedAt": "2026-11-27T20:10:33.661Z"
     },
     {
       "id": "2026-11-27:ALG:DOM",
