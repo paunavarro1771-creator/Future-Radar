@@ -1,7 +1,7 @@
 {
   "competitionId": "fifa-u17-world-cup-2026",
   "schemaVersion": 1,
-  "archivedAt": "2026-11-27T16:17:47.798Z",
+  "archivedAt": "2026-11-27T18:01:25.815Z",
   "source": "Existing Future Radar provider aggregator",
   "realtime": false,
   "partial": true,
@@ -3125,7 +3125,7 @@
         "name": "Chile U17",
         "score": 1
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 3,
@@ -3140,10 +3140,10 @@
         "away": "Chile U17",
         "homeScore": 0,
         "awayScore": 1,
-        "status": "LIVE",
-        "statusDescription": "59'",
-        "minute": "59",
-        "startTimestamp": 1795796211,
+        "status": "FT",
+        "statusDescription": "FT",
+        "minute": null,
+        "startTimestamp": null,
         "date": "2026-11-27",
         "homeCode": "MNE",
         "awayCode": "CHI",
@@ -3154,7 +3154,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-27T16:17:47.798Z"
+      "archivedAt": "2026-11-27T18:01:25.814Z"
     },
     {
       "id": "2026-11-27:VEN:MEX",
@@ -3172,7 +3172,7 @@
         "name": "Mexico U17",
         "score": 0
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 7,
@@ -3187,10 +3187,10 @@
         "away": "Mexico U17",
         "homeScore": 0,
         "awayScore": 0,
-        "status": "LIVE",
-        "statusDescription": "17'",
-        "minute": "17",
-        "startTimestamp": 1795796256,
+        "status": "FT",
+        "statusDescription": "FT",
+        "minute": null,
+        "startTimestamp": null,
         "date": "2026-11-27",
         "homeCode": "VEN",
         "awayCode": "MEX",
@@ -3201,7 +3201,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-27T16:17:47.798Z"
+      "archivedAt": "2026-11-27T18:01:25.814Z"
     },
     {
       "id": "2026-11-27:ROU:CMR",
@@ -3211,15 +3211,15 @@
         "id": "national:ROU:u17",
         "code": "ROU",
         "name": "Romania U17",
-        "score": 0
+        "score": 3
       },
       "away": {
         "id": "national:CMR:u17",
         "code": "CMR",
         "name": "Cameroon U17",
-        "score": 0
+        "score": 1
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 8,
@@ -3232,12 +3232,12 @@
         "id": "1885787",
         "home": "Romania U17",
         "away": "Cameroon U17",
-        "homeScore": 0,
-        "awayScore": 0,
-        "status": "LIVE",
-        "statusDescription": "17'",
-        "minute": "17",
-        "startTimestamp": 1795796236,
+        "homeScore": 3,
+        "awayScore": 1,
+        "status": "FT",
+        "statusDescription": "FT",
+        "minute": null,
+        "startTimestamp": null,
         "date": "2026-11-27",
         "homeCode": "ROU",
         "awayCode": "CMR",
@@ -3248,7 +3248,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-27T16:17:47.798Z"
+      "archivedAt": "2026-11-27T18:01:25.814Z"
     },
     {
       "id": "2026-11-27:HON:JPN",
@@ -3403,7 +3403,7 @@
         "name": "Dominican Republic U17",
         "score": 0
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "source": "existing_u17_aggregator",
       "sourceType": "unofficial_public_endpoint",
@@ -3414,10 +3414,10 @@
         "away": "Dominican Republic U17",
         "homeScore": 1,
         "awayScore": 0,
-        "status": "LIVE",
-        "statusDescription": "61'",
-        "minute": "61",
-        "startTimestamp": 1795796236,
+        "status": "FT",
+        "statusDescription": "FT",
+        "minute": null,
+        "startTimestamp": null,
         "date": "2026-11-27",
         "homeCode": "ALG",
         "awayCode": "DOM",
@@ -3428,7 +3428,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "scheduleOnly": false,
-      "archivedAt": "2026-11-27T16:17:47.798Z"
+      "archivedAt": "2026-11-27T18:01:25.814Z"
     },
     {
       "id": "2026-11-27:JAM:CRC",
