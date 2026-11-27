@@ -1,7 +1,7 @@
 {
   "competitionId": "fifa-u17-world-cup-2026",
   "schemaVersion": 1,
-  "archivedAt": "2026-11-27T15:10:32.229Z",
+  "archivedAt": "2026-11-27T16:17:47.798Z",
   "source": "Existing Future Radar provider aggregator",
   "realtime": false,
   "partial": true,
@@ -3029,9 +3029,9 @@
         "id": "national:BRA:u17",
         "code": "BRA",
         "name": "Brazil U17",
-        "score": 1
+        "score": 3
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 5,
@@ -3045,11 +3045,11 @@
         "home": "Costa Rica U17",
         "away": "Brazil U17",
         "homeScore": 0,
-        "awayScore": 1,
-        "status": "LIVE",
-        "statusDescription": "54'",
-        "minute": "54",
-        "startTimestamp": 1795792226,
+        "awayScore": 3,
+        "status": "FT",
+        "statusDescription": "FT",
+        "minute": null,
+        "startTimestamp": null,
         "date": "2026-11-27",
         "homeCode": "CRC",
         "awayCode": "BRA",
@@ -3060,7 +3060,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-27T15:10:32.229Z"
+      "archivedAt": "2026-11-27T16:17:47.798Z"
     },
     {
       "id": "2026-11-27:IRL:TAN",
@@ -3078,7 +3078,7 @@
         "name": "Tanzania U17",
         "score": 1
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 1,
@@ -3093,10 +3093,10 @@
         "away": "Tanzania U17",
         "homeScore": 3,
         "awayScore": 1,
-        "status": "LIVE",
-        "statusDescription": "49'",
-        "minute": "49",
-        "startTimestamp": 1795792191,
+        "status": "FT",
+        "statusDescription": "FT",
+        "minute": null,
+        "startTimestamp": null,
         "date": "2026-11-27",
         "homeCode": "IRL",
         "awayCode": "TAN",
@@ -3107,7 +3107,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-27T15:10:32.229Z"
+      "archivedAt": "2026-11-27T16:17:47.798Z"
     },
     {
       "id": "2026-11-27:MNE:CHI",
@@ -3123,7 +3123,7 @@
         "id": "national:CHI:u17",
         "code": "CHI",
         "name": "Chile U17",
-        "score": 0
+        "score": 1
       },
       "status": "LIVE",
       "kickoff": null,
@@ -3139,11 +3139,11 @@
         "home": "Montenegro U17",
         "away": "Chile U17",
         "homeScore": 0,
-        "awayScore": 0,
+        "awayScore": 1,
         "status": "LIVE",
-        "statusDescription": "10'",
-        "minute": "10",
-        "startTimestamp": 1795792211,
+        "statusDescription": "59'",
+        "minute": "59",
+        "startTimestamp": 1795796211,
         "date": "2026-11-27",
         "homeCode": "MNE",
         "awayCode": "CHI",
@@ -3154,7 +3154,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-27T15:10:32.229Z"
+      "archivedAt": "2026-11-27T16:17:47.798Z"
     },
     {
       "id": "2026-11-27:VEN:MEX",
@@ -3164,15 +3164,15 @@
         "id": "national:VEN:u17",
         "code": "VEN",
         "name": "Venezuela U17",
-        "score": null
+        "score": 0
       },
       "away": {
         "id": "national:MEX:u17",
         "code": "MEX",
         "name": "Mexico U17",
-        "score": null
+        "score": 0
       },
-      "status": "SCHEDULED",
+      "status": "LIVE",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 7,
@@ -3185,12 +3185,12 @@
         "id": "1885789",
         "home": "Venezuela U17",
         "away": "Mexico U17",
-        "homeScore": null,
-        "awayScore": null,
-        "status": "SCHEDULED",
-        "statusDescription": "NS",
-        "minute": null,
-        "startTimestamp": null,
+        "homeScore": 0,
+        "awayScore": 0,
+        "status": "LIVE",
+        "statusDescription": "17'",
+        "minute": "17",
+        "startTimestamp": 1795796256,
         "date": "2026-11-27",
         "homeCode": "VEN",
         "awayCode": "MEX",
@@ -3201,7 +3201,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-22T23:53:01.153Z"
+      "archivedAt": "2026-11-27T16:17:47.798Z"
     },
     {
       "id": "2026-11-27:ROU:CMR",
@@ -3211,15 +3211,15 @@
         "id": "national:ROU:u17",
         "code": "ROU",
         "name": "Romania U17",
-        "score": null
+        "score": 0
       },
       "away": {
         "id": "national:CMR:u17",
         "code": "CMR",
         "name": "Cameroon U17",
-        "score": null
+        "score": 0
       },
-      "status": "SCHEDULED",
+      "status": "LIVE",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 8,
@@ -3232,12 +3232,12 @@
         "id": "1885787",
         "home": "Romania U17",
         "away": "Cameroon U17",
-        "homeScore": null,
-        "awayScore": null,
-        "status": "SCHEDULED",
-        "statusDescription": "NS",
-        "minute": null,
-        "startTimestamp": null,
+        "homeScore": 0,
+        "awayScore": 0,
+        "status": "LIVE",
+        "statusDescription": "17'",
+        "minute": "17",
+        "startTimestamp": 1795796236,
         "date": "2026-11-27",
         "homeCode": "ROU",
         "awayCode": "CMR",
@@ -3248,7 +3248,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-22T23:53:01.153Z"
+      "archivedAt": "2026-11-27T16:17:47.798Z"
     },
     {
       "id": "2026-11-27:HON:JPN",
@@ -3395,7 +3395,7 @@
         "id": "national:ALG:u17",
         "code": "ALG",
         "name": "Algeria U17",
-        "score": 0
+        "score": 1
       },
       "away": {
         "id": "national:DOM:u17",
@@ -3412,12 +3412,12 @@
         "id": "1885767",
         "home": "Algeria U17",
         "away": "Dominican Republic U17",
-        "homeScore": 0,
+        "homeScore": 1,
         "awayScore": 0,
         "status": "LIVE",
-        "statusDescription": "10'",
-        "minute": "10",
-        "startTimestamp": 1795792211,
+        "statusDescription": "61'",
+        "minute": "61",
+        "startTimestamp": 1795796236,
         "date": "2026-11-27",
         "homeCode": "ALG",
         "awayCode": "DOM",
@@ -3428,7 +3428,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "scheduleOnly": false,
-      "archivedAt": "2026-11-27T15:10:32.229Z"
+      "archivedAt": "2026-11-27T16:17:47.798Z"
     },
     {
       "id": "2026-11-27:JAM:CRC",
