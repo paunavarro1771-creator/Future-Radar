@@ -1,7 +1,7 @@
 {
   "competitionId": "fifa-u17-world-cup-2026",
   "schemaVersion": 1,
-  "archivedAt": "2026-11-26T23:09:54.759Z",
+  "archivedAt": "2026-11-27T13:29:34.319Z",
   "source": "Existing Future Radar provider aggregator",
   "realtime": false,
   "partial": true,
@@ -3258,15 +3258,15 @@
         "id": "national:HON:u17",
         "code": "HON",
         "name": "Honduras U17",
-        "score": null
+        "score": 0
       },
       "away": {
         "id": "national:JPN:u17",
         "code": "JPN",
         "name": "Japan U17",
-        "score": null
+        "score": 2
       },
-      "status": "SCHEDULED",
+      "status": "LIVE",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 4,
@@ -3279,12 +3279,12 @@
         "id": "1885773",
         "home": "Honduras U17",
         "away": "Japan U17",
-        "homeScore": null,
-        "awayScore": null,
-        "status": "SCHEDULED",
-        "statusDescription": "NS",
-        "minute": null,
-        "startTimestamp": null,
+        "homeScore": 0,
+        "awayScore": 2,
+        "status": "LIVE",
+        "statusDescription": "28'",
+        "minute": "28",
+        "startTimestamp": 1795786131,
         "date": "2026-11-27",
         "homeCode": "HON",
         "awayCode": "JPN",
@@ -3295,7 +3295,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-22T23:53:01.153Z"
+      "archivedAt": "2026-11-27T13:29:34.319Z"
     },
     {
       "id": "2026-11-27:COL:SRB",
@@ -3305,15 +3305,15 @@
         "id": "national:COL:u17",
         "code": "COL",
         "name": "Colombia U17",
-        "score": null
+        "score": 0
       },
       "away": {
         "id": "national:SRB:u17",
         "code": "SRB",
         "name": "Serbia U17",
-        "score": null
+        "score": 0
       },
-      "status": "SCHEDULED",
+      "status": "LIVE",
       "kickoff": null,
       "timezone": "Asia/Qatar",
       "pitch": 9,
@@ -3326,12 +3326,12 @@
         "id": "1885772",
         "home": "Colombia U17",
         "away": "Serbia U17",
-        "homeScore": null,
-        "awayScore": null,
-        "status": "SCHEDULED",
-        "statusDescription": "NS",
-        "minute": null,
-        "startTimestamp": null,
+        "homeScore": 0,
+        "awayScore": 0,
+        "status": "LIVE",
+        "statusDescription": "28'",
+        "minute": "28",
+        "startTimestamp": 1795786126,
         "date": "2026-11-27",
         "homeCode": "COL",
         "awayCode": "SRB",
@@ -3342,7 +3342,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "officialScheduleSource": "https://rfef.es/sites/default/files/fu17wc2026_match_schedule_v3_26052026.pdf?cb=3c8fd27a",
-      "archivedAt": "2026-11-22T23:53:01.153Z"
+      "archivedAt": "2026-11-27T13:29:34.319Z"
     },
     {
       "id": "2026-11-27:FRA:VEN",
