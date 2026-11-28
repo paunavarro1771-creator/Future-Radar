@@ -1,7 +1,7 @@
 {
   "competitionId": "fifa-u17-world-cup-2026",
   "schemaVersion": 1,
-  "archivedAt": "2026-11-28T09:03:26.812Z",
+  "archivedAt": "2026-11-28T10:02:16.190Z",
   "source": "Existing Future Radar provider aggregator",
   "realtime": false,
   "partial": true,
@@ -3544,9 +3544,9 @@
         "homeScore": 1,
         "awayScore": 1,
         "status": "LIVE",
-        "statusDescription": "17'",
-        "minute": "17",
-        "startTimestamp": 1795856571,
+        "statusDescription": "58'",
+        "minute": "58",
+        "startTimestamp": 1795860121,
         "date": "2026-11-28",
         "homeCode": "AUS",
         "awayCode": "COL",
@@ -3557,7 +3557,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "scheduleOnly": false,
-      "archivedAt": "2026-11-28T09:03:26.812Z"
+      "archivedAt": "2026-11-28T10:02:16.189Z"
     },
     {
       "id": "2026-11-28:ESP:CHI",
