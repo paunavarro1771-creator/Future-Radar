@@ -1,7 +1,7 @@
 {
   "competitionId": "fifa-u17-world-cup-2026",
   "schemaVersion": 1,
-  "archivedAt": "2026-11-27T23:08:22.121Z",
+  "archivedAt": "2026-11-28T00:00:31.861Z",
   "source": "Existing Future Radar provider aggregator",
   "realtime": false,
   "partial": true,
@@ -3438,7 +3438,7 @@
         "id": "national:JAM:u17",
         "code": "JAM",
         "name": "Jamaica W",
-        "score": 1
+        "score": 3
       },
       "away": {
         "id": "national:CRC:u17",
@@ -3446,7 +3446,7 @@
         "name": "Costa Rica W",
         "score": 0
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "source": "existing_u17_aggregator",
       "sourceType": "unofficial_public_endpoint",
@@ -3455,12 +3455,12 @@
         "id": "1887010",
         "home": "Jamaica W",
         "away": "Costa Rica W",
-        "homeScore": 1,
+        "homeScore": 3,
         "awayScore": 0,
-        "status": "LIVE",
-        "statusDescription": "48'",
-        "minute": "48",
-        "startTimestamp": 1795820886,
+        "status": "FT",
+        "statusDescription": "FT",
+        "minute": null,
+        "startTimestamp": null,
         "date": "2026-11-27",
         "homeCode": "JAM",
         "awayCode": "CRC",
@@ -3471,7 +3471,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "scheduleOnly": false,
-      "archivedAt": "2026-11-27T23:08:22.121Z"
+      "archivedAt": "2026-11-28T00:00:31.861Z"
     },
     {
       "id": "2026-11-27:CIV:SEN",
