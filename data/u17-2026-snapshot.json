@@ -1,7 +1,7 @@
 {
   "competitionId": "fifa-u17-world-cup-2026",
   "schemaVersion": 1,
-  "archivedAt": "2026-11-28T10:02:16.190Z",
+  "archivedAt": "2026-11-28T10:59:54.208Z",
   "source": "Existing Future Radar provider aggregator",
   "realtime": false,
   "partial": true,
@@ -3524,7 +3524,7 @@
         "id": "national:AUS:u17",
         "code": "AUS",
         "name": "Australia Women",
-        "score": 1
+        "score": 3
       },
       "away": {
         "id": "national:COL:u17",
@@ -3532,7 +3532,7 @@
         "name": "Colombia W",
         "score": 1
       },
-      "status": "LIVE",
+      "status": "FT",
       "kickoff": null,
       "source": "existing_u17_aggregator",
       "sourceType": "unofficial_public_endpoint",
@@ -3541,12 +3541,12 @@
         "id": "1886444",
         "home": "Australia Women",
         "away": "Colombia W",
-        "homeScore": 1,
+        "homeScore": 3,
         "awayScore": 1,
-        "status": "LIVE",
-        "statusDescription": "58'",
-        "minute": "58",
-        "startTimestamp": 1795860121,
+        "status": "FT",
+        "statusDescription": "FT",
+        "minute": null,
+        "startTimestamp": null,
         "date": "2026-11-28",
         "homeCode": "AUS",
         "awayCode": "COL",
@@ -3557,7 +3557,7 @@
         "sourceUrl": "https://www.livescore.com/"
       },
       "scheduleOnly": false,
-      "archivedAt": "2026-11-28T10:02:16.189Z"
+      "archivedAt": "2026-11-28T10:59:54.208Z"
     },
     {
       "id": "2026-11-28:ESP:CHI",
